@@ -1,3 +1,4 @@
+// Slideshow and Typing Effect
 let slideIndex = 0;
 let mauaText = "Maua"; // The text you want to display letter by letter
 let currentLetterIndex = 0; // Index for typing each letter
@@ -19,7 +20,7 @@ function showSlides() {
         startTypingEffect(mauaElement);
     }
     
-    setTimeout(showSlides, 7000); // Change slide every 5 seconds
+    setTimeout(showSlides, 7000); // Change slide every 7 seconds
 }
 
 // Typing effect for "Maua"
@@ -39,7 +40,30 @@ function startTypingEffect(mauaElement) {
     typeWriter(mauaElement); // Start typing
 }
 
-// Initialize the slideshow
+// Initialize the slideshow when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    showSlides(); // Start the slideshow when the DOM is loaded
+    showSlides();
+});
+
+// Dropdown functionality for "More" and arrow
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.getElementById("dropdownn");
+    const arrow = document.getElementById("arrow");
+    const moreLink = document.getElementById("moreLink");
+
+    // Function to toggle the dropdown
+    function toggleDropdown() {
+        if (dropdown.style.display === "block") {
+            dropdown.style.display = "none";
+        } else {
+            dropdown.style.display = "block";
+        }
+    }
+
+    // Add event listeners to both the arrow and the More link
+    arrow.addEventListener("click", toggleDropdown);
+    moreLink.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        toggleDropdown();
+    });
 });
