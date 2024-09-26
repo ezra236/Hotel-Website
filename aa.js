@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // Dropdown functionality for "More" and arrow
 document.addEventListener('DOMContentLoaded', function() {
     const dropdown = document.getElementById("dropdownn");
-    const arrow = document.getElementById("arrow");
     const moreLink = document.getElementById("moreLink");
+    const rightSidebar = document.querySelector(".right-sidebar");
 
     // Function to toggle the dropdown
     function toggleDropdown() {
@@ -61,9 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Add event listeners to both the arrow and the More link
-    arrow.addEventListener("click", toggleDropdown);
     moreLink.addEventListener("click", function(event) {
         event.preventDefault(); // Prevent default link behavior
         toggleDropdown();
+    });
+
+    rightSidebar.addEventListener("click", function() {
+        toggleDropdown(); // Toggle dropdown when the sidebar is clicked
     });
 });
