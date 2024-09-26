@@ -1,7 +1,5 @@
 // Slideshow and Typing Effect
 let slideIndex = 0;
-let mauaText = "Maua"; // The text you want to display letter by letter
-let currentLetterIndex = 0; // Index for typing each letter
 
 function showSlides() {
     const slides = document.getElementsByClassName("slide");
@@ -24,20 +22,24 @@ function showSlides() {
 }
 
 // Typing effect for "Maua"
-function typeWriter(mauaElement) {
-    if (currentLetterIndex < mauaText.length) {
-        mauaElement.innerHTML += mauaText.charAt(currentLetterIndex);
-        currentLetterIndex++;
-        setTimeout(function() { typeWriter(mauaElement); }, 250); // Delay between letters
+function typeWriter(mauaElement, text) {
+    let currentLetterIndex = 0; // Reset index for each typing effect
+    function type() {
+        if (currentLetterIndex < text.length) {
+            mauaElement.innerHTML += text.charAt(currentLetterIndex);
+            currentLetterIndex++;
+            setTimeout(type, 250); // Delay between letters
+        }
     }
+    type();
 }
 
 // Start typing effect when a new slide is shown
 function startTypingEffect(mauaElement) {
+    const text = mauaElement.textContent; // Get the text from the element
     mauaElement.innerHTML = ""; // Clear the text
-    currentLetterIndex = 0; // Reset index
     mauaElement.style.visibility = 'visible'; // Make the element visible
-    typeWriter(mauaElement); // Start typing
+    typeWriter(mauaElement, text); // Start typing
 }
 
 // Initialize the slideshow when the DOM is loaded
@@ -53,11 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to toggle the dropdown
     function toggleDropdown() {
-        if (dropdown.style.display === "block") {
-            dropdown.style.display = "none";
-        } else {
-            dropdown.style.display = "block";
-        }
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
     }
 
     // Add event listeners to both the arrow and the More link
@@ -68,5 +66,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     rightSidebar.addEventListener("click", function() {
         toggleDropdown(); // Toggle dropdown when the sidebar is clicked
+    });
+});
+
+// Toggle box functionality
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleBox = document.getElementById("toggle-box");
+    const menu = document.getElementById("menu");
+
+    toggleBox.addEventListener("click", function() {
+        // Toggle the active class on the menu to slide it in or out
+        menu.classList.toggle("active");
+
+        // Move the toggle-box based on the menu state
+        toggleBox.style.left = menu.classList.contains("active") ? "200px" : "0px"; // Adjust position based on your layout
     });
 });
