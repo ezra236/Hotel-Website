@@ -84,9 +84,14 @@ nav a:hover::after {
 }
 
 .menu-container {
-    position: relative;
-  }
-  
+    position: relative; 
+    z-index: 10;
+}
+
+.menu.active {
+    left: 0; /* Menu slides into view */
+}
+
   /* Styles for the 'X' box (toggle button) */
   .toggle-box {
     position: fixed;
@@ -127,11 +132,6 @@ nav a:hover::after {
     text-align: center; 
 }
   
-  /* When menu is visible */
-  .menu.active {
-    left: 0; /* Menu slides into view */
-  }
-  
   /* Adjust the toggle box position when menu is active */
   .menu.active ~ .toggle-box {
     left: 180px; 
@@ -161,19 +161,32 @@ nav a:hover::after {
     background-color: #bb4b00; /* Darker shade on hover */
 }
 
+.full-width-paragraph {
+    height: 300px;
+    width: 100%; 
+    background-color: #342623; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    color: white; 
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center; /* Optional: Align text as desired */
+}
+
 
 .container {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     max-width: 10000px;
-    margin-top: 0px;
+    margin-top: 55px;
 }
 
 .image-container {
     position: relative;
     width: 70%;
-    max-width: 800px;
+    max-width: 700px;
+    left: 10%;
 }
 
 .image-container img {
@@ -193,8 +206,8 @@ nav a:hover::after {
 }
 
 .text-right {
-    margin-left: 100px;
-    margin-top: 150px;
+    margin-left: 250px;
+    margin-top: 90px;
     color: black;
     font-size: 22px;
     font-weight: normal;
@@ -202,6 +215,35 @@ nav a:hover::after {
     max-width: 500px;
     text-align: center;
 }
+
+.content-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 10000px;
+    margin-top: 50px;
+}
+
+.text-container {
+    flex: 1; /* Allow text container to take up available space */
+    padding: 20px; /* Add padding for spacing */
+    text-align: center;
+    margin-top: -8%;
+    margin-left: 50px;
+    margin-right: 20px;
+}
+
+.image-section {
+    flex: 0 0 auto; /* Prevent the image section from growing */
+    margin-left: 20px;
+    margin-right: 150px;
+}
+
+.image-section img { 
+    height: auto; 
+    max-width: 650px;
+}
+
 
 /* Dropdown container */
 .dropdown {
@@ -213,11 +255,14 @@ nav a:hover::after {
     display: none;
     position: absolute;
     background-color: #FAF0E6;
-    min-width: 160px;
+    min-width: 300px;
+    height: 300px;
     z-index: 1000;
     top: 100%;
     left: 0;
     padding: 10px 0;
+    margin-top: 5px;
+    border-radius: 6px;
 }
 
 .dropdown-content a {
@@ -226,6 +271,7 @@ nav a:hover::after {
     text-decoration: none;
     display: block;
     text-align: left;
+    margin-bottom: 10px; 
 }
 
 .dropdown:hover .dropdown-content {
