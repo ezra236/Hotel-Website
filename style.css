@@ -97,15 +97,15 @@ nav a:hover::after {
     position: fixed;
     top: 335px;
     left: 0; /* Position this initially off the screen */
-    width: 32px;
-    height: 32px;
+    width: 20px;
+    height: 20px;
     background-color: #333;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 5px;
     z-index: 10;
     transition: left 0.3s ease-in-out; /* Smooth movement */
   }
@@ -114,7 +114,7 @@ nav a:hover::after {
   .menu {
     position: fixed;
     top: 230px;
-    left: -205px; /* Initially off-screen */
+    left: -212px; /* Initially off-screen */
     width: 180px;
     height: 25vh;
     background-color: #ffb264;
