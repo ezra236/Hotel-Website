@@ -47,27 +47,26 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlides();
 });
 
-// Dropdown functionality for "More" and arrow
-document.addEventListener('DOMContentLoaded', function() {
-    const dropdown = document.getElementById("dropdownn");
-    const moreLink = document.getElementById("moreLink");
-    const rightSidebar = document.querySelector(".right-sidebar");
+// Dropdown functionality
+document.addEventListener("DOMContentLoaded", function() {
+    const shapeContainer = document.getElementById("shape-container");
+    const dropdownContent = document.getElementById("dropdownn");
 
-    // Function to toggle the dropdown
-    function toggleDropdown() {
-        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-    }
-
-    // Add event listeners to both the arrow and the More link
-    moreLink.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        toggleDropdown();
-    });
-
-    rightSidebar.addEventListener("click", function() {
-        toggleDropdown(); // Toggle dropdown when the sidebar is clicked
+    shapeContainer.addEventListener("click", function() {
+        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
     });
 });
+
+// Hide dropdown when clicking outside of it
+document.addEventListener("click", function(event) {
+    const shapeContainer = document.getElementById("shape-container");
+    const dropdownContent = document.getElementById("dropdownn");
+
+    if (!shapeContainer.contains(event.target)) {
+        dropdownContent.style.display = "none"; // Hide dropdown if clicked outside
+    }
+});
+
 
 // Toggle box functionality
 document.addEventListener("DOMContentLoaded", function() {
