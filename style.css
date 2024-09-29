@@ -13,38 +13,79 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
+    padding: 0; /* Remove extra padding */
+    margin: 0;
 }
 
 nav {
     background-color:#ECE9DF;
-    width: 92%;
-    padding: 20px;
+    width: 100%;
+    padding: 10px;
     text-align: left;
+    display: flex; /* Ensure the nav is using flexbox */
+    align-items: center;
 }
 
-.right-sidebar {
-    background-color: orange; /* You can change this color */
-    width: 8%;
-    padding: 20px;
-    text-align: center;
-    transition: background-color 0.3s ease;
+.logo {
+    display: flex; /* Aligns content using flexbox */
+    align-items: center; /* Vertically centers the logo */
+    justify-content: flex-start; /* Aligns the logo to the left */
+    margin-right: 10px;
+}
+
+.logo img {
+    width: 50px; /* Adjust the size to your preference */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Prevents the logo from getting larger than the container */
+    object-fit: contain; /* Ensures the image fits within the container without distortion */
+    margin: 0;
+    padding: 0;
+}
+
+.shape-container {
+    position: relative;
+    width: 100px; /* Width of the square */
+    height: 50px;
     cursor: pointer;
+  }
+  
+  .square {
+    width: 100%; /* Full width */
+    height: 70px; /* Height of the square */
+    background-color: orange; /* Background color for the square */
+    position: absolute; /* Position it above the triangle */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+  }
+  
+.shape-container:hover .square {
+    background-color: rgb(254, 63, 0);/* Change color on hover */
 }
 
-.right-sidebar:hover {
-    background-color: rgb(255, 106, 0); /* Color change on hover */
+.shape-container:hover .triangle{
+    border-top-color: rgb(254, 63, 0); /* Change color on hover */
 }
+  
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent; /* Half of the square width */
+    border-right: 50px solid transparent; /* Half of the square width */
+    border-top: 50px solid orange; /* Height of the triangle */
+    position: relative; 
+    top: 70px; /* Position the triangle below the square */
+  }
 
-#moreLink {
-    color: black; 
+  .shape-text {
+    position: absolute; 
+    top: 10px; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); 
+    color: #333; 
+    font-size: 16px; 
+    margin: 0; 
+    text-align: center; 
     font-weight: bold; 
-    text-decoration: none; /* No underline */
-    transition: color 0.3s ease; 
-    font-size: small;
-}
-
-#moreLink:hover {
-    text-decoration: none; /* Prevent underline on hover */
 }
 
 nav a {
