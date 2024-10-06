@@ -44,7 +44,7 @@ nav {
 
 .shape-container {
     position: relative;
-    width: 100px; /* Width of the square */
+    width: 120px; /* Width of the square */
     height: 50px;
     cursor: pointer;
   }
@@ -69,9 +69,9 @@ nav {
 .triangle {
     width: 0;
     height: 0;
-    border-left: 50px solid transparent; /* Half of the square width */
-    border-right: 50px solid transparent; /* Half of the square width */
-    border-top: 50px solid orange; /* Height of the triangle */
+    border-left: 60px solid transparent; /* Half of the square width */
+    border-right: 60px solid transparent; /* Half of the square width */
+    border-top: 35px solid orange; /* Height of the triangle */
     position: relative; 
     top: 70px; /* Position the triangle below the square */
   }
@@ -155,7 +155,7 @@ nav a:hover::after {
   .menu {
     position: fixed;
     top: 230px;
-    left: -212px; /* Initially off-screen */
+    left: -210px; /* Initially off-screen */
     width: 180px;
     height: 25vh;
     background-color: #ffb264;
