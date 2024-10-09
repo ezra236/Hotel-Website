@@ -103,25 +103,24 @@ nav a::after {
     content: ''; 
     position: absolute; 
     left: 0; /* Align with the left */
-    bottom: -3px; 
-    width: 0; /* Initially hidden */
-    height: 2px; 
+    bottom: 0; /* Start at the bottom of the text */
+    width: 100%; /* Full width initially */
+    height: 5px; 
     background-color: #ff4500; 
-    transition: width 0.3s ease, bottom 0.3s ease, height 0.3s ease; 
-    box-shadow: 0 0 10px #ff4500; 
-    opacity: 0; 
+    transition: bottom 0.5s ease, height 0.7s ease; 
+    box-shadow: 0 0 10px #ff7441; 
+    opacity: 0; /* Initially hidden */
+}
+
+nav a:hover::after {
+    bottom: -7px; /* Move the line down */
+    height: 5px; 
+    opacity: 1; 
 }
 
 
 nav a:hover {
     color: #ff4500; 
-}
-
-nav a:hover::after {
-    width: 100%; 
-    bottom: -5px; 
-    height: 3px; 
-    opacity: 1; 
 }
 
 .menu-container {
@@ -146,7 +145,7 @@ nav a:hover::after {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 1px;
     z-index: 10;
     transition: left 0.3s ease-in-out; /* Smooth movement */
   }
@@ -226,7 +225,7 @@ nav a:hover::after {
 .image-container {
     position: relative;
     width: 70%;
-    max-width: 700px;
+    max-width: 600px;
     left: 10%;
 }
 
@@ -248,7 +247,7 @@ nav a:hover::after {
 
 .text-right {
     margin-left: 250px;
-    margin-top: 90px;
+    margin-top: 25px;
     color: black;
     font-size: 22px;
     font-weight: normal;
@@ -257,12 +256,44 @@ nav a:hover::after {
     text-align: center;
 }
 
+.book-now-btn {
+    background-color: #e06230; /* Green background */
+    border: none;
+    color: white; /* White text */
+    padding: 15px 30px; /* Button padding */
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px; /* Font size */
+    margin: 20px 2px;
+    cursor: pointer;
+    border-radius: 2px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Hover effect */
+.book-now-btn:hover {
+    background-color: #fb3a00; /* Darker green on hover */
+}
+
+/* Add focus outline for accessibility */
+.book-now-btn:focus {
+    outline: 3px solid #0000FF; /* Blue outline */
+}
+
+/* Adding shadow for depth */
+.book-now-btn:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(2px); /* Press effect */
+}
+
 .content-container {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
     max-width: 10000px;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .text-container {
@@ -270,8 +301,13 @@ nav a:hover::after {
     padding: 20px; /* Add padding for spacing */
     text-align: center;
     margin-top: -8%;
-    margin-left: 50px;
-    margin-right: 20px;
+    margin-left: 120px;
+    margin-right: 110px;
+}
+
+.i {
+    margin-top: 80px;
+    margin-bottom: 20px;
 }
 
 .image-section {
@@ -281,8 +317,8 @@ nav a:hover::after {
 }
 
 .image-section img { 
-    height: auto; 
-    max-width: 650px;
+    height: 410px; 
+    max-width: 550px;
 }
 
 
@@ -303,7 +339,7 @@ nav a:hover::after {
     left: 0;
     padding: 10px 0;
     margin-top: 5px;
-    border-radius: 6px;
+    border-radius: 1px;
 }
 
 .dropdown-content a {
@@ -317,6 +353,16 @@ nav a:hover::after {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.dropdown-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px; /* Thickness of the underline */
+    background-color: rgb(255, 38, 0); /* The underline color */
 }
 
 .dropdownn {
@@ -418,3 +464,202 @@ nav a:hover::after {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+.block {
+    top: 50px;
+    width: 100%; 
+    height: 140px;
+    margin: 0; /* Remove any default margin */
+    background-color: #e4e4e4; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border: none; 
+    box-shadow: none; 
+  }
+  
+.linn {
+    width: 50%; 
+    padding: 20px; /* Padding inside the linn div */
+    background-color: #e4e4e4; 
+    color: white; 
+    text-align: center; 
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 60px;
+}
+
+.linn img{
+    width: 30px;
+}
+  
+.linn p{
+    font-weight: bold;
+    font-size: 13px;
+    color: #000;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e4e4e4; /* Pantone 427 (Fog Gray) */
+    padding: 20px;
+    height: 255px;
+    border-radius: 1px;
+    margin-top: 0px;
+}
+
+/* Individual section styling */
+.section {
+    flex: 1; /* Make all sections equal width */
+    padding: 5px;
+    margin: 5px; 
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.section1 { 
+    color: #000000;
+    margin-left: 80px;
+} 
+.section2 { 
+    color: #000000; 
+} 
+.section3 { 
+    color: #000000;
+} 
+
+.social-icon {
+    margin-left: 20px;
+    width: 27px;  /* Set desired width */
+    height: 27px; /* Set desired height */
+    transition: transform 0.5s ease; /* Optional transition for hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.7); /* Optional hover effect to slightly enlarge */
+}
+
+
+.pp {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+}
+.oo {
+    font-weight: 15px; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+}
+
+.u {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between; /* Space out the two sections */
+    align-items: center; /* Vertically align the sections */
+    background-color: #efefef; /* Dark background */
+    color: #000000; /* White text */
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+.stp a {
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-weight: bold; /* Bold text */
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+    margin: 0 35px; 
+}
+
+.stp a:hover {
+    color: #ff4500;
+}
+
+/* Style for the copyright section */
+.copyright {
+    font-size: 0.8rem;
+    color: #000000; /* Slightly lighter gray text */
+    margin-left: 60px;
+}
+
+/* Responsive: Stack the sections vertically on small screens */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column; /* Stack the sections vertically */
+        text-align: center;
+    }
+
+    .stp {
+        margin-top: 10px;
+    }
+}
+
+.about-link {
+    text-align: left;
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-weight: bold; 
+    transition: background-color 0.3s, color 0.3s; /
+}
+
+.about-link:hover {
+    color: #ff4500; 
+}
+
+.about-lin {
+    text-align: left;
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-weight: 15px; 
+    transition: background-color 0.3s, color 0.3s; /
+}
+
+.about-lin:hover {
+    color: #ff4500; 
+}
+
+.form-container {
+    background-color: #d0d0ce;
+}
+  
+  .input-button-container {
+    display: flex; /* Use flexbox to place input and button on the same line */
+    align-items: center; /* Align vertically */
+    gap: 0px; /* Add spacing between input and button */
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  input[type="email"] {
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    flex: 1; /* Make the input field flexible */
+  }
+  
+  button {
+    background-color: #ffab74;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 11px 15px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent the button from shrinking */
+  }
+  
+  button:hover {
+    background-color: #fc5c06;
+    }
