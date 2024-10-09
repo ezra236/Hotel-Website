@@ -57,6 +57,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // This will add a smooth scroll effect
+    });
+}
+
 // Hide dropdown when clicking outside of it
 document.addEventListener("click", function(event) {
     const shapeContainer = document.getElementById("shape-container");
