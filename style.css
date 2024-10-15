@@ -19,8 +19,8 @@ body {
 
 nav {
     background-color:#ECE9DF;
-    width: 100%;
-    padding: 10px;
+    width: 90%;
+    padding: 23px;
     text-align: left;
     display: flex; /* Ensure the nav is using flexbox */
     align-items: center;
@@ -30,7 +30,7 @@ nav {
     display: flex; /* Aligns content using flexbox */
     align-items: center; /* Vertically centers the logo */
     justify-content: flex-start; /* Aligns the logo to the left */
-    margin-right: 10px;
+    background-color: #ECE9DF;
 }
 
 .logo img {
@@ -40,6 +40,8 @@ nav {
     object-fit: contain; /* Ensures the image fits within the container without distortion */
     margin: 0;
     padding: 0;
+    margin-right: 12px;
+    margin-left: 12px;
 }
 
 .shape-container {
@@ -51,7 +53,7 @@ nav {
   
   .square {
     width: 100%; /* Full width */
-    height: 70px; /* Height of the square */
+    height: 85px; /* Height of the square */
     background-color: orange; /* Background color for the square */
     position: absolute; /* Position it above the triangle */
     top: 0; /* Align it to the top */
@@ -73,7 +75,7 @@ nav {
     border-right: 60px solid transparent; /* Half of the square width */
     border-top: 35px solid orange; /* Height of the triangle */
     position: relative; 
-    top: 70px; /* Position the triangle below the square */
+    top: 85px; /* Position the triangle below the square */
   }
 
   .shape-text {
@@ -95,7 +97,7 @@ nav a {
     font-weight: bold; /* Bold text */
     border-radius: 5px; 
     transition: background-color 0.3s, color 0.3s; 
-    margin: 0 70px; 
+    margin: 0 85px; 
     position: relative; 
 }
 
@@ -113,7 +115,7 @@ nav a::after {
 }
 
 nav a:hover::after {
-    bottom: -7px; /* Move the line down */
+    bottom: -17px; /* Move the line down */
     height: 5px; 
     opacity: 1; 
 }
@@ -204,8 +206,8 @@ nav a:hover {
 .full-width-paragraph {
     height: 300px;
     width: 100%; 
-    background-color: #342623; 
     padding: 20px; 
+    background-color: #39261d;
     box-sizing: border-box; 
     color: white; 
     font-weight: bold;
@@ -326,6 +328,23 @@ nav a:hover {
 .dropdown {
     position: relative;
     display: inline-block;
+    width: 10%;
+    background-color: #ECE9DF;
+    padding: 17px;
+    text-align: center;
+    display: flex; /* Ensure the nav is using flexbox */
+    align-items: center;
+}
+
+.dropdown a{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 55px;
+}
+
+.dropdown a:hover {
+    color: #ff4500; /* Change text color to red */
 }
 
 .dropdown-content {
@@ -335,7 +354,7 @@ nav a:hover {
     min-width: 300px;
     height: 300px;
     z-index: 1000;
-    top: 100%;
+    top: 70%;
     left: 0;
     padding: 10px 0;
     margin-top: 5px;
@@ -348,7 +367,12 @@ nav a:hover {
     text-decoration: none;
     display: block;
     text-align: left;
-    margin-bottom: 10px; 
+    margin-bottom: 2px; 
+    transition: all 0.5s ease;
+}
+
+.dropdown-content a:hover {
+    color: #ff4500; /* Change text color to red */
 }
 
 .dropdown:hover .dropdown-content {
@@ -470,7 +494,7 @@ nav a:hover {
     width: 100%; 
     height: 140px;
     margin: 0; /* Remove any default margin */
-    background-color: #e4e4e4; 
+    background-color: #e8e8e8; 
     position: relative; 
     display: flex; 
     justify-content: center; 
@@ -482,7 +506,7 @@ nav a:hover {
 .linn {
     width: 50%; 
     padding: 20px; /* Padding inside the linn div */
-    background-color: #e4e4e4; 
+    background-color: #e8e8e8; 
     color: white; 
     text-align: center; 
     border-radius: 5px;
@@ -503,7 +527,7 @@ nav a:hover {
 .info {
     display: flex;
     justify-content: space-between;
-    background-color: #e4e4e4; /* Pantone 427 (Fog Gray) */
+    background-color: #e8e8e8; /* Pantone 427 (Fog Gray) */
     padding: 20px;
     height: 255px;
     border-radius: 1px;
@@ -562,7 +586,7 @@ nav a:hover {
     display: flex;
     justify-content: space-between; /* Space out the two sections */
     align-items: center; /* Vertically align the sections */
-    background-color: #efefef; /* Dark background */
+    background-color: #ffffff; /* Dark background */
     color: #000000; /* White text */
     padding: 20px;
     font-size: 0.9rem;
@@ -575,7 +599,7 @@ nav a:hover {
     font-weight: bold; /* Bold text */
     border-radius: 5px; 
     transition: background-color 0.3s, color 0.3s; 
-    margin: 0 35px; 
+    margin: 0 30px; 
 }
 
 .stp a:hover {
@@ -662,4 +686,4 @@ nav a:hover {
   
   button:hover {
     background-color: #fc5c06;
-    }
+        }
