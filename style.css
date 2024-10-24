@@ -204,17 +204,60 @@ nav a:hover {
 }
 
 .full-width-paragraph {
-    height: 300px;
     width: 100%; 
     padding: 20px; 
-    background-color: #39261d;
+    background-color: #301414;
     box-sizing: border-box; 
     color: white; 
     font-weight: bold;
     font-size: 15px;
-    text-align: center; /* Optional: Align text as desired */
+    text-align: center; 
+    overflow: hidden; /* Ensure content overflow is hidden */
+    transition: max-height 1s ease; /* Transition for expanding */
+    max-height: 265px; /* Set initial height to 81px */
+    position: relative; /* Allow positioning of toggle text */
 }
 
+.content {
+    padding: 10px;
+}
+
+.toggle_ {
+    margin: 10px; 
+    padding: 0px; 
+    background-color: transparent; 
+    color: rgb(255, 102, 0); 
+    cursor: pointer; 
+    position: absolute; 
+    font-size: 14px;
+    top: 230px;
+    bottom: 10px;
+    right: 10px; 
+    font-weight: bold; 
+    text-decoration: none;
+}
+
+.toggle_::after {
+    content: ''; 
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    bottom: -11px; 
+    height: 2px; /* Thickness of the underline */
+    background-color: rgb(255, 145, 0); 
+    transform: translateY(5px); /* Initial position of underline */
+    transition: transform 0.3s ease; 
+}
+
+.toggle_:hover::after {
+    transform: translateY(-8px); /* Move the underline up on hover */
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
 .container {
     display: flex;
@@ -222,6 +265,14 @@ nav a:hover {
     justify-content: flex-start;
     max-width: 10000px;
     margin-top: 55px;
+    transform: scale(0.5); /* Start scaled down */
+    opacity: 0; /* Start invisible */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+}
+
+.container.visible {
+    transform: scale(1); /* Scale back to normal */
+    opacity: 1; /* Fade in */
 }
 
 .image-container {
@@ -259,36 +310,30 @@ nav a:hover {
 }
 
 .book-now-btn {
-    background-color: #e06230; /* Green background */
+    background-color: #e06230;
     border: none;
-    color: white; /* White text */
-    padding: 15px 30px; /* Button padding */
+    color: white;
+    padding: 15px 30px;
     text-align: left;
     text-decoration: none;
     display: inline-block;
     font-weight: bold;
-    font-size: 16px; /* Font size */
+    font-size: 16px;
     margin: 20px 2px;
     cursor: pointer;
-    border-radius: 2px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth background transition */
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
 }
 
-/* Hover effect */
 .book-now-btn:hover {
-    background-color: #fb3a00; /* Darker green on hover */
+    background-color: #fb3a00;
 }
 
-/* Add focus outline for accessibility */
-.book-now-btn:focus {
-    outline: 3px solid #0000FF; /* Blue outline */
-}
-
-/* Adding shadow for depth */
 .book-now-btn:active {
     box-shadow: 0 5px #666;
-    transform: translateY(2px); /* Press effect */
+    transform: translateY(2px);
 }
+
 
 .content-container {
     display: flex; 
@@ -296,6 +341,14 @@ nav a:hover {
     align-items: center; 
     max-width: 10000px;
     margin-top: 60px;
+    transform: scale(0.5); /* Start with a smaller scale */
+    opacity: 0; /* Start invisible */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for scale and opacity */
+}
+
+.content-container.visible {
+    transform: scale(1); /* Scale to original size */
+    opacity: 1; /* Make it fully visible */
 }
 
 .text-container {
@@ -322,7 +375,6 @@ nav a:hover {
     height: 410px; 
     max-width: 550px;
 }
-
 
 /* Dropdown container */
 .dropdown {
@@ -686,4 +738,4 @@ nav a:hover {
   
   button:hover {
     background-color: #fc5c06;
-        }
+  }

@@ -88,3 +88,70 @@ document.addEventListener("DOMContentLoaded", function() {
         toggleBox.style.left = menu.classList.contains("active") ? "200px" : "0px"; // Adjust position based on your layout
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const content = document.getElementById("content");
+    const container = content.parentElement;
+
+    // Set initial maxHeight to 236px
+    container.style.maxHeight = "265px"; 
+
+    document.getElementById("toggleText").addEventListener("click", function () {
+        // Toggle between showing and hiding the full paragraph
+        if (container.style.maxHeight === "265px" || container.style.maxHeight === "") {
+            container.style.maxHeight = "none"; // Expand to show full content
+            this.textContent = "Less"; // Change text to "Less"
+            this.style.top = "337px"; // Move toggle text down when expanded (adjust as needed)
+        } else {
+            container.style.maxHeight = "265px"; // Collapse to initial height
+            this.textContent = "More"; // Change text to "More"
+            this.style.top = "230px"; // Reset toggle text position when collapsed (adjust as needed)
+        }
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const contentContainer = document.querySelector('.content-container');
+    let hasAnimated = false; // Flag to track if animation has occurred
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+                contentContainer.classList.add('visible');
+                hasAnimated = true; // Prevent further animations until reset
+            } else if (!entry.isIntersecting && hasAnimated) {
+                // Reset the animation when the element goes out of view
+                contentContainer.classList.remove('visible');
+                hasAnimated = false; // Allow the animation to trigger again when it comes back into view
+            }
+        });
+    });
+
+    observer.observe(contentContainer);
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.querySelector('.container');
+    let hasAnimated = false; // Track if the animation has occurred
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+                container.classList.add('visible');
+                hasAnimated = true; // Prevent continuous animation
+            } else if (!entry.isIntersecting && hasAnimated) {
+                // Reset the animation when out of view
+                container.classList.remove('visible');
+                hasAnimated = false; // Allow animation to trigger again
+            }
+        });
+    });
+
+    observer.observe(container);
+});
+
+
+
