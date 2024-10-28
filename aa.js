@@ -57,12 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // This will add a smooth scroll effect
-    });
-}
 
 // Hide dropdown when clicking outside of it
 document.addEventListener("click", function(event) {
@@ -74,6 +68,13 @@ document.addEventListener("click", function(event) {
     }
 });
 
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // This will add a smooth scroll effect
+    });
+}
 
 // Toggle box functionality
 document.addEventListener("DOMContentLoaded", function() {
@@ -94,13 +95,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const content = document.getElementById("content");
     const container = content.parentElement;
 
-    // Set initial maxHeight to 236px
+    // Set initial maxHeight to 265px
     container.style.maxHeight = "265px"; 
 
     document.getElementById("toggleText").addEventListener("click", function () {
         // Toggle between showing and hiding the full paragraph
         if (container.style.maxHeight === "265px" || container.style.maxHeight === "") {
-            container.style.maxHeight = "none"; // Expand to show full content
+            container.style.maxHeight = "1000px"; // Set to a high value to expand
             this.textContent = "Less"; // Change text to "Less"
             this.style.top = "785px"; // Move toggle text down when expanded (adjust as needed)
         } else {
@@ -110,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -204,5 +206,13 @@ function scrollToItem() {
 
 
 
+function showClients() {
+    const clients = document.querySelector('.clients');
+    clients.classList.add('visible'); // Add the class to trigger the transition
+}
 
+// Example of calling the function after a delay (for demonstration)
+document.addEventListener('DOMContentLoaded', (event) => {
+    setTimeout(showClients, 1000); // Show after 1 second
+});
 
