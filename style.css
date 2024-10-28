@@ -253,11 +253,89 @@ nav a:hover {
     transform: translateY(-8px); /* Move the underline up on hover */
 }
 
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+.clients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 35px;
 }
+
+.titley {
+    font-size: 24px;
+    color: #da450f;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.arrowy-container {
+    display: flex;
+    align-items: center;
+}
+
+.scrolly-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 880px; /* Adjust width to show three items */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scrolly-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scrolly-item {
+    min-width: 850px; /* Ensure each item gets allocated space */
+    height: 350px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 5px;
+    border-radius: 5px;
+    flex-shrink: 0; /* Prevents items from shrinking */
+}
+
+/* Background colors for items */
+.scrolly-item:nth-child(1) { background-color: #eccea5; }
+.scrolly-item:nth-child(2) { background-color: #eccea5; }
+.scrolly-item:nth-child(3) { background-color: #eccea5; }
+.scrolly-item:nth-child(4) { background-color: #eccea5; }
+
+.im img {
+    width: 80px; /* Set desired width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; 
+    margin-top: 20px;
+}
+
+.scrolly-item p {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    overflow-wrap: break-word;
+}
+
+.arrowy {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 40px;
+    padding: 10px;
+    color: #007bff;
+}
+
+.arrowy:hover {
+    color: #0056b3;
+    background-color: transparent;
+}
+
+
 
 .container {
     display: flex;
@@ -1006,4 +1084,4 @@ body {
   
   button:hover {
     background-color: #fc5c06;
-  }
+    }
