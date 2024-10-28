@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (container.style.maxHeight === "265px" || container.style.maxHeight === "") {
             container.style.maxHeight = "none"; // Expand to show full content
             this.textContent = "Less"; // Change text to "Less"
-            this.style.top = "337px"; // Move toggle text down when expanded (adjust as needed)
+            this.style.top = "785px"; // Move toggle text down when expanded (adjust as needed)
         } else {
             container.style.maxHeight = "265px"; // Collapse to initial height
             this.textContent = "More"; // Change text to "More"
@@ -176,6 +176,32 @@ prevBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+
+const scrollyContainer = document.getElementById("scrollyContainer");
+const items = document.querySelectorAll(".scrolly-item");
+
+let currentIndex = 0;
+
+document.getElementById("nextBtny").addEventListener("click", () => {
+    if (currentIndex < items.length - 1) {
+        currentIndex++;
+        scrollToItem();
+    }
+});
+
+document.getElementById("prevBtny").addEventListener("click", () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        scrollToItem();
+    }
+});
+
+function scrollToItem() {
+    const itemWidth = items[0].offsetWidth; // Get width of each item
+    scrollyContainer.scrollLeft = currentIndex * itemWidth; // Scroll to full width of next item
+}
+
 
 
 
