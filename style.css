@@ -213,7 +213,7 @@ nav a:hover {
     font-size: 15px;
     text-align: center; 
     overflow: hidden; /* Ensure content overflow is hidden */
-    transition: max-height 1s ease; /* Transition for expanding */
+    transition: max-height 3s ease;
     max-height: 265px; /* Set initial height to 81px */
     position: relative; /* Allow positioning of toggle text */
 }
@@ -235,6 +235,7 @@ nav a:hover {
     right: 10px; 
     font-weight: bold; 
     text-decoration: none;
+    transition: top 1s ease;
 }
 
 .toggle_::after {
@@ -259,6 +260,18 @@ nav a:hover {
     align-items: center;
     position: relative;
     margin-bottom: 35px;
+    /* Initial state for the transition */
+    opacity: 0; 
+    transform: scale(0.5); 
+    height: 0; 
+    overflow: hidden; 
+    transition: opacity 9s ease, transform 12s ease, height 8s ease; 
+}
+
+.clients.visible {
+    opacity: 1; /* Fully visible */
+    transform: scale(1); 
+    height: auto; 
 }
 
 .titley {
@@ -277,7 +290,7 @@ nav a:hover {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    width: 880px; /* Adjust width to show three items */
+    width: 940px; /* Adjust width to show three items */
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
 }
@@ -294,16 +307,22 @@ nav a:hover {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 0 5px;
+    margin: 0 20px;
     border-radius: 5px;
     flex-shrink: 0; /* Prevents items from shrinking */
+    transition: transform 3s ease, opacity 3s ease; 
+}
+
+.scrolly-item:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    opacity: 0.8; /* Slightly reduce opacity on hover */
 }
 
 /* Background colors for items */
-.scrolly-item:nth-child(1) { background-color: #eccea5; }
-.scrolly-item:nth-child(2) { background-color: #eccea5; }
-.scrolly-item:nth-child(3) { background-color: #eccea5; }
-.scrolly-item:nth-child(4) { background-color: #eccea5; }
+.scrolly-item:nth-child(1) { background-color: #eccea5; min-width: 780px;}
+.scrolly-item:nth-child(2) { background-color: #eccea5; min-width: 760px;}
+.scrolly-item:nth-child(3) { background-color: #eccea5; min-width: 770px; }
+.scrolly-item:nth-child(4) { background-color: #eccea5; min-width: 790px;}
 
 .im img {
     width: 80px; /* Set desired width */
@@ -722,6 +741,7 @@ nav a:hover {
     color: rgba(175, 26, 26, 0.877);
 }
 
+
 /* Dropdown container */
 .dropdown {
     position: relative;
@@ -734,27 +754,43 @@ nav a:hover {
     align-items: center;
 }
 
-.dropdown a{
+.dropdown a {
     color: #000;
     text-decoration: none;
     font-weight: bold;
     margin-left: 55px;
+    position: relative;
 }
 
 .dropdown a:hover {
     color: #ff4500; /* Change text color to red */
 }
 
+/* Add the arrow after the "Rooms" link text */
+.rooms-link::after {
+    content: "▼"; /* Down arrow */
+    font-size: 12px;
+    margin-left: 5px;
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.dropdown:hover .rooms-link::after {
+    content: "▲"; /* Change to up arrow */
+    transform: rotate(180deg); /* Flip the arrow on hover */
+}
+
 .dropdown-content {
-    display: none;
     position: absolute;
     background-color: #FAF0E6;
     min-width: 300px;
-    height: 300px;
+    height: 300px; 
+    opacity: 0; /* Start fully transparent */
     z-index: 1000;
-    top: 70%;
+    top: 93%;
     left: 0;
-    padding: 10px 0;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
     margin-top: 5px;
     border-radius: 1px;
 }
@@ -765,7 +801,7 @@ nav a:hover {
     text-decoration: none;
     display: block;
     text-align: left;
-    margin-bottom: 2px; 
+    margin-bottom: 2px;
     transition: all 0.5s ease;
 }
 
@@ -774,7 +810,9 @@ nav a:hover {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    padding: 10px 0; 
+    max-height: 300px;
+    opacity: 1; /* Make fully visible */
 }
 
 .dropdown-content::after {
@@ -787,6 +825,8 @@ nav a:hover {
     background-color: rgb(255, 38, 0); /* The underline color */
 }
 
+    
+
 .dropdownn {
     position: relative;
     display: inline-block;
@@ -796,12 +836,12 @@ nav a:hover {
     display: none;
     position: absolute;
     background-color: #FAF0E6;
-    min-width: 1191px;
+    min-width: 1511px;
     z-index: 1000;
     top: 100%;
-    left: -1100px;
+    left: -1392px;
     padding: 10px 0;
-    margin-top: 22px;
+    margin-top: 37px;
     border-radius: 6px;
 }
 
@@ -836,6 +876,7 @@ nav a:hover {
     transform: scaleX(1); /* Scale to full width on hover */
     box-shadow: 0 0 10px #ff4500; /* Glowing effect */
 }
+
 
 .slideshow-container {
     position: relative;
