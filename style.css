@@ -793,6 +793,14 @@ nav a:hover {
     transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
     margin-top: 5px;
     border-radius: 1px;
+    pointer-events: none;
+}
+
+.dropdown:hover .dropdown-content {
+    padding: 10px 0; 
+    max-height: 300px;
+    opacity: 1; /* Make fully visible */
+    pointer-events: auto;
 }
 
 .dropdown-content a {
@@ -809,11 +817,6 @@ nav a:hover {
     color: #ff4500; /* Change text color to red */
 }
 
-.dropdown:hover .dropdown-content {
-    padding: 10px 0; 
-    max-height: 300px;
-    opacity: 1; /* Make fully visible */
-}
 
 .dropdown-content::after {
     content: '';
