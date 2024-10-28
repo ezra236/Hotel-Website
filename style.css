@@ -833,17 +833,29 @@ nav a:hover {
 }
 
 .dropdownn-content {
-    display: none;
+    display: block; /* Set to block initially; we'll control visibility with max-height */
     position: absolute;
-    background-color: #FAF0E6;
+    background-color: #392b2b;
     min-width: 1511px;
+    max-height: 0; /* Start closed */
+    overflow: hidden;
+    opacity: 0; /* Fully transparent */
     z-index: 1000;
     top: 100%;
     left: -1392px;
-    padding: 10px 0;
+    padding: 0; /* No padding initially */
+    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
     margin-top: 37px;
     border-radius: 6px;
 }
+
+.dropdownn-content.show {
+    max-height: 500px; /* Adjust based on desired dropdown height */
+    padding: 10px 0; /* Add padding when expanded */
+    opacity: 1; /* Fully visible */
+}
+
+
 
 .dropdownn-content a {
     color: rgb(0, 0, 0);

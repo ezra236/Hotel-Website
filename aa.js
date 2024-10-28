@@ -47,16 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlides();
 });
 
-// Dropdown functionality
+
 document.addEventListener("DOMContentLoaded", function() {
     const shapeContainer = document.getElementById("shape-container");
     const dropdownContent = document.getElementById("dropdownn");
 
     shapeContainer.addEventListener("click", function() {
-        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+        dropdownContent.classList.toggle("show"); // Toggle show class
     });
 });
-
 
 // Hide dropdown when clicking outside of it
 document.addEventListener("click", function(event) {
@@ -64,7 +63,7 @@ document.addEventListener("click", function(event) {
     const dropdownContent = document.getElementById("dropdownn");
 
     if (!shapeContainer.contains(event.target)) {
-        dropdownContent.style.display = "none"; // Hide dropdown if clicked outside
+        dropdownContent.classList.remove("show"); // Remove show class if clicked outside
     }
 });
 
@@ -216,3 +215,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setTimeout(showClients, 1000); // Show after 1 second
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const clients = document.querySelector('.clients');
+    let clientsAnimated = false; // Track if the animation has occurred
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !clientsAnimated) {
+                clients.classList.add('visible');
+                clientsAnimated = true; // Prevent continuous animation
+            } else if (!entry.isIntersecting && clientsAnimated) {
+                clients.classList.remove('visible');
+                clientsAnimated = false; // Allow animation to trigger again if needed
+            }
+        });
+    });
+
+    observer.observe(clients);
+});
