@@ -234,3 +234,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(clients);
 });
+
+
+// Get today's date in the format yyyy-mm-dd
+const today = new Date();
+const formattedDate = today.toISOString().split('T')[0];
+
+// Set the "Check-in" and "Check-out" dates to today's date
+document.getElementById('check-in').value = formattedDate;
+document.getElementById('check-out').value = formattedDate;
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the check class element
+    const checkElement = document.querySelector(".check");
+
+    // Add click event listener to the check element
+    checkElement.addEventListener("click", function(event) {
+        // Prevent the event from bubbling up to the parent
+        event.stopPropagation();
+    });
+});
+
+
+document.getElementById('check-rates').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent form submission
+    window.location.href = 'rates.html'; // Redirect to rates.html
+});
+
