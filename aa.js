@@ -66,19 +66,19 @@ function scrollToTop() {
     });
 }
 
-// Toggle box functionality
 document.addEventListener("DOMContentLoaded", function() {
     const toggleBox = document.getElementById("toggle-box");
     const menu = document.getElementById("menu");
 
     toggleBox.addEventListener("click", function() {
-        // Toggle the active class on the menu to slide it in or out
+        // Toggle the active class on the menu to slide it out or back
         menu.classList.toggle("active");
 
-        // Move the toggle-box based on the menu state
-        toggleBox.style.left = menu.classList.contains("active") ? "200px" : "0px"; // Adjust position based on your layout
+        // Adjust the position of the toggle-box based on the menu state
+        toggleBox.style.left = menu.classList.contains("active") ? "0px" : "200px";
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -319,5 +319,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+document.getElementById("continue-popover").addEventListener("click", function() {
+    // Get the value of the confirmation number
+    const confirmationNumber = document.getElementById("confirmation_number").value;
+
+    // Redirect to cancel.html with the confirmation number as a query parameter
+    window.location.href = `cancel.html?confirmation_number=${encodeURIComponent(confirmationNumber)}`;
+});
 
 
