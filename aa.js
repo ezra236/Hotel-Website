@@ -57,15 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Hide dropdown when clicking outside of it
-document.addEventListener("click", function(event) {
-    const shapeContainer = document.getElementById("shape-container");
-    const dropdownContent = document.getElementById("dropdownn");
-
-    if (!shapeContainer.contains(event.target)) {
-        dropdownContent.classList.remove("show"); // Remove show class if clicked outside
-    }
-});
 
 
 function scrollToTop() {
@@ -261,4 +252,72 @@ document.getElementById('check-rates').addEventListener('click', function(event)
     event.preventDefault(); // Prevent form submission
     window.location.href = 'rates.html'; // Redirect to rates.html
 });
+
+
+
+
+function toggleDropdown(inputId, dropdownId) {
+    const input = document.getElementById(inputId);
+    const dropdown = document.getElementById(dropdownId);
+
+    input.addEventListener('click', () => {
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!input.contains(event.target) && !dropdown.contains(event.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+}
+
+// Set up dropdowns for both inputs
+toggleDropdown('room-number', 'roomdropdow'); // Updated ID
+toggleDropdown('adults', 'adultsdropdow'); // Updated ID
+
+// Function to set value on dropdown item click
+function setupDropdownValues(inputId, dropdownId) {
+    const input = document.getElementById(inputId);
+    const dropdown = document.getElementById(dropdownId);
+    const items = dropdown.querySelectorAll('div[data-value]');
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            input.value = item.getAttribute('data-value');
+            dropdown.style.display = 'none'; // Hide dropdown after selection
+        });
+    });
+}
+
+// Set up dropdown values for both inputs
+setupDropdownValues('room-number', 'roomdropdow'); // Updated ID
+setupDropdownValues('adults', 'adultsdropdow'); // Updated ID
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const modifyBooking = document.getElementById('modify-booking');
+    const popover = document.getElementById('popover');
+    const closePopover = document.getElementById('close-popover');
+
+    // Show popover on click
+    modifyBooking.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevents event from affecting other elements
+        popover.style.display = 'block';
+    });
+
+    // Hide popover on close button click
+    closePopover.addEventListener('click', (event) => {
+        event.stopPropagation(); // Ensures the close click only affects the button
+        popover.style.display = 'none';
+    });
+
+    // Prevent the popover from closing if clicked on directly
+    popover.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+});
+
+
+
 

@@ -237,6 +237,7 @@ nav a:hover {
     font-weight: bold; 
     text-decoration: none;
     transition: top 1s ease;
+    z-index: 900;
 }
 
 .toggle_::after {
@@ -261,18 +262,7 @@ nav a:hover {
     align-items: center;
     position: relative;
     margin-bottom: 35px;
-    /* Initial state for the transition */
-    opacity: 0; 
-    transform: scale(0.5); 
-    height: 0; 
-    overflow: hidden; 
-    transition: opacity 9s ease, transform 12s ease, height 8s ease; 
-}
-
-.clients.visible {
-    opacity: 1; /* Fully visible */
-    transform: scale(1); 
-    height: auto; 
+    max-height: auto;
 }
 
 .titley {
@@ -356,22 +346,14 @@ nav a:hover {
 }
 
 
-
 .container {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     max-width: 10000px;
     margin-top: 55px;
-    transform: scale(0.5); /* Start scaled down */
-    opacity: 0; /* Start invisible */
-    transition: transform 3s ease, opacity 3s ease; /* Smooth transition */
 }
 
-.container.visible {
-    transform: scale(1); /* Scale back to normal */
-    opacity: 1; /* Fade in */
-}
 
 .image-container {
     position: relative;
@@ -438,14 +420,6 @@ nav a:hover {
     align-items: center; 
     max-width: 10000px;
     margin-top: 60px;
-    transform: scale(0.5); /* Start with a smaller scale */
-    opacity: 0; /* Start invisible */
-    transition: transform 3s ease, opacity 3s ease; /* Transition for scale and opacity */
-}
-
-.content-container.visible {
-    transform: scale(1); /* Scale to original size */
-    opacity: 1; /* Make it fully visible */
 }
 
 .text-container {
@@ -786,7 +760,7 @@ nav a:hover {
     min-width: 300px;
     height: 300px; 
     opacity: 0; /* Start fully transparent */
-    z-index: 900;
+    z-index: 1800;
     top: 93%;
     left: 0;
     padding: 0;
@@ -834,6 +808,8 @@ nav a:hover {
 .dropdownn {
     position: relative;
     display: inline-block;
+    overflow: visible;
+    pointer-events: none;
 }
 
 .dropdownn-content {
@@ -842,15 +818,16 @@ nav a:hover {
     background-color: #392b2b;
     min-width: 1511px;
     max-height: 0; /* Start closed */
-    overflow: hidden;
+    overflow: visible;
     opacity: 0; /* Fully transparent */
     z-index: 1000;
     top: 100%;
     left: -1392px;
     padding: 0; /* No padding initially */
-    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+    transition: max-height 2s ease, padding 2s ease, opacity 0.5s ease;
     margin-top: 36px;
     border-radius: 0px;
+    pointer-events: none;
 }
 
 .dropdownn-content.show {
@@ -860,34 +837,62 @@ nav a:hover {
 }
 
 
-
-.dropdownn-content a {
-    color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    position: relative;
-    margin-left: 1220px;
-    transition: color 0.3s ease;
-    pointer-events: auto;
-}
-
-.linkc a {
+.linkc p {
     color: #ffffff; /* Initial text color */
     padding: 10px 20px; /* Adding padding for the link */
-    text-decoration: none; /* Remove underline */
     display: inline-block; /* Ensures padding works as expected */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
     text-decoration: underline;
+    pointer-events: auto;
+    margin-left: 1020px;
 }
 
-.linkc a:hover {
+.linkc p:hover {
     color: #ff5900; /* Text color on hover */
     background-color: transparent; /* Background color on hover */
     border-radius: 4px; /* Optional: rounded corners */
 }
 
+.popover {
+    position: absolute;
+    top: 100%; /* Position below the "Modify Booking" text */
+    left: 80%;
+    transform: translateX(-50%);
+    background-color: #f9ede1;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Width of the popover */
+    z-index: 1000;
+    height: 300px;
+    display: none; /* Hidden by default */
+}
+
+.popover p {
+    margin: 0;
+    font-size: 14px;
+    color: #e14e26;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.popover button {
+    margin-top: 10px;
+    padding: 10px 35px;
+    background-color: #ea6827;
+    color: #ffffff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.popp{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
 
 
 
@@ -934,6 +939,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-top: 23px;
 }
 
 .check label {
@@ -941,6 +947,7 @@ nav a:hover {
     color: #ffffff;
     margin-bottom: 58px;
     font-weight: bold;
+    margin-top: 6px;
 }
 
 /* Set width and minimum height of input fields */
@@ -958,6 +965,7 @@ nav a:hover {
     background-repeat: no-repeat; /* Prevent the icon from repeating */
     background-position: right 10px center;/* Position the icon inside the input */
     background-size: 16px 16px; /* Set size of the icon */
+    pointer-events: auto;
 }
 
 
@@ -969,7 +977,71 @@ nav a:hover {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    pointer-events: auto;
 }
+
+.check input[type="numberr"] {
+    font-family: 'Arial', sans-serif;/* Change to your desired font family */
+    font-size: 14px;
+    width: 45px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="orange" viewBox="0 0 24 24"%3E%3Cpath d="M8.59 9.17L12 12.58l3.41-3.41L17 10.59l-5 5-5-5z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: left 59px center;
+    background-size: 28px;
+    padding-right: 36px; 
+    cursor: pointer; 
+    pointer-events: auto;
+}
+
+.dropdow {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background-color: #FAF0E6;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 2500;
+    width: 50px; /* Match input width */
+    margin-left: 710px;
+    margin-top: 390px;
+    color: #000;
+    pointer-events: auto;
+}
+
+.dropdoww {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background-color: #FAF0E6;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 2500;
+    width: 50px; /* Match input width */
+    margin-left: 890px;
+    margin-top: 390px;
+    color: #000;
+    pointer-events: auto;
+}
+
+.dropdow div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdow div:hover {
+    background-color: #856464; /* Highlight on hover */
+}
+
+.dropdoww div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdoww div:hover {
+    background-color: #856464; /* Highlight on hover */
+}
+
 
 /* Button styling */
 .check button {
@@ -977,10 +1049,11 @@ nav a:hover {
     background-color: #cf6237;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 0px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    pointer-events: auto;
 }
 
 .check button:hover {
