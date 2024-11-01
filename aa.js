@@ -54,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     shapeContainer.addEventListener("click", function() {
         dropdownContent.classList.toggle("show"); // Toggle show class
+
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
     });
 });
 
@@ -326,5 +328,61 @@ document.getElementById("continue-popover").addEventListener("click", function()
     // Redirect to cancel.html with the confirmation number as a query parameter
     window.location.href = `cancel.html?confirmation_number=${encodeURIComponent(confirmationNumber)}`;
 });
+
+
+
+        // Function to update the current time
+    function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        document.getElementById('currentTime').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+        
+        // Update time every second
+    setInterval(updateTime, 1000);
+    updateTime(); // Initial call to display time immediately
+
+
+    // JavaScript to update the current time
+    function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        document.getElementById('currentTime').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+
+
+// Function to update the navigation bar and finis container positions
+function updatePositions() {
+    if (window.scrollY > 0) {
+        document.querySelector('.nav-container').classList.add('scrolled');
+        document.querySelector('.finis').classList.add('scrolled');
+    } else {
+        document.querySelector('.nav-container').classList.remove('scrolled');
+        document.querySelector('.finis').classList.remove('scrolled');
+    }
+}
+
+// Scroll detection for navigation bar
+window.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowDown') {
+        document.querySelector('.nav-container').classList.add('scrolled');
+        document.querySelector('.finis').classList.add('scrolled');
+    }
+});
+
+// Handle scroll events
+window.addEventListener('scroll', updatePositions);
+
+// Set the initial position when the page loads
+window.addEventListener('load', updatePositions);
+
+
 
 
