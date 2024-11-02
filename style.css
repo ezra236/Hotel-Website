@@ -82,7 +82,7 @@ nav {
 }
 
 .logo img {
-    width: 50px; /* Adjust the size to your preference */
+    width: 90px; /* Adjust the size to your preference */
     height: auto; /* Maintain aspect ratio */
     max-height: 100%; /* Prevents the logo from getting larger than the container */
     object-fit: contain; /* Ensures the image fits within the container without distortion */
@@ -824,7 +824,7 @@ nav a:hover {
 .dropdown-content {
     position: absolute;
     background-color: #FAF0E6;
-    min-width: 210px;
+    min-width: 240px;
     height: 300px; 
     font-family: 'Times New Roman', Times, serif;
     opacity: 0; /* Start fully transparent */
