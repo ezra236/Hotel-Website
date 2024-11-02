@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-content: flex-start; 
     padding: 20px;
-    background-color: #d3b991;
+    background-color: #d6b88f;
     width: 100%;
     height: 15px; 
     box-sizing: border-box; 
@@ -27,6 +27,7 @@ body {
     text-align: left;
     left: 0;
     color: #000;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .leftt-image {
@@ -49,6 +50,58 @@ body {
     font-family: Times New Roman;
 }
 
+.squared-shape {
+    width: 78px; 
+    height: 38px; 
+    background-color: #eccea5; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    border-radius: 38px; 
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    overflow: hidden; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.squared-shape:hover {
+    background-color: #ccae84; /* Change color on hover */
+}
+
+.squared-shape p {
+    margin: 0;
+    color: rgb(0, 0, 0); /* Change text color for visibility */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.squared-shape p:hover{
+    color: #ff4500;
+}
+
+.blockk {
+    position: absolute;
+    top: 0; 
+    right: -800px; 
+    width: 390px;
+    height: 800px; 
+    background-color: rgb(220, 216, 210); /* Block color */
+    backdrop-filter: blur(5px);
+    transition: right 0.5s ease; 
+    display: none; 
+    z-index: 5000;
+}
+
+.blockk p {
+    position: absolute; 
+    top: 20px;  
+    left: 330px; /* Adjust as needed */
+    color: rgb(0, 0, 0); 
+    font-size: 45px; 
+    margin: 0; 
+    cursor: pointer;
+}
+
+
 .nav-container {
     display: flex;
     width: 100%;
@@ -67,7 +120,7 @@ body {
 
 nav {
     background-color:#eccea5;
-    width: 90%;
+    width: 68%;
     padding: 23px;
     text-align: left;
     display: flex; /* Ensure the nav is using flexbox */
@@ -94,39 +147,47 @@ nav {
 
 .shape-container {
     position: relative;
-    width: 120px; /* Width of the square */
+    width: 139px; /* Width of the square */
     height: 50px;
     cursor: pointer;
   }
   
   .square {
-    width: 100%; /* Full width */
-    height: 85px; /* Height of the square */
-    background-color: orange; /* Background color for the square */
+    width: 100%; 
+    height: 85px; 
+    background-color: rgb(255, 132, 0); 
     position: absolute; /* Position it above the triangle */
-    top: 0; /* Align it to the top */
-    left: 0; /* Align it to the left */
+    top: 0; 
+    left: 0; 
   }
   
 .shape-container:hover .square {
-    background-color: rgb(254, 63, 0);/* Change color on hover */
+    background-color: rgb(230, 89, 28);/* Change color on hover */
 }
 
 .shape-container:hover .triangle{
-    border-top-color: rgb(254, 63, 0); /* Change color on hover */
+    border-top-color: rgb(230, 89, 28); /* Change color on hover */
 }
   
 .triangle {
     width: 0;
     height: 0;
-    border-left: 60px solid transparent; /* Half of the square width */
-    border-right: 60px solid transparent; /* Half of the square width */
-    border-top: 35px solid orange; /* Height of the triangle */
+    border-left: 70px solid transparent; /* Half of the square width */
+    border-right: 70px solid transparent; 
+    border-top: 35px solid rgb(255, 132, 0); 
     position: relative; 
-    top: 85px; /* Position the triangle below the square */
+    top: 85px; 
     z-index: 1500;
-  }
+}
 
+.triangle-image {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px; /* Adjust the size as needed */
+    height: 35px;
+}
   .shape-text {
     position: absolute; 
     top: 10px; /* Adjust as needed */
@@ -762,11 +823,11 @@ nav a:hover {
 
 .triangled {
     position: relative;
-    width: 0; /* No width needed for the triangle */
-    height: 0; /* No height needed for the triangle */
-    border-left: 50px solid transparent; /* Adjust left side for medium width */
-    border-right: 50px solid transparent; /* Adjust right side for medium width */
-    border-bottom: 30px solid #e8e8e8; /* Triangle color and small height */
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent; 
+    border-right: 50px solid transparent;
+    border-bottom: 30px solid #e8e8e8; 
     margin-left: -5px;
     margin-top: 72px;
     cursor: pointer;
@@ -777,10 +838,10 @@ nav a:hover {
     top: 19px; /* Adjust position of the arrow inside the triangle */
     left: 50%;
     height: auto; /* No height needed for the triangle */
-    border-left: 16px solid transparent; /* Adjust left side for medium width */
-    border-right: 16px solid transparent; /* Adjust right side for medium width */
-    border-bottom: 10px solid #c0b4b4; /* Triangle color and small height */
-    transform: translateX(-50%); /* Center the arrow */
+    border-left: 16px solid transparent; 
+    border-right: 16px solid transparent; 
+    border-bottom: 10px solid #c0b4b4; 
+    transform: translateX(-50%); 
 }
 
 
@@ -930,21 +991,35 @@ nav a:hover {
     cursor: pointer;
 }
 
+
 .popover {
     position: absolute;
     top: 100%; /* Position below the "Modify Booking" text */
-    left: 80%;
+    left: 85%; /* Adjust based on your layout */
     transform: translateX(-50%);
     background-color: #f9ede1;
     border: 1px solid #ccc;
     padding: 15px;
     border-radius: 4px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px; /* Width of the popover */
+    width: 380px; /* Width of the popover */
     z-index: 1000;
-    height: 260px;
+    height: 250px;
     display: none; /* Hidden by default */
+    margin-top: 10px;
 }
+
+.popover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%; 
+    left: 50%; 
+    margin-left: -10px; 
+    border-width: 22px; 
+    border-style: solid;
+    border-color: transparent transparent #f9ede1 transparent; /* Triangle color matches popover background */
+}
+
 
 .popover p {
     margin: 0;
