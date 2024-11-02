@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+
 .finis {
     display: flex;
     align-items: center;
@@ -39,6 +40,13 @@ body {
     font-weight: bold;
     color: #333;
     margin-left: 1180px;
+}
+
+.separator {
+    font-size: 30px; 
+    color: #dc5837; /* Adjust color to match your design */
+    margin-left: 0px; 
+    font-family: Times New Roman;
 }
 
 .nav-container {
@@ -135,10 +143,10 @@ nav a {
     text-decoration: none; 
     color: black; 
     padding: 10px 20px; 
-    font-weight: bold; /* Bold text */
+    font-family: 'Times New Roman', Times, serif;
     border-radius: 5px; 
     transition: background-color 0.3s, color 0.3s; 
-    margin: 0 85px; 
+    margin: 0 65px; 
     position: relative; 
 }
 
@@ -656,7 +664,7 @@ nav a:hover {
 }
 
 .offa-button:hover {
-    background-color: #f81100; 
+    background-color: #6e100e; 
 }
 
 .offf-button {
@@ -672,7 +680,7 @@ nav a:hover {
 }
 
 .offf-button:hover {
-    background-color: #f81100; 
+    background-color: #6e100e; 
 }
 
 .offff-button {
@@ -688,7 +696,7 @@ nav a:hover {
 }
 
 .offff-button:hover {
-    background-color: #f81100; 
+    background-color: #6e100e; 
 }
 
 .offd-button {
@@ -704,7 +712,7 @@ nav a:hover {
 }
 
 .offd-button:hover {
-    background-color: #f81100; 
+    background-color: #6e100e; 
 }
 
 .offs-button {
@@ -720,7 +728,7 @@ nav a:hover {
 }
 
 .offs-button:hover {
-    background-color: #f81100; 
+    background-color: #6e100e; 
 }
 
 .arroww {
@@ -791,7 +799,7 @@ nav a:hover {
 .dropdown a {
     color: #000;
     text-decoration: none;
-    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
     margin-left: 55px;
     position: relative;
 }
@@ -816,8 +824,9 @@ nav a:hover {
 .dropdown-content {
     position: absolute;
     background-color: #FAF0E6;
-    min-width: 300px;
+    min-width: 210px;
     height: 300px; 
+    font-family: 'Times New Roman', Times, serif;
     opacity: 0; /* Start fully transparent */
     z-index: 1800;
     top: 93%;

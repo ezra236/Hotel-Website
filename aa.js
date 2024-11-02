@@ -384,5 +384,3 @@ window.addEventListener('scroll', updatePositions);
 window.addEventListener('load', updatePositions);
 
 
-
-
