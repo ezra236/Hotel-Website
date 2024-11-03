@@ -297,6 +297,7 @@ setupDropdownValues('room-number', 'roomdropdow'); // Updated ID
 setupDropdownValues('adults', 'adultsdropdow'); // Updated ID
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const modifyBooking = document.getElementById('modify-booking');
     const popover = document.getElementById('popover');
@@ -319,6 +320,8 @@ document.addEventListener('DOMContentLoaded', function () {
         event.stopPropagation();
     });
 });
+
+
 
 
 document.getElementById("continue-popover").addEventListener("click", function() {

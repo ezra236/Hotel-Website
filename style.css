@@ -79,7 +79,7 @@ body {
 }
 
 .blockk {
-    position: absolute;
+    position: fixed;
     top: 0; 
     right: -800px; 
     width: 390px;
@@ -840,7 +840,7 @@ nav a:hover {
     height: auto; /* No height needed for the triangle */
     border-left: 16px solid transparent; 
     border-right: 16px solid transparent; 
-    border-bottom: 10px solid #c0b4b4; 
+    border-bottom: 10px solid #ffffff; 
     transform: translateX(-50%); 
 }
 
@@ -932,8 +932,6 @@ nav a:hover {
     background-color: rgb(255, 38, 0); /* The underline color */
 }
 
-    
-
 .dropdownn {
     position: relative;
     display: inline-block;
@@ -942,8 +940,8 @@ nav a:hover {
 }
 
 .dropdownn-content {
-    display: block; /* Set to block initially; we'll control visibility with max-height */
-    position: absolute; 
+    display: block;
+    position: absolute;
     background-color: #392b2b;
     min-width: 1511px;
     max-height: 0; /* Start closed */
@@ -952,18 +950,24 @@ nav a:hover {
     z-index: 1000;
     top: 100%;
     left: 1px;
-    padding: 0; /* No padding initially */
-    transition: max-height 2s ease, padding 2s ease, opacity 0.5s ease;
+    padding: 0;
     margin-top: 71px;
-    border-radius: 0px;
+    border-radius: 0;
     pointer-events: none;
+    
+    /* Start with hidden and scaled up */
+    transform: translateY(-10px); 
+    transition: max-height 1s ease, padding 1s ease, opacity 0.5s ease, transform 1s ease;
 }
 
 .dropdownn-content.show {
-    max-height: 500px; /* Adjust based on desired dropdown height */
-    padding: 0px 0; /* Add padding when expanded */
+    max-height: 500px;
+    padding: 0px 0; 
     opacity: 1; /* Fully visible */
+    pointer-events: auto; 
+    transform: translateY(0); 
 }
+
 
 
 .linkc {
@@ -971,6 +975,7 @@ nav a:hover {
     color: #ffffff;
     padding: 10px 20px;
     margin-top: 20px;
+    
 }
 
 
@@ -1003,7 +1008,7 @@ nav a:hover {
     border-radius: 4px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     width: 380px; /* Width of the popover */
-    z-index: 1000;
+    z-index: 1500;
     height: 250px;
     display: none; /* Hidden by default */
     margin-top: 10px;
@@ -1467,6 +1472,7 @@ nav a:hover {
     color: black; /* Link color */
     padding: 10px 20px; 
     font-weight: 15px; 
+    font-family: 'Times New Roman', Times, serif;
     transition: background-color 0.3s, color 0.3s; /
 }
 
