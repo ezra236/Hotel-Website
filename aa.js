@@ -392,23 +392,26 @@ window.addEventListener('load', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
     const shapedSquare = document.getElementById('shaped-square');
     const slidingBlock = document.getElementById('slidingg-block');
-    const closeButton = document.getElementById('close-button'); // Reference to the close button
+    const closeButton = document.getElementById('close-button');
+    const overlay = document.getElementById('overlay'); // Reference to the overlay
 
     shapedSquare.addEventListener('click', function() {
-        slidingBlock.style.display = 'block'; // Show the block
+        slidingBlock.style.display = 'block';
+        overlay.style.display = 'block'; // Show the overlay
         document.body.style.overflow = 'hidden'; // Disable scrolling
         setTimeout(() => {
-            slidingBlock.style.right = '0'; // Move the block into view from the right
-        }, 0); // Delay to allow the display change to take effect
+            slidingBlock.style.right = '0'; // Slide the block into view
+        }, 0);
     });
 
-    // Add event listener to close the block
     closeButton.addEventListener('click', function() {
-        slidingBlock.style.right = '-800px'; // Move the block off the screen
+        slidingBlock.style.right = '-800px'; // Slide the block out of view
         setTimeout(() => {
-            slidingBlock.style.display = 'none'; // Hide the block after animation
-            document.body.style.overflow = 'auto'; // Enable scrolling again
-        }, 500); // Match the timeout with the CSS transition duration
+            slidingBlock.style.display = 'none';
+            overlay.style.display = 'none'; // Hide the overlay
+            document.body.style.overflow = 'auto'; // Enable scrolling
+        }, 500); // Match the CSS transition duration
     });
 });
+
 
