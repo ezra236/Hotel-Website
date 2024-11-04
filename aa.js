@@ -61,12 +61,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
 function scrollToTop() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth' // This will add a smooth scroll effect
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const toggleBox = document.getElementById("toggle-box");
@@ -77,9 +79,13 @@ document.addEventListener("DOMContentLoaded", function() {
         menu.classList.toggle("active");
 
         // Adjust the position of the toggle-box based on the menu state
-        toggleBox.style.left = menu.classList.contains("active") ? "0px" : "200px";
+        toggleBox.style.left = menu.classList.contains("active") ? "3px" : "220px";
+
+        // Add or remove the active class on the toggle box based on the menu state
+        toggleBox.classList.toggle("active", menu.classList.contains("active"));
     });
 });
+
 
 
 
@@ -385,6 +391,7 @@ window.addEventListener('scroll', updatePositions);
 
 // Set the initial position when the page loads
 window.addEventListener('load', updatePositions);
+
 
 
 
