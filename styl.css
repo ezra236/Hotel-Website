@@ -716,11 +716,11 @@ nav a:hover {
 
 .Modif p {
     position: absolute;  
-    top: 30%; /* Center vertically */
+    top: 35%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%);
     color: #ffffff; 
-    font-size: 95px; /* Adjust font size as needed */
+    font-size: 85px; /* Adjust font size as needed */
     padding: 10px; 
     border-radius: 5px; 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -757,7 +757,7 @@ nav a:hover {
     transform: translateX(-50%);
     font-size: 25px; /* Size of the arrow */
     color: #ffffff;
-    animation: bounce 1.5s infinite;
+    animation: bounce 1.2s infinite;
     cursor: pointer;
 }
 
@@ -771,8 +771,94 @@ nav a:hover {
         transform: translate(-50%, 0); /* Starting position */
     }
     50% {
-        transform: translate(-50%, -10px); /* Move up by 10px */
+        transform: translate(-50%, -15px); /* Move up by 10px */
     }
+}
+
+.roomm{
+    width: 100%;
+    height: 580px;
+    background-color: #ffffff;
+    margin-top: -20px;
+    display: flex;
+}
+
+.roomn{
+    width: 30%;
+    padding-top: 90px; 
+}
+
+.roomn p{
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-left: 40px;
+    transition: 1s ease;
+    cursor: pointer;
+}
+
+.roomn p:hover{
+    color: #cc462b;
+}
+
+.roomd{
+    width: 70%;
+    background-color: #ffffff;
+}
+
+.roo1 {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+
+.roo1 img {
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 420px; /* Adjust width as needed */
+    height: 470px;
+}
+
+.roo1 .text-container {
+    margin-left: 30px; /* Space between image and text */
+    display: flex;
+    flex-direction: column; /* Stack heading and paragraph vertically */
+    justify-content: flex-start;
+}
+
+.roo1 h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 28px;
+    margin-top: 100px; /* Remove extra margins to align with paragraph */
+    color: #000;
+    margin-left: 5px;
+}
+
+.roo1 p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-top: 10px; /* Space between heading and paragraph */
+    color: #000;
+    margin-left: 5px;
+    margin-right: 125px;
+}
+
+.butto {
+    margin-top: 15px; /* Space between paragraph and button */
+    padding: 10px 5px;
+    font-size: 16px;
+    width: 110px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #811b18; /* Button background color */
+    color: #ffffff; /* Text color */
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+.butto:hover {
+    background-color: #a22a1f; /* Darker color on hover */
 }
 
 
@@ -782,11 +868,8 @@ nav a:hover {
 
 
 
-
-
-
 .acc{
-    margin-top: 800px;
+    margin-top: 5500px;
 }
 
 .block {
