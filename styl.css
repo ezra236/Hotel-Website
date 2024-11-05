@@ -800,6 +800,7 @@ nav a:hover {
 
 .roomn p:hover{
     color: #e53e1c;
+    text-decoration: underline;
 }
 
 .roomd {
@@ -813,10 +814,11 @@ nav a:hover {
     align-items: flex-start;
     margin-top: 50px;
     opacity: 0; /* Initially hidden */
+    transition: opacity 0.2s ease; /* Quick fade-in for quicker visibility */
 }
 
 .slide-in {
-    animation: slideIn 1s forwards; /* Change duration as needed */
+    animation: slideIn 0.5s forwards; /* Shorten duration for faster effect */
 }
 
 /* Keyframes for the slide-in effect from top to bottom */
@@ -888,7 +890,7 @@ nav a:hover {
 
 
 .acc{
-    margin-top: 5500px;
+    margin-top: 900px;
 }
 
 .block {
