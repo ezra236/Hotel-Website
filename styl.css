@@ -791,25 +791,38 @@ nav a:hover {
 .roomn p{
     color: #000;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    margin-left: 40px;
-    transition: 1s ease;
+    font-size: 25px;
+    margin-left: 50px;
+    transition: 0.5s ease;
     cursor: pointer;
+    width: 145px;
 }
 
 .roomn p:hover{
-    color: #cc462b;
+    color: #e53e1c;
 }
 
-.roomd{
+.roomd {
     width: 70%;
     background-color: #ffffff;
+    position: relative; /* Make sure the parent container has a position */
 }
 
 .roo1 {
     display: flex;
     align-items: flex-start;
     margin-top: 50px;
+    position: absolute; /* Position absolute for sliding effect */
+    bottom: -100%; /* Start off-screen at the bottom */
+    left: 0;
+    right: 0;
+    opacity: 0; /* Initially hidden */
+    transition: bottom 0.5s ease, opacity 0.5s ease; /* Transition for bottom and opacity */
+}
+
+.roo1.show {
+    bottom: 0; /* Move to the visible area */
+    opacity: 1; /* Make visible */
 }
 
 

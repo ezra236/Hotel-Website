@@ -136,3 +136,36 @@ document.getElementById("continue-popover").addEventListener("click", function()
     window.location.href = `cancel.html?confirmation_number=${encodeURIComponent(confirmationNumber)}`;
 });
 
+
+
+function showRoom(city) {
+    // Hide all rooms
+    const rooms = document.querySelectorAll('.roo1');
+    rooms.forEach(room => {
+        room.classList.remove('show'); // Remove the 'show' class to hide the room
+        room.style.display = 'none'; // Ensure it's not displayed
+    });
+
+    // Show the selected room
+    const selectedRoom = document.getElementById(city);
+    if (selectedRoom) {
+        selectedRoom.style.display = 'flex'; // Set to flex to make it visible
+        setTimeout(() => {
+            selectedRoom.classList.add('show'); // Add the 'show' class after a short delay
+        }, 10); // Delay to ensure the element is rendered before applying the class
+    }
+}
+
+// Initially show the Paris room
+document.addEventListener('DOMContentLoaded', () => {
+    showRoom('paris');
+});
+
+
+
+
+
+
+
+
+
