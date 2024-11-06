@@ -169,6 +169,26 @@ document.querySelectorAll('.roomn a').forEach(p => {
 
 
 
+  document.querySelectorAll('.roomn a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('data-id'); // Get data-id
+        const targetElement = document.getElementById(targetId);
+        const container = document.querySelector('.roomd');
+
+        if (targetElement) {
+            container.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+
+
+
+
 
 
 
