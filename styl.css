@@ -913,8 +913,6 @@ nav a:hover {
     margin: 0;
 }
 
-
-
 .butto {
     margin-top: 25px; /* Space between paragraph and button */
     padding: 10px 5px;
@@ -938,7 +936,8 @@ nav a:hover {
     font-size: 16px;
     width: 155px;
     font-family: 'Times New Roman', Times, serif;
-    background-color: #6f2e22; /* Button background color */
+    background-color: #893121; /* Button background color */
+    border: 2px solid #b8321e; 
     color: #ffffff; /* Text color */ 
     border-radius: 0px;
     cursor: pointer;
@@ -1147,7 +1146,7 @@ nav a:hover {
     flex: 1; /* Make the input field flexible */
   }
 
-  .submit-button {
+  .su {
     background-color: transparent; 
     color: rgb(217, 197, 197);
     border: none;
@@ -1158,6 +1157,6 @@ nav a:hover {
     margin-left: -45px;
 }
 
-.submit-button:hover {
+.su:hover {
     color: #b59595; /* Slightly darker green when hovered */
 }

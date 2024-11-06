@@ -383,7 +383,7 @@ nav a:hover {
     background-color: #ef640d; 
     color: rgb(255, 255, 255); 
     border: none; 
-    padding: 11px 55px; /* Padding for the button */
+    padding: 11px 49px; /* Padding for the button */
     border-radius: 0px; 
     cursor: pointer; /* Change cursor on hover */
     margin-top: 20px; 
@@ -1598,7 +1598,7 @@ nav a:hover {
     flex: 1; /* Make the input field flexible */
   }
   
-  .submit-button {
+.su {
     background-color: transparent; 
     color: rgb(215, 198, 198);
     border: none;
@@ -1609,6 +1609,6 @@ nav a:hover {
     margin-left: -45px;
 }
 
-.submit-button:hover {
+.su:hover {
     color: #ba9a9a; /* Slightly darker green when hovered */
 }
