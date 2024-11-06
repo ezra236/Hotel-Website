@@ -1329,8 +1329,12 @@ nav a:hover {
     border-radius: 0px;
     cursor: pointer;
     font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
     transition: background-color 0.3s;
     pointer-events: auto;
+    display: inline-block; /* Ensures button is inline */
+    white-space: nowrap; /* Prevents text from wrapping */
+    text-align: center;
 }
 
 .check button:hover {
