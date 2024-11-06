@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: white;
     font-family: Arial, sans-serif;
@@ -789,27 +793,56 @@ nav a:hover {
 }
 
 .roomm{
-    width: 100%;
-    height: 580px;
-    background-color: #ffffff;
-    margin-top: -20px;
     display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: relative;
+    margin-top: 0px;
+    height: 600px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+
+    border-top: 15px solid #321414; 
 }
 
 .roomn{
     width: 25%;
-    padding-top: 90px; 
+    padding-top: 95px; 
+    background-color: #ffffff;
+    height: 550px;
+    position: sticky;
 }
 
 .roomn p{
     color: #000;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 25px;
+    font-size: 22px;
     margin-left: 90px;
     transition: 0.5s ease;
     cursor: pointer;
-    width: 145px;
+    width: 150px;
 }
+
+.roomn a{
+    text-decoration: none;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 29px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.roomn a:hover{
+    color: #e53e1c;
+    text-decoration: underline;
+}
+
+.roomn a.selected {
+    color: rgb(210, 90, 21); /* Color for the selected link */
+  }
 
 .roomn p:hover{
     color: #e53e1c;
@@ -817,66 +850,69 @@ nav a:hover {
 }
 
 .roomd {
-    width: 70%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+    scroll-behavior: smooth;
+    height: 600px; 
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    width: 75%;
     background-color: #ffffff;
-    position: relative; /* Make sure the parent container has a position */
+    margin-top: 20px;
 }
 
-.roo1 {
+.roomd::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+
+.roo1, .roo2, .roo3, .roo4, .roo5, .roo6, .roo7, .roo8, .roo9, .roo10 {
+    min-height: 600px;
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: flex-start; 
+    margin: 10px 0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 15px;
+}
+
+.roo1 img, .roo2 img, .roo3 img, .roo4 img, .roo5 img, .roo6 img, .roo7 img, .roo8 img, .roo9 img, .roo10 img {
+    width: 350px;
+    height: 390px;
+    border-radius: 2px;
+    object-fit: cover;
+    margin-left: 20px; /* Space between the image and the text */
+}
+
+.roo1 .text-container, .roo2 .text-container, .roo3 .text-container, .roo4 .text-container, .roo5 .text-container, .roo6 .text-container, .roo7 .text-container, .roo8 .text-container, .roo9 .text-container, .roo10 .text-container {
+    color: #0b0300;
+    text-align: left; 
     display: flex;
-    align-items: flex-start;
-    margin-top: 50px;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.2s ease; /* Quick fade-in for quicker visibility */
-}
-
-.slide-in {
-    animation: slideIn 0.5s forwards; /* Shorten duration for faster effect */
-}
-
-/* Keyframes for the slide-in effect from top to bottom */
-@keyframes slideIn {
-    from {
-        transform: translateY(-100%); /* Start from above the view */
-        opacity: 0; /* Start invisible */
-    }
-    to {
-        transform: translateY(0); /* End at normal position */
-        opacity: 1; /* Fully visible */
-    }
-}
-
-
-.roo1 img {
-    margin-top: 80px;
+    flex-direction: column; 
+    justify-content: center; 
+    width: 65%;
     margin-left: 50px;
-    width: 420px; /* Adjust width as needed */
-    height: 470px;
+    margin-right: 90px;
 }
 
-.roo1 .text-container {
-    margin-left: 30px; /* Space between image and text */
-    display: flex;
-    flex-direction: column; /* Stack heading and paragraph vertically */
-    justify-content: flex-start;
-}
-
-.roo1 h3 {
+.roo1, .roo2, .roo3, .roo4, .roo5, .roo6, .roo7, .roo8, .roo9, .roo10 h3 {
     font-family: 'Times New Roman', Times, serif;
     font-size: 28px;
-    margin-top: 120px; /* Remove extra margins to align with paragraph */
     color: #000;
-    margin-left: 5px;
+    margin: 0 0 10px 0; /* Remove top margin, add bottom margin */
 }
 
-.roo1 p {
+.roo1, .roo2, .roo3, .roo4, .roo5, .roo6, .roo7, .roo8, .roo9, .roo10 p {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    margin-top: 10px; /* Space between heading and paragraph */
+    font-size: 18px;
     color: #000;
-    margin-left: 5px;
-    margin-right: 125px;
+    margin: 0;
 }
+
+
 
 .butto {
     margin-top: 25px; /* Space between paragraph and button */

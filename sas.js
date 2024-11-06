@@ -139,37 +139,6 @@ document.getElementById("continue-popover").addEventListener("click", function()
 
 
 
-function showRoom(city) {
-    // Hide all rooms
-    const rooms = document.querySelectorAll('.roo1');
-    rooms.forEach(room => {
-        room.style.display = 'none';
-        room.classList.remove('slide-in'); // Remove slide-in class when hiding
-    });
-
-    // Show the selected room
-    const selectedRoom = document.getElementById(city);
-    if (selectedRoom) {
-        selectedRoom.style.display = 'flex'; // or 'block', depending on your layout
-        selectedRoom.style.opacity = '0'; // Set opacity to 0 for immediate effect
-        selectedRoom.classList.add('slide-in'); // Add slide-in class when showing
-
-        // Delay to set opacity to 1 after the room is displayed
-        setTimeout(() => {
-            selectedRoom.style.opacity = '1'; // Fade in quickly
-        }, 50); // Short delay to trigger the animation
-    }
-}
-
-// Initially show the Paris room
-document.addEventListener('DOMContentLoaded', () => {
-    showRoom('paris');
-});
-
-
-
-
-
 const scrollArrow = document.querySelector('.scroll-arrow');
 
 scrollArrow.addEventListener('click', () => {
@@ -181,6 +150,20 @@ scrollArrow.addEventListener('click', () => {
         });
     }
 });
+
+
+
+document.querySelectorAll('.roomn a').forEach(p => {
+    p.addEventListener('click', function() {
+      // Remove the 'selected' class from all p elements
+      document.querySelectorAll('.roomn a').forEach(p => {
+        p.classList.remove('selected');
+      });
+      
+      // Add the 'selected' class to the clicked p
+      this.classList.add('selected');
+    });
+  });
 
 
 
