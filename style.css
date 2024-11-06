@@ -1598,18 +1598,17 @@ nav a:hover {
     flex: 1; /* Make the input field flexible */
   }
   
-  button {
-    background-color: #ffab74;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-size: 12px;
-    padding: 11px 15px;
+  .submit-button {
+    background-color: transparent; 
+    color: rgb(215, 198, 198);
     border: none;
-    border-radius: 1px;
+    padding: 6px 10px;
     cursor: pointer;
-    white-space: nowrap; /* Prevent the button from shrinking */
-  }
-  
-  button:hover {
-    background-color: #fc5c06;
-    }
+    font-size: 25px; /* Adjust the size of the arrow */
+    transition: background-color 0.3s ease;
+    margin-left: -45px;
+}
+
+.submit-button:hover {
+    color: #ba9a9a; /* Slightly darker green when hovered */
+}

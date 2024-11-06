@@ -187,6 +187,13 @@ document.querySelectorAll('.roomn a').forEach(p => {
 
 
 
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // This will add a smooth scroll effect
+    });
+}
+
 
 
 

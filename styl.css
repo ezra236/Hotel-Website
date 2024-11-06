@@ -798,7 +798,7 @@ nav a:hover {
     flex-direction: row;
     align-items: flex-start;
     position: relative;
-    top: -65px;
+    top: -60px;
     height: 600px;
     background-color: #ffffff;
     padding: 10px;
@@ -808,7 +808,7 @@ nav a:hover {
 
 .roomn{
     width: 25%;
-    padding-top: 55px; 
+    padding-top: 75px; 
     background-color: #ffffff;
     height: 550px;
     position: sticky;
@@ -857,7 +857,10 @@ nav a:hover {
     -ms-overflow-style: none; /* IE and Edge */
     width: 75%;
     background-color: #ffffff;
-    margin-top: 20px;
+    box-sizing: border-box;
+    padding-right: 15px;
+    margin-top: 60px;
+    position: relative;
 }
 
 .roomd::-webkit-scrollbar {
@@ -878,8 +881,8 @@ nav a:hover {
 }
 
 .roo1 img, .roo2 img, .roo3 img, .roo4 img, .roo5 img, .roo6 img, .roo7 img, .roo8 img, .roo9 img, .roo10 img {
-    width: 350px;
-    height: 390px;
+    width: 430px;
+    height: 450px;
     border-radius: 2px;
     object-fit: cover;
     margin-left: 20px; /* Space between the image and the text */
@@ -929,15 +932,47 @@ nav a:hover {
     background-color: #8b706c; /* Darker color on hover */
 }
 
+.buttonn {
+    margin-top: 25px; /* Space between paragraph and button */
+    padding: 10px 5px;
+    font-size: 16px;
+    width: 155px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #6f2e22; /* Button background color */
+    color: #ffffff; /* Text color */ 
+    border-radius: 0px;
+    cursor: pointer;
+}
 
+.buttonn:hover {
+    background-color: #d5381f; /* Darker color on hover */
+}
 
+.triangled {
+    position: relative;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent; 
+    border-right: 50px solid transparent;
+    border-bottom: 30px solid #e8e8e8; 
+    margin-left: 705px;
+    margin-top: 5px;
+    cursor: pointer;
+}
 
-
-
-
+.arrowd {
+    position: absolute;
+    top: 19px; /* Adjust position of the arrow inside the triangle */
+    left: 50%;
+    height: auto; /* No height needed for the triangle */
+    border-left: 16px solid transparent; 
+    border-right: 16px solid transparent; 
+    border-bottom: 10px solid #ffffff; 
+    transform: translateX(-50%); 
+}
 
 .acc{
-    margin-top: 900px;
+    margin-top: 0px;
 }
 
 .block {
@@ -1095,7 +1130,7 @@ nav a:hover {
     background-color: #d0d0ce;
 }
   
-  .input-button-container {
+.input-button-container {
     display: flex; /* Use flexbox to place input and button on the same line */
     align-items: center; /* Align vertically */
     gap: 0px; /* Add spacing between input and button */
@@ -1111,19 +1146,18 @@ nav a:hover {
     border-radius: 1px;
     flex: 1; /* Make the input field flexible */
   }
-  
-  button {
-    background-color: #ffab74;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-size: 12px;
-    padding: 11px 15px;
+
+  .submit-button {
+    background-color: transparent; 
+    color: rgb(217, 197, 197);
     border: none;
-    border-radius: 1px;
+    padding: 6px 10px;
     cursor: pointer;
-    white-space: nowrap; /* Prevent the button from shrinking */
-  }
-  
-  button:hover {
-    background-color: #fc5c06;
-    }
+    font-size: 25px; /* Adjust the size of the arrow */
+    transition: background-color 0.3s ease;
+    margin-left: -45px;
+}
+
+.submit-button:hover {
+    color: #b59595; /* Slightly darker green when hovered */
+}
