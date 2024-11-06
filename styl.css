@@ -276,6 +276,18 @@ nav a:hover {
     align-items: center;
 }
 
+.dropdown p {
+    color: #4c2222;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 50px;
+    position: relative;
+    font-size: 17px;
+    width: 120px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .dropdown a {
     color: #000;
     text-decoration: none;
@@ -283,6 +295,7 @@ nav a:hover {
     margin-left: 50px;
     position: relative;
     font-size: 17px;
+    width: 95px;
 }
 
 .dropdown a:hover {
@@ -306,7 +319,7 @@ nav a:hover {
     position: absolute;
     background-color: #FAF0E6;
     min-width: 240px;
-    height: 300px; 
+    height: 600px; 
     font-family: 'Times New Roman', Times, serif;
     opacity: 0; /* Start fully transparent */
     z-index: 1800;
@@ -322,7 +335,7 @@ nav a:hover {
 
 .dropdown:hover .dropdown-content {
     padding: 10px 0; 
-    max-height: 300px;
+    max-height: 600px;
     opacity: 1; /* Make fully visible */
     pointer-events: auto;
 }
