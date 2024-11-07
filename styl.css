@@ -828,6 +828,12 @@ nav a:hover {
     width: 150px;
 }
 
+.tt{
+    text-decoration: underline;
+    pointer-events: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .roomn a{
     text-decoration: none;
     color: #000;
@@ -839,7 +845,6 @@ nav a:hover {
 
 .roomn a:hover{
     color: #e53e1c;
-    text-decoration: underline;
 }
 
 .roomn a.selected {
@@ -848,8 +853,8 @@ nav a:hover {
 
 .roomn p:hover{
     color: #e53e1c;
-    text-decoration: underline;
 }
+
 
 .roomd {
     display: flex;
