@@ -81,12 +81,17 @@ function changeMonth(offset) {
     generateCalendar(currentMonth, currentYear);
 }
 
-
 // Store multiple selected dates
 let selectedDates = [];
 
 // Function to handle the date selection
 function selectDate(dateElement, day, month, year) {
+    // Check if there are already 2 selected dates
+    if (selectedDates.length >= 2) {
+        alert('You can only select 2 dates for check in and out.');
+        return; // Prevent further selection
+    }
+
     // Check if the date is already selected
     const alreadySelected = selectedDates.find(
         d => d.day === day && d.month === month && d.year === year
@@ -126,4 +131,3 @@ function selectDate(dateElement, day, month, year) {
 
 // Initialize the calendar with the current month
 generateCalendar(currentMonth, currentYear);
-
