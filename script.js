@@ -1,7 +1,8 @@
 // Define the current date and month for navigation
 let currentDate = new Date();
-let currentMonth = currentDate.getMonth();
-let currentYear = currentDate.getFullYear();
+let currentMonth = currentDate.getMonth();  // current month (0-11)
+let currentYear = currentDate.getFullYear(); // current year
+let currentDay = currentDate.getDate(); // current day
 
 // Store the previously selected date (day, month, year)
 let selectedDates = [];
@@ -10,7 +11,6 @@ let selectedDates = [];
 let checkInDate = null;
 let checkOutDate = null;
 
-// Function to generate the calendar for a given month and year
 // Function to generate the calendar for a given month and year
 function generateCalendar(month, year) {
     const monthNames = [
@@ -33,7 +33,7 @@ function generateCalendar(month, year) {
     // Clear previous dates
     const calendar = document.querySelector('.calendar');
     calendar.innerHTML = '';
-    
+
     // Add day names to the calendar
     const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     dayNames.forEach(day => {
@@ -56,23 +56,33 @@ function generateCalendar(month, year) {
         dateElement.classList.add('calendar-date');
         dateElement.innerText = day;
 
-        // Check if the day is in the selectedDates array
-        const isSelected = selectedDates.some(d => d.day === day && d.month === month && d.year === year);
-        if (isSelected) {
-            dateElement.style.backgroundColor = '#6d3e3e';
-            dateElement.style.color = '#fff';
-        }
+        // Disable past dates
+        if (isPastDate(day, month, year)) {
+            dateElement.classList.add('disabled');
+        } else {
+            // Check if the day is in the selectedDates array
+            const isSelected = selectedDates.some(d => d.day === day && d.month === month && d.year === year);
+            if (isSelected) {
+                dateElement.style.backgroundColor = '#6d3e3e';
+                dateElement.style.color = '#fff';
+            }
 
-        // Add an event listener to the date box
-        dateElement.addEventListener('click', function() {
-            selectDate(dateElement, day, month, year);
-        });
+            // Add an event listener to the date box
+            dateElement.addEventListener('click', function() {
+                selectDate(dateElement, day, month, year);
+            });
+        }
 
         calendar.appendChild(dateElement);
     }
 }
 
-
+// Function to check if the date is in the past
+function isPastDate(day, month, year) {
+    const today = new Date();
+    const selectedDate = new Date(year, month, day);
+    return selectedDate < today;
+}
 
 // Function to change the month when the user clicks on next/prev buttons
 function changeMonth(offset) {
@@ -83,6 +93,11 @@ function changeMonth(offset) {
         currentYear--;
     } else if (currentMonth > 11) {
         currentMonth = 0;
+        currentYear++;
+    }
+
+    // Update the year if it's beyond December
+    if (currentMonth === 0 && currentDate.getMonth() === 11 && currentDate.getFullYear() === currentYear) {
         currentYear++;
     }
 
