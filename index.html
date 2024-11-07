@@ -7,13 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Check-in / Check-out Section -->
+    <div class="check-in-out">
+        <div class="check-in" id="check-in">
+            <span>Check-in: Not selected</span>
+        </div>
+        <div class="check-out" id="check-out">
+            <span>Check-out: Not selected</span>
+        </div>
+    </div>
+
+    <!-- Calendar Container -->
     <div class="calendar-container">
         <div class="calendar-header">
             <button class="prev-month" onclick="changeMonth(-1)">&#10094;</button>
             <h2 id="month-name">November 2024</h2>
             <button class="next-month" onclick="changeMonth(1)">&#10095;</button>
         </div>
-
         <div class="calendar">
             <div class="calendar-day">Sun</div>
             <div class="calendar-day">Mon</div>

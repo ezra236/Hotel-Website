@@ -4,8 +4,13 @@ let currentMonth = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
 
 // Store the previously selected date (day, month, year)
-let selectedDate = null;
+let selectedDates = [];
 
+// Track the check-in and check-out dates
+let checkInDate = null;
+let checkOutDate = null;
+
+// Function to generate the calendar for a given month and year
 // Function to generate the calendar for a given month and year
 function generateCalendar(month, year) {
     const monthNames = [
@@ -51,20 +56,23 @@ function generateCalendar(month, year) {
         dateElement.classList.add('calendar-date');
         dateElement.innerText = day;
 
+        // Check if the day is in the selectedDates array
+        const isSelected = selectedDates.some(d => d.day === day && d.month === month && d.year === year);
+        if (isSelected) {
+            dateElement.style.backgroundColor = '#6d3e3e';
+            dateElement.style.color = '#fff';
+        }
+
         // Add an event listener to the date box
         dateElement.addEventListener('click', function() {
             selectDate(dateElement, day, month, year);
         });
 
-        // Check if the date matches the selected date and apply the color
-        if (selectedDate && selectedDate.day === day && selectedDate.month === month && selectedDate.year === year) {
-            dateElement.style.backgroundColor = '#6d3e3e';
-            dateElement.style.color = '#fff'; // Change text color to white for better contrast
-        }
-
         calendar.appendChild(dateElement);
     }
 }
+
+
 
 // Function to change the month when the user clicks on next/prev buttons
 function changeMonth(offset) {
@@ -81,52 +89,87 @@ function changeMonth(offset) {
     generateCalendar(currentMonth, currentYear);
 }
 
-// Store multiple selected dates
-let selectedDates = [];
-
-// Function to handle the date selection
+// Function to handle the date selection (and changing check-in/check-out dates)
 function selectDate(dateElement, day, month, year) {
-    // Check if there are already 2 selected dates
-    if (selectedDates.length >= 2) {
-        alert('You can only select 2 dates for check in and out.');
-        return; // Prevent further selection
-    }
+    // If the selected date is already a check-in or check-out date, allow changing it
+    const isCheckInSelected = checkInDate && checkInDate.day === day && checkInDate.month === month && checkInDate.year === year;
+    const isCheckOutSelected = checkOutDate && checkOutDate.day === day && checkOutDate.month === month && checkOutDate.year === year;
 
-    // Check if the date is already selected
-    const alreadySelected = selectedDates.find(
-        d => d.day === day && d.month === month && d.year === year
-    );
-
-    if (alreadySelected) {
-        // If already selected, deselect it and revert to original color
+    if (isCheckInSelected) {
+        // If the user double-clicks the selected check-in date, reset it
+        checkInDate = null;
+        document.getElementById('check-in').innerHTML = '<span>Check-in: Not selected</span>';
         dateElement.style.backgroundColor = '#f1f1f1';
         dateElement.style.color = 'black';
-
-        // Remove it from the selectedDates array
-        selectedDates = selectedDates.filter(
-            d => !(d.day === day && d.month === month && d.year === year)
-        );
+    } else if (isCheckOutSelected) {
+        // If the user double-clicks the selected check-out date, reset it
+        checkOutDate = null;
+        document.getElementById('check-out').innerHTML = '<span>Check-out: Not selected</span>';
+        dateElement.style.backgroundColor = '#f1f1f1';
+        dateElement.style.color = 'black';
     } else {
-        // Add the new date to selectedDates
-        selectedDates.push({ day, month, year, element: dateElement });
+        // If Check-in is not selected yet, set it
+        if (!checkInDate) {
+            checkInDate = { day, month, year };
+            document.getElementById('check-in').innerHTML = `Check-in: ${day} ${getMonthName(month)} ${year}`;
+            dateElement.style.backgroundColor = '#6d3e3e';
+            dateElement.style.color = '#fff';
 
-        // Change the background color of the selected date
-        dateElement.style.backgroundColor = '#6d3e3e';
-        dateElement.style.color = '#fff';
+            // Add the selected date to the selectedDates array
+            selectedDates.push({ day, month, year });
 
-        // Set a timeout to revert the color after 10 seconds
-        setTimeout(function() {
-            // Revert the color if the date is still in selectedDates
-            if (selectedDates.find(d => d.day === day && d.month === month && d.year === year)) {
-                dateElement.style.backgroundColor = '#f1f1f1';
-                dateElement.style.color = 'black';
-                // Remove from selectedDates after timeout
-                selectedDates = selectedDates.filter(
-                    d => !(d.day === day && d.month === month && d.year === year)
-                );
-            }
-        }, 10000); // 10 seconds
+            // Set a timeout to revert the color and reset the text after 10 seconds
+            setTimeout(function() {
+                // Revert the color if the date is still in selectedDates
+                if (selectedDates.find(d => d.day === day && d.month === month && d.year === year)) {
+                    dateElement.style.backgroundColor = '#f1f1f1';
+                    dateElement.style.color = 'black';
+                    // Remove from selectedDates after timeout
+                    selectedDates = selectedDates.filter(
+                        d => !(d.day === day && d.month === month && d.year === year)
+                    );
+
+                    // Reset the check-in text back to "Not selected"
+                    document.getElementById('check-in').innerHTML = '<span>Check-in: Not selected</span>';
+                }
+            }, 10000000); // 10 seconds
+        }
+        // If Check-out is not selected yet, set it
+        else if (!checkOutDate && (year > checkInDate.year || (year === checkInDate.year && month > checkInDate.month) || (year === checkInDate.year && month === checkInDate.month && day > checkInDate.day))) {
+            checkOutDate = { day, month, year };
+            document.getElementById('check-out').innerHTML = `Check-out: ${day} ${getMonthName(month)} ${year}`;
+            dateElement.style.backgroundColor = '#6d3e3e';
+            dateElement.style.color = '#fff';
+
+            // Add the selected check-out date to the selectedDates array
+            selectedDates.push({ day, month, year });
+
+            // Set a timeout to revert the color and reset the text after 10 seconds
+            setTimeout(function() {
+                // Revert the color if the date is still in selectedDates
+                if (selectedDates.find(d => d.day === day && d.month === month && d.year === year)) {
+                    dateElement.style.backgroundColor = '#f1f1f1';
+                    dateElement.style.color = 'black';
+                    // Remove from selectedDates after timeout
+                    selectedDates = selectedDates.filter(
+                        d => !(d.day === day && d.month === month && d.year === year)
+                    );
+
+                    // Reset the check-out text back to "Not selected"
+                    document.getElementById('check-out').innerHTML = '<span>Check-out: Not selected</span>';
+                }
+            }, 10000000); // 10 seconds
+        }
     }
+}
+
+// Helper function to get month name from index
+function getMonthName(month) {
+    const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    return monthNames[month];
 }
 
 // Initialize the calendar with the current month
