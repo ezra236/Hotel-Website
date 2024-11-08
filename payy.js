@@ -71,3 +71,27 @@ if (roomDetails[roomId]) {
     // If no roomId is found, display a default message
     document.querySelector('.chosen').innerHTML = "<p>Room not found.</p>";
 }
+
+
+
+
+
+function getQueryParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return {
+        checkin: urlParams.get('checkin'),
+        checkout: urlParams.get('checkout')
+    };
+}
+
+// Function to update the days section with check-in and check-out dates
+function updateDates() {
+    const { checkin, checkout } = getQueryParams();
+    if (checkin && checkout) {
+        document.getElementById('check-in-display').innerHTML = `Check-in: ${checkin}`;
+        document.getElementById('check-out-display').innerHTML = `Check-out: ${checkout}`;
+    }
+}
+
+// Call the function to update the dates when the page loads
+window.onload = updateDates;

@@ -443,6 +443,8 @@ generateCalendar(currentMonth, currentYear);
 
 
 
+
+
 // Store the room id globally
 let selectedRoomId = '';
 
@@ -450,9 +452,17 @@ let selectedRoomId = '';
 function proceedToPay(roomId) {
     selectedRoomId = roomId; // Store the clicked room's ID
     document.getElementById('right-button').addEventListener('click', function () {
-        // Open a new tab with the URL including the room ID
-        window.open(`pay.html?room=${selectedRoomId}`, '_blank');
+        // Find the check-in and check-out dates from selectedDates
+        const checkInDate = selectedDates[0];  // Assuming the first element is check-in
+        const checkOutDate = selectedDates[selectedDates.length - 1]; // Last element is check-out
+
+        // Open a new tab with the URL including the room ID and check-in/check-out dates
+        window.open(`pay.html?room=${selectedRoomId}&checkin=${checkInDate.day}-${checkInDate.month}-${checkInDate.year}&checkout=${checkOutDate.day}-${checkOutDate.month}-${checkOutDate.year}`, '_blank');
     });
 }
+
+
+
+
 
 
