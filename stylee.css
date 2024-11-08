@@ -9,7 +9,7 @@ body {
 
 .pay {
     width: 100%;
-    height: 650px;
+    height: 690px;
     background-color: #f0f0f0;
     display: flex; 
     justify-content: space-between; 
@@ -39,9 +39,21 @@ body {
     margin-left: 30px;
 }
 
+#check-in-display,
+#check-out-display {
+    font-size: 22px;         
+    font-weight: bold;        
+    padding: 18px 38px;       
+    color: #ffffff;           
+    background-color: #6a4530; 
+    border-radius: 0px;       
+    margin: 30px;              
+    display: inline-block;    
+}
+
 .chosen {
-    background-color: #7c4f40; /* Example background color */
-    color: white;
+    background-color: #ffffff; /* Example background color */
+    color: rgb(9, 1, 1);
 }
 
 .chosen img {
@@ -57,13 +69,13 @@ body {
 }
 
 .chosen p {
-    font-size: 16px; 
+    font-size: 18px; 
     line-height: 1.6; 
     font-family: 'Times New Roman', Times, serif;
 }
 
 .days {
-    background-color: #4f7c40; /* Example background color */
+    background-color: #ffffff; /* Example background color */
     color: white;
 }
 

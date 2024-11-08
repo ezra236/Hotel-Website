@@ -365,27 +365,25 @@ function selectDate(dateElement, day, month, year) {
     const checkOutElement = document.querySelector('.verify-dates #check-out');
 
     if (isCheckInSelected) {
-        // If the user double-clicks the selected check-in date, reset it
         checkInDate = null;
         checkInElement.innerHTML = '<span>Check-in: Not selected</span>';
         dateElement.style.backgroundColor = '#f1f1f1';
         dateElement.style.color = 'black';
     } else if (isCheckOutSelected) {
-        // If the user double-clicks the selected check-out date, reset it
         checkOutDate = null;
         checkOutElement.innerHTML = '<span>Check-out: Not selected</span>';
         dateElement.style.backgroundColor = '#f1f1f1';
         dateElement.style.color = 'black';
     } else {
-        // If Check-in is not selected yet, set it
         if (!checkInDate) {
+            // Set the check-in date
             checkInDate = { day, month, year };
             checkInElement.innerHTML = `Check-in: ${day} ${getMonthName(month)} ${year}`;
             dateElement.style.backgroundColor = '#6d3e3e';
             dateElement.style.color = '#fff';
 
-            // Add the selected date to the selectedDates array
-            selectedDates.push({ day, month, year });
+            // Add the selected check-in date with type
+            selectedDates.push({ day, month, year, type: 'check-in' });
 
             setTimeout(function() {
                 // Revert the color if the date is still in selectedDates
@@ -401,15 +399,18 @@ function selectDate(dateElement, day, month, year) {
                     checkInElement.innerHTML = '<span>Check-in: Not selected</span>';
                 }
             }, 10000000); // 10 seconds
-        }
-        // If Check-out is not selected yet, set it
-        else if (!checkOutDate && (year > checkInDate.year || (year === checkInDate.year && month > checkInDate.month) || (year === checkInDate.year && month === checkInDate.month && day > checkInDate.day))) {
+
+
+        } else if (!checkOutDate && (year > checkInDate.year || (year === checkInDate.year && month > checkInDate.month) || (year === checkInDate.year && month === checkInDate.month && day > checkInDate.day))) {
+            // Set the check-out date
             checkOutDate = { day, month, year };
             checkOutElement.innerHTML = `Check-out: ${day} ${getMonthName(month)} ${year}`;
             dateElement.style.backgroundColor = '#6d3e3e';
             dateElement.style.color = '#fff';
 
-            selectedDates.push({ day, month, year });
+            // Add the selected check-out date with type
+            selectedDates.push({ day, month, year, type: 'check-out' });
+
 
             setTimeout(function() {
                 if (selectedDates.find(d => d.day === day && d.month === month && d.year === year)) {
@@ -424,6 +425,8 @@ function selectDate(dateElement, day, month, year) {
                     checkOutElement.innerHTML = '<span>Check-out: Not selected</span>';
                 }
             }, 10000000); // 10 seconds
+
+
         }
     }
 }
@@ -442,6 +445,28 @@ generateCalendar(currentMonth, currentYear);
 
 
 
+// Function to retrieve the last check-in date
+function getLastCheckInDate() {
+    // Iterate backwards to find the last check-in date entry
+    for (let i = selectedDates.length - 1; i >= 0; i--) {
+        if (selectedDates[i].type === 'check-in') {
+            return selectedDates[i];
+        }
+    }
+    return null; // Return null if no check-in date is found
+}
+
+// Getter function to get the last check-in and check-out dates from selectedDates
+function getLastCheckInCheckOutDates() {
+    if (selectedDates.length === 0) return null;  // Return null if no dates are selected
+
+    const lastCheckInDate = getLastCheckInDate();  // First element as the last check-in
+    const lastCheckOutDate = selectedDates[selectedDates.length - 1];  // Last element as the last check-out
+    
+    return { lastCheckInDate, lastCheckOutDate };
+}
+
+
 
 
 
@@ -452,15 +477,18 @@ let selectedRoomId = '';
 function proceedToPay(roomId) {
     selectedRoomId = roomId; // Store the clicked room's ID
     document.getElementById('right-button').addEventListener('click', function () {
-        // Find the check-in and check-out dates from selectedDates
-        const checkInDate = selectedDates[0];  // Assuming the first element is check-in
-        const checkOutDate = selectedDates[selectedDates.length - 1]; // Last element is check-out
+        // Get the last check-in and check-out dates using the getLastCheckInCheckOutDates function
+        const { lastCheckInDate, lastCheckOutDate } = getLastCheckInCheckOutDates();
 
-        // Open a new tab with the URL including the room ID and check-in/check-out dates
-        window.open(`pay.html?room=${selectedRoomId}&checkin=${checkInDate.day}-${checkInDate.month}-${checkInDate.year}&checkout=${checkOutDate.day}-${checkOutDate.month}-${checkOutDate.year}`, '_blank');
+        // Ensure that both dates are selected
+        if (lastCheckInDate && lastCheckOutDate) {
+            // Open a new tab with the URL including the room ID and check-in/check-out dates
+            window.open(`pay.html?room=${selectedRoomId}&checkin=${lastCheckInDate.day}-${lastCheckInDate.month}-${lastCheckInDate.year}&checkout=${lastCheckOutDate.day}-${lastCheckOutDate.month}-${lastCheckOutDate.year}`, '_blank');
+        } else {
+            alert('Please select both check-in and check-out dates before proceeding.');
+        }
     });
 }
-
 
 
 
