@@ -93,5 +93,51 @@ function updateDates() {
     }
 }
 
+
 // Call the function to update the dates when the page loads
 window.onload = updateDates;
+
+
+
+function calculateDaysBetweenDates() {
+    const { checkin, checkout } = getQueryParams(); // Get check-in and check-out dates from the URL
+
+    if (checkin && checkout) {
+        // Parse the check-in and check-out date strings (dd-mm-yyyy format)
+        const checkInDate = parseDate(checkin);
+        const checkOutDate = parseDate(checkout);
+
+        if (!checkInDate || !checkOutDate) {
+            console.log("Invalid date format. Please ensure the dates are in the format dd-mm-yyyy.");
+            return;
+        }
+
+        // Calculate the difference in time (in milliseconds)
+        const timeDifference = checkOutDate - checkInDate;
+
+        // Convert time difference from milliseconds to days
+        const daysDifference = timeDifference / (1000 * 3600 * 24);
+
+        // Display the result in the 'amount' div
+        const amountElement = document.querySelector('.amount');
+        amountElement.innerHTML = `Total days: ${daysDifference}`;
+    } else {
+        console.log("Check-in or Check-out date is missing.");
+    }
+}
+
+// Helper function to parse the date in dd-mm-yyyy format
+function parseDate(dateString) {
+    const [day, month, year] = dateString.split('-'); // Split the date by "-"
+    const date = new Date(`${year}-${month}-${day}`); // Reformat to yyyy-mm-dd and create a Date object
+
+    // Check if the date is valid
+    if (isNaN(date)) {
+        return null; // Return null if the date is invalid
+    }
+
+    return date;
+}
+
+// Call the function to calculate and display the days
+calculateDaysBetweenDates();

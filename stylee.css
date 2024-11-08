@@ -51,6 +51,18 @@ body {
     display: inline-block;    
 }
 
+.datess{
+    height: 25%;
+}
+
+.amount{
+    height: 55%;
+    background-color: #7c4f40;
+    font-size: 20px; 
+    color: #000000; 
+    font-family: 'Times New Roman', Times, serif;
+}
+
 .chosen {
     background-color: #ffffff; /* Example background color */
     color: rgb(9, 1, 1);

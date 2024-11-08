@@ -992,7 +992,7 @@ nav a:hover {
     z-index: 9999; 
     transition: opacity 0.5s ease, transform 0.5s ease; 
     transform: translateY(100%);
-    background-color: #7c4f40; 
+    background-color: #e5e5e5; 
     color: white; /* Text color */
     overflow: hidden;
 }
@@ -1021,7 +1021,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #9a5a3f;
+    background-color: #773a3a;
     height: 500px;
 }
 
@@ -1031,7 +1031,8 @@ nav a:hover {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    background-color: #7c4f40;
+    background-color: #ffffff;
+    color: black;
 }
 
 .calendar {
@@ -1068,7 +1069,7 @@ nav a:hover {
     padding: 5px;
     margin-bottom: 1px;
     background-color: #703131;
-    height: 100px;
+    height: 70px;
 }
 
 .check-in, .check-out {
@@ -1117,7 +1118,7 @@ nav a:hover {
     justify-content: flex-end; 
     width: 100%; 
     margin-top: 80px;
-    background-color: #7c4f40;
+    background-color: #e5e5e5;
 }
 
 .right-button {
