@@ -7,6 +7,38 @@ body {
     flex-direction: column;
 }
 
+
+.nav-container {
+    position: fixed; /* Fixes the container at the top */
+    top: 0;
+    display: flex; 
+    justify-content: space-around; 
+    padding: 20px; 
+    background-color: #eccea5; 
+    border-radius: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+}
+
+.nav-option {
+    padding: 15px 40px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #ffffff; 
+    background-color: #b45836; 
+    border: none; 
+    border-radius: 0px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    display: inline-block; /* Ensures button is inline */
+    white-space: nowrap;
+}
+
+.nav-option:hover {
+    background-color: #842d10; /* Darker gray on hover */
+}
+
+
 .pay {
     width: 100%;
     height: 690px;
@@ -15,6 +47,7 @@ body {
     justify-content: space-between; 
     align-items: center; 
     padding: 0 20px; 
+    margin-top: 98px;
 }
 
 .chosen {
@@ -41,30 +74,116 @@ body {
 
 #check-in-display,
 #check-out-display {
-    font-size: 22px;         
+    font-size: 25px;         
     font-weight: bold;        
     padding: 18px 38px;       
     color: #ffffff;           
-    background-color: #6a4530; 
+    background-color: #714e3a; 
     border-radius: 0px;       
     margin: 30px;              
     display: inline-block;    
 }
 
 .datess{
-    height: 25%;
+    height: 20%;
 }
 
 .amount{
-    height: 55%;
-    background-color: #7c4f40;
-    font-size: 20px; 
+    height: 10%;
+    background-color: #f0f0f0;
+    font-size: 30px; 
+    text-align: left; /* Center the text */
+    padding-top: 25px;
+    padding-left: 50px;
     color: #000000; 
     font-family: 'Times New Roman', Times, serif;
 }
 
+.methodp {
+    height: 60%;
+    display: flex; 
+    justify-content: space-between; 
+    gap: 5px; /* Add space between the two classes */
+    padding: 20px;
+}
+
+.options, .availability {
+    flex: 1;
+    padding: 10px; 
+    border-radius: 0px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.options {
+    background-color: #ffffff; 
+}
+
+.options h3 {
+    font-size: 25px; 
+    color: #333; 
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+.options ul {
+    list-style-type: decimal; 
+    padding-left: 20px; 
+}
+
+.options ul li {
+    font-size: 16px; 
+    color: #000000; 
+    margin-bottom: 20px; /* Space between list items */
+    margin-top: 15px;
+}
+
+.options p {
+    font-size: 20px; 
+    font-weight: bold; 
+    color: #000000; /* Text color */
+    margin-top: 20px; 
+    font-family: 'Times New Roman', Times, serif;
+}
+
+form {
+    margin-top: 20px; 
+}
+
+form label {
+    display: block; 
+    font-size: 22px; 
+    color: #333; 
+    margin-bottom: 8px; 
+    font-family: 'Times New Roman', Times, serif;
+}
+
+form input {
+    width: 60%; 
+    padding: 10px; 
+    margin-bottom: 15px; /* Space below the input */
+    border: 1px solid #ccc; 
+    border-radius: 2px; 
+}
+
+form button {
+    padding: 10px 25px; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 0px; 
+    cursor: pointer; 
+}
+
+form button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.availability {
+    background-color: #d0d0d0; 
+}
+
 .chosen {
-    background-color: #ffffff; /* Example background color */
+    background-color: #ffffff; 
     color: rgb(9, 1, 1);
 }
 
@@ -150,4 +269,224 @@ button {
 
 button:hover {
     background-color: #5c3a2f;
+}
+
+
+.acc{
+    margin-top: 0px;
+}
+
+.block {
+    top: 0px;
+    width: 100%; 
+    height: 140px;
+    margin: 0; /* Remove any default margin */
+    background-color: #e8e8e8; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border: none; 
+    box-shadow: none; 
+}
+  
+
+.block img{
+    width: 80px;
+    border-radius: 40px;
+}
+  
+
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e8e8e8; /* Pantone 427 (Fog Gray) */
+    padding: 20px;
+    height: 255px;
+    border-radius: 1px;
+    margin-top: 0px;
+}
+
+/* Individual section styling */
+.section {
+    flex: 1; /* Make all sections equal width */
+    padding: 5px;
+    margin: 5px; 
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.section1 { 
+    color: #000000;
+    margin-left: 80px;
+} 
+.section2 { 
+    color: #000000; 
+} 
+.section3 { 
+    color: #000000;
+} 
+
+.social-icon {
+    margin-left: 20px;
+    width: 27px;  /* Set desired width */
+    height: 27px; /* Set desired height */
+    transition: transform 0.5s ease; /* Optional transition for hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.7); /* Optional hover effect to slightly enlarge */
+}
+
+
+.pp {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+}
+.oo {
+    font-weight: 15px; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+}
+
+.u {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between; /* Space out the two sections */
+    align-items: center; /* Vertically align the sections */
+    background-color: #ffffff; /* Dark background */
+    color: #000000; /* White text */
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+.stp a {
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+    margin: 0 27px; 
+}
+
+.stp a:hover {
+    color: #ff4500;
+}
+
+/* Style for the copyright section */
+.copyright {
+    font-size: 16px;
+    color: #000000; /* Slightly lighter gray text */
+    margin-left: 65px;
+}
+
+/* Responsive: Stack the sections vertically on small screens */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column; /* Stack the sections vertically */
+        text-align: center;
+    }
+
+    .stp {
+        margin-top: 10px;
+    }
+}
+
+.about-link {
+    text-align: left;
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-weight: bold; 
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s; /
+}
+
+.about-link:hover {
+    color: #ff4500; 
+}
+
+.about-lin {
+    text-align: left;
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-size: 18px; 
+    font-family: 'Times New Roman', Times, serif;
+    transition: background-color 0.3s, color 0.3s; /
+}
+
+.about-lin:hover {
+    color: #ff4500; 
+}
+
+.form-container {
+    background-color: #d0d0ce;
+}
+  
+.input-button-container {
+    display: flex; /* Use flexbox to place input and button on the same line */
+    align-items: center; /* Align vertically */
+    gap: 0px; /* Add spacing between input and button */
+  }
+  
+  label {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  input[type="email"] {
+    margin-top: 25px;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    flex: 1; /* Make the input field flexible */
+    width: 250px;
+  }
+
+  .suyu {
+    background-color: transparent; 
+    color: rgb(217, 197, 197);
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 25px; /* Adjust the size of the arrow */
+    transition: background-color 0.3s ease;
+    margin-left: -115px;
+}
+
+.suyu:hover {
+    color: #b59595; /* Slightly darker green when hovered */
+    background-color: transparent;
+}
+
+.triangled {
+    position: relative;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent; 
+    border-right: 50px solid transparent;
+    border-bottom: 30px solid #e8e8e8; 
+    margin-left: 705px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.arrowd {
+    position: absolute;
+    top: 19px; /* Adjust position of the arrow inside the triangle */
+    left: 50%;
+    height: auto; /* No height needed for the triangle */
+    border-left: 16px solid transparent; 
+    border-right: 16px solid transparent; 
+    border-bottom: 10px solid #ffffff; 
+    transform: translateX(-50%); 
 }

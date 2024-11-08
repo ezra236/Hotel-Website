@@ -98,8 +98,18 @@ function updateDates() {
 window.onload = updateDates;
 
 
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // This will add a smooth scroll effect
+    });
+}
 
-function calculateDaysBetweenDates() {
+
+
+
+// Function to get the dates and calculate the total price
+function calculateTotalPrice() {
     const { checkin, checkout } = getQueryParams(); // Get check-in and check-out dates from the URL
 
     if (checkin && checkout) {
@@ -118,9 +128,21 @@ function calculateDaysBetweenDates() {
         // Convert time difference from milliseconds to days
         const daysDifference = timeDifference / (1000 * 3600 * 24);
 
+        // Get the room name from the roomDetails object using roomId
+        const room = roomDetails[roomId];
+        const roomPrice = getRoomPrice(room.name); // Get the price for the selected room
+        
+        if (roomPrice === "City not found") {
+            console.log("Invalid room.");
+            return;
+        }
+
+        // Calculate the total cost
+        const totalPrice = roomPrice * daysDifference;
+
         // Display the result in the 'amount' div
         const amountElement = document.querySelector('.amount');
-        amountElement.innerHTML = `Total days: ${daysDifference}`;
+        amountElement.innerHTML = `Room ${room.name} for ${daysDifference} days is Ksh ${totalPrice}`;
     } else {
         console.log("Check-in or Check-out date is missing.");
     }
@@ -140,4 +162,32 @@ function parseDate(dateString) {
 }
 
 // Call the function to calculate and display the days
-calculateDaysBetweenDates();
+calculateTotalPrice();
+
+
+
+// Function to get the room price based on the selected city (room)
+function getRoomPrice(city) {
+    const pricePerRoom = 1200; // Price for each room in Ksh
+
+    let price;
+
+    switch (city) {
+        case "Paris":
+        case "Tokyo":
+        case "New York":
+        case "Dubai":
+        case "London":
+        case "Sydney":
+        case "Rome":
+        case "Cairo":
+        case "Berlin":
+        case "Bangkok":
+            price = pricePerRoom; // All cities have the same price
+            break;
+        default:
+            price = "City not found"; // In case the city is not in the list
+    }
+
+    return price;
+}
