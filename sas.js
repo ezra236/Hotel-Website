@@ -349,10 +349,6 @@ function changeMonth(offset) {
     }
 
     // Update the year if it's beyond December
-    if (currentMonth === 0 && currentDate.getMonth() === 11 && currentDate.getFullYear() === currentYear) {
-        currentYear++;
-    }
-
     generateCalendar(currentMonth, currentYear);
 }
 
@@ -363,6 +359,33 @@ function selectDate(dateElement, day, month, year) {
 
     const checkInElement = document.querySelector('.verify-dates #check-in');
     const checkOutElement = document.querySelector('.verify-dates #check-out');
+
+    if (checkOutDate) {
+        // Define the reset function to be used later
+        const resetSelections = function() {
+            // Reset the calendar's date selections
+            const calendar = document.querySelector('.verify-dates .calendar');
+            const calendarDates = calendar.querySelectorAll('.calendar-date');
+            calendarDates.forEach(calendarDate => {
+                calendarDate.style.backgroundColor = '#f1f1f1'; // Reset background color
+                calendarDate.style.color = 'black'; // Reset text color
+            });
+    
+            // This will prevent any Check-in date selection after Check-out
+            checkInElement.innerHTML = '<span>Check-in: Not selected</span>';
+            checkOutElement.innerHTML = '<span>Check-out: Not selected</span>';
+            checkInDate = null;
+            checkOutDate = null;
+    
+            // Remove the event listener after the reset action
+            document.removeEventListener('click', resetSelections);
+        };
+    
+        // Add the event listener to listen for any click on the document
+        document.addEventListener('click', resetSelections);
+    }
+    
+
 
     if (isCheckInSelected) {
         checkInDate = null;
@@ -385,22 +408,6 @@ function selectDate(dateElement, day, month, year) {
             // Add the selected check-in date with type
             selectedDates.push({ day, month, year, type: 'check-in' });
 
-            setTimeout(function() {
-                // Revert the color if the date is still in selectedDates
-                if (selectedDates.find(d => d.day === day && d.month === month && d.year === year)) {
-                    dateElement.style.backgroundColor = '#f1f1f1';
-                    dateElement.style.color = 'black';
-
-                    selectedDates = selectedDates.filter(
-                        d => !(d.day === day && d.month === month && d.year === year)
-                    );
-
-                    // Reset the check-in text back to "Not selected"
-                    checkInElement.innerHTML = '<span>Check-in: Not selected</span>';
-                }
-            }, 10000000); // 10 seconds
-
-
         } else if (!checkOutDate && (year > checkInDate.year || (year === checkInDate.year && month > checkInDate.month) || (year === checkInDate.year && month === checkInDate.month && day > checkInDate.day))) {
             // Set the check-out date
             checkOutDate = { day, month, year };
@@ -410,26 +417,11 @@ function selectDate(dateElement, day, month, year) {
 
             // Add the selected check-out date with type
             selectedDates.push({ day, month, year, type: 'check-out' });
-
-
-            setTimeout(function() {
-                if (selectedDates.find(d => d.day === day && d.month === month && d.year === year)) {
-                    dateElement.style.backgroundColor = '#f1f1f1';
-                    dateElement.style.color = 'black';
-                    // Remove from selectedDates after timeout
-                    selectedDates = selectedDates.filter(
-                        d => !(d.day === day && d.month === month && d.year === year)
-                    );
-
-                    // Reset the check-out text back to "Not selected"
-                    checkOutElement.innerHTML = '<span>Check-out: Not selected</span>';
-                }
-            }, 10000000); // 10 seconds
-
-
         }
     }
 }
+
+
 
 // Helper function to get month name from index
 function getMonthName(month) {
@@ -442,8 +434,6 @@ function getMonthName(month) {
 
 // Initialize the calendar with the current month inside .verify-dates
 generateCalendar(currentMonth, currentYear);
-
-
 
 // Function to retrieve the last check-in date
 function getLastCheckInDate() {
@@ -466,10 +456,6 @@ function getLastCheckInCheckOutDates() {
     return { lastCheckInDate, lastCheckOutDate };
 }
 
-
-
-
-
 // Store the room id globally
 let selectedRoomId = '';
 
@@ -483,7 +469,7 @@ function proceedToPay(roomId) {
         // Ensure that both dates are selected
         if (lastCheckInDate && lastCheckOutDate) {
             // Open a new tab with the URL including the room ID and check-in/check-out dates
-            window.open(`pay.html?room=${selectedRoomId}&checkin=${lastCheckInDate.day}-${lastCheckInDate.month}-${lastCheckInDate.year}&checkout=${lastCheckOutDate.day}-${lastCheckOutDate.month}-${lastCheckOutDate.year}`, '_blank');
+            window.open(`pay.html?room=${selectedRoomId}&checkin=${lastCheckInDate.day}-${lastCheckInDate.month + 1}-${lastCheckInDate.year}&checkout=${lastCheckOutDate.day}-${lastCheckOutDate.month + 1}-${lastCheckOutDate.year}`, '_blank');
         } else {
             alert('Please select both check-in and check-out dates before proceeding.');
         }
