@@ -261,33 +261,18 @@ let selectedDates = [];
 let checkInDate = null;
 let checkOutDate = null;
 
-// Function to generate the calendar for a given month and year
-function generateCalendar(month, year) {
-    const monthNames = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
 
-    const monthName = monthNames[month];
-    const monthYear = `${monthName} ${year}`;
-    
-    // Get the verify-dates block and update the month name in the header
+
+function generateCalendar(month, year) {
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const calendarBlock = document.querySelector('.verify-dates');
     const monthHeader = calendarBlock.querySelector('#month-name');
-    monthHeader.innerText = monthYear;
-
-    // Get the first day of the month
-    const firstDay = new Date(year, month, 1).getDay();
-
-    // Get the number of days in the month
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    // Clear previous dates
     const calendar = calendarBlock.querySelector('.calendar');
+    monthHeader.innerText = `${monthNames[month]} ${year}`;
     calendar.innerHTML = '';
 
-    // Add day names to the calendar
-    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    // Add day names
     dayNames.forEach(day => {
         const dayElement = document.createElement('div');
         dayElement.classList.add('calendar-day');
@@ -295,39 +280,43 @@ function generateCalendar(month, year) {
         calendar.appendChild(dayElement);
     });
 
-    // Add empty cells for the days before the 1st of the month
+    // Fill in empty cells before first day
+    const firstDay = new Date(year, month, 1).getDay();
     for (let i = 0; i < firstDay; i++) {
         const emptyCell = document.createElement('div');
         emptyCell.classList.add('empty');
         calendar.appendChild(emptyCell);
     }
 
-    // Add the actual days of the month
+    // Generate days
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
     for (let day = 1; day <= daysInMonth; day++) {
         const dateElement = document.createElement('div');
         dateElement.classList.add('calendar-date');
         dateElement.innerText = day;
 
-        // Disable past dates
         if (isPastDate(day, month, year)) {
             dateElement.classList.add('disabled');
-        } else {
-            // Check if the day is in the selectedDates array
-            const isSelected = selectedDates.some(d => d.day === day && d.month === month && d.year === year);
-            if (isSelected) {
+        } else{
+            if (checkInDate && checkInDate.day === day && checkInDate.month === month && checkInDate.year === year) {
+                dateElement.style.backgroundColor = '#6d3e3e';
+                dateElement.style.color = '#fff';
+            } else if (checkOutDate && checkOutDate.day === day && checkOutDate.month === month && checkOutDate.year === year) {
                 dateElement.style.backgroundColor = '#6d3e3e';
                 dateElement.style.color = '#fff';
             }
 
-            // Add an event listener to the date box
-            dateElement.addEventListener('click', function() {
-                selectDate(dateElement, day, month, year);
-            });
         }
+
+        dateElement.addEventListener('click', function() {
+            selectDate(dateElement, day, month, year);
+        });
 
         calendar.appendChild(dateElement);
     }
-}
+}    
+    
+    
 
 // Function to check if the date is in the past
 function isPastDate(day, month, year) {
@@ -417,10 +406,14 @@ function selectDate(dateElement, day, month, year) {
 
             // Add the selected check-out date with type
             selectedDates.push({ day, month, year, type: 'check-out' });
+              
         }
     }
 }
 
+
+
+    
 
 
 // Helper function to get month name from index
@@ -434,6 +427,7 @@ function getMonthName(month) {
 
 // Initialize the calendar with the current month inside .verify-dates
 generateCalendar(currentMonth, currentYear);
+
 
 // Function to retrieve the last check-in date
 function getLastCheckInDate() {
