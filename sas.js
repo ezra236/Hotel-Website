@@ -297,14 +297,29 @@ function generateCalendar(month, year) {
 
         if (isPastDate(day, month, year)) {
             dateElement.classList.add('disabled');
+            // Disable any event for past dates
+            
         } else{
             if (checkInDate && checkInDate.day === day && checkInDate.month === month && checkInDate.year === year) {
+                // Apply the check-in style
                 dateElement.style.backgroundColor = '#6d3e3e';
                 dateElement.style.color = '#fff';
             } else if (checkOutDate && checkOutDate.day === day && checkOutDate.month === month && checkOutDate.year === year) {
+                // Apply the check-out style
                 dateElement.style.backgroundColor = '#6d3e3e';
                 dateElement.style.color = '#fff';
-            }
+            } else if (checkInDate && checkOutDate) {
+                // Apply the range color
+                const startDate = new Date(checkInDate.year, checkInDate.month, checkInDate.day);
+                const endDate = new Date(checkOutDate.year, checkOutDate.month, checkOutDate.day);
+                const currentDate = new Date(year, month, day);
+            
+                // Check if the current date is within the range of check-in and check-out
+                if (currentDate >= startDate && currentDate <= endDate) {
+                    dateElement.style.backgroundColor = '#a66e6e';  // Color for dates between check-in and check-out
+                    dateElement.style.color = '#fff';
+                }
+            }            
 
         }
 
@@ -341,7 +356,22 @@ function changeMonth(offset) {
     generateCalendar(currentMonth, currentYear);
 }
 
-// Function to handle the date selection (and changing check-in/check-out dates)
+
+
+// Helper function to calculate the number of days between two dates
+function getDaysBetweenDates(startDate, endDate) {
+    const days = [];
+    let currentDate = new Date(startDate);
+
+    while (currentDate <= endDate) {
+        days.push(new Date(currentDate));  // Add the current date to the array
+        currentDate.setDate(currentDate.getDate() + 1);  // Move to the next day
+    }
+
+    return days;
+}
+
+// Update the selectDate function to apply styles to dates between check-in and check-out
 function selectDate(dateElement, day, month, year) {
     const isCheckInSelected = checkInDate && checkInDate.day === day && checkInDate.month === month && checkInDate.year === year;
     const isCheckOutSelected = checkOutDate && checkOutDate.day === day && checkOutDate.month === month && checkOutDate.year === year;
@@ -359,22 +389,20 @@ function selectDate(dateElement, day, month, year) {
                 calendarDate.style.backgroundColor = '#f1f1f1'; // Reset background color
                 calendarDate.style.color = 'black'; // Reset text color
             });
-    
+
             // This will prevent any Check-in date selection after Check-out
             checkInElement.innerHTML = '<span>Check-in: Not selected</span>';
             checkOutElement.innerHTML = '<span>Check-out: Not selected</span>';
             checkInDate = null;
             checkOutDate = null;
-    
+
             // Remove the event listener after the reset action
             document.removeEventListener('click', resetSelections);
         };
-    
+
         // Add the event listener to listen for any click on the document
         document.addEventListener('click', resetSelections);
     }
-    
-
 
     if (isCheckInSelected) {
         checkInDate = null;
@@ -396,7 +424,6 @@ function selectDate(dateElement, day, month, year) {
 
             // Add the selected check-in date with type
             selectedDates.push({ day, month, year, type: 'check-in' });
-
         } else if (!checkOutDate && (year > checkInDate.year || (year === checkInDate.year && month > checkInDate.month) || (year === checkInDate.year && month === checkInDate.month && day > checkInDate.day))) {
             // Set the check-out date
             checkOutDate = { day, month, year };
@@ -406,12 +433,36 @@ function selectDate(dateElement, day, month, year) {
 
             // Add the selected check-out date with type
             selectedDates.push({ day, month, year, type: 'check-out' });
-              
+
+            // Highlight the range between check-in and check-out
+            const startDate = new Date(checkInDate.year, checkInDate.month, checkInDate.day);
+            const endDate = new Date(checkOutDate.year, checkOutDate.month, checkOutDate.day);
+
+            const daysInRange = getDaysBetweenDates(startDate, endDate);
+
+            // Loop through all calendar dates and apply styles to the dates in the range
+            const calendar = document.querySelector('.verify-dates .calendar');
+            const calendarDates = calendar.querySelectorAll('.calendar-date');
+            calendarDates.forEach(calendarDate => {
+                const dayInCalendar = parseInt(calendarDate.innerText, 10);
+                const monthInCalendar = currentMonth;
+                const yearInCalendar = currentYear;
+
+                // Check if the current day in the calendar is within the range
+                const isInRange = daysInRange.some(date => {
+                    return date.getDate() === dayInCalendar &&
+                           date.getMonth() === monthInCalendar &&
+                           date.getFullYear() === yearInCalendar;
+                });
+
+                if (isInRange) {
+                    calendarDate.style.backgroundColor = '#a66e6e';  // Color for dates between check-in and check-out
+                    calendarDate.style.color = '#fff';
+                }
+            });
         }
     }
 }
-
-
 
     
 
@@ -469,7 +520,6 @@ function proceedToPay(roomId) {
         }
     });
 }
-
 
 
 
