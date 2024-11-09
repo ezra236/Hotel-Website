@@ -1028,6 +1028,7 @@ nav a:hover {
     background-color: rgb(255, 38, 0); /* The underline color */
 }
 
+
 .dropdownn {
     position: relative;
     display: inline-block;
@@ -1063,7 +1064,9 @@ nav a:hover {
     transform: translateY(0); 
     pointer-events: auto;
     z-index: 1100;
-}
+} 
+    
+    
 
 .linkc {
     display: block; /* or flex if using flex layout */

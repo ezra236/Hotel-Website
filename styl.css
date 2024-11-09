@@ -1004,8 +1004,21 @@ nav a:hover {
     transition: opacity 0.5s ease, visibility 0s 0s, transform 1s ease; /* Remove delay for visibility and apply transitions */
 }
 
+.verify-dates p {
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(22, 32, 122);
+    margin-left: 30px;
+}
 
-
+.verify-dates img {
+    width: 28px;
+    height: auto;
+    margin-left: 20px;
+    margin-top: 19px;
+    border-radius: 20px;
+}
 
 
 .close {
@@ -1041,7 +1054,7 @@ nav a:hover {
     margin-top: 0px;
     margin-bottom: 5px;
     border: 1px solid black;
-    height: 100px;
+    height: 95px;
 }
 
 .calendar-header button{
@@ -1103,8 +1116,9 @@ nav a:hover {
     padding: 5px;
     margin-bottom: 1px;
     background-color: white;
-    height: 110px;
+    height: 80px;
 }
+
 
 .check-in, .check-out {
     width: 45%;
@@ -1119,8 +1133,8 @@ nav a:hover {
     font-weight: bold;
     margin-left: 60px;
     margin-right:60px ;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .check-in span, .check-out span {
@@ -1154,10 +1168,19 @@ nav a:hover {
 
 .button-container {
     display: flex;
-    justify-content: flex-end; 
-    width: 100%; 
-    margin-top: 80px;
+    justify-content: space-between; /* Space between to push elements apart */
+    width: 100%;
+    margin-top: 10px;
     background-color: white;
+    margin-bottom: 20px;
+}
+
+.s {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    color: blue;
+    font-weight: bold;
+    padding-top: 10px;
 }
 
 .right-button {

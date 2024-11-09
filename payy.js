@@ -6,7 +6,7 @@ const roomId = urlParams.get('room'); // Get the room ID from the URL
 const roomDetails = {
     roo1: {
         name: "Paris",
-        description: "This kind of room would be perfect for those looking to escape into a setting that feels both chic and relaxing—a little slice of Paris right where you are, capturing the timeless ambiance of the world’s most romantic city. Perfect for unwinding, enjoying a book, or indulging in room service that makes you feel like you're right along the Seine!",
+        description: "This kind of room would be perfect for those looking to escape into a setting that feels both chic and relaxing—a little slice of Paris right where you are.",
         image: "im1.avif"
     },
     roo2: {
@@ -63,7 +63,7 @@ if (roomDetails[roomId]) {
     
     // Set the content dynamically
     chosenDiv.innerHTML = `
-        <h2>Chosen Room: ${room.name}</h2>
+        <h2>Room: ${room.name}</h2>
         <img src="${room.image}" alt="${room.name}" style="width: 100%; max-width: 600px;">
         <p>${room.description}</p>
     `;
@@ -88,8 +88,8 @@ function getQueryParams() {
 function updateDates() {
     const { checkin, checkout } = getQueryParams();
     if (checkin && checkout) {
-        document.getElementById('check-in-display').innerHTML = `Check-in: ${checkin}`;
-        document.getElementById('check-out-display').innerHTML = `Check-out: ${checkout}`;
+        document.getElementById('check-in-display').innerHTML = `Check-in:<br><br> ${checkin}`;
+        document.getElementById('check-out-display').innerHTML = `Check-out:<br><br> ${checkout}`;
     }
 }
 
@@ -142,7 +142,7 @@ function calculateTotalPrice() {
 
         // Display the result in the 'amount' div
         const amountElement = document.querySelector('.amount');
-        amountElement.innerHTML = `Room ${room.name} for ${daysDifference} days is Ksh ${totalPrice}`;
+        amountElement.innerHTML = `Room:&nbsp&nbsp ${room.name} <br> Days:&nbsp&nbsp&nbsp ${daysDifference} days <br> Ksh:&nbsp&nbsp&nbsp&nbsp&nbsp ${totalPrice}`;
     } else {
         console.log("Check-in or Check-out date is missing.");
     }
