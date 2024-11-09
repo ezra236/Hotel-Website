@@ -982,26 +982,29 @@ nav a:hover {
 
 
 .verify-dates {
-    display: none;
-    opacity: 0;
     position: fixed; /* Fix it to the screen */
-    top: 0; /* Full screen */
+    bottom: 0; /* Start from the bottom */
     left: 0;
     width: 100%;
-    height: 100%; 
-    z-index: 9999; 
-    transition: opacity 0.5s ease, transform 0.5s ease; 
-    transform: translateY(100%);
-    background-color: #703131; 
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden; /* Make it hidden but still take up space */
+    transition: opacity 0.5s ease, visibility 0s 0.5s, transform 1s ease; /* Transition opacity and visibility */
+    transform: translateY(100%); /* Start off-screen from the bottom */
+    background-color: white;
     color: white; /* Text color */
     overflow: hidden;
 }
 
 .verify-dates.show {
-    display: block;
     opacity: 1;
-    transform: translateY(0); /* Slide it into view */
-}  
+    visibility: visible; /* Make it visible */
+    transform: translateY(0); /* Slide into view from the bottom */
+    transition: opacity 0.5s ease, visibility 0s 0s, transform 1s ease; /* Remove delay for visibility and apply transitions */
+}
+
+
 
 
 
@@ -1021,7 +1024,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #773a3a;
+    background-color: #ffffff;
     height: 500px;
 }
 
@@ -1029,10 +1032,41 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 0px;
+    border-radius: 1px;
     background-color: #ffffff;
     color: black;
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    height: 100px;
+}
+
+.calendar-header button{
+    background-color: transparent;
+    border: none;
+    width: 80px;
+    color: rgb(172, 103, 103);
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.prev-month {
+    font-size: 45px; /* Adjust size for the left arrow */
+}
+
+.next-month {
+    font-size: 45px; /* Adjust size for the right arrow */
+}
+
+.prev-month:hover {
+    color: rgb(93, 42, 42);
+}
+
+.next-month:hover {
+    color: rgb(93, 42, 42);
 }
 
 .calendar {
@@ -1046,7 +1080,7 @@ nav a:hover {
     text-align: center;
     padding: 10px;
     cursor: pointer;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(135, 107, 96);
     transition: background-color 0.3s;
     background-color: white;
     font-family: 'Times New Roman', Times, serif;
@@ -1055,11 +1089,11 @@ nav a:hover {
 }
 
 .calendar-day {
-    background-color: #f1f1f1;
+    background-color: white;
 }
 
 .calendar-date:hover {
-    background-color: #807b7b;
+    border: 1px solid rgb(0, 0, 255);
 }
 
 .check-in-out {
@@ -1068,27 +1102,31 @@ nav a:hover {
     width: 100%;
     padding: 5px;
     margin-bottom: 1px;
-    background-color: #703131;
-    height: 70px;
+    background-color: white;
+    height: 110px;
 }
 
 .check-in, .check-out {
     width: 45%;
     padding: 20px;
     text-align: center;
-    background-color: #703131;
+    background-color: white;
     border-radius: 0px;
     cursor: pointer;
     font-size: 26px;
     border: 1px solid black;
-    color: rgb(255, 254, 254);
+    color: rgb(50, 35, 124);
     font-weight: bold;
+    margin-left: 60px;
+    margin-right:60px ;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .check-in span, .check-out span {
     font-size: 26px;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: rgb(50, 35, 124);
 }
 
 
@@ -1119,7 +1157,7 @@ nav a:hover {
     justify-content: flex-end; 
     width: 100%; 
     margin-top: 80px;
-    background-color: #e9e9e9;
+    background-color: white;
 }
 
 .right-button {
