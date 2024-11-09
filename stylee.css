@@ -270,11 +270,11 @@ form button:hover {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    width: 80%;
+    width: 100%; /* Make sure the rows are full width */
 }
 
-.roo1, .roo2, .roo3, .roo4, .roo5, .roo6, .roo7, .roo8, .roo9, .roo10 {
-    width: 48%;
+.roo1, .roo2, .roo3, .roo4, .roo5, .roo6, .roo7, .roo8, .roo9 {
+    width: 30%; /* Set width to 30% for 3 items per row */
     background-color: #fff;
     border-radius: 0px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -282,17 +282,25 @@ form button:hover {
     flex-direction: column;
     justify-content: space-between;
     height: 100%; /* Ensures all rooms stretch to the same height */
-    margin-right: 90px;
-    margin-left: 90px;
+}
+
+.roo10 {
+    width: 100%; /* Set width to 100% for the last room */
+    background-color: #fff;
+    border-radius: 0px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .roo1 img, .roo2 img, .roo3 img, .roo4 img, .roo5 img, .roo6 img, .roo7 img, .roo8 img, .roo9 img, .roo10 img {
-    width: 80%;
+    width: 100%;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     height: 300px;
-    margin-left: 35px;
-    margin-top: 10px;
+    object-fit: cover; /* Ensure images cover the area without distortion */
 }
 
 .text-container {
@@ -324,6 +332,7 @@ button {
 button:hover {
     background-color: #5c3a2f;
 }
+
 
 
 .acc{
