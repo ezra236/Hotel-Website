@@ -310,6 +310,26 @@ button:hover {
 }
 
 
+.popover {
+    display: none; /* Initially hidden */
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    background-color: #3f0808;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    z-index: 1000;
+    height: 300px;
+}
+
+.popover p {
+    margin: 0;
+}
+
+
+
 
 
 

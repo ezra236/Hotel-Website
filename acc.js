@@ -330,3 +330,77 @@ document.addEventListener("DOMContentLoaded", () => {
     // Observe the .container element
     observer.observe(container);
 });
+
+
+
+// Add event listener for all 'SELECT' buttons dynamically
+document.querySelectorAll('button[id="selectBtn"]').forEach(function(button) {
+    button.addEventListener("click", function(event) {
+        // Find the closest parent div with a class like 'roo1', 'roo2', etc.
+        var roomDiv = button.closest("div[class^='roo']");
+        
+        // Get the room ID (e.g., roo1, roo2, etc.)
+        var roomId = roomDiv.id;
+
+        // Get the popover inside the current room
+        var popover = roomDiv.querySelector(".popover");
+
+        // Set the content of the popover to display the room's ID
+        popover.querySelector("p").textContent = "Popover Content: Information about " + roomId;
+
+        // Get the position of the button on the page
+        var buttonRect = button.getBoundingClientRect();
+        
+        // Calculate the position of the popover (above the button)
+        var popoverTop = buttonRect.top - popover.offsetHeight - 5; // Decrease the spacing to 5px (or any smaller value)
+        var popoverLeft = buttonRect.left + (buttonRect.width / 2) - (popover.offsetWidth / 2); // Center the popover
+
+        // Set the popover position dynamically
+        popover.style.top = popoverTop + "px";
+        popover.style.left = popoverLeft + "px";
+
+
+        // Toggle the visibility of the popover
+        if (popover.style.display === "none" || popover.style.display === "") {
+            popover.style.display = "block";
+        } else {
+            popover.style.display = "none";
+        }
+
+        // Prevent the click event from propagating to document
+        event.stopPropagation();
+    });
+});
+
+// Close the popover if the user clicks anywhere outside the popover or the button
+document.addEventListener("click", function(event) {
+    // Find the open popovers
+    var popovers = document.querySelectorAll(".popover");
+    
+    // Check if the clicked area is outside any of the buttons or popovers
+    popovers.forEach(function(popover) {
+        var button = popover.previousElementSibling.querySelector("button"); // Get the button of the popover
+        if (!popover.contains(event.target) && event.target !== button) {
+            popover.style.display = "none";
+        }
+    });
+});
+
+// Close the popover when scrolling inside the scroll-container
+document.querySelector(".scroll-container").addEventListener("scroll", function() {
+    var popovers = document.querySelectorAll(".popover");
+    popovers.forEach(function(popover) {
+        popover.style.display = "none";
+    });
+});
+
+
+
+
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // This will add a smooth scroll effect
+    });
+}
