@@ -187,12 +187,28 @@
     overflow-x: hidden; 
     border: 1px solid #ccc; 
     padding: 10px; 
-    width: 70%;
+    width: 72%;
     scroll-behavior: smooth;
 }
 
+/* Webkit browsers (Chrome, Safari) */
 .scroll-container::-webkit-scrollbar {
-    display: none; 
+    width: 10px; 
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 8px; 
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
+}
+
+/* Firefox */
+.scroll-container {
+    scrollbar-width: thin; 
+    scrollbar-color: #888 #f1f1f1;
 }
 
 #check-in-display,
@@ -231,12 +247,12 @@
     color: #000000; 
     font-family: 'Times New Roman', Times, serif;
     border: 1px solid #d4d49b;
-    height: 40%;
+    height: 20%;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .know {
-    width: 30%;
+    width: 28%;
     padding: 20px;
     background-color: #ffffff;
     border: 1px solid #ccc;
@@ -268,7 +284,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%; /* Ensures all rooms stretch to the same height */
+    height: 90%; /* Ensures all rooms stretch to the same height */
 }
 
 .roo1 img, .roo2 img, .roo3 img, .roo4 img, .roo5 img, .roo6 img, .roo7 img, .roo8 img, .roo9 img, .roo10 img {
@@ -310,32 +326,6 @@ button:hover {
 }
 
 
-.popover {
-    display: none; /* Initially hidden */
-    position: absolute;
-    left: 0;
-    padding: 10px;
-    background-color: #3f0808;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    z-index: 1000;
-    height: 300px;
-}
-
-.popover p {
-    margin: 0;
-}
-
-
-
-
-
-
-.acc{
-    margin-top: 0px;
-}
 
 .block {
     top: 0px;
@@ -467,7 +457,6 @@ button:hover {
     color: black; /* Link color */
     padding: 10px 20px; 
     font-weight: bold; 
-    font-size: 18px;
     transition: background-color 0.3s, color 0.3s; /
 }
 
@@ -480,7 +469,7 @@ button:hover {
     text-decoration: none; 
     color: black; /* Link color */
     padding: 10px 20px; 
-    font-size: 18px; 
+    font-weight: 15px; 
     font-family: 'Times New Roman', Times, serif;
     transition: background-color 0.3s, color 0.3s; /
 }
@@ -493,7 +482,7 @@ button:hover {
     background-color: #d0d0ce;
 }
   
-.input-button-container {
+  .input-button-container {
     display: flex; /* Use flexbox to place input and button on the same line */
     align-items: center; /* Align vertically */
     gap: 0px; /* Add spacing between input and button */
@@ -501,33 +490,34 @@ button:hover {
   
   label {
     margin-right: 10px;
-    margin-top: 10px;
   }
   
   input[type="email"] {
-    margin-top: 25px;
     padding: 9px;
     border: 1px solid #ccc;
     border-radius: 1px;
-    flex: 1; /* Make the input field flexible */
-    width: 250px;
+    width: 75%;
   }
-
-  .suyu {
+  
+.su {
     background-color: transparent; 
-    color: rgb(217, 197, 197);
+    color: rgb(215, 198, 198);
     border: none;
     padding: 6px 10px;
     cursor: pointer;
     font-size: 25px; /* Adjust the size of the arrow */
     transition: background-color 0.3s ease;
-    margin-left: -115px;
+    margin-left: -100px;
+    margin-bottom: 12px;
 }
 
-.suyu:hover {
-    color: #b59595; /* Slightly darker green when hovered */
+.su:hover {
+    color: #ba9a9a; /* Slightly darker green when hovered */
     background-color: transparent;
 }
+
+
+
 
 .triangled {
     position: relative;
@@ -536,8 +526,8 @@ button:hover {
     border-left: 50px solid transparent; 
     border-right: 50px solid transparent;
     border-bottom: 30px solid #e8e8e8; 
-    margin-left: 705px;
-    margin-top: 5px;
+    margin-left: 750px;
+    margin-top: 72px;
     cursor: pointer;
 }
 
