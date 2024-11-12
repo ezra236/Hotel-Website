@@ -192,7 +192,7 @@ function displayChosenRoom() {
             document.querySelector('.imagee').style.backgroundImage = `url(${roomImage})`;
             document.querySelector('.imagee').style.backgroundSize = 'cover';
             document.querySelector('.imagee').style.backgroundPosition = 'center';
-            document.querySelector('.imagee').style.height = '350px'; // Adjust height
+            document.querySelector('.imagee').style.height = '320px'; // Adjust height
             document.querySelector('.imagee').style.width = '300px';
             document.querySelector('.imagee').style.borderRadius = '1px'; // Rounded corners
             document.querySelector('.imagee').style.marginLeft = '15px'; 
@@ -236,7 +236,7 @@ function displayChosenRoom() {
             let pair1 = createImageParagraphPair(roomImager1, "King's Bed");
 
             // Create the second image-paragraph pair
-            let pair2 = createImageParagraphPair(roomImager2, "Queen's Bed");
+            let pair2 = createImageParagraphPair(roomImager2, "2 people");
 
             // Append both pairs to the container
             containerElement.appendChild(pair1);
@@ -262,3 +262,71 @@ function displayChosenRoom() {
 
 // Call the function to display the room details in the chosen section
 displayChosenRoom();
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector('.container');
+    const scrollContainer = document.querySelector('.scroll-container');
+    const roomRows = document.querySelectorAll('.room-row'); // All the room rows
+
+    let currentRowIndex = 0; // Index of the currently viewed row
+
+    // Function to handle scrolling within scrollContainer
+    function handleScroll(event) {
+        const maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+
+        // Arrow down key
+        if (event.key === "ArrowDown") {
+            if (currentRowIndex < roomRows.length - 1) {
+                currentRowIndex++; // Move to the next row
+                // Scroll to the next row smoothly, mimicking natural scrolling behavior
+                const nextRow = roomRows[currentRowIndex];
+                scrollContainer.scrollTo({
+                    top: nextRow.offsetTop - scrollContainer.offsetTop,
+                    behavior: 'smooth'
+                });
+                event.preventDefault(); // Prevent default scrolling for ArrowDown
+            }
+        }
+        
+        // Arrow up key
+        else if (event.key === "ArrowUp") {
+            if (currentRowIndex > 0) {
+                currentRowIndex--; // Move to the previous row
+                // Scroll to the previous row smoothly, mimicking natural scrolling behavior
+                const prevRow = roomRows[currentRowIndex];
+                scrollContainer.scrollTo({
+                    top: prevRow.offsetTop - scrollContainer.offsetTop,
+                    behavior: 'smooth'
+                });
+                event.preventDefault(); // Prevent default scrolling for ArrowUp
+            }
+        }
+    }
+
+    // Intersection Observer to detect when .container enters the viewport
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Get the position of .container and scroll with 25px offset
+                const containerTop = container.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({
+                    top: containerTop - 25, // 25px offset from the top
+                    behavior: 'smooth' // Smooth scrolling
+                });
+                
+                // When .container is in view, add keydown listener
+                document.addEventListener('keydown', handleScroll, { passive: true });
+            } else {
+                // When .container is out of view, remove keydown listener
+                document.removeEventListener('keydown', handleScroll);
+            }
+        });
+    }, { threshold: 0.5 }); // Adjust threshold as needed to detect half of .container in view
+
+    // Observe the .container element
+    observer.observe(container);
+});

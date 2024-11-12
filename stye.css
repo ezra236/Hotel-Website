@@ -79,7 +79,7 @@
     align-items: center; 
     gap: 10px; 
     width: 1250px;
-    height: 370px;
+    height: 340px;
     margin-top: 65px; /* Ensure it's below the fixed navbar */
     background-color: white;
     margin-left: 120px;
@@ -188,6 +188,7 @@
     border: 1px solid #ccc; 
     padding: 10px; 
     width: 70%;
+    scroll-behavior: smooth;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -306,4 +307,227 @@ button {
 
 button:hover {
     background-color: #5c3a2f;
+}
+
+
+
+
+
+.acc{
+    margin-top: 0px;
+}
+
+.block {
+    top: 0px;
+    width: 100%; 
+    height: 140px;
+    margin: 0; /* Remove any default margin */
+    background-color: #e8e8e8; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border: none; 
+    box-shadow: none; 
+}
+  
+
+.block img{
+    width: 80px;
+    border-radius: 40px;
+}
+  
+
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e8e8e8; /* Pantone 427 (Fog Gray) */
+    padding: 20px;
+    height: 255px;
+    border-radius: 1px;
+    margin-top: 0px;
+}
+
+/* Individual section styling */
+.section {
+    flex: 1; /* Make all sections equal width */
+    padding: 5px;
+    margin: 5px; 
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.section1 { 
+    color: #000000;
+    margin-left: 80px;
+} 
+.section2 { 
+    color: #000000; 
+} 
+.section3 { 
+    color: #000000;
+} 
+
+.social-icon {
+    margin-left: 20px;
+    width: 27px;  /* Set desired width */
+    height: 27px; /* Set desired height */
+    transition: transform 0.5s ease; /* Optional transition for hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.7); /* Optional hover effect to slightly enlarge */
+}
+
+
+.pp {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+}
+.oo {
+    font-weight: 15px; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+}
+
+.u {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between; /* Space out the two sections */
+    align-items: center; /* Vertically align the sections */
+    background-color: #ffffff; /* Dark background */
+    color: #000000; /* White text */
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+.stp a {
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+    margin: 0 27px; 
+}
+
+.stp a:hover {
+    color: #ff4500;
+}
+
+/* Style for the copyright section */
+.copyright {
+    font-size: 16px;
+    color: #000000; /* Slightly lighter gray text */
+    margin-left: 65px;
+}
+
+/* Responsive: Stack the sections vertically on small screens */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column; /* Stack the sections vertically */
+        text-align: center;
+    }
+
+    .stp {
+        margin-top: 10px;
+    }
+}
+
+.about-link {
+    text-align: left;
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-weight: bold; 
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s; /
+}
+
+.about-link:hover {
+    color: #ff4500; 
+}
+
+.about-lin {
+    text-align: left;
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-size: 18px; 
+    font-family: 'Times New Roman', Times, serif;
+    transition: background-color 0.3s, color 0.3s; /
+}
+
+.about-lin:hover {
+    color: #ff4500; 
+}
+
+.form-container {
+    background-color: #d0d0ce;
+}
+  
+.input-button-container {
+    display: flex; /* Use flexbox to place input and button on the same line */
+    align-items: center; /* Align vertically */
+    gap: 0px; /* Add spacing between input and button */
+  }
+  
+  label {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  input[type="email"] {
+    margin-top: 25px;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    flex: 1; /* Make the input field flexible */
+    width: 250px;
+  }
+
+  .suyu {
+    background-color: transparent; 
+    color: rgb(217, 197, 197);
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 25px; /* Adjust the size of the arrow */
+    transition: background-color 0.3s ease;
+    margin-left: -115px;
+}
+
+.suyu:hover {
+    color: #b59595; /* Slightly darker green when hovered */
+    background-color: transparent;
+}
+
+.triangled {
+    position: relative;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent; 
+    border-right: 50px solid transparent;
+    border-bottom: 30px solid #e8e8e8; 
+    margin-left: 705px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.arrowd {
+    position: absolute;
+    top: 19px; /* Adjust position of the arrow inside the triangle */
+    left: 50%;
+    height: auto; /* No height needed for the triangle */
+    border-left: 16px solid transparent; 
+    border-right: 16px solid transparent; 
+    border-bottom: 10px solid #ffffff; 
+    transform: translateX(-50%); 
 }
