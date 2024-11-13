@@ -182,7 +182,7 @@
 }
 
 .scroll-container {
-    height: 600px; 
+    height: 1920px; 
     overflow-y: auto; 
     overflow-x: hidden; 
     border: 1px solid #ccc; 
@@ -191,25 +191,8 @@
     scroll-behavior: smooth;
 }
 
-/* Webkit browsers (Chrome, Safari) */
-.scroll-container::-webkit-scrollbar {
-    width: 10px; 
-}
 
-.scroll-container::-webkit-scrollbar-thumb {
-    background-color: #888; 
-    border-radius: 8px; 
-}
 
-.scroll-container::-webkit-scrollbar-track {
-    background-color: #f1f1f1; 
-}
-
-/* Firefox */
-.scroll-container {
-    scrollbar-width: thin; 
-    scrollbar-color: #888 #f1f1f1;
-}
 
 #check-in-display,
 #check-out-display {
@@ -313,7 +296,7 @@ p {
 button {
     margin-top: 10px;
     padding: 10px;
-    background-color: #7c4f40;
+    background-color: #ba5425;
     color: white;
     border: none;
     border-radius: 0px;
@@ -322,8 +305,103 @@ button {
 }
 
 button:hover {
-    background-color: #5c3a2f;
+    background-color: #94360a;
 }
+
+/* Modal styling to cover the full screen */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    color: white;
+}
+
+/* Close button styling */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.close-btn:hover{
+    color: #dddddd;
+    background-color: transparent;
+}
+
+
+.modal-content {
+    display: flex;  /* Use flexbox for horizontal layout */
+    flex-direction: row; /* Align child elements in a row (horizontally) */
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 800px;  /* Adjust width if needed */
+    width: 90%;
+    justify-content: space-between;  /* Add space between boxes */
+}
+
+.box {
+    background-color: #444;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.room-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    color: #000;
+    width: 45%;  /* Set the width of the room box */
+    height: auto;
+}
+
+.room-box h3{
+    margin-top: 15px;
+    color: #c65521;
+}
+
+.add-room-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    background-color: #b3582f;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    width: 45%;  /* Set the width of the room box */
+    height: auto;
+}
+
+.add-room-box span:hover {
+    color: #f6f6f6;
+}
+
+.add-room-box p {
+    margin-top: 18px;
+}
+
+
+
+
+
 
 
 
@@ -526,7 +604,7 @@ button:hover {
     border-left: 50px solid transparent; 
     border-right: 50px solid transparent;
     border-bottom: 30px solid #e8e8e8; 
-    margin-left: 750px;
+    margin-left: 700px;
     margin-top: 72px;
     cursor: pointer;
 }

@@ -274,3 +274,75 @@ function scrollToTop() {
 }
 
 
+
+
+// JavaScript to display the full-screen modal only for button clicks
+document.querySelectorAll('.selectBtn').forEach(button => {
+    button.addEventListener('click', function() {
+        document.getElementById('selectionMessage').style.display = 'flex';
+        displayC();
+    });
+});
+
+// Function to close the modal
+function closeModal() {
+    document.getElementById('selectionMessage').style.display = 'none';
+}
+
+
+    
+    
+
+
+// Get the roomId from the URL
+const urlParamso = new URLSearchParams(window.location.search);
+const rooomId = urlParamso.get('room'); // Get the room ID from the URL
+
+// Function to display the room details in the chosen section
+function displayC() {
+    if (rooomId) {
+        // Find the room with the specified ID within the display section
+        const selecteddRoom = document.getElementById(rooomId);
+
+        if (selecteddRoom) {
+            // Extract image, text, and other details
+            const roomImage = selecteddRoom.querySelector('img').src;
+            const roomTitle = selecteddRoom.querySelector('h3').textContent;
+
+            // Get the modal-content element
+            const modalContent = document.querySelector('.modal-content');
+            
+            // Clear any previous content
+            modalContent.innerHTML = '';
+
+            // Create the first box with the room image and title
+            const roomBox = document.createElement('div');
+            roomBox.classList.add('box', 'room-box');
+            roomBox.innerHTML = `
+                <p style="color: #b3582f;">CURRENT ROOM</p>
+                <img src="${roomImage}" alt="${roomTitle}" style="width: 95%; border-radius: 1px;">
+                <h3>${roomTitle}</h3>
+            `;
+            
+            // Create the second box with the addition sign and "ADD ROOM" text
+            const addRoomBox = document.createElement('div');
+            addRoomBox.classList.add('box', 'add-room-box');
+            addRoomBox.innerHTML = `
+                <span style="font-size: 48px; font-weight: bold;">+</span>
+                <p>ADD ROOM</p>
+            `;
+            
+            // Append the created boxes to the modal content
+            modalContent.appendChild(roomBox);
+            modalContent.appendChild(addRoomBox);
+
+            // Display the modal by changing display property to flex
+            document.getElementById('selectionMessage').style.display = 'flex';
+        }
+    }
+}
+
+
+
+
+

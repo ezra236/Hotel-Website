@@ -945,15 +945,15 @@ nav a:hover {
     font-size: 16px;
     width: 155px;
     font-family: 'Times New Roman', Times, serif;
-    background-color: #893121; /* Button background color */
-    border: 2px solid #b8321e; 
+    background-color: #c9632c; /* Button background color */
+    border: 2px solid #c9632c; 
     color: #ffffff; /* Text color */ 
     border-radius: 0px;
     cursor: pointer;
 }
 
 .buttonn:hover {
-    background-color: #d5381f; /* Darker color on hover */
+    background-color: #a9450f; /* Darker color on hover */
 }
 
 .triangled {
