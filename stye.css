@@ -137,7 +137,7 @@
 
 /* Style the BOOK button */
 .book-button {
-    background-color: #954f29; /* Green background */
+    background-color: #ad5525; /* Green background */
     color: white;
     font-size: 16px;
     padding: 10px 35px;
@@ -150,8 +150,158 @@
 
 /* Hover effect for the button */
 .book-button:hover {
-    background-color: #5c2a0f; /* Darker green */
+    background-color: #85370c; /* Darker green */
 }
+
+
+/* Initial state for the booking info block */
+.bookingInfo {
+    display: none; 
+    position: fixed; 
+    bottom: -100%; 
+    left: 0; /* Full width */
+    width: 100%; 
+    height: 100vh; 
+    background: white; 
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
+    transition: bottom 5s ease-out; 
+}
+
+/* Show the block with transformation */
+.bookingInfo.show {
+    display: block;
+    bottom: 0; /* Move it to the top (visible) */
+    z-index: 5000;
+}
+
+  
+.row {
+    display: flex; /* Use Flexbox to align items side by side */
+    justify-content: space-between; /* Spread them out */
+    align-items: center; /* Center them vertically */
+    margin-top: 5px;
+}
+
+/* Style for the paying class */
+.paying {
+    flex: 1; /* Take up equal space */
+    text-align: left;
+    padding: 10px;
+    background-color: white;
+    border-radius: 2px;
+    margin-right: 10px;
+    margin-top: 50px;
+}
+
+/* Style for the information class */
+.information {
+    flex: 1; /* Take up equal space */
+    text-align: left;
+    padding: 10px;
+    background-color: rgb(212, 207, 140);
+    border-radius: 2px;
+    margin-left: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+
+.closes-button {
+    position: absolute;
+    top: 50px;
+    left: 90%;
+    background: transparent;
+    border: none;
+    color: #000;
+    font-size: 29px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* Close button hover effect */
+.closes-button:hover {
+    color: red;
+    background-color: transparent;
+}
+
+/* Style for h3 (Payment Options) */
+.paying h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* Style for the payment options list */
+.paying ul {
+    list-style-type: circle;
+    padding-left: 0;
+}
+
+.paying ul li {
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+/* Style for paragraph (IF PAID, Proceed) */
+.paying p {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+/* Style for the form */
+.paying form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label style */
+.paying label {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+/* Input fields */
+.paying input[type="text"],
+.paying input[type="tel"],
+.paying input[type="email"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    width: 50%;
+}
+
+.paying input[type="text"]:focus,
+.paying input[type="tel"]:focus,
+.paying input[type="email"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Submit button */
+.paying .buttonS {
+    padding: 12px 20px;
+    background-color: #b85629;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.paying .buttonS:hover {
+    background-color: #92380f;
+}
+
 
 .add-room-container {
     width: 100%;
@@ -230,9 +380,10 @@
     color: #000000; 
     font-family: 'Times New Roman', Times, serif;
     border: 1px solid #d4d49b;
-    height: 20%;
+    height: 60%;
     font-family: 'Times New Roman', Times, serif;
 }
+
 
 .know {
     width: 28%;

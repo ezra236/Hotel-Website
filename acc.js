@@ -94,6 +94,8 @@ function calculateTotalPrice() {
         // Display the result in the 'amount' div
         const amountElement = document.querySelector('.amount');
         amountElement.innerHTML = `Room:&nbsp&nbsp ${room.name} <br> Days:&nbsp&nbsp&nbsp ${daysDifference} days <br> Ksh:&nbsp&nbsp&nbsp&nbsp&nbsp ${totalPrice}`;
+        retrieveTotalPrice(totalPrice);
+        calculateAndDisplayTotal(totalPrice);
     } else {
         console.log("Check-in or Check-out date is missing.");
     }
@@ -171,21 +173,23 @@ function displayChosenRoom() {
             const roomTitle = selectedRoom.querySelector('h3').textContent;
             const roomDescription = selectedRoom.querySelector('p').textContent;
 
-
             document.querySelector('.option').innerHTML = `
-             <p>SELECT</p>
-             <label>
-              <input type="radio" name="rateOption" value="1200" />
-               Best Available Rate Ksh 1200
-             </label>
-             <br>
-             <label>
-              <input type="radio" name="rateOption" value="1500" />
-               Best Available Rate with Breakfast Ksh 1500
-             </label>
-             <br>
-            <button class="book-button">BOOK</button>
-             `;
+        <p>SELECT</p>
+        <label>
+        <input type="radio" name="rateOption" value="1200" />
+        Best Available Rate Ksh 1200
+        </label>
+        <br>
+        <label>
+        <input type="radio" name="rateOption" value="1500" />
+        Best Available Rate with Breakfast Ksh 1500
+        </label>
+        <br>
+        <button class="book-button">BOOK</button>
+        `;
+
+        // After updating the HTML content, add the event listener
+        document.querySelector('.book-button').addEventListener('click', handleBookButtonClick);
 
 
             // Set background image and style it
@@ -385,6 +389,7 @@ function createAddRoomBox() {
     });
 }
 
+
 // Function to handle 'ADD ROOM' box click and calculate the cost
 function handleAddRoomClick(roommId) {
     console.log("Adding room with ID:", roommId);  // Corrected to roommId
@@ -411,9 +416,18 @@ function handleAddRoomClick(roommId) {
 
         const totalPrice = roomPrice * daysDifference;
         const amountElement = document.querySelector('.amount');
-        amountElement.innerHTML = `Room:&nbsp;&nbsp;${room.name} <br> Days:&nbsp;&nbsp;&nbsp;${daysDifference} days <br> Ksh:&nbsp;&nbsp;&nbsp;&nbsp;${totalPrice}`;
-    }
+
+        // Check if there is already content in the element
+        if (amountElement.innerHTML.trim() !== '') {
+            // Append new content below the existing content
+            amountElement.innerHTML += `<br><br>Room:&nbsp;&nbsp;${room.name} <br> Days:&nbsp;&nbsp;&nbsp;${daysDifference} days <br> Ksh:&nbsp;&nbsp;&nbsp;&nbsp;${totalPrice}`;
+            displayGrandTotal();
+            calculateAndDisplayT(totalPrice);
+        }
+       }
 }
+
+
 
 // Function to display a dialog box confirming the click
 function showDialogBox(message) {
@@ -422,7 +436,7 @@ function showDialogBox(message) {
     dialogBox.classList.add('dialog-box');
     dialogBox.innerHTML = `
         <p>${message}</p>
-        <button onclick="closeDialogBox()">Close</button>
+        <button onclick="closeDialogBox()">CLOSE</button>
     `;
 
     // Append the dialog box to the body
@@ -444,5 +458,91 @@ function closeDialogBox() {
     const dialogBox = document.querySelector('.dialog-box');
     if (dialogBox) {
         dialogBox.remove();
+    }
+}
+
+
+
+
+// Function to retrieve and display the cumulative total price
+function displayGrandTotal() {
+    const amountElement = document.querySelector('.amount');
+    const roomEntries = amountElement.innerHTML.match(/Ksh:&nbsp;&nbsp;&nbsp;&nbsp;(\d+)/g);
+
+    // Calculate the sum of all individual room prices
+    let grandTotal = 0;
+    if (roomEntries) {
+        roomEntries.forEach(entry => {
+            const price = parseInt(entry.match(/\d+/)[0], 10);
+            grandTotal += price;
+        });
+    }
+
+    // Append the grand total below the existing room information
+    amountElement.innerHTML += `<br><br><strong style="color: #ad5525; font-size: 18px; font-family: 'Times New Roman', Times, serif;">Total Price(Added Rooms): Ksh: ${grandTotal}</strong>`;
+}
+
+
+
+// Function to append the total price to the amount div
+function retrieveTotalPrice(totalPrice) {
+    // Get the last .amount element where you want to append the total
+    const amountElement = document.querySelector('.amount');
+
+    // Append the total price below the content
+    amountElement.innerHTML += `<br><br><strong>Total Price: Ksh: ${totalPrice}</strong>`;
+}
+
+
+
+
+
+function handleBookButtonClick() {
+    // Find the block element that you want to display
+    const block = document.querySelector('.bookingInfo');
+  
+    // Add the class to trigger the animation
+    block.classList.add('show');
+}
+  
+
+
+// Function to handle closing the booking info block
+function closeBookingInfo() {
+    const block = document.querySelector('.bookingInfo');
+    block.classList.remove('show');
+}
+
+// Add the event listener for the close button click
+document.querySelector('.closes-button').addEventListener('click', closeBookingInfo);
+
+
+
+
+// Function to calculate the total price and display in .information
+function calculateAndDisplayTotal(totalPrice) {
+    // Compute the sum
+    const sum = totalPrice;
+
+    // Find the element with class "information" and update its content
+    const informationElement = document.querySelector('.information');
+    informationElement.innerHTML = `Price: Ksh ${sum}`;
+}
+
+
+
+// Function to calculate the total price and display in .information
+function calculateAndDisplayT(totalPrice) {
+    const informationElement = document.querySelector('.information');
+    if (informationElement) {
+        // Check if there is existing content
+        if (informationElement.innerHTML.trim() !== '') {
+            informationElement.innerHTML += `<br><br>Price: Ksh ${totalPrice}`;
+        } else {
+            // Set content if empty
+            informationElement.innerHTML = `Total Price: Ksh ${totalPrice}`;
+        }
+    } else {
+        console.log("Element with class 'information' not found.");
     }
 }
