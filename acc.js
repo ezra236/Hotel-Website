@@ -293,56 +293,156 @@ function closeModal() {
     
     
 
-
 // Get the roomId from the URL
 const urlParamso = new URLSearchParams(window.location.search);
-const rooomId = urlParamso.get('room'); // Get the room ID from the URL
+const rooomId = urlParams.get('room'); // Get the room ID from the URL
 
-// Function to display the room details in the chosen section
-function displayC() {
+// Function to display the current room details (image and title)
+function displayCurrentRoom(roomId) {
     if (rooomId) {
         // Find the room with the specified ID within the display section
-        const selecteddRoom = document.getElementById(rooomId);
-
-        if (selecteddRoom) {
-            // Extract image, text, and other details
-            const roomImage = selecteddRoom.querySelector('img').src;
-            const roomTitle = selecteddRoom.querySelector('h3').textContent;
-
-            // Get the modal-content element
-            const modalContent = document.querySelector('.modal-content');
-            
-            // Clear any previous content
-            modalContent.innerHTML = '';
-
-            // Create the first box with the room image and title
-            const roomBox = document.createElement('div');
-            roomBox.classList.add('box', 'room-box');
-            roomBox.innerHTML = `
-                <p style="color: #b3582f;">CURRENT ROOM</p>
-                <img src="${roomImage}" alt="${roomTitle}" style="width: 95%; border-radius: 1px;">
-                <h3>${roomTitle}</h3>
-            `;
-            
-            // Create the second box with the addition sign and "ADD ROOM" text
-            const addRoomBox = document.createElement('div');
-            addRoomBox.classList.add('box', 'add-room-box');
-            addRoomBox.innerHTML = `
-                <span style="font-size: 48px; font-weight: bold;">+</span>
-                <p>ADD ROOM</p>
-            `;
-            
-            // Append the created boxes to the modal content
-            modalContent.appendChild(roomBox);
-            modalContent.appendChild(addRoomBox);
-
-            // Display the modal by changing display property to flex
-            document.getElementById('selectionMessage').style.display = 'flex';
+        const selectedRoom = document.getElementById(rooomId);
+        if (!selectedRoom) {
+            console.error(`No room found with ID: ${rooomId}`);
+            return;
         }
+
+        // Extract image and title details
+        const roomImage = selectedRoom.querySelector('img')?.src;
+        const roomTitle = selectedRoom.querySelector('h3')?.textContent;
+
+        if (!roomImage || !roomTitle) {
+            console.error("Room image or title not found.");
+            return;
+        }
+
+        // Get the modal-content element and clear any previous content
+        const modalContent = document.querySelector('.modal-content');
+        modalContent.innerHTML = '';
+
+        // Create the first box with the room image and title
+        const roomBox = document.createElement('div');
+        roomBox.classList.add('box', 'room-box');
+        roomBox.innerHTML = `
+            <p style="color: #b3582f;">CURRENT ROOM</p>
+            <img src="${roomImage}" alt="${roomTitle}" style="width: 95%; border-radius: 1px;">
+            <h3>${roomTitle}</h3>
+        `;
+        
+        // Append the roomBox to the modal content
+        modalContent.appendChild(roomBox);
+
+        // Display the modal by changing display property to flex
+        document.getElementById('selectionMessage').style.display = 'flex';
+    } else {
+        console.error("Room ID not provided in URL.");
     }
 }
 
 
+// Function to initialize both boxes
+function displayC(roomId) {
+    displayCurrentRoom(roomId); 
+    createAddRoomBox();         
+}
 
 
 
+let roommId = "";  
+
+// Function to handle the button click and store the room ID
+function calculate(button) {
+    // Get the ID of the button element that was clicked
+    roommId = button.id;  
+    console.log(roommId);  
+}
+
+// Function to create the 'ADD ROOM' box with "+" symbol
+function createAddRoomBox() {
+    // Get the modal-content element
+    const modalContent = document.querySelector('.modal-content');
+
+    // Create the second box with the addition sign and "ADD ROOM" text
+    const addRoomBox = document.createElement('div');
+    addRoomBox.classList.add('box', 'add-room-box');
+    addRoomBox.innerHTML = `
+        <span style="font-size: 48px; font-weight: bold;">+</span>
+        <p>ADD ROOM</p>
+    `;
+    
+    // Append the addRoomBox to the modal content
+    modalContent.appendChild(addRoomBox);
+
+    // Add click event to the 'ADD ROOM' box
+    addRoomBox.addEventListener('click', function() {
+        console.log(roommId);
+
+        // Call the handleAddRoomClick function with roommId
+        handleAddRoomClick(roommId);
+
+        // Display a dialog box to show that it was clicked
+        showDialogBox(`Room with ID ${roommId} has been added!`);
+    });
+}
+
+// Function to handle 'ADD ROOM' box click and calculate the cost
+function handleAddRoomClick(roommId) {
+    console.log("Adding room with ID:", roommId);  // Corrected to roommId
+
+    // Assuming these utility functions exist
+    const { checkin, checkout } = getQueryParams();
+    if (checkin && checkout) {
+        const checkInDate = parseDate(checkin);
+        const checkOutDate = parseDate(checkout);
+
+        if (!checkInDate || !checkOutDate) {
+            console.log("Invalid date format. Ensure dates are in dd-mm-yyyy.");
+            return;
+        }
+
+        const daysDifference = (checkOutDate - checkInDate) / (1000 * 3600 * 24);
+        const room = roomDetails[roommId]; 
+        const roomPrice = getRoomPrice(room.name); 
+
+        if (roomPrice === "City not found") {
+            console.log("Invalid room.");
+            return;
+        }
+
+        const totalPrice = roomPrice * daysDifference;
+        const amountElement = document.querySelector('.amount');
+        amountElement.innerHTML = `Room:&nbsp;&nbsp;${room.name} <br> Days:&nbsp;&nbsp;&nbsp;${daysDifference} days <br> Ksh:&nbsp;&nbsp;&nbsp;&nbsp;${totalPrice}`;
+    }
+}
+
+// Function to display a dialog box confirming the click
+function showDialogBox(message) {
+    // Create a dialog box div
+    const dialogBox = document.createElement('div');
+    dialogBox.classList.add('dialog-box');
+    dialogBox.innerHTML = `
+        <p>${message}</p>
+        <button onclick="closeDialogBox()">Close</button>
+    `;
+
+    // Append the dialog box to the body
+    document.body.appendChild(dialogBox);
+
+    // Optionally, add some styling for the dialog box (inline style for simplicity)
+    dialogBox.style.position = 'fixed';
+    dialogBox.style.top = '50%';
+    dialogBox.style.left = '50%';
+    dialogBox.style.transform = 'translate(-50%, -50%)';
+    dialogBox.style.padding = '20px';
+    dialogBox.style.backgroundColor = 'white';
+    dialogBox.style.border = '1px solid black';
+    dialogBox.style.zIndex = '1000';
+}
+
+// Function to close the dialog box
+function closeDialogBox() {
+    const dialogBox = document.querySelector('.dialog-box');
+    if (dialogBox) {
+        dialogBox.remove();
+    }
+}
