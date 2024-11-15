@@ -147,13 +147,13 @@ function getRoomPrice(city) {
 
 
 
-
-
-// Toggle the visibility of the menu
 function toggleMenu() {
-    const menu = document.getElementById('menuLinks');
-    menu.classList.toggle('show');
+    // Toggle the "open" class on the hamburger menu
+    document.getElementById("hamburgerMenu").classList.toggle("open");
+    // Show or hide the menu links
+    document.getElementById("menuLinks").classList.toggle("show");
 }
+
 
 
 
