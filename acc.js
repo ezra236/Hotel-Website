@@ -491,8 +491,6 @@ function retrieveTotalPrice(totalPrice) {
 
 
 
-
-
 function handleBookButtonClick() {
     // Find the block element that you want to display
     const block = document.querySelector('.bookingInfo');
@@ -552,45 +550,65 @@ function calculateAndDisplayT(totalPrice) {
 }
 
 
+
 // Add event listener to the book button
 document.querySelector('.book-button').addEventListener('click', calculateAndDisplayGrandTotal);
 
 
 function calculateAndDisplayGrandTotal() {
-    // Select the .information element
-    const informationElement = document.querySelector('.information');
-
-    if (informationElement) {
-        // Extract all price values from the element
-        const prices = informationElement.innerHTML.match(/Ksh (\d+)/g);
-
-        if (prices) {
-            // Parse the numeric values
-            const parsedPrices = prices.map(price => parseInt(price.replace('Ksh ', ''), 10));
-
-            // Check if the "Best Available Rate with Breakfast" option is checked
-            const isRateOption2Checked = document.querySelector('input[name="rateOption2"]:checked');
-
-            if (isRateOption2Checked) {
-                // Add 300 to each price if rateOption2 is checked
-                for (let i = 0; i < parsedPrices.length; i++) {
-                    parsedPrices[i] += 300;
-                }
-            }
-
-            // Calculate the total by summing the prices
-            const total = parsedPrices.reduce((sum, value) => sum + value, 0);
-
-            // Append the grand total to the .information element
-            informationElement.innerHTML += `<br><br><strong>Total: Ksh ${total}</strong>`;
-        } else {
-            console.log("No prices found in the information element.");
+    // Assuming these utility functions exist
+    const { checkin, checkout } = getQueryParams();
+    if (checkin && checkout) {
+        const checkInDate = parseDate(checkin);
+        const checkOutDate = parseDate(checkout);
+    
+        if (!checkInDate || !checkOutDate) {
+            console.log("Invalid date format. Ensure dates are in dd-mm-yyyy.");
+            return;
         }
-    } else {
-        console.log("Element with class 'information' not found.");
+    
+        const daysDifference = (checkOutDate - checkInDate) / (1000 * 3600 * 24);
+
+        // Select the .information element
+        const informationElement = document.querySelector('.information');
+    
+        if (informationElement) {
+             // Remove any element that contains the text "Total: Ksh" from the container
+            informationElement.innerHTML = informationElement.innerHTML
+            .split('<br>') // Split content by <br> tags to isolate lines
+            .filter(line => !line.includes('Total: Ksh')) // Exclude lines containing "Total: Ksh"
+            .join('<br>'); // Join the remaining lines back into the HTML
+
+
+            // Extract all price values from the element, excluding "Total: Ksh" lines
+            const prices = informationElement.innerHTML
+                .split('<br>') // Split content by <br> tags to isolate lines
+                .filter(line => !line.includes('Total: Ksh')) // Exclude lines containing "Total: Ksh"
+                .map(line => line.match(/Ksh (\d+)/)) // Extract prices
+                .filter(match => match !== null) 
+                .map(match => parseInt(match[1], 10)); 
+
+            if (prices.length > 0) {
+                // Check if the "Best Available Rate with Breakfast" option is checked
+                const isRateOption2Checked = document.querySelector('input[name="rateOption2"]:checked');
+    
+                if (isRateOption2Checked) {
+                    // Add 300 to each price if rateOption2 is checked
+                    for (let i = 0; i < prices.length; i++) {
+                        prices[i] += 300 * daysDifference;
+                    }
+                }
+    
+                // Calculate the total by summing the prices
+                const total = prices.reduce((sum, value) => sum + value, 0);
+    
+                // Append the grand total to the .information element
+                informationElement.innerHTML += `<br><br><strong>Total: Ksh ${total}</strong>`;
+            } else {
+                console.log("No prices found in the information element.");
+            }
+        } else {
+            console.log("Element with class 'information' not found.");
+        }
     }
 }
-
-
-
-
