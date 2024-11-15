@@ -159,8 +159,8 @@
     display: none; 
     position: fixed; 
     bottom: -100%; 
-    left: 0; /* Full width */
-    width: 100%; 
+    left: 20%; /* Full width */
+    width: 55%; 
     height: 100vh; 
     background: white; 
     padding: 20px;
@@ -185,18 +185,19 @@
 
 /* Style for the paying class */
 .paying {
-    flex: 1; /* Take up equal space */
+    width: 65%;
     text-align: left;
     padding: 10px;
     background-color: white;
     border-radius: 2px;
     margin-right: 10px;
     margin-top: 50px;
+    margin-left: 20px;
 }
 
 /* Style for the information class */
 .information {
-    flex: 1; /* Take up equal space */
+    width: 25%;
     text-align: left;
     padding: 10px;
     background-color: rgb(212, 207, 140);
@@ -209,7 +210,7 @@
 .closes-button {
     position: absolute;
     top: 50px;
-    left: 90%;
+    left: 85%;
     background: transparent;
     border: none;
     color: #000;
@@ -240,14 +241,15 @@
 }
 
 .paying ul li {
-    font-size: 1rem;
+    font-size: 25px;
     color: #000000;
     margin-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Style for paragraph (IF PAID, Proceed) */
 .paying p {
-    font-size: 20px;
+    font-size: 22px;
     color: #000000;
     margin-bottom: 8px;
 }
@@ -260,10 +262,11 @@
 
 /* Label style */
 .paying label {
-    font-size: 18px;
+    font-size: 22px;
     color: #000000;
     margin-bottom: 5px;
     margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Input fields */
@@ -272,8 +275,8 @@
 .paying input[type="email"] {
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid #000000;
+    border-radius: 0px;
     font-size: 1rem;
     background-color: #fff;
     width: 50%;

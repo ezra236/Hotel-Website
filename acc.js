@@ -175,14 +175,10 @@ function displayChosenRoom() {
 
             document.querySelector('.option').innerHTML = `
         <p>SELECT</p>
-        <label>
-        <input type="radio" name="rateOption" value="1200" />
-        Best Available Rate Ksh 1200
-        </label>
         <br>
         <label>
-        <input type="radio" name="rateOption" value="1500" />
-        Best Available Rate with Breakfast Ksh 1500
+        <input type="radio" name="rateOption2" value="1500" />
+        Best Available Rate with Breakfast Ksh 300
         </label>
         <br>
         <button class="book-button">BOOK</button>
@@ -240,7 +236,7 @@ function displayChosenRoom() {
             let pair1 = createImageParagraphPair(roomImager1, "King's Bed");
 
             // Create the second image-paragraph pair
-            let pair2 = createImageParagraphPair(roomImager2, "2 people");
+            let pair2 = createImageParagraphPair(roomImager2, "1 person");
 
             // Append both pairs to the container
             containerElement.appendChild(pair1);
@@ -507,14 +503,22 @@ function handleBookButtonClick() {
   
 
 
-// Function to handle closing the booking info block
+// Function to handle closing the booking info block and clearing the total
 function closeBookingInfo() {
     const block = document.querySelector('.bookingInfo');
     block.classList.remove('show');
+
+    // Clear the total from the .information element
+    const informationElement = document.querySelector('.information');
+    if (informationElement) {
+        // Remove the total text if it exists
+        informationElement.innerHTML = informationElement.innerHTML.replace(/<br><br><strong>Total: Ksh \d+<\/strong>/, '');
+    }
 }
 
 // Add the event listener for the close button click
 document.querySelector('.closes-button').addEventListener('click', closeBookingInfo);
+
 
 
 
@@ -546,3 +550,47 @@ function calculateAndDisplayT(totalPrice) {
         console.log("Element with class 'information' not found.");
     }
 }
+
+
+// Add event listener to the book button
+document.querySelector('.book-button').addEventListener('click', calculateAndDisplayGrandTotal);
+
+
+function calculateAndDisplayGrandTotal() {
+    // Select the .information element
+    const informationElement = document.querySelector('.information');
+
+    if (informationElement) {
+        // Extract all price values from the element
+        const prices = informationElement.innerHTML.match(/Ksh (\d+)/g);
+
+        if (prices) {
+            // Parse the numeric values
+            const parsedPrices = prices.map(price => parseInt(price.replace('Ksh ', ''), 10));
+
+            // Check if the "Best Available Rate with Breakfast" option is checked
+            const isRateOption2Checked = document.querySelector('input[name="rateOption2"]:checked');
+
+            if (isRateOption2Checked) {
+                // Add 300 to each price if rateOption2 is checked
+                for (let i = 0; i < parsedPrices.length; i++) {
+                    parsedPrices[i] += 300;
+                }
+            }
+
+            // Calculate the total by summing the prices
+            const total = parsedPrices.reduce((sum, value) => sum + value, 0);
+
+            // Append the grand total to the .information element
+            informationElement.innerHTML += `<br><br><strong>Total: Ksh ${total}</strong>`;
+        } else {
+            console.log("No prices found in the information element.");
+        }
+    } else {
+        console.log("Element with class 'information' not found.");
+    }
+}
+
+
+
+

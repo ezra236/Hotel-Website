@@ -1185,7 +1185,7 @@ nav a:hover {
 }
 
 .right-button {
-    padding: 10px 35px; 
+    padding: 18px 35px; 
     font-size: 16px; 
     background-color: #e06320; 
     color: white; 
@@ -1195,6 +1195,7 @@ nav a:hover {
     margin-bottom: 20px;
     margin-top: 20px;
     margin-right: 25px;
+    border-radius: 1px;
 }
 
 .right-button:hover {
