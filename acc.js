@@ -612,3 +612,42 @@ function calculateAndDisplayGrandTotal() {
         }
     }
 }
+
+
+
+
+// Select the target element
+const amountElement = document.querySelector('.amount');
+
+// Create a MutationObserver instance
+const observer = new MutationObserver(() => {
+    // Get the current height of the element
+    const currentHeight = parseInt(window.getComputedStyle(amountElement).height, 10);
+    
+    // Set the new height to double the current height
+    amountElement.style.height = (currentHeight * 2) + 'px';
+});
+
+// Configure the observer to watch for child node changes
+observer.observe(amountElement, { childList: true, subtree: true });
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const radioButtons = document.querySelectorAll('input[name="rateOption2"]');
+    
+    radioButtons.forEach(radio => {
+        // Store the previous state of the radio button
+        radio.previousChecked = false;
+
+        radio.addEventListener('click', function () {
+            if (this.previousChecked) {
+                this.checked = false; // Uncheck the radio button
+            }
+            // Update the previousChecked state
+            this.previousChecked = this.checked;
+        });
+    });
+});

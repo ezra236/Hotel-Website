@@ -72,7 +72,7 @@
 }
 
 .menu-links li a:hover {
-    background-color: #c12e0d;
+    color: #c12e0d;
 }
 
 /* Show the menu when toggled */
@@ -406,7 +406,7 @@
     color: #000000; 
     font-family: 'Times New Roman', Times, serif;
     border: 1px solid #d4d49b;
-    height: 60%;
+    height: 10%;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -574,12 +574,6 @@ button:hover {
 .add-room-box p {
     margin-top: 18px;
 }
-
-
-
-
-
-
 
 
 .block {
