@@ -5,26 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book a Table</title>
     <link rel="stylesheet" href="stylll.css">
+    <link rel="icon" href="lilo.png" type="image/png">
 </head>
 <body>
-    <div class="breadcrumb">
-        <a href="#">Home</a> &gt; <a href="#">Dining</a> &gt; <span>Book a Table</span>
+    <div class="nav-container"> 
+        <div class="logo">
+            <img src="logo.png" alt="Logo" /> 
+      </div>
+      <div class="dropdown">
+         <a href="room.html" class="rooms-link">Accomodation</a>
+           <div class="dropdown-content">
+            <p>Available Rooms</p>
+            <a href="room.html">Paris</a>
+            <a href="room.html">Tokyo</a>
+            <a href="room.html">New York</a>
+            <a href="room.html">Dubai</a>
+            <a href="room.html">London</a>
+            <a href="room.html">Sydney</a>
+            <a href="room.html">Rome</a>
+            <a href="room.html">Cairo</a>
+            <a href="room.html">Berlin</a>
+            <a href="room.html">Bangkok</a>
+            <a href="room.html">Istanbul</a>
+            <a href="room.html">Moscow</a>
+            <a href="room.html">Toronto</a>
+           </div>
+      </div>
+        <nav>
+         <span class="separator">|</span>
+         <a href="offers.html">Offers</a>
+         <span class="separator">|</span>
+         <a href="dining.html">Dining</a>
+         <span class="separator">|</span>
+         <a href="locate.html">Location</a>
+         <span class="separator">|</span>
+         <a href="feedback.html">Feedback</a>
+         <div class="squared-shape" id="shaped-square">
+            <p>More</p>
+        </div>
+        </nav>
+        <div class="shape-container" id="shape-container">
+            <div class="triangle">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 9.17L12 12.58l3.41-3.41L17 10.59l-5 5-5-5z'/%3E%3C/svg%3E" alt="Triangle Icon" class="triangle-image">
+            </div>
+            <div class="square"></div>
+            <p class="shape-text"><br>Check Availability</p>
+         
+        </div>  
     </div>
-    <h1 class="title">Book a Table</h1>
+    
+    
+    <div id="overlay"></div>
+    
+    
+    <div class="blockk" id="slidingg-block">
+        <p class="parag" id="close-button">X</p>
+        <div class="inblock">
+            <img src="lilo.png">
+            <p>PRIME GUEST HOME</p>
+        </div>
+        <div class="linkk">
+            <a href="contact.html">CONTACT US</a>
+            <a href="herit.html">HERITAGE</a>
+        </div>
+        <div class="logimage">
+            <img src="lilo.png">
+        </div>
+    </div>
+    
+    
+    <div class="dropdownn">
+        <div class="dropdownn-content" id="dropdownn">
+            <div class="check">
+                <div class="circle">
+                    <div class="checkmark"></div>
+                </div>
+                <div class="tex">
+                    <p><span style="color: #ff4500;">Rooms From KSH 1205.00 </span><br>
+                        Best rate guaranteed<br>
+                        Exclusive offers available
+                    </p>
+                </div>
+                <form>
+                    <label for="check-in">Check-in:</label>
+                    <input type="text" id="check-in" name="check-in" class="flatpickr" />
+        
+                    <label for="check-out">Check-out:</label>
+                    <input type="text" id="check-out" name="check-out" class="flatpickr" />
+        
+                    <label for="room-number">Room Number:</label>
+                    <input type="numberr" id="room-number" name="room-number" />
+                    <div class="dropdow" id="roomdropdow">
+                        <!-- Dropdown items -->
+                        <div data-value="1">1</div>
+                        <div data-value="2">2</div>
+                        <div data-value="3">3</div>
+                        <div data-value="4">4</div>
+                        <div data-value="5">5</div>
+                        <div data-value="6">6</div>
+                        <div data-value="7">7</div>
+                        <div data-value="8">8</div>
+                        <div data-value="9">9</div>
+                        <div data-value="10">10</div>
+                    </div>
+        
+                    <label for="adults">Adults:</label>
+                    <input type="numberr" id="adults" name="adults" />
+                    <div class="dropdoww" id="adultsdropdow">
+                        <!-- Dropdown items -->
+                        <div data-value="1">1</div>
+                        <div data-value="2">2</div>
+                        <div data-value="3">3</div>
+                        <div data-value="4">4</div>
+                        <div data-value="5">5</div>
+                        <div data-value="6">6</div>
+                        <div data-value="7">7</div>
+                        <div data-value="8">8</div>
+                        <div data-value="9">9</div>
+                        <div data-value="10">10</div>
+                    </div>
+        
+                    <button id="check-rates">Check Rates</button>
+    
+                </form>
+                <div class="linkc">
+                    <p id="modify-booking">Modify Booking</p>
+                    <div class="popover" id="popover">
+                        <p><span style="color: #cb4f1d;">Modify/ Cancel Reservations</span></p>
+                        <p><span style="color: black; font-size: 14px; font-weight: normal;"> Please enter the following to retrieve your reservation</span></p>
+                        <label for="confirmation_number" class="popover-label">Confirmation Number:</label>
+                        <input type="text" id="confirmation_number" name="confirmation_number" />
+    
+                        <button id="close-popover" class="popp">Close</button>
+                        <button id="continue-popover" class="popp">Continue</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+     </div>
+
+
+
+    
+
+    <h1 class="title">Book</h1>
     <form class="booking-form">
         <div class="form-group">
             <label for="restaurant">Restaurant *</label>
             <select id="restaurant" name="restaurant">
                 <option value="">Select</option>
-                <!-- Add options here -->
-            </select>
+                <option value="early-bird-discount">Early Bird Discount</option>
+                <option value="dinner-special">Dinner Special</option>
+                <option value="long-stay-discount">Long Stay Discount</option>
+                <option value="last-minute-discount">Last Minute Discount</option>
+                <option value="room-service">Room Service</option>
+                <option value="breakfast-morning">Breakfast Morning</option>
+                <option value="desserts">Desserts</option>
+            </select>                      
         </div>
         <div class="form-group">
             <label for="title">Title *</label>
             <select id="title" name="title">
                 <option value="">Select</option>
-                <!-- Add options here -->
-            </select>
+                <option value="Dr.">Dr.</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Honorable">Honorable</option>
+            </select>            
         </div>
         <div class="form-group">
             <label for="first-name">First Name *</label>
@@ -48,5 +196,8 @@
         </div>
         <button type="submit" class="submit-button">Submit</button>
     </form>
+
+
+    <script src="enq.js"></script>
 </body>
 </html>

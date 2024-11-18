@@ -1,13 +1,45 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const shapeContainer = document.getElementById("shape-container");
+document.addEventListener("DOMContentLoaded", function () {
     const dropdownContent = document.getElementById("dropdownn");
+    const shapeContainer = document.getElementById("shape-container");
 
-    shapeContainer.addEventListener("click", function() {
-        dropdownContent.classList.toggle("show"); // Toggle show class
+    // Function to disable or enable events inside the dropdown
+    function manageDropdownEvents() {
+        if (dropdownContent.classList.contains("show")) {
+            dropdownContent.querySelectorAll("*").forEach(element => {
+                element.style.pointerEvents = "auto"; // Enable events
+            });
+        } else {
+            dropdownContent.querySelectorAll("*").forEach(element => {
+                element.style.pointerEvents = "none"; // Disable events
+            });
+        }
+    }
 
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
+    // Toggle dropdown visibility, manage events, and scroll to top when shape-container is clicked
+    shapeContainer.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent click event from bubbling up
+        dropdownContent.classList.toggle("show");
+        manageDropdownEvents(); // Update the state of events based on visibility
+
+        // Smooth scroll to the top of the page
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Smooth scrolling
+        });
     });
+
+    // Close dropdown and disable events when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!dropdownContent.contains(event.target) && event.target !== shapeContainer) {
+            dropdownContent.classList.remove("show");
+            manageDropdownEvents(); // Update the state of events when closed
+        }
+    });
+
+    // Initialize: Ensure events are disabled by default
+    manageDropdownEvents();
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
