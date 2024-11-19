@@ -1,3 +1,4 @@
+
 html {
     scroll-behavior: smooth;
 }
@@ -719,92 +720,86 @@ nav a:hover {
     margin-right: 40px; /* Adjust for the desired spacing */
 }
 
-  
-.title {
-    font-size: 30px;
-    margin-bottom: 20px;
+.form-containerr {
+    background: #fffcfc;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 560px;
+    margin-top: 80px;
+    margin-left: 450px;
+}
+
+.form-containerr h1 {
     text-align: center;
-    color: #0a0101;
-    margin-top: 120px;
-  }
-  
-  .booking-form {
-    max-width: 800px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 17px;
     color: #000000;
-  }
-  
-  input, select {
+}
+
+.form-containerr label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #070404;
+    margin-left: 40px;
+}
+
+.form-containerr input {
+    width: 50%;
     padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
     border-radius: 0px;
-  }
-  
-  input[type="date"] {
-    padding-left: 35px;
-    background: url('calendar-icon.png') no-repeat scroll 10px center;
-    background-size: 20px;
-  }
-  
-  button.submit-button {
-    grid-column: span 1;
-    width: 190px; /* Set a fixed width */
-    height: 45px;
+    font-size: 14px;
+    margin-left: 40px;
+}
+
+.form-containerr select{
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    font-size: 14px;
+    margin-left: 40px;
+}
+
+.form-containerr textarea{
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    font-size: 14px;
+    margin-left: 40px;
+}
+
+.buty {
+    width: 50%;
+    background-color: #c6641a;
+    color: #fff;
     padding: 10px;
     font-size: 16px;
-    font-weight: bold;
-    background-color: #ff6600;
-    color: #fff;
     border: none;
     border-radius: 0px;
     cursor: pointer;
-    margin-top: 120px;
-    margin-left: 100px;
-  }
-  
-  button.submit-button:hover {
-    background-color: #e55a00;
-  }
-  
-.acc{
-    margin-top: 270px;
+    font-weight: bold;
+    margin-left: 130px;
+    margin-top: 10px;
 }
 
-  .block {
-    top: 0px;
-    width: 100%; 
-    height: 140px;
-    margin: 0; /* Remove any default margin */
-    background-color: #e8e8e8; 
-    position: relative; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    border: none; 
-    box-shadow: none; 
+.buty:hover {
+    background-color: #ab450f;
 }
-  
 
-.block img{
-    width: 80px;
-    border-radius: 40px;
+#responseMessage {
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(183, 78, 26);
+    font-weight: bold;
 }
-  
+
+
 
 
 .info {
@@ -976,3 +971,26 @@ nav a:hover {
 
 
 
+
+.triangled {
+    position: relative;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent; 
+    border-right: 50px solid transparent;
+    border-bottom: 30px solid #e8e8e8; 
+    margin-left: 700px;
+    margin-top: 72px;
+    cursor: pointer;
+}
+
+.arrowd {
+    position: absolute;
+    top: 19px; /* Adjust position of the arrow inside the triangle */
+    left: 50%;
+    height: auto; /* No height needed for the triangle */
+    border-left: 16px solid transparent; 
+    border-right: 16px solid transparent; 
+    border-bottom: 10px solid #ffffff; 
+    transform: translateX(-50%); 
+}

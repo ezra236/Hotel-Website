@@ -720,72 +720,85 @@ nav a:hover {
 }
 
   
-.title {
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #0a0101;
-    margin-top: 120px;
-  }
-  
-  .booking-form {
-    max-width: 800px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 17px;
-    color: #000000;
-  }
-  
-  input, select {
-    padding: 10px;
+/* Breadcrumb Header */
+.breadcrumb {
+    padding: 10px 20px;
+    background-color: #ffffff;
     font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 0px;
-  }
-  
-  input[type="date"] {
-    padding-left: 35px;
-    background: url('calendar-icon.png') no-repeat scroll 10px center;
-    background-size: 20px;
-  }
-  
-  button.submit-button {
-    grid-column: span 1;
-    width: 190px; /* Set a fixed width */
-    height: 45px;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #ff6600;
-    color: #fff;
-    border: none;
-    border-radius: 0px;
-    cursor: pointer;
-    margin-top: 120px;
-    margin-left: 100px;
-  }
-  
-  button.submit-button:hover {
-    background-color: #e55a00;
-  }
-  
-.acc{
-    margin-top: 270px;
+    font-weight: 500;
+    margin-top: 66px;
+    color: #000000;
+    padding-left: 246px;
 }
 
-  .block {
+.breadcrumb a {
+    text-decoration: none;
+    color: #333;
+    margin-top: 15px;
+}
+
+.breadcrumb span {
+    color: #cc5500;
+}
+
+/* Main Section */
+.special-offers {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.special-offers h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.special-offers h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #cc5500;
+    margin-bottom: 20px;
+}
+
+.special-offers p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #181616;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.header {
+    background-color: white;
+    padding: 10px 0;
+}
+
+.header h1 {
+    background-color: #f4f4f4;
+    margin-left: 10px;
+    font-size: 24px;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+}
+
+.header img {
+    width: 50%; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds hover animation */
+    margin-top: 15px;
+    margin-right: 50px;
+    margin-left: 350px;
+    margin-bottom: 50px;
+}
+
+.header img:hover {
+    transform: scale(1.25);
+}
+
+
+.block {
     top: 0px;
     width: 100%; 
     height: 140px;
@@ -976,3 +989,26 @@ nav a:hover {
 
 
 
+
+.triangled {
+    position: relative;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent; 
+    border-right: 50px solid transparent;
+    border-bottom: 30px solid #e8e8e8; 
+    margin-left: 700px;
+    margin-top: 72px;
+    cursor: pointer;
+}
+
+.arrowd {
+    position: absolute;
+    top: 19px; /* Adjust position of the arrow inside the triangle */
+    left: 50%;
+    height: auto; /* No height needed for the triangle */
+    border-left: 16px solid transparent; 
+    border-right: 16px solid transparent; 
+    border-bottom: 10px solid #ffffff; 
+    transform: translateX(-50%); 
+}
