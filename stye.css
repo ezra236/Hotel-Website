@@ -114,14 +114,51 @@
     height: 90%;
 }
 
+.imagee img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
 .text {
     flex-grow: 1; 
-    font-size: 16px; 
+    font-size: 18px; 
     width: 30%;
     background-color: white;
-    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
     padding: 10px;
     height: 90%;
+}
+
+.image-container {
+    display: flex;
+    gap: 20px; /* Space between the two images */
+    justify-content: center;
+    margin-bottom: 20px; /* Adds some space below the images */
+}
+
+.image-item {
+    text-align: center;
+    width: 45%; /* Each image takes up 45% of the container width */
+}
+
+.image-item img {
+    width: 100%; /* Makes the image fill its container */
+    height: auto;
+    max-width: 55px; /* Prevents the image from getting too large */
+    margin-bottom: 5px; /* Adds some space below the image */
+}
+
+.image-item p {
+    color: #000;
+    margin-top: 1px; /* Adds space between the image and text */
+}
+
+
+.n{
+    font-size: 26px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .option {
@@ -176,177 +213,138 @@
     background-color: #85370c; /* Darker green */
 }
 
-
-/* Initial state for the booking info block */
-.bookingInfo {
-    display: none; 
-    position: fixed; 
-    bottom: -100%; 
-    left: 20%; /* Full width */
-    width: 55%; 
-    height: 100vh; 
-    background: white; 
-    padding: 20px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
-    transition: bottom 5s ease-out; 
-}
-
-/* Show the block with transformation */
-.bookingInfo.show {
-    display: block;
-    bottom: 0; /* Move it to the top (visible) */
-    z-index: 5000;
-}
-
-  
-.row {
-    display: flex; /* Use Flexbox to align items side by side */
-    justify-content: space-between; /* Spread them out */
-    align-items: center; /* Center them vertically */
-    margin-top: 5px;
-}
-
-/* Style for the paying class */
-.paying {
-    width: 65%;
-    text-align: left;
+/* Message Box Styling */
+.message-box {
+    display: none;
     padding: 10px;
-    background-color: white;
-    border-radius: 2px;
-    margin-right: 10px;
-    margin-top: 50px;
-    margin-left: 20px;
-}
-
-/* Style for the information class */
-.information {
-    width: 25%;
-    text-align: left;
-    padding: 10px;
-    background-color: rgb(212, 207, 140);
-    border-radius: 2px;
-    margin-left: 10px;
+    background-color: #bd511f;
+    border: 1px solid #f5c6cb;
+    color: #020000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the box */
+    width: 180px;
+    height: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 9999; /* Ensures it's above other content */
     font-family: 'Times New Roman', Times, serif;
-    font-size: 22px;
-}
-
-.closes-button {
-    position: absolute;
-    top: 50px;
-    left: 85%;
-    background: transparent;
-    border: none;
-    color: #000;
-    font-size: 29px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: transparent;
-}
-
-/* Close button hover effect */
-.closes-button:hover {
-    color: red;
-    background-color: transparent;
-}
-
-/* Style for h3 (Payment Options) */
-.paying h3 {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #000000;
-    margin-bottom: 15px;
-}
-
-/* Style for the payment options list */
-.paying ul {
-    list-style-type: circle;
-    padding-left: 0;
-}
-
-.paying ul li {
-    font-size: 25px;
-    color: #000000;
-    margin-bottom: 5px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-/* Style for paragraph (IF PAID, Proceed) */
-.paying p {
-    font-size: 22px;
-    color: #000000;
-    margin-bottom: 8px;
-}
-
-/* Style for the form */
-.paying form {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Label style */
-.paying label {
-    font-size: 22px;
-    color: #000000;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-/* Input fields */
-.paying input[type="text"],
-.paying input[type="tel"],
-.paying input[type="email"] {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #000000;
-    border-radius: 0px;
-    font-size: 1rem;
-    background-color: #fff;
-    width: 50%;
-}
-
-.paying input[type="text"]:focus,
-.paying input[type="tel"]:focus,
-.paying input[type="email"]:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-/* Submit button */
-.paying .buttonS {
-    padding: 12px 20px;
-    background-color: #b85629;
-    color: white;
-    border: none;
-    border-radius: 2px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.paying .buttonS:hover {
-    background-color: #92380f;
+    font-size: 18px;
 }
 
 
-.add-room-container {
+.block-box {
+    display: none;
     width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    padding: 10px;
+    align-items: center;
+    font-size: 24px;
 }
 
-.add-room-container img {
-    width: 40px; 
-    height: 40px; 
-    margin-right: 10px; 
+/* Style for block-box (Full-Screen Overlay) */
+.block-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    font-size: 20px;
+    display: none; /* Initially hidden */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1000; /* Ensures it sits above other content */
 }
 
-.add-room-container span {
-    font-size: 19px; 
-    font-weight: bold; 
+.block-box p{
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+    margin-left: 1380px;
+    cursor: pointer;
+}
+
+/* Box container to display boxes in a row */
+.box-container {
+    display: flex; /* Aligns items in a row */
+    justify-content: space-between; /* Ensures space between the boxes */
+    gap: 20px; /* Space between the boxes */
+    max-width: 1000px; /* Limits width of container */
+    margin: 0 auto;
+}
+
+/* Styling for individual square boxes */
+.square-box1 {
+    width: 45%; 
+    height: 430px; 
+    background-color: white; 
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
+}
+
+#squareBox1 h2 {
+    font-size: 20px;
+    margin: 10px 0; /* Spacing between h2 and other elements */
+    color: #c7581c;
     font-family: 'Times New Roman', Times, serif;
+}
+
+#squareBox1 img {
+    width: 85%; 
+    height: 45px; /* Maintain aspect ratio */
+    border-radius: 1px; 
+    margin-bottom: 2px; 
+}
+
+div#squareBox1 p {
+    font-size: 16px;
+    margin: 10px 0; /* Consistent spacing between paragraphs */
+    color: #0a0101;
+    word-wrap: break-word; 
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#squareBox1 strong {
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.square-box2 {
+    width: 45%; /* Set the width */
+    height: 430px; 
+    background-color: #c44d16; 
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column; 
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+.square-box2 h5{
+    margin: 10px 0;
+    clear: both;  
+    font-size: 50px;
 }
 
 
@@ -419,6 +417,24 @@
     margin-left: 0px;
 }
 
+.datess {
+    background-color: #f9f9f9; 
+    font-size: 20px; 
+    padding: 15px; 
+    color: #333333; 
+    font-family: 'Times New Roman', Times, serif; 
+    border: 1px solid #d4d49b; 
+    margin-top: 10px; 
+    border-radius: 1px; 
+}
+
+.datess p {
+    margin: 10px 0; /* Add space between the paragraphs */
+    line-height: 1.5; /* Improve readability */
+    color: #631c0c;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+}
 
 
 .know button {

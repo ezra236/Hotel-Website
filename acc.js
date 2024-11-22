@@ -1,152 +1,3 @@
-function getQueryParams() {
-    const urlParams = new URLSearchParams(window.location.search);
-    return {
-        checkin: urlParams.get('checkin'),
-        checkout: urlParams.get('checkout')
-    };
-}
-
-// Function to update the days section with check-in and check-out dates
-function updateDates() {
-    const { checkin, checkout } = getQueryParams();
-    if (checkin && checkout) {
-        document.getElementById('check-in-display').innerHTML = `Check-in:<br><br> ${checkin}`;
-        document.getElementById('check-out-display').innerHTML = `Check-out:<br><br> ${checkout}`;
-    }
-}
-
-// Call the function to update the dates when the page loads
-window.onload = updateDates;
-
-
-const urlParams = new URLSearchParams(window.location.search);
-const roomId = urlParams.get('room'); // Get the room ID from the URL
-
-// Content for each room
-const roomDetails = {
-    roo1: {
-        name: "Paris"
-    },
-    roo2: {
-        name: "Tokyo"
-    },
-    roo3: {
-        name: "New York"
-    },
-    roo4: {
-        name: "Dubai"
-    },
-    roo5: {
-        name: "London"
-    },
-    roo6: {
-        name: "Sydney"
-    },
-    roo7: {
-        name: "Rome"
-    },
-    roo8: {
-        name: "Cairo"
-    },
-    roo9: {
-        name: "Berlin"
-    },
-    roo10: {
-        name: "Bangkok"
-    }
-};
-
-
-
-
-// Function to get the dates and calculate the total price
-function calculateTotalPrice() {
-    const { checkin, checkout } = getQueryParams(); // Get check-in and check-out dates from the URL
-
-    if (checkin && checkout) {
-        // Parse the check-in and check-out date strings (dd-mm-yyyy format)
-        const checkInDate = parseDate(checkin);
-        const checkOutDate = parseDate(checkout);
-
-        if (!checkInDate || !checkOutDate) {
-            console.log("Invalid date format. Please ensure the dates are in the format dd-mm-yyyy.");
-            return;
-        }
-
-        // Calculate the difference in time (in milliseconds)
-        const timeDifference = checkOutDate - checkInDate;
-
-        // Convert time difference from milliseconds to days
-        const daysDifference = timeDifference / (1000 * 3600 * 24);
-
-        // Get the room name from the roomDetails object using roomId
-        const room = roomDetails[roomId];
-        const roomPrice = getRoomPrice(room.name); // Get the price for the selected room
-        
-        if (roomPrice === "City not found") {
-            console.log("Invalid room.");
-            return;
-        }
-
-        // Calculate the total cost
-        const totalPrice = roomPrice * daysDifference;
-
-        // Display the result in the 'amount' div
-        const amountElement = document.querySelector('.amount');
-        amountElement.innerHTML = `Room:&nbsp&nbsp ${room.name} <br> Days:&nbsp&nbsp&nbsp ${daysDifference} days <br> Ksh:&nbsp&nbsp&nbsp&nbsp&nbsp ${totalPrice}`;
-        retrieveTotalPrice(totalPrice);
-        calculateAndDisplayTotal(totalPrice);
-    } else {
-        console.log("Check-in or Check-out date is missing.");
-    }
-}
-
-// Helper function to parse the date in dd-mm-yyyy format
-function parseDate(dateString) {
-    const [day, month, year] = dateString.split('-'); // Split the date by "-"
-    const date = new Date(`${year}-${month}-${day}`); // Reformat to yyyy-mm-dd and create a Date object
-
-    // Check if the date is valid
-    if (isNaN(date)) {
-        return null; // Return null if the date is invalid
-    }
-
-    return date;
-}
-
-// Call the function to calculate and display the days
-calculateTotalPrice();
-
-
-
-// Function to get the room price based on the selected city (room)
-function getRoomPrice(city) {
-    const pricePerRoom = 1200; // Price for each room in Ksh
-
-    let price;
-
-    switch (city) {
-        case "Paris":
-        case "Tokyo":
-        case "New York":
-        case "Dubai":
-        case "London":
-        case "Sydney":
-        case "Rome":
-        case "Cairo":
-        case "Berlin":
-        case "Bangkok":
-            price = pricePerRoom; // All cities have the same price
-            break;
-        default:
-            price = "City not found"; // In case the city is not in the list
-    }
-
-    return price;
-}
-
-
-
 function toggleMenu() {
     // Toggle the "open" class on the hamburger menu
     document.getElementById("hamburgerMenu").classList.toggle("open");
@@ -155,499 +6,194 @@ function toggleMenu() {
 }
 
 
-
-
-// Get the roomId from the URL
-const urlParamss = new URLSearchParams(window.location.search);
-const roomIdd = urlParams.get('room'); // Get the room ID from the URL
-
-// Function to display the room details in the chosen section
-function displayChosenRoom() {
-    if (roomIdd) {
-        // Find the room with the specified ID within the display section
-        const selectedRoom = document.getElementById(roomIdd);
-        
-        if (selectedRoom) {
-            // Extract image, text, and other details
-            const roomImage = selectedRoom.querySelector('img').src;
-            const roomTitle = selectedRoom.querySelector('h3').textContent;
-            const roomDescription = selectedRoom.querySelector('p').textContent;
-
-            document.querySelector('.option').innerHTML = `
-        <p>SELECT</p>
-        <br>
-        <label>
-        <input type="radio" name="rateOption2" value="1500" />
-        Best Available Rate with Breakfast Ksh 300
-        </label>
-        <br>
-        <button class="book-button">BOOK</button>
-        `;
-
-        // After updating the HTML content, add the event listener
-        document.querySelector('.book-button').addEventListener('click', handleBookButtonClick);
-
-
-            // Set background image and style it
-            document.querySelector('.imagee').style.backgroundImage = `url(${roomImage})`;
-            document.querySelector('.imagee').style.backgroundSize = 'cover';
-            document.querySelector('.imagee').style.backgroundPosition = 'center';
-            document.querySelector('.imagee').style.height = '320px'; // Adjust height
-            document.querySelector('.imagee').style.width = '300px';
-            document.querySelector('.imagee').style.borderRadius = '1px'; // Rounded corners
-            document.querySelector('.imagee').style.marginLeft = '15px'; 
-
-            let roomImager1 = "Bedroom free icons designed by max_icons.jpg"; // First image
-            let roomImager2 = "Profile Icon Silhouette PNG Transparent, Avatar Icon Profile Icon Member Login Vector Isolated, Login Icons, Profile Icons, Avatar Icons PNG Image For Free Download.jpg"; // Second image
-
-            // Create a container to hold both image-paragraph pairs side by side
-            let containerElement = document.createElement('div');
-            containerElement.style.display = 'flex';  // Use Flexbox to display items side by side
-            containerElement.style.gap = '20px'; // Optional: Add space between image-paragraph pairs
-
-            // Function to create an image and paragraph pair
-               function createImageParagraphPair(imageSrc, textContent) {
-                     // Create a div container for the image and paragraph pair
-                    let pairContainer = document.createElement('div');
-                    pairContainer.style.display = 'flex';
-                    pairContainer.style.flexDirection = 'column'; // Stack the image and paragraph vertically
-                    pairContainer.style.alignItems = 'center'; // Center them horizontally
-
-                    // Create the image element
-                    let imageElement = document.createElement('img');
-                    imageElement.src = imageSrc;
-                    imageElement.style.width = '50px';
-                    imageElement.style.height = '50px';
-                    imageElement.style.borderRadius = '5px';
-
-                    // Create the paragraph element
-                    let paragraphElement = document.createElement('p');
-                    paragraphElement.textContent = textContent;
-                    paragraphElement.style.marginTop = '0px'; // Optional: Adjust the margin
-
-                    // Append the image and paragraph to the pair container
-                    pairContainer.appendChild(imageElement);
-                    pairContainer.appendChild(paragraphElement);
-
-                  return pairContainer;
-                }
-
-                    
-            let pair1 = createImageParagraphPair(roomImager1, "King's Bed");
-
-            // Create the second image-paragraph pair
-            let pair2 = createImageParagraphPair(roomImager2, "1 person");
-
-            // Append both pairs to the container
-            containerElement.appendChild(pair1);
-            containerElement.appendChild(pair2);
-
-            // Now append the container to the .text element
-            document.querySelector('.text').appendChild(containerElement);
-
-
-
-            // Set the inner HTML of the text container (title and description)
-            document.querySelector('.text').innerHTML += `<h3 style="font-size: 25px; font-family: 'Times New Roman', Times, serif; color: #ae1d1d;">${roomTitle}</h3><p>${roomDescription}</p>`;
-
-
-            // Additional text styling can also be applied directly
-            document.querySelector('.text').style.marginTop = '10px';
-            document.querySelector('.text').style.fontSize = '18px';
-            document.querySelector('.text').style.color = '#333';
-
-        }
-    }
+// Function to get the room ID from the URL
+function getRoomIdFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('room'); // Assuming the room ID is passed as a query parameter, e.g., ?room=roo1
 }
 
-// Call the function to display the room details in the chosen section
-displayChosenRoom();
+// Function to handle the room selection
+function selectRoom(roomId) {
+    // Get the room ID from the URL
+    const urlRoomId = getRoomIdFromURL();
 
-
-
-
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // This will add a smooth scroll effect
-    });
-}
-
-
-
-
-// JavaScript to display the full-screen modal only for button clicks
-document.querySelectorAll('.selectBtn').forEach(button => {
-    button.addEventListener('click', function() {
-        document.getElementById('selectionMessage').style.display = 'flex';
-        displayC();
-    });
-});
-
-// Function to close the modal
-function closeModal() {
-    document.getElementById('selectionMessage').style.display = 'none';
-}
-
-
-    
-    
-
-// Get the roomId from the URL
-const urlParamso = new URLSearchParams(window.location.search);
-const rooomId = urlParams.get('room'); // Get the room ID from the URL
-
-// Function to display the current room details (image and title)
-function displayCurrentRoom(roomId) {
-    if (rooomId) {
-        // Find the room with the specified ID within the display section
-        const selectedRoom = document.getElementById(rooomId);
-        if (!selectedRoom) {
-            console.error(`No room found with ID: ${rooomId}`);
-            return;
-        }
-
-        // Extract image and title details
-        const roomImage = selectedRoom.querySelector('img')?.src;
-        const roomTitle = selectedRoom.querySelector('h3')?.textContent;
-
-        if (!roomImage || !roomTitle) {
-            console.error("Room image or title not found.");
-            return;
-        }
-
-        // Get the modal-content element and clear any previous content
-        const modalContent = document.querySelector('.modal-content');
-        modalContent.innerHTML = '';
-
-        // Create the first box with the room image and title
-        const roomBox = document.createElement('div');
-        roomBox.classList.add('box', 'room-box');
-        roomBox.innerHTML = `
-            <p style="color: #b3582f;">CURRENT ROOM</p>
-            <img src="${roomImage}" alt="${roomTitle}" style="width: 95%; border-radius: 1px;">
-            <h3>${roomTitle}</h3>
-        `;
-        
-        // Append the roomBox to the modal content
-        modalContent.appendChild(roomBox);
-
-        // Display the modal by changing display property to flex
-        document.getElementById('selectionMessage').style.display = 'flex';
+    // If the button's room ID matches the room ID in the URL
+    if (roomId === urlRoomId) {
+        // Show the message box for "Room Already Selected"
+        document.getElementById("messageBox").style.display = "block";
+        document.getElementById("blockBox").style.display = "none"; // Hide the block box if room is already selected
     } else {
-        console.error("Room ID not provided in URL.");
+        // Call another function to show the block-box
+        showBlockBox(roomId);
     }
 }
 
+// Global array to store room IDs that are not equal to the URL room ID
+let unmatchedRoomIds = [];
 
-// Function to initialize both boxes
-function displayC(roomId) {
-    displayCurrentRoom(roomId); 
-    createAddRoomBox();         
-}
+// Function to display the block-box (full screen loading message)
+function showBlockBox(roomId) {
+    document.getElementById("blockBox").style.display = "block"; // Show the block box
+    document.getElementById("messageBox").style.display = "none"; // Hide the message box if different room is selected
 
+    unmatchedRoomIds.push(roomId);
 
-
-let roommId = "";  
-
-// Function to handle the button click and store the room ID
-function calculate(button) {
-    // Get the ID of the button element that was clicked
-    roommId = button.id;  
-    console.log(roommId);  
-}
-
-// Function to create the 'ADD ROOM' box with "+" symbol
-function createAddRoomBox() {
-    // Get the modal-content element
-    const modalContent = document.querySelector('.modal-content');
-
-    // Create the second box with the addition sign and "ADD ROOM" text
-    const addRoomBox = document.createElement('div');
-    addRoomBox.classList.add('box', 'add-room-box');
-    addRoomBox.innerHTML = `
-        <span style="font-size: 48px; font-weight: bold;">+</span>
-        <p>ADD ROOM</p>
-    `;
-    
-    // Append the addRoomBox to the modal content
-    modalContent.appendChild(addRoomBox);
-
-    // Add click event to the 'ADD ROOM' box
-    addRoomBox.addEventListener('click', function() {
-        console.log(roommId);
-
-        // Call the handleAddRoomClick function with roommId
-        handleAddRoomClick(roommId);
-
-        // Display a dialog box to show that it was clicked
-        showDialogBox(`Room with ID ${roommId} has been added!`);
-    });
-}
-
-
-// Function to handle 'ADD ROOM' box click and calculate the cost
-function handleAddRoomClick(roommId) {
-    console.log("Adding room with ID:", roommId);  // Corrected to roommId
-
-    // Assuming these utility functions exist
-    const { checkin, checkout } = getQueryParams();
-    if (checkin && checkout) {
-        const checkInDate = parseDate(checkin);
-        const checkOutDate = parseDate(checkout);
-
-        if (!checkInDate || !checkOutDate) {
-            console.log("Invalid date format. Ensure dates are in dd-mm-yyyy.");
-            return;
-        }
-
-        const daysDifference = (checkOutDate - checkInDate) / (1000 * 3600 * 24);
-        const room = roomDetails[roommId]; 
-        const roomPrice = getRoomPrice(room.name); 
-
-        if (roomPrice === "City not found") {
-            console.log("Invalid room.");
-            return;
-        }
-
-        const totalPrice = roomPrice * daysDifference;
-        const amountElement = document.querySelector('.amount');
-
-        // Check if there is already content in the element
-        if (amountElement.innerHTML.trim() !== '') {
-            // Append new content below the existing content
-            amountElement.innerHTML += `<br><br>Room:&nbsp;&nbsp;${room.name} <br> Days:&nbsp;&nbsp;&nbsp;${daysDifference} days <br> Ksh:&nbsp;&nbsp;&nbsp;&nbsp;${totalPrice}`;
-            displayGrandTotal();
-            calculateAndDisplayT(totalPrice);
-        }
-       }
-}
-
-
-
-// Function to display a dialog box confirming the click
-function showDialogBox(message) {
-    // Create a dialog box div
-    const dialogBox = document.createElement('div');
-    dialogBox.classList.add('dialog-box');
-    dialogBox.innerHTML = `
-        <p>${message}</p>
-        <button onclick="closeDialogBox()">CLOSE</button>
-    `;
-
-    // Append the dialog box to the body
-    document.body.appendChild(dialogBox);
-
-    // Optionally, add some styling for the dialog box (inline style for simplicity)
-    dialogBox.style.position = 'fixed';
-    dialogBox.style.top = '50%';
-    dialogBox.style.left = '50%';
-    dialogBox.style.transform = 'translate(-50%, -50%)';
-    dialogBox.style.padding = '20px';
-    dialogBox.style.backgroundColor = 'white';
-    dialogBox.style.border = '1px solid black';
-    dialogBox.style.zIndex = '1000';
-}
-
-// Function to close the dialog box
-function closeDialogBox() {
-    const dialogBox = document.querySelector('.dialog-box');
-    if (dialogBox) {
-        dialogBox.remove();
-    }
-}
-
-
-
-
-// Function to retrieve and display the cumulative total price
-function displayGrandTotal() {
-    const amountElement = document.querySelector('.amount');
-    const roomEntries = amountElement.innerHTML.match(/Ksh:&nbsp;&nbsp;&nbsp;&nbsp;(\d+)/g);
-
-    // Calculate the sum of all individual room prices
-    let grandTotal = 0;
-    if (roomEntries) {
-        roomEntries.forEach(entry => {
-            const price = parseInt(entry.match(/\d+/)[0], 10);
-            grandTotal += price;
+    const closeBtn = blockBox.querySelector('p');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+            blockBox.style.display = "none"; // Hide the block-box when clicked
         });
     }
-
-    // Append the grand total below the existing room information
-    amountElement.innerHTML += `<br><br><strong style="color: #ad5525; font-size: 18px; font-family: 'Times New Roman', Times, serif;">Total Price(Added Rooms): Ksh: ${grandTotal}</strong>`;
 }
 
 
-
-// Function to append the total price to the amount div
-function retrieveTotalPrice(totalPrice) {
-    // Get the last .amount element where you want to append the total
-    const amountElement = document.querySelector('.amount');
-
-    // Append the total price below the content
-    amountElement.innerHTML += `<br><br><strong>Total Price: Ksh: ${totalPrice}</strong>`;
+// Function to get the room ID from the URL
+function getRoomIdFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('room'); // Get the room_id parameter from the URL
 }
 
 
+// Function that is called when square-box2 is clicked
+function addRoomsToSelection() {
+    // Get the room ID from the URL
+    const urlRoomId = getRoomIdFromURL();
 
-function handleBookButtonClick() {
-    // Find the block element that you want to display
-    const block = document.querySelector('.bookingInfo');
-  
-    // Add the class to trigger the animation
-    block.classList.add('show');
-}
-  
-
-
-// Function to handle closing the booking info block and clearing the total
-function closeBookingInfo() {
-    const block = document.querySelector('.bookingInfo');
-    block.classList.remove('show');
-
-    // Clear the total from the .information element
-    const informationElement = document.querySelector('.information');
-    if (informationElement) {
-        // Remove the total text if it exists
-        informationElement.innerHTML = informationElement.innerHTML.replace(/<br><br><strong>Total: Ksh \d+<\/strong>/, '');
+    // Push the URL room ID into the unmatched array if not already present
+    if (!unmatchedRoomIds.includes(urlRoomId)) {
+        unmatchedRoomIds.push(urlRoomId);
     }
+
+    // Show the dialog box when clicked and display the unmatched room IDs in the alert
+    alert('Click has been listened to! Unmatched Room IDs: ' + unmatchedRoomIds.join(', '));
+
+    // Call the function to update the total and room details
+    updateRoomDetails(unmatchedRoomIds);
 }
 
-// Add the event listener for the close button click
-document.querySelector('.closes-button').addEventListener('click', closeBookingInfo);
+// Function to calculate the new total price and display room names
+function updateRoomDetails(roomIds) {
+    // Clear the content of the "amount" class
+    const amountContainer = document.querySelector('.amount');
+    amountContainer.innerHTML = '';
 
+    // Create a new array to track unique room IDs
+    let uniqueRoomIds = [];
 
-
-
-
-// Function to calculate the total price and display in .information
-function calculateAndDisplayTotal(totalPrice) {
-    // Compute the sum
-    const sum = totalPrice;
-
-    // Find the element with class "information" and update its content
-    const informationElement = document.querySelector('.information');
-    informationElement.innerHTML = `Price: Ksh ${sum}`;
-}
-
-
-
-// Function to calculate the total price and display in .information
-function calculateAndDisplayT(totalPrice) {
-    const informationElement = document.querySelector('.information');
-    if (informationElement) {
-        // Check if there is existing content
-        if (informationElement.innerHTML.trim() !== '') {
-            informationElement.innerHTML += `<br><br>Price: Ksh ${totalPrice}`;
-        } else {
-            // Set content if empty
-            informationElement.innerHTML = `Total Price: Ksh ${totalPrice}`;
-        }
-    } else {
-        console.log("Element with class 'information' not found.");
-    }
-}
-
-
-
-// Add event listener to the book button
-document.querySelector('.book-button').addEventListener('click', calculateAndDisplayGrandTotal);
-
-
-function calculateAndDisplayGrandTotal() {
-    // Assuming these utility functions exist
-    const { checkin, checkout } = getQueryParams();
-    if (checkin && checkout) {
-        const checkInDate = parseDate(checkin);
-        const checkOutDate = parseDate(checkout);
-    
-        if (!checkInDate || !checkOutDate) {
-            console.log("Invalid date format. Ensure dates are in dd-mm-yyyy.");
-            return;
-        }
-    
-        const daysDifference = (checkOutDate - checkInDate) / (1000 * 3600 * 24);
-
-        // Select the .information element
-        const informationElement = document.querySelector('.information');
-    
-        if (informationElement) {
-             // Remove any element that contains the text "Total: Ksh" from the container
-            informationElement.innerHTML = informationElement.innerHTML
-            .split('<br>') // Split content by <br> tags to isolate lines
-            .filter(line => !line.includes('Total: Ksh')) // Exclude lines containing "Total: Ksh"
-            .join('<br>'); // Join the remaining lines back into the HTML
-
-
-            // Extract all price values from the element, excluding "Total: Ksh" lines
-            const prices = informationElement.innerHTML
-                .split('<br>') // Split content by <br> tags to isolate lines
-                .filter(line => !line.includes('Total: Ksh')) // Exclude lines containing "Total: Ksh"
-                .map(line => line.match(/Ksh (\d+)/)) // Extract prices
-                .filter(match => match !== null) 
-                .map(match => parseInt(match[1], 10)); 
-
-            if (prices.length > 0) {
-                // Check if the "Best Available Rate with Breakfast" option is checked
-                const isRateOption2Checked = document.querySelector('input[name="rateOption2"]:checked');
-    
-                if (isRateOption2Checked) {
-                    // Add 300 to each price if rateOption2 is checked
-                    for (let i = 0; i < prices.length; i++) {
-                        prices[i] += 300 * daysDifference;
-                    }
-                }
-    
-                // Calculate the total by summing the prices
-                const total = prices.reduce((sum, value) => sum + value, 0);
-    
-                // Append the grand total to the .information element
-                informationElement.innerHTML += `<br><br><strong>Total: Ksh ${total}</strong>`;
-            } else {
-                console.log("No prices found in the information element.");
+    // Loop through the room IDs and ensure no duplicates
+    roomIds.forEach((roomId) => {
+        // Check if roomId already exists in the uniqueRoomIds array
+        if (uniqueRoomIds.includes(roomId)) {
+            // If it exists more than once, remove the first occurrence
+            const index = uniqueRoomIds.indexOf(roomId);
+            if (index !== -1) {
+                uniqueRoomIds.splice(index, 1);
             }
-        } else {
-            console.log("Element with class 'information' not found.");
         }
-    }
-}
-
-
-
-
-// Select the target element
-const amountElement = document.querySelector('.amount');
-
-// Create a MutationObserver instance
-const observer = new MutationObserver(() => {
-    // Get the current height of the element
-    const currentHeight = parseInt(window.getComputedStyle(amountElement).height, 10);
-    
-    // Set the new height to double the current height
-    amountElement.style.height = (currentHeight * 2) + 'px';
-});
-
-// Configure the observer to watch for child node changes
-observer.observe(amountElement, { childList: true, subtree: true });
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const radioButtons = document.querySelectorAll('input[name="rateOption2"]');
-    
-    radioButtons.forEach(radio => {
-        // Store the previous state of the radio button
-        radio.previousChecked = false;
-
-        radio.addEventListener('click', function () {
-            if (this.previousChecked) {
-                this.checked = false; // Uncheck the radio button
-            }
-            // Update the previousChecked state
-            this.previousChecked = this.checked;
-        });
+        // Add the current roomId to the uniqueRoomIds array
+        uniqueRoomIds.push(roomId);
     });
-});
+
+    // Now calculate the new total and display the room details
+    let totalPrice = 0;
+    let roomNames = [];
+
+    uniqueRoomIds.forEach((roomId) => {
+        if (rooms[roomId]) {
+            const room = rooms[roomId];
+            totalPrice += room.price; // Add the price to the total
+            roomNames.push(room.room_name); // Collect the room names
+        }
+    });
+
+    // Display the room names and total price in the "amount" class
+    amountContainer.innerHTML = `
+        <p>Selected Rooms: ${roomNames.join(', ')}</p>
+        <p>Total Price: $${totalPrice}</p>
+    `;
+}
+
+
+    
+
+// Predefined room data
+const rooms = {
+    roo1: {
+        room_name: "Paris",
+        price: 1200,
+        image: "im1.avif"  // Image for Paris room
+    },
+    roo2: {
+        room_name: "Tokyo",
+        price: 1500,
+        image: "im2.jpg"  // Image for Tokyo room
+    },
+    roo3: {
+        room_name: "New York",
+        price: 1200,
+        image: "im3.avif"  // Image for New York room
+    },
+    roo4: {
+        room_name: "Dubai",
+        price: 1500,
+        image: "im4.jpg"  // Image for Dubai room
+    },
+    roo5: {
+        room_name: "London",
+        price: 1300,
+        image: "im5.jpg"  // Image for London room
+    },
+    roo6: {
+        room_name: "Sydney",
+        price: 1400,
+        image: "im6.jpg"  // Image for Sydney room
+    },
+    roo7: {
+        room_name: "Los Angeles",
+        price: 1600,
+        image: "im7.jpg"  // Image for Los Angeles room
+    },
+    roo8: {
+        room_name: "Rome",
+        price: 1250,
+        image: "im8.jpg"  // Image for Rome room
+    },
+    roo9: {
+        room_name: "Berlin",
+        price: 1350,
+        image: "im9.jpg"  // Image for Berlin room
+    },
+    roo10: {
+        room_name: "Bangkok",
+        price: 1100,
+        image: "im10.jpg"  // Image for Bangkok room
+    }
+};
+
+// Function to get query parameters from the URL
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+// Fetch the room ID from the URL
+const roomId = getQueryParam("room");
+
+// Get the div where content will be displayed
+const squareBox1 = document.getElementById("squareBox1");
+
+// Check if the room exists in the data
+if (roomId && rooms[roomId]) {
+    const room = rooms[roomId];
+    squareBox1.innerHTML = `
+        <h2>CURRENT ROOM: ${room.room_name}</h2>
+        <img src="${room.image}" alt="${room.room_name}" style="max-width: 100%; height: auto;">
+        <p><strong>Price per night: $${room.price}</strong></p>
+    `;
+} else {
+    // Display "Room not found" if the room ID is invalid or missing
+    squareBox1.innerHTML = `
+        <p>Room not found.</p>
+    `;
+}
+

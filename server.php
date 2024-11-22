@@ -95,7 +95,6 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
     $total_cost = $days * $selected_room['price']; // Calculate total cost
 }
 
-
 ?>
 
 
@@ -183,7 +182,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
         </div>
         
         <!-- Second Square Box -->
-        <div class="square-box2">
+        <div class="square-box2" onclick="addRoomsToSelection()">
             <h3>ADD ROOM</h3>
             <h5>+</h5>
         </div>
