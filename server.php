@@ -108,20 +108,150 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
     <link rel="icon" href="lilo.png" type="image/png">
     <title>Prime Guest Lodge</title>
     <link rel="stylesheet" href="stye.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <div class="navbar">
-        <div class="hamburger-menu" id="hamburgerMenu" onclick="toggleMenu()">
-            <div class="line"></div>
-            <div class="line"></div>
+<div class="nav-container"> 
+        <div class="logo">
+            <img src="logo.png" alt="Logo" /> 
+      </div>
+      <div class="dropdown">
+         <a href="room.html" class="rooms-link">Accomodation</a>
+           <div class="dropdown-content">
+            <p>Available Rooms</p>
+            <a href="room.html">Paris</a>
+            <a href="room.html">Tokyo</a>
+            <a href="room.html">New York</a>
+            <a href="room.html">Dubai</a>
+            <a href="room.html">London</a>
+            <a href="room.html">Sydney</a>
+            <a href="room.html">Rome</a>
+            <a href="room.html">Cairo</a>
+            <a href="room.html">Berlin</a>
+            <a href="room.html">Bangkok</a>
+            <a href="room.html">Istanbul</a>
+            <a href="room.html">Moscow</a>
+            <a href="room.html">Toronto</a>
+           </div>
+      </div>
+        <nav>
+         <span class="separator">|</span>
+         <a href="offers.html">Offers</a>
+         <span class="separator">|</span>
+         <a href="dining.html">Dining</a>
+         <span class="separator">|</span>
+         <a href="locate.html">Location</a>
+         <span class="separator">|</span>
+         <a href="contact.html">Contact Us</a>
+         <div class="squared-shape" id="shaped-square">
+            <p>More</p>
         </div>
-    
-        <!-- Menu links -->
-        <ul class="menu-links" id="menuLinks">
-            <li><a href="Guest.html">Go To Home Page</a></li>
-        </ul>
+        </nav>
+        <div class="shape-container" id="shape-container">
+            <div class="triangle">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 9.17L12 12.58l3.41-3.41L17 10.59l-5 5-5-5z'/%3E%3C/svg%3E" alt="Triangle Icon" class="triangle-image">
+            </div>
+            <div class="square"></div>
+            <p class="shape-text"><br>Check Availability</p>
+         
+        </div>  
     </div>
+    
+    
+    <div id="overlay"></div>
+    
+    
+    <div class="blockk" id="slidingg-block">
+        <p class="parag" id="close-button">X</p>
+        <div class="inblock">
+            <img src="lilo.png">
+            <p>PRIME GUEST HOME</p>
+        </div>
+        <div class="linkk">
+            <a href="feedback.html">FEEDBACK</a>
+            <a href="herit.html">HERITAGE</a>
+        </div>
+        <div class="logimage">
+            <img src="lilo.png">
+        </div>
+    </div>
+    
+    
+    <div class="dropdownn">
+        <div class="dropdownn-content" id="dropdownn">
+            <div class="check">
+                <div class="circle">
+                    <div class="checkmark"></div>
+                </div>
+                <div class="tex">
+                    <p><span style="color: #ff4500;">Rooms From KSH 1205.00 </span><br>
+                        Best rate guaranteed<br>
+                        Exclusive offers available
+                    </p>
+                </div>
+                <form>
+                    <label for="check-in">Check-in:</label>
+                    <input type="text" id="check-in" name="check-in" class="flatpickr" />
+        
+                    <label for="check-out">Check-out:</label>
+                    <input type="text" id="check-out" name="check-out" class="flatpickr" />
+        
+                    <label for="room-number">Room Number:</label>
+                    <input type="numberr" id="room-number" name="room-number" />
+                    <div class="dropdow" id="roomdropdow">
+                        <!-- Dropdown items -->
+                        <div data-value="1">1</div>
+                        <div data-value="2">2</div>
+                        <div data-value="3">3</div>
+                        <div data-value="4">4</div>
+                        <div data-value="5">5</div>
+                        <div data-value="6">6</div>
+                        <div data-value="7">7</div>
+                        <div data-value="8">8</div>
+                        <div data-value="9">9</div>
+                        <div data-value="10">10</div>
+                    </div>
+        
+                    <label for="adults">Adults:</label>
+                    <input type="numberr" id="adults" name="adults" />
+                    <div class="dropdoww" id="adultsdropdow">
+                        <!-- Dropdown items -->
+                        <div data-value="1">1</div>
+                        <div data-value="2">2</div>
+                        <div data-value="3">3</div>
+                        <div data-value="4">4</div>
+                        <div data-value="5">5</div>
+                        <div data-value="6">6</div>
+                        <div data-value="7">7</div>
+                        <div data-value="8">8</div>
+                        <div data-value="9">9</div>
+                        <div data-value="10">10</div>
+                    </div>
+        
+                    <button id="check-rates">Check Rates</button>
+    
+                </form>
+                <div class="linkc">
+                    <p id="modify-booking">Modify Booking</p>
+                    <div class="popover" id="popover">
+                        <p><span style="color: #cb4f1d;">Modify/ Cancel Reservations</span></p>
+                        <p><span style="color: black; font-size: 14px; font-weight: normal;"> Please enter the following to retrieve your reservation</span></p>
+                        <label for="confirmation_number" class="popover-label">Confirmation Number:</label>
+                        <input type="text" id="confirmation_number" name="confirmation_number" />
+    
+                        <div class="popover-buttons">
+                           <button id="close-popover" class="popp">Close</button>
+                           <button id="continue-popover" class="popp">Continue</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+     </div>
     
 
 
@@ -166,6 +296,66 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
     </div>
 
 
+    <div class="overlayy" id="overlayy"></div>
+
+<div class="hidden-block" id="hiddenBlock">
+        <button class="m"> X</button>
+
+    <div class="containerd">
+        <div class="pay-d">
+            <?php if ($selected_room): ?>
+                <p>Room: <?php echo htmlspecialchars($selected_room['room_name']); ?></p>
+                <p>Days: <?php echo $days . ' day' . ($days > 1 ? 's' : ''); ?></p>
+                <p>Total: Ksh <?php echo number_format($total_cost, 2); ?></p>
+            <?php endif; ?>
+        </div>
+
+        <div class="formm-container">
+    <h2 class="formm-title">GUEST DETAILS</h2>
+    <p class="formm-note">
+        Prime Guest Lodge
+    </p>
+    <form>
+        <div class="formm-group">
+            <label for="title" class="formm-label">TITLE</label>
+            <select id="title" name="title" class="formm-input" required>
+                <option value="" disabled selected>-</option>
+                <option value="ms">Dr</option>
+                <option value="ms">Honorable</option>
+                <option value="mr">Mr</option>
+                <option value="ms">Ms</option>
+            </select>
+        </div>
+        <div class="formm-row">
+            <div class="formm-group">
+                <label for="first-name" class="formm-label">FIRST NAME</label>
+                <input type="text" id="first-name" name="first-name" class="formm-input">
+            </div>
+            <div class="formm-group">
+                <label for="last-name" class="formm-label">LAST NAME</label>
+                <input type="text" id="last-name" name="last-name" class="formm-input" >
+            </div>
+        </div>
+        <div class="formm-group">
+            <label for="country" class="formm-label">THE PAYMENT CODE</label>
+            <input type="text" id="code" name="p-code" class="formm-input" >
+        </div>
+        <div class="formm-row">
+            <div class="formm-group">
+                <label for="phone" class="formm-label">PHONE</label>
+                <input type="text" id="phone" name="phone" class="formm-input" placeholder="+00 000 000 000">
+            </div>
+            <div class="formm-group">
+                <label for="email" class="formm-label">EMAIL</label>
+                <input type="email" id="email" name="email" class="formm-input" placeholder="email@example.com" required>
+            </div>
+        </div>
+        <button type="submit" class="formm-submit">Submit</button>
+    </form>
+</div>
+</div>
+</div>
+
 
     <!-- Message Box for Already Selected -->
     <div class="message-box" id="messageBox" style="display: none;">Room Already Selected</div>
@@ -182,7 +372,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
         </div>
         
         <!-- Second Square Box -->
-        <div class="square-box2" onclick="addRoomsToSelection()">
+        <div class="square-box2" onclick="addRoomsToSelection(); addRoomsToSelectionn();">
             <h3>ADD ROOM</h3>
             <h5>+</h5>
         </div>
@@ -468,6 +658,14 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
         </div>
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // Initialize Flatpickr
+        flatpickr('.flatpickr', {
+            dateFormat: "Y-m-d", // Adjust date format as needed
+        });
+    </script>
 
     <script src="acc.js"></script>
 </body>

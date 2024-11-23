@@ -1,9 +1,182 @@
-function toggleMenu() {
-    // Toggle the "open" class on the hamburger menu
-    document.getElementById("hamburgerMenu").classList.toggle("open");
-    // Show or hide the menu links
-    document.getElementById("menuLinks").classList.toggle("show");
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownContent = document.getElementById("dropdownn");
+    const shapeContainer = document.getElementById("shape-container");
+
+    // Function to disable or enable events inside the dropdown
+    function manageDropdownEvents() {
+        if (dropdownContent.classList.contains("show")) {
+            dropdownContent.querySelectorAll("*").forEach(element => {
+                element.style.pointerEvents = "auto"; // Enable events
+            });
+        } else {
+            dropdownContent.querySelectorAll("*").forEach(element => {
+                element.style.pointerEvents = "none"; // Disable events
+            });
+        }
+    }
+
+    // Toggle dropdown visibility, manage events, and scroll to top when shape-container is clicked
+    shapeContainer.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent click event from bubbling up
+        dropdownContent.classList.toggle("show");
+        manageDropdownEvents(); // Update the state of events based on visibility
+
+        // Smooth scroll to the top of the page
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Smooth scrolling
+        });
+    });
+
+    // Close dropdown and disable events when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!dropdownContent.contains(event.target) && event.target !== shapeContainer) {
+            dropdownContent.classList.remove("show");
+            manageDropdownEvents(); // Update the state of events when closed
+        }
+    });
+
+    // Initialize: Ensure events are disabled by default
+    manageDropdownEvents();
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const shapedSquare = document.getElementById('shaped-square');
+    const slidingBlock = document.getElementById('slidingg-block');
+    const closeButton = document.getElementById('close-button');
+    const overlay = document.getElementById('overlay'); // Reference to the overlay
+
+    shapedSquare.addEventListener('click', function() {
+        slidingBlock.style.display = 'block';
+        overlay.style.display = 'block'; // Show the overlay
+        document.body.style.overflow = 'hidden'; // Disable scrolling
+        setTimeout(() => {
+            slidingBlock.style.right = '0'; // Slide the block into view
+        }, 0);
+    });
+
+    closeButton.addEventListener('click', function() {
+        slidingBlock.style.right = '-800px'; // Slide the block out of view
+        setTimeout(() => {
+            slidingBlock.style.display = 'none';
+            overlay.style.display = 'none'; // Hide the overlay
+            document.body.style.overflow = 'auto'; // Enable scrolling
+        }, 500); // Match the CSS transition duration
+    });
+});
+
+
+
+// Get today's date in the format yyyy-mm-dd
+const today = new Date();
+const formattedDate = today.toISOString().split('T')[0];
+
+// Set the "Check-in" and "Check-out" dates to today's date
+document.getElementById('check-in').value = formattedDate;
+document.getElementById('check-out').value = formattedDate;
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the check class element
+    const checkElement = document.querySelector(".check");
+
+    // Add click event listener to the check element
+    checkElement.addEventListener("click", function(event) {
+        // Prevent the event from bubbling up to the parent
+        event.stopPropagation();
+    });
+});
+
+
+// Function to toggle dropdown visibility on input click
+function toggleDropdown(inputId, dropdownId) {
+    const input = document.getElementById(inputId);
+    const dropdown = document.getElementById(dropdownId);
+
+    input.addEventListener('click', () => {
+        dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // Close dropdown if clicking outside
+    document.addEventListener('click', (event) => {
+        if (!input.contains(event.target) && !dropdown.contains(event.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
 }
+
+// Function to set value on dropdown item click
+function setupDropdownValues(inputId, dropdownId) {
+    const input = document.getElementById(inputId);
+    const dropdown = document.getElementById(dropdownId);
+    const items = dropdown.querySelectorAll('div[data-value]');
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            input.value = item.getAttribute('data-value');
+            dropdown.style.display = 'none'; // Hide dropdown after selection
+        });
+    });
+}
+
+// Set up dropdowns and values for both inputs
+toggleDropdown('room-number', 'roomdropdow'); // Updated ID
+toggleDropdown('adults', 'adultsdropdow'); // Updated ID
+setupDropdownValues('room-number', 'roomdropdow'); // Updated ID
+setupDropdownValues('adults', 'adultsdropdow'); // Updated ID
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const modifyBooking = document.getElementById('modify-booking');
+    const popover = document.getElementById('popover');
+    const closePopover = document.getElementById('close-popover');
+    const continuePopover = document.getElementById('continue-popover');
+
+    // Show popover on "Modify Booking" click
+    modifyBooking.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevents event from affecting other elements
+        popover.style.display = 'block';
+    });
+
+    // Hide popover on "Close" button click
+    closePopover.addEventListener('click', (event) => {
+        event.stopPropagation(); // Ensures the close click only affects the button
+        popover.style.display = 'none';
+    });
+
+    // Prevent the popover from closing when clicking inside it
+    popover.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+});
+
+
+document.getElementById('check-rates').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent form submission
+    window.location.href = 'rates.html'; // Redirect to rates.html
+});
+
+
+document.getElementById("continue-popover").addEventListener("click", function() {
+    // Get the value of the confirmation number
+    const confirmationNumber = document.getElementById("confirmation_number").value;
+
+    // Redirect to cancel.html with the confirmation number as a query parameter
+    window.location.href = `cancel.html?confirmation_number=${encodeURIComponent(confirmationNumber)}`;
+});
+
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // This will add a smooth scroll effect
+    });
+}
+
+
 
 
 // Function to get the room ID from the URL
@@ -37,6 +210,7 @@ function showBlockBox(roomId) {
     document.getElementById("messageBox").style.display = "none"; // Hide the message box if different room is selected
 
     unmatchedRoomIds.push(roomId);
+    unmatchedRoomIdss.push(roomId);
 
     const closeBtn = blockBox.querySelector('p');
     if (closeBtn) {
@@ -45,6 +219,71 @@ function showBlockBox(roomId) {
         });
     }
 }
+
+
+let unmatchedRoomIdss = [];
+
+// Function that is called when square-box2 is clicked
+function addRoomsToSelectionn() {
+    // Get the room ID from the URL
+    const urlRoomId = getRoomIdFromURL();
+
+    // Push the URL room ID into the unmatched array if not already present
+    if (!unmatchedRoomIdss.includes(urlRoomId)) {
+        unmatchedRoomIdss.push(urlRoomId);
+    }
+
+    // Show the dialog box when clicked and display the unmatched room IDs in the alert
+    alert('Click has been listened to! Unmatched Room IDs: ' + unmatchedRoomIdss.join(', '));
+
+    // Call the function to update the total and room details
+    updateRoomDetailss(unmatchedRoomIdss);
+}
+
+// Function to calculate the new total price and display room names
+function updateRoomDetailss(roomIds) {
+    // Clear the content of the "amount" class
+    const amountContainer = document.querySelector('.pay-d');
+    amountContainer.innerHTML = '';
+
+    // Create a new array to track unique room IDs
+    let uniqueRoomIds = [];
+
+    // Loop through the room IDs and ensure no duplicates
+    roomIds.forEach((roomId) => {
+        // Check if roomId already exists in the uniqueRoomIds array
+        if (uniqueRoomIds.includes(roomId)) {
+            // If it exists more than once, remove the first occurrence
+            const index = uniqueRoomIds.indexOf(roomId);
+            if (index !== -1) {
+                uniqueRoomIds.splice(index, 1);
+            }
+        }
+        // Add the current roomId to the uniqueRoomIds array
+        uniqueRoomIds.push(roomId);
+    });
+
+    // Now calculate the new total and display the room details
+    let totalPrice = 0;
+    let roomNames = [];
+
+    uniqueRoomIds.forEach((roomId) => {
+        if (rooms[roomId]) {
+            const room = rooms[roomId];
+            totalPrice += room.price; // Add the price to the total
+            roomNames.push(room.room_name); // Collect the room names
+        }
+    });
+
+    // Display the room names and total price in the "amount" class
+    amountContainer.innerHTML = `
+        <p style="font-size: 20px; font-weight:bold; color: #2c3e50;">Selected Rooms:<br> </p>
+        <p>${roomNames.join('<br> ')}</p>
+        <p style="font-size: 22px; color: #2c3e50; text-decoration:underline">Total Price: Ksh ${totalPrice}</p>
+    `;
+}
+
+
 
 
 // Function to get the room ID from the URL
@@ -108,13 +347,36 @@ function updateRoomDetails(roomIds) {
 
     // Display the room names and total price in the "amount" class
     amountContainer.innerHTML = `
-        <p>Selected Rooms: ${roomNames.join(', ')}</p>
-        <p>Total Price: $${totalPrice}</p>
+        <p style="font-size: 20px; font-weight:bold; color: #2c3e50;">Selected Rooms:<br> </p>
+        <p>${roomNames.join('<br> ')}</p>
+        <p style="font-size: 22px; color: #2c3e50; text-decoration:underline">Total Price: Ksh ${totalPrice}</p>
     `;
+
+    adjustAmountHeight(); // Adjust the height of the amount container
 }
 
 
+function adjustAmountHeight() {
+    // Get the amount container
+    const amountContainer = document.querySelector('.amount');
     
+    // Get the list of displayed rooms
+    const roomElements = amountContainer.querySelectorAll('p:nth-of-type(2)'); // Assuming room names are in the second <p>
+    
+    // Split room names into an array
+    const roomList = roomElements[0]?.innerHTML.split('<br>') || []; 
+
+    // Check if more than 4 rooms are displayed
+    if (roomList.length > 4) {
+        // Get the current height of the amount container
+        const currentHeight = parseFloat(window.getComputedStyle(amountContainer).height);
+        
+        // Increase the height by a factor of 1.3
+        amountContainer.style.height = `${currentHeight * 1.3}px`;
+    }
+}
+
+
 
 // Predefined room data
 const rooms = {
@@ -197,3 +459,34 @@ if (roomId && rooms[roomId]) {
     `;
 }
 
+
+
+      // Get the button, block, and overlay
+      const bookButton = document.querySelector('.book-button');
+      const hiddenBlock = document.getElementById('hiddenBlock');
+      const overlay = document.getElementById('overlayy');
+      
+      // Add an event listener to the button to show the block
+      bookButton.addEventListener('click', function() {
+          // Display the block and overlay
+          hiddenBlock.style.display = 'block';
+          overlay.style.display = 'block';
+      
+          // Disable background scroll
+          document.body.style.overflow = 'hidden';
+      });
+
+
+
+
+
+
+// Get the button and the block element
+const closeButton = document.querySelector('.m');
+const hiddennBlock = document.getElementById('hiddenBlock');
+
+// Add click event listener to the button
+closeButton.addEventListener('click', function() {
+    // Hide the block by changing its display to none
+    hiddennBlock.style.display = 'none';
+});

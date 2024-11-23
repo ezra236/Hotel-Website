@@ -514,13 +514,12 @@ function proceedToPay(roomId) {
         // Ensure that both dates are selected
         if (lastCheckInDate && lastCheckOutDate) {
             // Open a new tab with the URL including the room ID and check-in/check-out dates
-            window.open(`accomodation.html?room=${selectedRoomId}&checkin=${lastCheckInDate.day}-${lastCheckInDate.month + 1}-${lastCheckInDate.year}&checkout=${lastCheckOutDate.day}-${lastCheckOutDate.month + 1}-${lastCheckOutDate.year}`, '_blank');
+            window.open(`server.php?room=${selectedRoomId}&checkin=${lastCheckInDate.day}-${lastCheckInDate.month + 1}-${lastCheckInDate.year}&checkout=${lastCheckOutDate.day}-${lastCheckOutDate.month + 1}-${lastCheckOutDate.year}`, '_blank');
         } else {
             alert('Please select both check-in and check-out dates before proceeding.');
         }
     });
 }
-
 
 
 
