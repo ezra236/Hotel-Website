@@ -675,6 +675,7 @@ nav a:hover {
     display: inline-block; /* Ensures button is inline */
     white-space: nowrap; /* Prevents text from wrapping */
     text-align: center;
+    margin-top: -5px;
 }
 
 .check button:hover {
@@ -685,7 +686,7 @@ nav a:hover {
     display: flex; /* Aligns buttons in a row */
     justify-content: flex-start; 
     align-items: center; 
-    gap: 15px; /* Space between buttons */
+    gap: 18px; /* Space between buttons */
     margin-top: 20px;
 }
 
@@ -833,7 +834,7 @@ nav a:hover {
     border: none;
     border-radius: 0px;
     cursor: pointer;
-    margin-top: 85px;
+    margin-top: 65px;
     margin-left: 20px;
 }
 
@@ -863,18 +864,6 @@ nav a:hover {
     font-size: 18px;
 }
 
-
-.block-box {
-    display: none;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-}
 
 /* Style for block-box (Full-Screen Overlay) */
 .block-box {
@@ -1096,7 +1085,13 @@ div#squareBox1 p {
 /* Styling for the pay-d div */
 .pay-d {
     flex: 1;  /* Pay content will take up available space */
-    background-color: #851919;  /* Optional: Add styling for pay-d */
+    background-color: white;  /* Optional: Add styling for pay-d */
+    margin: 5px;
+    padding: 90px;
+    padding-top: 150px;
+    padding-left: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 19px;
 }
 
 /* General Form Container Styling */

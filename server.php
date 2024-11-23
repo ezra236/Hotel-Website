@@ -287,7 +287,12 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
            <p>SELECT</p>
            <br>
            <label>
-           <input type="radio" name="rateOption2" value="1500" />
+           <input type="radio" name="rateOption" value="1500" />
+           Best Available rate
+           </label>
+           <br>
+           <label>
+           <input type="radio" name="rateOption" value="1500"/>
            Best Available Rate with Breakfast Ksh 300
            </label>
            <br>

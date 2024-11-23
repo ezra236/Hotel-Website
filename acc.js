@@ -489,4 +489,21 @@ const hiddennBlock = document.getElementById('hiddenBlock');
 closeButton.addEventListener('click', function() {
     // Hide the block by changing its display to none
     hiddennBlock.style.display = 'none';
+    overlay.style.display = 'none';
+
+    // Re-enable background scroll
+    document.body.style.overflow = 'auto';
 });
+
+
+
+
+document.querySelectorAll('.radio-toggle').forEach((radio) => {
+    radio.addEventListener('click', function () {
+      // If the radio is already checked, uncheck it
+      if (this.checked) {
+        this.checked = false;
+      }
+    });
+  });
+  
