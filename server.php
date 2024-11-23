@@ -93,6 +93,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
     }
 
     $total_cost = $days * $selected_room['price']; // Calculate total cost
+
 }
 
 ?>
@@ -121,19 +122,19 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
          <a href="room.html" class="rooms-link">Accomodation</a>
            <div class="dropdown-content">
             <p>Available Rooms</p>
-            <a href="room.html">Paris</a>
-            <a href="room.html">Tokyo</a>
-            <a href="room.html">New York</a>
-            <a href="room.html">Dubai</a>
-            <a href="room.html">London</a>
-            <a href="room.html">Sydney</a>
-            <a href="room.html">Rome</a>
-            <a href="room.html">Cairo</a>
-            <a href="room.html">Berlin</a>
-            <a href="room.html">Bangkok</a>
-            <a href="room.html">Istanbul</a>
-            <a href="room.html">Moscow</a>
-            <a href="room.html">Toronto</a>
+            <a href="paris.html" target="_blank">Paris</a>
+            <a href="tokyo.html" target="_blank">Tokyo</a>
+            <a href="york.html" target="_blank">New York</a>
+            <a href="dubai.html" target="_blank">Dubai</a>
+            <a href="london.html" target="_blank">London</a>
+            <a href="sydney.html" target="_blank">Sydney</a>
+            <a href="rome.html" target="_blank">Rome</a>
+            <a href="cairo.html" target="_blank">Cairo</a>
+            <a href="berlin.html" target="_blank">Berlin</a>
+            <a href="bangkok.html" target="_blank">Bangkok</a>
+            <a href="istanbul.html" target="_blank">Istanbul</a>
+            <a href="mosco.html" target="_blank">Moscow</a>
+            <a href="toronto.html" target="_blank">Toronto</a>
            </div>
       </div>
         <nav>
@@ -285,11 +286,6 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
         </div>
         <div class="option">
            <p>SELECT</p>
-           <br>
-           <label>
-           <input type="radio" name="rateOption" value="1500" />
-           Best Available rate
-           </label>
            <br>
            <label>
            <input type="radio" name="rateOption" value="1500"/>

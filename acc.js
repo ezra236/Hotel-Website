@@ -233,8 +233,6 @@ function addRoomsToSelectionn() {
         unmatchedRoomIdss.push(urlRoomId);
     }
 
-    // Show the dialog box when clicked and display the unmatched room IDs in the alert
-    alert('Click has been listened to! Unmatched Room IDs: ' + unmatchedRoomIdss.join(', '));
 
     // Call the function to update the total and room details
     updateRoomDetailss(unmatchedRoomIdss);
@@ -303,8 +301,6 @@ function addRoomsToSelection() {
         unmatchedRoomIds.push(urlRoomId);
     }
 
-    // Show the dialog box when clicked and display the unmatched room IDs in the alert
-    alert('Click has been listened to! Unmatched Room IDs: ' + unmatchedRoomIds.join(', '));
 
     // Call the function to update the total and room details
     updateRoomDetails(unmatchedRoomIds);
@@ -498,12 +494,4 @@ closeButton.addEventListener('click', function() {
 
 
 
-document.querySelectorAll('.radio-toggle').forEach((radio) => {
-    radio.addEventListener('click', function () {
-      // If the radio is already checked, uncheck it
-      if (this.checked) {
-        this.checked = false;
-      }
-    });
-  });
-  
+
