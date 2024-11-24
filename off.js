@@ -154,9 +154,29 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.getElementById('check-rates').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent form submission
-    window.location.href = 'rates.html'; // Redirect to rates.html
+document.getElementById('roomForm').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const roomNumber = document.getElementById('room-number').value;
+
+    try {
+        // Send room number to the server
+        const response = await fetch('rate.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `room-number=${encodeURIComponent(roomNumber)}`
+        });
+
+        if (response.ok) {
+            const targetUrl = await response.text();
+            window.open(targetUrl, '_blank'); // Open in new tab
+        } else {
+            alert('Invalid room number!'); // Show error if input is invalid
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while processing your request.');
+    }
 });
 
 

@@ -91,7 +91,7 @@
                         Exclusive offers available
                     </p>
                 </div>
-                <form>
+                <form action="rate.php" method="POST" id="roomForm">
                     <label for="check-in">Check-in:</label>
                     <input type="text" id="check-in" name="check-in" class="flatpickr" />
         
@@ -130,7 +130,7 @@
                         <div data-value="10">10</div>
                     </div>
         
-                    <button id="check-rates">Check Rates</button>
+                    <button type="submit">Check Rates</button>
     
                 </form>
                 <div class="linkc">
@@ -191,10 +191,54 @@
             <li><span class="icon">🛁</span> Bathtub and separate shower</li>
             <li><span class="icon">🆓</span> Complimentary minibar (soft drinks only)</li>
           </ul>
+
+          <button class="buttonn" onclick="proceedToPay('roo10')">BOOK</button>
         </div>
       </div>
 
 
+
+      <div class="verify-dates">
+        <img src="lilo.png">
+        <p> Prime Guest Lodge</p>
+
+        <button class="close">&times;</button>
+
+        <div class="button-container">
+            <p class="s"> SELECT DATES</p>
+            <button class="right-button" id="right-button">CONFIRM DATES OF STAY</button>
+        </div>
+        
+    
+        <!-- Check-in / Check-out Section -->
+    <div class="check-in-out">
+        <div class="check-in" id="check-in">
+            <span>Check-in: Not selected</span>
+        </div>
+        <div class="check-out" id="check-out">
+            <span>Check-out: Not selected</span>
+        </div>
+    </div>
+    
+        <!-- Calendar Container -->
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button class="prev-month" onclick="changeMonth(-1)">&#10094;</button>
+                <h2 id="month-name">November 2024</h2>
+                <button class="next-month" onclick="changeMonth(1)">&#10095;</button>
+            </div>
+            <div class="calendar">
+                <div class="calendar-day">Sun</div>
+                <div class="calendar-day">Mon</div>
+                <div class="calendar-day">Tue</div>
+                <div class="calendar-day">Wed</div>
+                <div class="calendar-day">Thu</div>
+                <div class="calendar-day">Fri</div>
+                <div class="calendar-day">Sat</div>
+                <!-- Dates will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
 
 
 

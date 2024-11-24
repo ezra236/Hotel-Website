@@ -192,7 +192,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
                         Exclusive offers available
                     </p>
                 </div>
-                <form>
+                <form action="rate.php" method="POST" id="roomForm">
                     <label for="check-in">Check-in:</label>
                     <input type="text" id="check-in" name="check-in" class="flatpickr" />
         
@@ -231,7 +231,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
                         <div data-value="10">10</div>
                     </div>
         
-                    <button id="check-rates">Check Rates</button>
+                    <button type="submit">Check Rates</button>
     
                 </form>
                 <div class="linkc">

@@ -924,9 +924,10 @@ nav a:hover {
 
 #squareBox1 img {
     width: 85%; 
-    height: 45px; /* Maintain aspect ratio */
+    height: 300px; /* Maintain aspect ratio */
     border-radius: 1px; 
     margin-bottom: 2px; 
+    object-fit: cover;
 }
 
 div#squareBox1 p {
