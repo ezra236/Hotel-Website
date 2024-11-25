@@ -442,3 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+document.getElementById('bookNowButton').addEventListener('click', function () {
+    window.open('special.html', '_blank');
+});

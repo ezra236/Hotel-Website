@@ -193,38 +193,3 @@ function scrollToTop() {
 
 
 
-
-
-
-document.querySelector(".booking-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Extract form data
-    const formData = new FormData(this);
-
-    // Send form data to the server
-    fetch("submit_booking.php", {
-        method: "POST",
-        body: formData,
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            const responseMessage = document.getElementById("responseMessage");
-
-            if (data.status === "success") {
-                // Display success message
-                responseMessage.innerText = data.message;
-                responseMessage.style.color = "#ff6600";
-
-                // Optionally clear the form
-                this.reset();
-            } else {
-                // Display error message
-                responseMessage.innerText = data.message;
-                responseMessage.style.color = "red";
-            }
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-        });
-});

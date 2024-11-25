@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book</title>
-    <link rel="stylesheet" href="stylll.css">
+    <title>Prime Guest Lodge</title>
+    <link rel="stylesheet" href="stypec.css">
     <link rel="icon" href="lilo.png" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -149,61 +149,69 @@
 
 
 
-    
 
-    <h1 class="title">Book</h1>
-    <form class="booking-form" action="submit_booking.php" method="POST">
-        <div class="form-group">
-            <label for="restaurant">Restaurant *</label>
-            <select id="restaurant" name="restaurant">
-                <option value="">Select</option>
-                <option value="early-bird-discount">Early Bird Discount</option>
-                <option value="dinner-special">Dinner Special</option>
-                <option value="long-stay-discount">Long Stay Discount</option>
-                <option value="last-minute-discount">Last Minute Discount</option>
-                <option value="room-service">Room Service</option>
-                <option value="breakfast-morning">Breakfast Morning</option>
-                <option value="desserts">Desserts</option>
-            </select>                      
+    <header class="breadcrumb">
+        <a href="Guest.html">HOME</a> > <a href="special.html"><span>SPECIAL OFFERS</span></a>
+    </header>
+
+
+    <main class="special-offers">
+        <h1>SPECIAL OFFER</h1>
+    </main>
+
+
+    <div class="event-container">
+        <h1 class="event-header">Join us for a week of tangled, tasty perfection!</h1>
+        <p class="event-description">
+            Indulge in a carefully curated menu that highlights the best of Asia's rich culinary traditions.<br>
+            From delicate Japanese tempura to the sizzling Thai stir-fries, every dish is a celebration of authentic taste and tradition.
+        </p>
+        <div class="event-details">
+            <p><strong>Date:</strong> 25th to 30th November 2024</p>
+            <p><strong>Time:</strong> 11:00am to 11:00pm</p>
         </div>
-        <div class="form-group">
-            <label for="title">Title *</label>
-            <select id="title" name="title">
-                <option value="">Select</option>
-                <option value="Dr.">Dr.</option>
-                <option value="Mr.">Mr.</option>
-                <option value="Mrs.">Mrs.</option>
-                <option value="Honorable">Honorable</option>
-            </select>            
-        </div>
-        <div class="form-group">
-            <label for="first-name">First Name *</label>
-            <input type="text" id="first-name" name="first-name" required>
-        </div>
-        <div class="form-group">
-            <label for="last-name">Last Name *</label>
-            <input type="text" id="last-name" name="last-name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone">
-        </div>
-        <div class="form-group">
-            <label for="date">Date *</label>
-            <input type="date" id="date" name="date" required>
-        </div>
-        <button type="submit" class="submit-button">Submit</button>
-    </form>
+        <p class="menu">Menu: A la carte</p>
+        <p class="event-footer">Prime Guest Lodge | A Culinary Adventure Awaits!</p>
+    </div>
 
 
 
-    <div id="responseMessage" style="margin-top: 50px; margin-left: 80px; font-size: 20px;"></div>
+    <div class="event-image">
+        <img src="b.jpg" alt="Culinary Event Image">
+    </div>
+
+    <!-- Button Section -->
+    <div class="event-container">
+        <button class="action-button" onclick="window.location.href='special.html';">BOOK</button>
+    </div>
 
 
+
+
+
+    <div class="testimonial-container">
+        <div class="testimonial">
+            <span class="quote-icon-left">❝</span>
+            <h2>Once Prime, always Prime</h2>
+            <p>
+                When I say standard of hospitality, care, and luxury, I mean - Prime Guest lODGE! Back in 2009, now Prime again! Simply the best! 
+                First impression, receptionist Erick, so kind and efficient! One word - fantastic! Once Prime, always Prime!
+            </p>
+            <span class="author">Dreamer, 04,</span> <span class="date">28 Mar, 2024</span>
+            <span class="quote-icon-right">❞</span>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+     <div class="triangled" onclick="scrollToTop()">
+        <div class="arrowd"></div>
+    </div> 
 
 
      <div class="acc"> 
@@ -267,6 +275,6 @@
         });
     </script>
 
-    <script src="enq.js"></script>
+    <script src="spec.js"></script>
 </body>
 </html>

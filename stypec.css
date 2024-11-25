@@ -719,75 +719,164 @@ nav a:hover {
     margin-right: 40px; /* Adjust for the desired spacing */
 }
 
-
-
-
-.title {
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #0a0101;
-    margin-top: 120px;
-  }
-  
-  .booking-form {
-    max-width: 800px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 17px;
-    color: #000000;
-  }
-  
-  input, select {
-    padding: 10px;
+/* Breadcrumb Header */
+.breadcrumb {
+    padding: 10px 20px;
+    background-color: #ffffff;
     font-size: 14px;
-    border: 1px solid #ccc;
+    font-weight: 500;
+    margin-top: 66px;
+    color: #000000;
+    padding-left: 246px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #333;
+    margin-top: 15px;
+}
+
+.breadcrumb span {
+    color: #cc5500;
+}
+
+/* Main Section */
+.special-offers {
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.special-offers h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 0px;
+    color: #333;
+}
+
+
+.event-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.event-header {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e76f51;
+    margin-bottom: 20px;
+}
+
+.event-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #0a0101;
+}
+
+.event-details {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #080808;
+}
+
+.menu {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e63946;
+    margin-bottom: 10px;
+}
+
+.event-footer {
+    font-size: 19px;
+    color: #231c1c;
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+  
+.event-image {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.event-image img {
+    width: 50%;
     border-radius: 0px;
-  }
-  
-  input[type="date"] {
-    padding-left: 35px;
-    background: url('calendar-icon.png') no-repeat scroll 10px center;
-    background-size: 20px;
-  }
-  
-  button.submit-button {
-    grid-column: span 1;
-    width: 190px; /* Set a fixed width */
-    height: 45px;
-    padding: 10px;
+    height: 500px;
+}
+
+.action-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 12px 50px;
+    background-color: #e76f51;
+    color: #fff;
     font-size: 16px;
     font-weight: bold;
-    background-color: #ff6600;
-    color: #fff;
     border: none;
     border-radius: 0px;
     cursor: pointer;
-    margin-top: 120px;
-    margin-left: 100px;
-  }
-  
-  button.submit-button:hover {
-    background-color: #e55a00;
-  }
-  
-.acc{
-    margin-top: 270px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-  .block {
+.action-button:hover {
+    background-color: #942712;
+}
+
+.testimonial-container {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.testimonial h2 {
+    font-style: italic;
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+    position: relative;
+}
+
+.testimonial p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.testimonial .author, .testimonial .date {
+    display: inline-block;
+    font-size: 14px;
+    color: #888;
+    margin: 5px;
+}
+
+.quote-icon-left, .quote-icon-right {
+    color: orange;
+    font-size: 36px;
+    position: relative;
+}
+
+.quote-icon-left {
+    float: left;
+    margin-top: 10px;
+}
+
+.quote-icon-right {
+    float: right;
+    margin-top: 10px;
+}
+
+
+
+.block {
     top: 0px;
     width: 100%; 
     height: 140px;
@@ -978,3 +1067,26 @@ nav a:hover {
 
 
 
+
+.triangled {
+    position: relative;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent; 
+    border-right: 50px solid transparent;
+    border-bottom: 30px solid #e8e8e8; 
+    margin-left: 700px;
+    margin-top: 72px;
+    cursor: pointer;
+}
+
+.arrowd {
+    position: absolute;
+    top: 19px; /* Adjust position of the arrow inside the triangle */
+    left: 50%;
+    height: auto; /* No height needed for the triangle */
+    border-left: 16px solid transparent; 
+    border-right: 16px solid transparent; 
+    border-bottom: 10px solid #ffffff; 
+    transform: translateX(-50%); 
+}
