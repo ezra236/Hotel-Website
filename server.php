@@ -297,6 +297,16 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
     </div>
 
 
+
+
+    <div class="containerrd">
+    <img src="Download real estate building logo icon design vector for free.jpg" alt="Add Room Image" class="image">
+    <span class="textr">Add Room <p>&darr;</p></span>
+    </div>
+
+
+
+
     <div class="overlayy" id="overlayy"></div>
 
 <div class="hidden-block" id="hiddenBlock">
