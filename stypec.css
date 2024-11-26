@@ -843,7 +843,17 @@ nav a:hover {
     align-items: center;
     flex-direction: column;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+    /* Add initial transform and transition for the animation */
+    transform: translateY(100%); /* Start from below the screen */
+    transition: transform 0.5s ease-in-out;
 }
+
+.fill.active {
+    transform: translateY(0); /* Animate to its normal position */
+}
+
+    
 
 .fill h1{
     margin-top: 5px;

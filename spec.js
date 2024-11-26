@@ -194,23 +194,25 @@ function scrollToTop() {
 
 
 
- // Select the elements
- const fillDiv = document.getElementById('fill');
- const showButton = document.getElementById('showButton');
- const closeButton = document.getElementById('closeButton');
-
- // Set the .fill block to display:none initially
- fillDiv.style.display = 'none';
-
- // Show the full-screen block on button click
- showButton.addEventListener('click', function () {
-     fillDiv.style.display = 'flex';
- });
-
- // Hide the full-screen block on close button click
- closeButton.addEventListener('click', function () {
-     fillDiv.style.display = 'none';
- });
 
 
+// Select the elements
+const fillDiv = document.getElementById('fill');
+const showButton = document.getElementById('showButton');
+const closeButton = document.getElementById('closeButton');
+
+// Ensure the block starts hidden
+fillDiv.style.display = 'none';
+
+// Show the full-screen block on button click
+showButton.addEventListener('click', function () {
+    fillDiv.style.display = 'flex'; // Make it visible first
+    setTimeout(() => fillDiv.classList.add('active'), 10); // Add animation after a tiny delay
+});
+
+// Hide the full-screen block on close button click
+closeButton.addEventListener('click', function () {
+    fillDiv.classList.remove('active'); // Trigger reverse animation
+    setTimeout(() => (fillDiv.style.display = 'none'), 500); // Wait for animation to complete before hiding
+});
 
