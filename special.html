@@ -189,10 +189,10 @@
 
     <!-- Full-Screen Div -->
     <div class="fill" id="fill">
+        <div id="responseMessage" style="margin-top: 5px; color: rgb(179, 82, 3); font-size: 22px; font-weight: bold;"></div>
         <h1>Booking Section</h1>
-
         <div class="form-container">
-            <form>
+            <form method="post" action="pay.php" id="reservationForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="title">TITLE*</label>
@@ -348,6 +348,7 @@
         });
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="spec.js"></script>
 </body>
 </html>

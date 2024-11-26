@@ -314,6 +314,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
 
     <div class="containerd">
         <div class="pay-d">
+        <p id="message" style="color: #ad4717; display: none;  font-size:22px; font-weight:bold;"></p>
             <?php if ($selected_room): ?>
                 <p style="font-size: 20px; font-family:'Times New Roman', Times, serif; font-weight:800;">Room: <?php echo htmlspecialchars($selected_room['room_name']); ?></p>
                 <p>Days: <?php echo $days . ' day' . ($days > 1 ? 's' : ''); ?></p>
@@ -326,12 +327,12 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
     <p class="formm-note">
         Prime Guest Lodge
     </p>
-    <form>
+    <form action="price.php" method="post" id="userForm">
         <div class="formm-group">
             <label for="title" class="formm-label">TITLE</label>
             <select id="title" name="title" class="formm-input" required>
                 <option value="" disabled selected>-</option>
-                <option value="ms">Dr</option>
+                <option value="dr">Dr</option>
                 <option value="ms">Honorable</option>
                 <option value="mr">Mr</option>
                 <option value="ms">Ms</option>

@@ -15,11 +15,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Toggle dropdown visibility and manage events when shape-container is clicked
+    // Toggle dropdown visibility, manage events, and scroll to top when shape-container is clicked
     shapeContainer.addEventListener("click", function (event) {
         event.stopPropagation(); // Prevent click event from bubbling up
         dropdownContent.classList.toggle("show");
         manageDropdownEvents(); // Update the state of events based on visibility
+
+        // Smooth scroll to the top of the page
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Smooth scrolling
+        });
     });
 
     // Close dropdown and disable events when clicking outside
@@ -33,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize: Ensure events are disabled by default
     manageDropdownEvents();
 });
-
 
 
 
@@ -216,3 +221,26 @@ closeButton.addEventListener('click', function () {
     setTimeout(() => (fillDiv.style.display = 'none'), 500); // Wait for animation to complete before hiding
 });
 
+
+
+
+
+
+$(document).ready(function () {
+    $('#reservationForm').on('submit', function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        
+        $.ajax({
+            url: 'pay.php', // Point to your PHP processing script
+            type: 'POST',
+            data: $(this).serialize(), // Serialize the form data
+            success: function (response) {
+                $('#responseMessage').text("Information was acquired successfully");
+                $('#reservationForm')[0].reset(); // Reset the form
+            },
+            error: function () {
+                $('#responseMessage').text("An error occurred. Please try again later.").css('color', 'red');
+            }
+        });
+    });
+});

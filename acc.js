@@ -522,6 +522,28 @@ closeButton.addEventListener('click', function() {
 
 
 
+document.getElementById('userForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+        
+        const formData = new FormData(this);
+
+        fetch('price.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Display the confirmation message
+            const message = document.getElementById('message');
+            message.textContent = "Information was acquired successfully!";
+            message.style.display = 'block';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+
 
 
 
