@@ -305,9 +305,9 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
     <div class="containerd">
         <div class="pay-d">
             <?php if ($selected_room): ?>
-                <p>Room: <?php echo htmlspecialchars($selected_room['room_name']); ?></p>
+                <p style="font-size: 20px; font-family:'Times New Roman', Times, serif; font-weight:800;">Room: <?php echo htmlspecialchars($selected_room['room_name']); ?></p>
                 <p>Days: <?php echo $days . ' day' . ($days > 1 ? 's' : ''); ?></p>
-                <p>Total: Ksh <?php echo number_format($total_cost, 2); ?></p>
+                <p style="font-size: 22px; font-family:'Times New Roman', Times, serif; font-weight:bold; text-decoration:underline;">Total: Ksh <?php echo number_format($total_cost, 2); ?></p>
             <?php endif; ?>
         </div>
 

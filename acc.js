@@ -477,39 +477,49 @@ if (roomId && rooms[roomId]) {
 
 
 
-      // Get the button, block, and overlay
-      const bookButton = document.querySelector('.book-button');
-      const hiddenBlock = document.getElementById('hiddenBlock');
-      const overlay = document.getElementById('overlayy');
-      
-      // Add an event listener to the button to show the block
-      bookButton.addEventListener('click', function() {
-          // Display the block and overlay
-          hiddenBlock.style.display = 'block';
-          overlay.style.display = 'block';
-      
-          // Disable background scroll
-          document.body.style.overflow = 'hidden';
-      });
 
+// Get the button, block, and overlay
+const bookButton = document.querySelector('.book-button');
+const hiddenBlock = document.getElementById('hiddenBlock');
+const overlay = document.getElementById('overlayy');
 
+// Add an event listener to the button to show the block
+bookButton.addEventListener('click', function() {
+    // Display the block and overlay
+    hiddenBlock.style.display = 'block';
+    overlay.style.display = 'block';
 
+    // Add the 'active' class to trigger the bottom-to-top effect
+    setTimeout(() => {
+        hiddenBlock.classList.add('active');
+    }, 10);  // A small delay to ensure the block is displayed first
 
+    // Disable background scroll
+    document.body.style.overflow = 'hidden';
+});
 
-
-// Get the button and the block element
+// Get the close button and add event listener
 const closeButton = document.querySelector('.m');
-const hiddennBlock = document.getElementById('hiddenBlock');
 
-// Add click event listener to the button
+// Add click event listener to the close button
 closeButton.addEventListener('click', function() {
-    // Hide the block by changing its display to none
-    hiddennBlock.style.display = 'none';
-    overlay.style.display = 'none';
+    // Remove the 'active' class to reverse the effect
+    hiddenBlock.classList.remove('active');
+
+    // Hide the block and overlay after the animation
+    setTimeout(() => {
+        hiddenBlock.style.display = 'none';
+        overlay.style.display = 'none';
+    }, 500);  // Wait for the transition to complete before hiding
 
     // Re-enable background scroll
     document.body.style.overflow = 'auto';
 });
+
+
+
+
+
 
 
 

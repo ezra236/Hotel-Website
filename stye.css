@@ -1063,7 +1063,7 @@ div#squareBox1 p {
 
 
 .hidden-block {
-    display: none;
+    display: none; /* Keep it hidden initially */
     width: 100%;      
     height: 100vh;        /* Make the block take up 90% of the viewport height */
     background-color: whitesmoke;
@@ -1075,7 +1075,17 @@ div#squareBox1 p {
     left: 0;
     overflow-y: auto;   
     z-index: 10000;
+    
+    /* Start off-screen (bottom) */
+    transform: translateY(100%); /* Initially positioned below the screen */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for the animation */
 }
+
+/* Active class to bring the block up */
+.hidden-block.active {
+    transform: translateY(0); /* Animate to its normal position */
+}
+
 
 .containerd {
     display: flex;
@@ -1087,13 +1097,14 @@ div#squareBox1 p {
 /* Styling for the pay-d div */
 .pay-d {
     flex: 1;  /* Pay content will take up available space */
-    background-color: white;  /* Optional: Add styling for pay-d */
+    background-color: rgb(205, 219, 116);  /* Optional: Add styling for pay-d */
     margin: 5px;
     padding: 90px;
     padding-top: 150px;
     padding-left: 60px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 19px;
+    margin-top: 45px;
 }
 
 /* General Form Container Styling */
