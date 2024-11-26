@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const shapedSquare = document.getElementById('shaped-square');
     const slidingBlock = document.getElementById('slidingg-block');
