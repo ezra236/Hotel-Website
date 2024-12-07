@@ -522,27 +522,127 @@ closeButton.addEventListener('click', function() {
 
 
 
-document.getElementById('userForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from refreshing the page
-        
-        const formData = new FormData(this);
 
-        fetch('price.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            // Display the confirmation message
-            const message = document.getElementById('message');
-            message.textContent = "Information was acquired successfully!";
-            message.style.display = 'block';
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    });
+document.querySelector('.formm-submit').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+
+    // Get the form data
+    const title = document.querySelector('#title').value;
+    const firstName = document.querySelector('#first-name').value;
+    const lastName = document.querySelector('#last-name').value;
+    const paymentCode = document.querySelector('#code').value;
+    const phone = document.querySelector('#phone').value;
+    const email = document.querySelector('#email').value;
+
+    // Validate form fields
+    if (!title || !firstName || !lastName || !paymentCode || !phone || !email) {
+        alert('Please fill in all fields!');
+        return;
+    }
+
+    // Get the content from the "pay-d" class
+    const paymentDetails = document.querySelector('.pay-d').textContent.trim();
+
+    // Validate if the payment details are not empty
+    if (paymentDetails === '') {
+        alert('Payment details cannot be empty!');
+        return;
+    }
+
+    // Split the content into lines
+    const lines = paymentDetails.split('\n');
+
+    // Ensure there are at least two lines (first and last)
+    if (lines.length < 2) {
+        alert('Insufficient data in payment details!');
+        return;
+    }
+
+    // Get the first part (all lines except the last one) for the first column
+    const firstPart = lines.slice(0, -1).join('\n').trim();
+    
+    // Get the last line for the second column
+    const lastLine = lines[lines.length - 1].trim();
+
+    // Get the query parameters from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const room = urlParams.get('room');
+    const checkin = urlParams.get('checkin');
+    const checkout = urlParams.get('checkout');
+
+    // Validate if room, checkin, and checkout are present in the URL
+    if (!room || !checkin || !checkout) {
+        alert('Room, check-in, and check-out details are required in the URL!');
+        return;
+    }
+
+    // Generate a random number
+    const randomNumber = Math.floor(Math.random() * 1000000); // Random number between 0 and 999999
+
+    // Create an AJAX request to send data to PHP
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'submit_payment.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+    // Handle the response
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            alert('Payment information submitted successfully!');
+        } else {
+            alert('Error submitting payment.');
+        }
+    };
+
+    // Send the data to PHP
+    xhr.send(`title=${encodeURIComponent(title)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}&payment_code=${encodeURIComponent(paymentCode)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&first_part=${encodeURIComponent(firstPart)}&last_line=${encodeURIComponent(lastLine)}&room=${encodeURIComponent(room)}&check_in=${encodeURIComponent(checkin)}&check_out=${encodeURIComponent(checkout)}&random_number=${randomNumber}`);
+});
 
 
 
 
+
+
+
+// Event listener for square-box2 click
+document.querySelector('.square-box2').addEventListener('click', function () {
+    const room = new URLSearchParams(window.location.search).get('room');
+
+    if (!room) {
+        alert('Room ID is missing in the URL!');
+        return;
+    }
+
+    // Check if there are unmatched room IDs in the global variable
+    if (unmatchedRoomIdss.length > 0) {
+        // Filter out the current room ID from the unmatchedRoomIdss
+        const filteredRooms = unmatchedRoomIdss.filter(roomId => roomId !== room);
+
+        if (filteredRooms.length > 0) {
+            // Display the unmatched room IDs using an alert
+            alert(`Unmatched Room IDs: ${filteredRooms.join(', ')}`);
+
+            // Send the filteredRooms to the server to be added to the database
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'check_unmatched_rooms.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    alert('Unmatched Room IDs added to the database successfully!');
+                } else {
+                    alert('Error adding unmatched room IDs to the database.');
+                }
+            };
+
+            // Prepare the data to send to the server
+            const data = `room=${encodeURIComponent(room)}&filteredRooms=${encodeURIComponent(JSON.stringify(filteredRooms))}`;
+
+            // Send the request
+            xhr.send(data);
+        } else {
+            alert('No unmatched Room IDs other than the current room.');
+        }
+    } else {
+        alert('No unmatched Room IDs found in the global variable.');
+    }
+});

@@ -544,3 +544,34 @@ function proceedToPay(roomId) {
 
 
 
+// Select necessary elements
+const scrollyContainer = document.getElementById("scrollyContainer");
+const items = document.querySelectorAll(".scrolly-item");
+let currentIndex = 0;
+
+// Navigation buttons
+const nextBtny = document.getElementById("nextBtny");
+const prevBtny = document.getElementById("prevBtny");
+
+// Add event listeners
+nextBtny.addEventListener("click", () => {
+    if (currentIndex < items.length - 1) {
+        currentIndex++;
+        scrollToItem();
+    }
+});
+
+prevBtny.addEventListener("click", () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        scrollToItem();
+    }
+});
+
+function scrollToItem() {
+    const itemWidth = items[0].offsetWidth; // Calculate the width dynamically
+    scrollyContainer.scrollTo({
+        left: currentIndex * itemWidth,
+        behavior: 'smooth'
+    });
+}

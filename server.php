@@ -167,7 +167,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
     <div class="blockk" id="slidingg-block">
         <p class="parag" id="close-button">X</p>
         <div class="inblock">
-            <img src="lilo.png">
+            <img src="logoo.jpg">
             <p>PRIME GUEST HOME</p>
         </div>
         <div class="linkk">
@@ -175,7 +175,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
             <a href="herit.html">HERITAGE</a>
         </div>
         <div class="logimage">
-            <img src="lilo.png">
+            <img src="logoo.jpg">
         </div>
     </div>
     
@@ -327,7 +327,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
     <p class="formm-note">
         Prime Guest Lodge
     </p>
-    <form action="price.php" method="post" id="userForm">
+    <form>
         <div class="formm-group">
             <label for="title" class="formm-label">TITLE</label>
             <select id="title" name="title" class="formm-input" required>
@@ -620,7 +620,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
 
     <div class="acc"> 
         <div class="block">
-                <img src="lilo.png" style="cursor: pointer;">
+                <img src="logoo.jpg" style="cursor: pointer;">
         </div>
     
         <div class="info">

@@ -34,6 +34,7 @@ body {
     width: 30px; /* Adjust as needed */
     height: 30px; /* Adjust as needed */
     margin-right: 25px;
+    border-radius: 50%;
 }
 
 .time-display {
@@ -498,6 +499,7 @@ nav a:hover {
 .scrolly-item:hover {
     transform: scale(1.05); /* Slightly scale up on hover */
     opacity: 0.8; /* Slightly reduce opacity on hover */
+    background-color: #dfc299;
 }
 
 /* Background colors for items */
