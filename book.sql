@@ -21,3 +21,7 @@ CREATE TABLE UserBookingDetails (
 
 ALTER TABLE UserBookingDetails
 ADD COLUMN Added_Room VARCHAR(50) AFTER last_line;
+
+ALTER TABLE UserBookingDetails MODIFY COLUMN Added_Room TEXT;
+
+
