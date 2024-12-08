@@ -27,4 +27,6 @@ ALTER TABLE UserBookingDetails MODIFY COLUMN Added_Room TEXT;
 ALTER TABLE UserBookingDetails 
 ADD COLUMN Availability TEXT AFTER Added_Room;
 
+ALTER TABLE UserBookingDetails DROP COLUMN Added_Room;
+
 
