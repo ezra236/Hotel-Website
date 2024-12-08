@@ -19,6 +19,7 @@ CREATE TABLE UserBookingDetails (
     random_number INT,         -- Column to store the random number
     check_in DATE,             -- Column to store the check-in date
     check_out DATE,            -- Column to store the check-out date
+    Availability TEXT,         -- Column to store availability status
     Room_Number TEXT           -- Column to store room number
 );
 
