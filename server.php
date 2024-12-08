@@ -285,13 +285,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
             <?php endif; ?>
         </div>
         <div class="option">
-           <p>SELECT</p>
-           <br>
-           <label>
-           <input type="radio" name="rateOption" value="1500"/>
-           Best Available Rate with Breakfast Ksh 300
-           </label>
-           <br>
+           <p>Add an extra room to your booking if desired. Otherwise, proceed to book the room you have selected.</p>
            <button class="book-button">BOOK</button>
         </div>
     </div>

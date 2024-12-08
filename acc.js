@@ -221,6 +221,8 @@ function selectRoom(roomId) {
     }
 }
 
+
+
 // Global array to store room IDs that are not equal to the URL room ID
 let unmatchedRoomIds = [];
 
@@ -257,6 +259,7 @@ function addRoomsToSelectionn() {
     // Call the function to update the total and room details
     updateRoomDetailss(unmatchedRoomIdss);
 }
+
 
 // Function to calculate the new total price and display room names
 function updateRoomDetailss(roomIds) {
@@ -579,70 +582,39 @@ document.querySelector('.formm-submit').addEventListener('click', function (even
     // Generate a random number
     const randomNumber = Math.floor(Math.random() * 1000000); // Random number between 0 and 999999
 
-    // Create an AJAX request to send data to PHP
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'submit_payment.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // Create an AJAX request to send data to submit_payment.php
+    const xhr1 = new XMLHttpRequest();
+    xhr1.open('POST', 'submit_payment.php', true);
+    xhr1.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     
-    // Handle the response
-    xhr.onload = function () {
-        if (xhr.status === 200) {
+    // Handle the response from submit_payment.php
+    xhr1.onload = function () {
+        if (xhr1.status === 200) {
+            console.log('Payment information sent to submit_payment.php');
+        } else {
+            console.log('Error submitting payment to submit_payment.php');
+        }
+    };
+
+    // Send the data to submit_payment.php
+    xhr1.send(`title=${encodeURIComponent(title)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}&payment_code=${encodeURIComponent(paymentCode)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&first_part=${encodeURIComponent(firstPart)}&last_line=${encodeURIComponent(lastLine)}&room=${encodeURIComponent(room)}&check_in=${encodeURIComponent(checkin)}&check_out=${encodeURIComponent(checkout)}&random_number=${randomNumber}`);
+    
+    // Create an AJAX request to send data to ownerVa.php
+    const xhr2 = new XMLHttpRequest();
+    xhr2.open('POST', 'ownerVa.php', true);
+    xhr2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+    // Handle the response from ownerVa.php
+    xhr2.onload = function () {
+        if (xhr2.status === 200) {
+            console.log('Payment information sent to ownerVa.php');
             alert('Payment information submitted successfully!');
         } else {
+            console.log('Error submitting payment to ownerVa.php');
             alert('Error submitting payment.');
         }
     };
 
-    // Send the data to PHP
-    xhr.send(`title=${encodeURIComponent(title)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}&payment_code=${encodeURIComponent(paymentCode)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&first_part=${encodeURIComponent(firstPart)}&last_line=${encodeURIComponent(lastLine)}&room=${encodeURIComponent(room)}&check_in=${encodeURIComponent(checkin)}&check_out=${encodeURIComponent(checkout)}&random_number=${randomNumber}`);
-});
-
-
-
-
-
-
-
-// Event listener for square-box2 click
-document.querySelector('.square-box2').addEventListener('click', function () {
-    const room = new URLSearchParams(window.location.search).get('room');
-
-    if (!room) {
-        alert('Room ID is missing in the URL!');
-        return;
-    }
-
-    // Check if there are unmatched room IDs in the global variable
-    if (unmatchedRoomIdss.length > 0) {
-        // Filter out the current room ID from the unmatchedRoomIdss
-        const filteredRooms = unmatchedRoomIdss.filter(roomId => roomId !== room);
-
-        if (filteredRooms.length > 0) {
-            // Display the unmatched room IDs using an alert
-            alert(`Unmatched Room IDs: ${filteredRooms.join(', ')}`);
-
-            // Send the filteredRooms to the server to be added to the database
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'check_unmatched_rooms.php', true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    alert('Unmatched Room IDs added to the database successfully!');
-                } else {
-                    alert('Error adding unmatched room IDs to the database.');
-                }
-            };
-
-            // Prepare the data to send to the server
-            const data = `room=${encodeURIComponent(room)}&filteredRooms=${encodeURIComponent(JSON.stringify(filteredRooms))}`;
-
-            // Send the request
-            xhr.send(data);
-        } else {
-            alert('No unmatched Room IDs other than the current room.');
-        }
-    } else {
-        alert('No unmatched Room IDs found in the global variable.');
-    }
+    // Send the data to ownerVa.php
+    xhr2.send(`title=${encodeURIComponent(title)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}&payment_code=${encodeURIComponent(paymentCode)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&first_part=${encodeURIComponent(firstPart)}&last_line=${encodeURIComponent(lastLine)}&room=${encodeURIComponent(room)}&check_in=${encodeURIComponent(checkin)}&check_out=${encodeURIComponent(checkout)}&random_number=${randomNumber}`);
 });
