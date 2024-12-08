@@ -24,4 +24,7 @@ ADD COLUMN Added_Room VARCHAR(50) AFTER last_line;
 
 ALTER TABLE UserBookingDetails MODIFY COLUMN Added_Room TEXT;
 
+ALTER TABLE UserBookingDetails 
+ADD COLUMN Availability TEXT AFTER Added_Room;
+
 
