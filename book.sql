@@ -29,4 +29,9 @@ ADD COLUMN Availability TEXT AFTER Added_Room;
 
 ALTER TABLE UserBookingDetails DROP COLUMN Added_Room;
 
+ALTER TABLE UserBookingDetails 
+ADD COLUMN Room_Number TEXT AFTER Availability;
+
+
+
 
