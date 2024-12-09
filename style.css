@@ -6,43 +6,185 @@ body {
     padding: 0;
 }
 
-
 .finis {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; 
-    padding: 20px;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 20px; /* Add padding for spacing */
     background-color: #d6b88f;
     width: 100%;
-    height: 15px; 
+    height: 20px;
     box-sizing: border-box; 
-    transition: top 0.5s ease; 
 }
 
-.finis.scrolled {
-    top: -50px; /* Hides .finis by moving it upwards */
+.finis img.leftt-image {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px; /* Space between image and text */
+    border-radius: 50%;
 }
 
-.finis p{
-    text-align: left;
-    left: 0;
+.finis p {
     color: #000;
     font-family: 'Times New Roman', Times, serif;
+    margin: 0; /* Remove default margin */
+    margin-right: 15px; 
 }
 
-.leftt-image {
-    width: 30px; /* Adjust as needed */
-    height: 30px; /* Adjust as needed */
-    margin-right: 25px;
-    border-radius: 50%;
+.finis .sig {
+    margin-left: auto; /* Push button to the far right */
+    padding: 8px 16px;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.finis .sig:hover {
+    background-color: #91989338; /* Hover effect */
 }
 
 .time-display {
     font-size: 12px;
     font-weight: bold;
     color: #333;
-    margin-left: 1180px;
+    margin-left: 140px; 
+    white-space: nowrap; /* Prevent text wrapping */
 }
+
+.details {
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Hide it visually but keep it in the DOM */
+    position: fixed; 
+    top: 120px; 
+    left: 35%; 
+    width: 30%; 
+    height: 75%; /* Set exact height */
+    background-color: transparent; 
+    color: #fff; /* Text color */
+    font-family: Arial, sans-serif;
+    text-align: center; 
+    padding: 20px; 
+    box-sizing: content-box; 
+    overflow: hidden; 
+    z-index: 20000; 
+    transform: translateY(100vh); /* Start off-screen */
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Smooth transition */
+}
+
+.details.show {
+    opacity: 1; 
+    visibility: visible; /* Ensure it's interactable */
+    transform: translateY(0); 
+}
+
+.backdrop {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 19999; /* Below .details */
+}
+
+.clos {
+    position: absolute;
+    top: 1px;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 430px;
+    cursor: pointer;
+    color: white;
+}
+
+.clos:hover {
+    color: #d25431;
+}
+
+.details h2{
+    color: white;
+}
+
+/* General form styling */
+form {
+    width: 100%;
+    max-width: 400px; /* Limits the form width */
+    margin: 0 auto; /* Centers the form horizontally */
+    padding: 20px;
+    height: 70%;
+    background-color: black; /* Light background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 60px;
+}
+
+/* Style for labels */
+form label {
+    font-size: 18px;
+    color: white;
+    display: block; /* Makes the label appear above the input field */
+    margin-bottom: 8px; 
+    margin-top: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Style for input fields */
+form input[type="text"],
+form input[type="password"] {
+    width: 70%; 
+    padding: 10px;
+    margin-bottom: 15px; /* Adds space between inputs */
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 14px;
+    box-sizing: border-box; 
+}
+
+/* Style for the submit button */
+form input[type="submit"] {
+    width: 80%;
+    padding: 12px;
+    background-color: #b34d12; /* Green background */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #933c0a; /* Darker green on hover */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px; /* Reduces padding on small screens */
+    }
+
+    form label {
+        font-size: 12px; /* Smaller font size for labels */
+    }
+
+    form input[type="text"],
+    form input[type="password"] {
+        padding: 8px; /* Smaller padding for inputs */
+        font-size: 12px; /* Smaller font size for inputs */
+    }
+
+    form input[type="submit"] {
+        font-size: 14px; /* Smaller font size for button */
+        padding: 10px; /* Smaller padding for button */
+    }
+}
+
 
 .separator {
     font-size: 30px; 

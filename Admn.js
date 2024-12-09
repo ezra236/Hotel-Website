@@ -36,6 +36,27 @@ $(document).ready(function () {
             }
         });
     });
+
+
+        // Unroom Form Submission
+        $("#unavaila").on("submit", function (e) {
+            e.preventDefault();
+            const id = $("#roomu").val();
+            $.ajax({
+                url: "process.php",
+                type: "POST",
+                data: { id: id, action: "remove" },
+                success: function (response) {
+                    $("#message").text(response);
+                    $("#unavaila")[0].reset();
+                    setTimeout(() => location.reload(), 1500); // Refresh page after 1.5 seconds
+                },
+                error: function () {
+                    $("#message").text("An error occurred.");
+                }
+            });
+        });
+    
 });
 
 
@@ -50,6 +71,13 @@ $(document).ready(function () {
         const room2 = $("#room2").val();
         const room3 = $("#room3").val();
         const rooms = [room1, room2, room3].filter(room => room !== ""); // Only include non-empty inputs
+
+        // Validate room numbers
+        const invalidRooms = rooms.filter(room => parseInt(room, 10) > 10);
+        if (invalidRooms.length > 0) {
+            $("#message").text("Error: Room numbers must not exceed 10.");
+            return; // Stop form submission
+        }
         
         $.ajax({
             url: "process.php",

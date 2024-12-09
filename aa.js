@@ -412,6 +412,23 @@ window.addEventListener('load', updatePositions);
 
 
 
+function showDetails() {
+    // Show the backdrop and details block
+    document.getElementById('backdrop').style.display = 'block';
+    document.getElementById('details').classList.add('show');
+    // Disable scrolling
+    document.body.classList.add('no-scroll');
+}
+
+function hideDetails() {
+    // Hide the backdrop and details block
+    document.getElementById('backdrop').style.display = 'none';
+    document.getElementById('details').classList.remove('show');
+    // Re-enable scrolling
+    document.body.classList.remove('no-scroll');
+}
+
+
 
 
 document.addEventListener('DOMContentLoaded', function() {

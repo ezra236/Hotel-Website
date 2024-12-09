@@ -1,10 +1,93 @@
 <?php
-// Extract query parameters from the URL
-$checkin = isset($_GET['checkin']) ? htmlspecialchars($_GET['checkin']) : 'Not provided';
-$checkout = isset($_GET['checkout']) ? htmlspecialchars($_GET['checkout']) : 'Not provided';
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "UserBookingDB";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Room ID mapping to Room_Number
+$room_map = [
+    "roo1" => 1,
+    "roo2" => 2,
+    "roo3" => 3,
+    "roo4" => 4,
+    "roo5" => 5,
+    "roo6" => 6,
+    "roo7" => 7,
+    "roo8" => 8,
+    "roo9" => 9,
+    "roo10" => 10,
+];
 
 // Extract query parameters from the URL
 $room_id = isset($_GET['room']) ? htmlspecialchars($_GET['room']) : null;
+$checkin = isset($_GET['checkin']) ? htmlspecialchars($_GET['checkin']) : 'Not provided';
+$checkout = isset($_GET['checkout']) ? htmlspecialchars($_GET['checkout']) : 'Not provided';
+
+// Get Room_Number from room_id
+$room_number = $room_map[$room_id] ?? null;
+
+if ($room_number) {
+    // Query the database for the room's availability
+    $availability_sql = "SELECT Availability 
+                     FROM UserBookingDetails 
+                     WHERE Room_Number REGEXP '(^|,)$room_number(,|$)'"; 
+    $availability_result = $conn->query($availability_sql);
+
+    if ($availability_result->num_rows > 0) {
+        $row = $availability_result->fetch_assoc();
+        $availability = $row['Availability'];
+
+        // Check if the room is already booked
+        if ($availability == "1") {
+            echo "
+            <div style='
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 20px;
+                border: 2px solid #e25623;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                text-align: center;
+                z-index: 1000;
+            '>
+                <h2 style='color: #e25623;'>Room $room_number is already booked!</h2>
+                <p>You cannot access this page for the selected room.</p>
+                <button onclick='window.location.href=\"room.html\"'  style='padding: 12px 35px; background-color: #e25623; color: white; border: none; cursor: pointer;'>
+                    Go Back
+                </button>
+            </div>
+            <div style='
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            '></div>
+            ";
+            exit; // Stop further execution of the script
+        }
+    } else {
+        
+    }
+} else {
+    echo "Invalid room ID.";
+    exit;
+}
+
+// Close the database connection
+$conn->close();
 
 // Room data: Map room IDs to their content and prices
 $rooms = [
@@ -12,7 +95,7 @@ $rooms = [
         "room_name" => "Paris",
         "image" => "im1.avif",
         "description" => "This kind of room would be perfect for those looking to escape into a setting that feels both chic and relaxing...",
-        "price" => 1200, // Price per day in USD
+        "price" => 1200,
     ],
     "roo2" => [
         "room_name" => "Tokyo",
@@ -93,9 +176,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
     }
 
     $total_cost = $days * $selected_room['price']; // Calculate total cost
-
 }
-
 ?>
 
 
@@ -679,3 +760,4 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
 
 
     
+

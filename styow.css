@@ -1,0 +1,70 @@
+:root {
+    --table-bg-color: #f9f9f9;
+    --table-border-color: #ddd;
+    --header-bg-color: #4CAF50;
+    --header-text-color: white;
+    --row-hover-color: #f1f1f1;
+    --text-color: #333;
+}
+
+.tab{
+    margin-top: 0px;
+}
+
+.booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: var(--table-bg-color);
+    border: 1px solid var(--table-border-color);
+}
+
+.booking-table th, .booking-table td {
+    padding: 12px;
+    border: 1px solid var(--table-border-color);
+    text-align: left;
+    color: var(--text-color);
+}
+
+.booking-table th {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+}
+
+.booking-table tr:hover {
+    background-color: var(--row-hover-color);
+}
+
+
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}
+.form-container button {
+    padding: 12px 80px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.form-container .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+}

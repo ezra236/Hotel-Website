@@ -43,12 +43,33 @@ body {
     color: #fff;
 }
 
+.form-container .unroom-btn{
+    background-color: #e25623;
+    color: #fff;
+}
+
 .form-container button:hover {
     opacity: 0.9;
 }
 
+.form-container h3{
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+}
+
+.form-container h4{
+    font-size: 18x;
+    text-decoration: underline;
+    color: blue;
+}
+
+.q{
+    margin-bottom: 90px;
+}
+
 #message {
-    margin-top: -500px;
+    margin-top: -900px;
     color: rgb(184, 81, 12);
     font-family: 'Times New Roman', Times, serif;
     font-size: 22px;
@@ -93,7 +114,7 @@ tr:hover {
 }
 
 .tab{
-    margin-top: 600px;
+    margin-top: 950px;
 }
 
 .booking-table {

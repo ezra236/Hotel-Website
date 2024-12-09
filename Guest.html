@@ -14,8 +14,25 @@
 
     <div class="finis">
         <img src="logoo.jpg" alt="Left Image" class="leftt-image">
-        <p> PRIME GUEST LODGE</p>
+        <p class="po"> PRIME GUEST LODGE</p>
+        <button class="sig" onclick="showDetails()">SIGN-IN</button>
         <div class="time-display" id="currentTime"></div>
+    </div>
+
+
+    <div class="backdrop" id="backdrop"></div>
+    <div id="details" class="details">
+        <p class="clos" onclick="hideDetails()">X</p>
+        <form action="validate.php" method="POST">
+            <h2>SIGN-IN</h2>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+            
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            
+            <input type="submit" value="Login">
+        </form>
     </div>
 
   

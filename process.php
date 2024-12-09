@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $action = $_POST['action']; // Determine the action (book, delete, room)
+    $action = $_POST['action']; // Determine the action (book, delete, room, remove)
 
     if ($action === "book") {
         // Mark as Booked
@@ -33,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } elseif ($action === "delete") {
         // Delete Row
         $id = intval($_POST['input2']); // Get the input value
-        $sql = "DELETE FROM UserBookingDetails WHERE id = ?";
+        $sql = "DELETE FROM UserBookingDetails 
+                WHERE id = ? AND (Availability IS NULL OR Availability = '') AND (Room_Number IS NULL OR Room_Number = '')";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $id);
 
@@ -55,6 +56,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             echo "Room numbers updated to: $rooms for ID $id.";
         } else {
             echo "Error updating room numbers: " . $stmt->error;
+        }
+        $stmt->close();
+    } elseif ($action === "remove") {
+        // Remove Room Availability
+        $id = intval($_POST['id']); // Get the input value
+        $sql = "UPDATE UserBookingDetails SET Availability = 'NONE' WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+
+        if ($stmt->execute()) {
+            echo "Room availability removed for ID $id.";
+        } else {
+            echo "Error removing room availability: " . $stmt->error;
         }
         $stmt->close();
     }

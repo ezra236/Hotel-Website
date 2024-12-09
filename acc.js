@@ -598,23 +598,12 @@ document.querySelector('.formm-submit').addEventListener('click', function (even
 
     // Send the data to submit_payment.php
     xhr1.send(`title=${encodeURIComponent(title)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}&payment_code=${encodeURIComponent(paymentCode)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&first_part=${encodeURIComponent(firstPart)}&last_line=${encodeURIComponent(lastLine)}&room=${encodeURIComponent(room)}&check_in=${encodeURIComponent(checkin)}&check_out=${encodeURIComponent(checkout)}&random_number=${randomNumber}`);
-    
-    // Create an AJAX request to send data to ownerVa.php
-    const xhr2 = new XMLHttpRequest();
-    xhr2.open('POST', 'ownerVa.php', true);
-    xhr2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    
-    // Handle the response from ownerVa.php
-    xhr2.onload = function () {
-        if (xhr2.status === 200) {
-            console.log('Payment information sent to ownerVa.php');
-            alert('Payment information submitted successfully!');
-        } else {
-            console.log('Error submitting payment to ownerVa.php');
-            alert('Error submitting payment.');
-        }
-    };
 
-    // Send the data to ownerVa.php
-    xhr2.send(`title=${encodeURIComponent(title)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}&payment_code=${encodeURIComponent(paymentCode)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&first_part=${encodeURIComponent(firstPart)}&last_line=${encodeURIComponent(lastLine)}&room=${encodeURIComponent(room)}&check_in=${encodeURIComponent(checkin)}&check_out=${encodeURIComponent(checkout)}&random_number=${randomNumber}`);
 });
+
+
+
+
+
+
+

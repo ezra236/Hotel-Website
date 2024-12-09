@@ -73,7 +73,10 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book and Delete Form</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="5000">
+    <link rel="icon" href="lilo.png" type="image/png">
+    <title>Prime Guest Lodge</title>
     <link rel="stylesheet" href="styad.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -91,59 +94,62 @@ if ($result->num_rows > 0) {
             <tr>
                 <td>1</td>
                 <td>Paris</td>
-                <td>101</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>Tokyo</td>
-                <td>102</td>
+                <td>2</td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>New York</td>
-                <td>103</td>
+                <td>3</td>
             </tr>
             <tr>
                 <td>4</td>
                 <td>Dubai</td>
-                <td>104</td>
+                <td>4</td>
             </tr>
             <tr>
                 <td>5</td>
                 <td>London</td>
-                <td>105</td>
+                <td>5</td>
             </tr>
             <tr>
                 <td>6</td>
                 <td>Sydney</td>
-                <td>106</td>
+                <td>6</td>
             </tr>
             <tr>
                 <td>7</td>
                 <td>Rome</td>
-                <td>107</td>
+                <td>7</td>
             </tr>
             <tr>
                 <td>8</td>
                 <td>Cairo</td>
-                <td>108</td>
+                <td>8</td>
             </tr>
             <tr>
                 <td>9</td>
                 <td>Berlin</td>
-                <td>109</td>
+                <td>9</td>
             </tr>
             <tr>
                 <td>10</td>
                 <td>Bangkok</td>
-                <td>110</td>
+                <td>10</td>
             </tr>
         </tbody>
     </table>
 
     <div class="form-container">
         <form id="bookForm">
-            <label for="input1"> Mark As Booked</label>
+            <h3>BOOKING INFORMATION</h3>
+            <h4>Mark as Booked</h4>
+            <P>---------------------------------------------------------------------------</P>
+            <label for="input1"> Romm Bookings ID</label>
             <input type="text" id="input1" name="input1" required>
 
             <button type="submit" class="book-btn" name="action" value="book">Book</button>
@@ -161,6 +167,19 @@ if ($result->num_rows > 0) {
             <input type="text" id="idInput" name="idInput" required placeholder="Enter ID">
 
            <button type="submit" class="room-btn" name="action" value="room">ADD ROOM</button>
+
+           <P class="q">---------------------------------------------------------------------------</P>
+        </form>
+
+
+        <form id="unavaila">
+            <h4>Mark as Unavailable</h4>
+            <label for="input4"> Room Details ID</label>
+            <input type="text" id="roomu" name="roomu" placeholder="Room">
+
+           <button type="submit" class="unroom-btn" name="action" value="remove">REMOVE ROOM</button>
+
+           <P class="q">---------------------------------------------------------------------------</P>
         </form>
 
 
