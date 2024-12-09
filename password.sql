@@ -1,18 +1,17 @@
 -- Create the database
-CREATE DATABASE PasswordStore;
+CREATE DATABASE UserCredentials;
 
--- Use the newly created database
-USE PasswordStore;
+-- Use the database
+USE UserCredentials;
 
--- Create a table to store the passwords
-CREATE TABLE Passwords (
+-- Create the table
+CREATE TABLE Credentials (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    password_name VARCHAR(50) NOT NULL,
-    password_value VARCHAR(255) NOT NULL
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL
 );
 
--- Insert the passwords
-INSERT INTO Passwords (password_name, password_value)
-VALUES 
-('password1', '123qw'),
-('password2', '123own');
+-- Insert the usernames and passwords
+INSERT INTO Credentials (username, password) VALUES
+('Reception', '123qw'),
+('Arungai59', '123own');
