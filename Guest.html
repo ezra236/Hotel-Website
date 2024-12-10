@@ -23,16 +23,16 @@
     <div class="backdrop" id="backdrop"></div>
     <div id="details" class="details">
         <p class="clos" onclick="hideDetails()">X</p>
-        <form action="validate.php" method="POST">
+        <form action="validate.php" method="POST" class="signin-form">
             <h2>SIGN-IN</h2>
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username" required><br><br>
+            <label for="username" class="signin-label">Username:</label><br>
+            <input type="text" id="username" name="username" class="signin-input" required><br><br>
             
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br><br>
+            <label for="password" class="signin-label">Password:</label><br>
+            <input type="password" id="password" name="password" class="signin-input" required><br><br>
             
-            <input type="submit" value="Login">
-        </form>
+            <input type="submit" value="Login" class="signin-submit">
+        </form>        
     </div>
 
   

@@ -111,79 +111,50 @@ body {
     color: white;
 }
 
-/* General form styling */
-form {
+/* Styles for the first form */
+.signin-form {
     width: 100%;
-    max-width: 400px; /* Limits the form width */
-    margin: 0 auto; /* Centers the form horizontally */
+    max-width: 400px;
+    margin: 0 auto;
     padding: 20px;
-    height: 70%;
-    background-color: black; /* Light background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: black;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 60px;
 }
 
-/* Style for labels */
-form label {
+.signin-label {
     font-size: 18px;
     color: white;
-    display: block; /* Makes the label appear above the input field */
-    margin-bottom: 8px; 
-    margin-top: 5px;
+    display: block;
+    margin-bottom: 8px;
     font-family: 'Times New Roman', Times, serif;
 }
 
-/* Style for input fields */
-form input[type="text"],
-form input[type="password"] {
-    width: 70%; 
+.signin-input {
+    width: 70%;
     padding: 10px;
-    margin-bottom: 15px; /* Adds space between inputs */
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    font-size: 14px;
-    box-sizing: border-box; 
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* Style for the submit button */
-form input[type="submit"] {
+.signin-submit {
     width: 80%;
     padding: 12px;
-    background-color: #b34d12; /* Green background */
+    background-color: #b34d12;
     color: white;
     font-size: 16px;
     border: none;
-    border-radius: 0px;
+    border-radius: 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-form input[type="submit"]:hover {
-    background-color: #933c0a; /* Darker green on hover */
+.signin-submit:hover {
+    background-color: #933c0a;
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
-    form {
-        padding: 15px; /* Reduces padding on small screens */
-    }
-
-    form label {
-        font-size: 12px; /* Smaller font size for labels */
-    }
-
-    form input[type="text"],
-    form input[type="password"] {
-        padding: 8px; /* Smaller padding for inputs */
-        font-size: 12px; /* Smaller font size for inputs */
-    }
-
-    form input[type="submit"] {
-        font-size: 14px; /* Smaller font size for button */
-        padding: 10px; /* Smaller padding for button */
-    }
-}
 
 
 .separator {
