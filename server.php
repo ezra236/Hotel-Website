@@ -459,7 +459,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
         </div>
         
         <!-- Second Square Box -->
-        <div class="square-box2" onclick="addRoomsToSelection(); addRoomsToSelectionn();">
+        <div class="square-box2" onclick="addRoomsToSelection(); addRoomsToSelectionn();  boxdisp();">
             <h3>ADD ROOM</h3>
             <h5>+</h5>
         </div>
@@ -468,6 +468,7 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
 </div>
 
 
+<div id="notificationBox">Room Added</div>
 
 
     <!-- Main Container -->

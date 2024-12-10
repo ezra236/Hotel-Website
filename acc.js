@@ -430,12 +430,12 @@ const rooms = {
         image: "im6.jpg"  // Image for Sydney room
     },
     roo7: {
-        room_name: "Los Angeles",
+        room_name: "Rome",
         price: 1600,
         image: "im7.jpg"  // Image for Los Angeles room
     },
     roo8: {
-        room_name: "Rome",
+        room_name: "Cairo",
         price: 1250,
         image: "im8.jpg"  // Image for Rome room
     },
@@ -563,8 +563,6 @@ document.querySelector('.formm-submit').addEventListener('click', function (even
 
     // Get the first part (all lines except the last one) for the first column
     const firstPart = lines.slice(0, -1).join('\n').trim();
-    
-    // Get the last line for the second column
     const lastLine = lines[lines.length - 1].trim();
 
     // Get the query parameters from the URL
@@ -573,32 +571,67 @@ document.querySelector('.formm-submit').addEventListener('click', function (even
     const checkin = urlParams.get('checkin');
     const checkout = urlParams.get('checkout');
 
-    // Validate if room, checkin, and checkout are present in the URL
     if (!room || !checkin || !checkout) {
         alert('Room, check-in, and check-out details are required in the URL!');
         return;
     }
 
     // Generate a random number
-    const randomNumber = Math.floor(Math.random() * 1000000); // Random number between 0 and 999999
+    const randomNumber = Math.floor(Math.random() * 1000000);
+
+    // Create the box element
+    let box = document.createElement('div');
+
+    // Style the box using JavaScript
+    box.style.position = 'fixed';
+    box.style.top = '50%';
+    box.style.left = '50%';
+    box.style.transform = 'translate(-50%, -50%)';
+    box.style.width = '500px';
+    box.style.height = '210px';
+    box.style.border = '20px solid #c44d16';
+    box.style.backgroundColor = 'white';
+    box.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+    box.style.borderRadius = '1px';
+    box.style.textAlign = 'center';
+    box.style.lineHeight = '10px';
+    box.style.fontFamily = 'Arial, sans-serif';
+    box.style.fontSize = '18px';
+    box.style.color = 'black';
+    box.style.zIndex = '20000';
+
+    // Add the box to the body
+    document.body.appendChild(box);
+
 
     // Create an AJAX request to send data to submit_payment.php
     const xhr1 = new XMLHttpRequest();
     xhr1.open('POST', 'submit_payment.php', true);
     xhr1.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    
-    // Handle the response from submit_payment.php
+
     xhr1.onload = function () {
         if (xhr1.status === 200) {
-            console.log('Payment information sent to submit_payment.php');
+            // Update box content with well-organized text
+box.innerHTML = `
+<p style="margin: 10px; font-size: 18px; line-height: 1.5;">
+    Guest Details submitted successfully!<br>
+    We will send you your reception number to your email.<br>
+    Have a great day!<br><br>
+    <strong>Once Prime, Always Prime!</strong>
+</p>`;
+
         } else {
-            console.log('Error submitting payment to submit_payment.php');
+            box.textContent = 'Error submitting payment.';
         }
+
+        setTimeout(() => {
+            document.body.removeChild(box);
+        }, 15000);
+
     };
 
     // Send the data to submit_payment.php
     xhr1.send(`title=${encodeURIComponent(title)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}&payment_code=${encodeURIComponent(paymentCode)}&phone=${encodeURIComponent(phone)}&email=${encodeURIComponent(email)}&first_part=${encodeURIComponent(firstPart)}&last_line=${encodeURIComponent(lastLine)}&room=${encodeURIComponent(room)}&check_in=${encodeURIComponent(checkin)}&check_out=${encodeURIComponent(checkout)}&random_number=${randomNumber}`);
-
 });
 
 
@@ -606,4 +639,11 @@ document.querySelector('.formm-submit').addEventListener('click', function (even
 
 
 
+function boxdisp() {
+    const box = document.getElementById('notificationBox');
+    box.style.display = 'block';
 
+    setTimeout(() => {
+        box.style.display = 'none';
+    }, 5000);
+}

@@ -194,3 +194,7 @@ function scrollToTop() {
         behavior: 'smooth' // This will add a smooth scroll effect
     });
 }
+
+
+
+

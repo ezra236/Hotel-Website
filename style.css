@@ -1734,3 +1734,49 @@ nav a:hover {
 .su:hover {
     color: #ba9a9a; /* Slightly darker green when hovered */
 }
+
+
+
+#messageBox {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: #131111;
+    padding: 20px;
+    border: 20px solid #d56a46;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    width: 85%;
+    max-width: 500px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.messag h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #cd5627;
+}
+
+.messag p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.c {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #0e0101;
+    font-weight: bold;
+}
+
+.c:hover {
+    color: red;
+}

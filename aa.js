@@ -463,3 +463,34 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('bookNowButton').addEventListener('click', function () {
     window.open('special.html', '_blank');
 });
+
+
+
+
+document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const email = document.getElementById('email').value;
+
+    // AJAX request to send_email.php
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'send_email.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Show message box on successful submission
+            const messageBox = document.getElementById('messageBox');
+            messageBox.style.display = 'block';
+
+        }
+    };
+
+    xhr.send(`email=${encodeURIComponent(email)}`);
+});
+
+
+
+function hideMessageBox() {
+    const messageBox = document.getElementById('messageBox');
+    messageBox.style.display = 'none';
+}

@@ -883,8 +883,8 @@ nav a:hover {
 
 /* Styling for individual square boxes */
 .square-box1 {
-    width: 45%; 
-    height: 430px; 
+    width: 30%; 
+    height: 300px; 
     background-color: white; 
     color: black;
     display: flex;
@@ -892,12 +892,13 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 5px; 
+    border-radius: 0px; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
+    margin-left: 130px;
 }
 
 #squareBox1 h2 {
-    font-size: 20px;
+    font-size: 18px;
     margin: 10px 0; /* Spacing between h2 and other elements */
     color: #c7581c;
     font-family: 'Times New Roman', Times, serif;
@@ -905,7 +906,7 @@ nav a:hover {
 
 #squareBox1 img {
     width: 85%; 
-    height: 300px; /* Maintain aspect ratio */
+    height: 200px; /* Maintain aspect ratio */
     border-radius: 1px; 
     margin-bottom: 2px; 
     object-fit: cover;
@@ -925,27 +926,51 @@ div#squareBox1 p {
 }
 
 .square-box2 {
-    width: 45%; /* Set the width */
-    height: 430px; 
-    background-color: #c44d16; 
+    width: 30%; /* Set the width */
+    height: 300px; 
+    background-color: white; 
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 20px solid #c44d16;
     text-align: center;
-    border-radius: 10px; /* Optional: rounded corners */
+    border-radius: 1px; /* Optional: rounded corners */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
     display: flex;
     flex-direction: column; 
-    font-size: 35px;
+    font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     cursor: pointer;
+    margin-right: 130px;
 }
 
 .square-box2 h5{
     margin: 10px 0;
     clear: both;  
     font-size: 50px;
+}
+
+#notificationBox {
+    display: none;
+    position: fixed;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f4ff;
+    color: black;
+    padding: 20px;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 22px;
+    text-align: center;
+    z-index: 21000;
+    width: 130px;
+    height: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    border: 10px solid #c44d16;
+    align-items: center;
+    text-align: center;
 }
 
 

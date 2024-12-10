@@ -2,13 +2,23 @@ body {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
+
+.For-Em {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 900px;
+    margin-left: 280px;
+}
 .form-container {
-    max-width: 400px;
+    width: 65%;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin-right: 20px;
 }
 .form-container label {
     display: block;
@@ -64,12 +74,43 @@ body {
     color: blue;
 }
 
+.email {
+    width: 35%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.email label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.email input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}
+.email button {
+    padding: 12px 80px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+.email button:hover {
+    opacity: 0.9;
+}
+
 .q{
     margin-bottom: 90px;
 }
 
 #message {
-    margin-top: -900px;
+    margin-top: 50px;
     color: rgb(184, 81, 12);
     font-family: 'Times New Roman', Times, serif;
     font-size: 22px;
@@ -114,7 +155,8 @@ tr:hover {
 }
 
 .tab{
-    margin-top: 950px;
+    margin-top: 20px;
+    margin-bottom: 85px;
 }
 
 .booking-table {
