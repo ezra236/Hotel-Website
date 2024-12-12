@@ -32,6 +32,11 @@ ALTER TABLE UserBookingDetails DROP COLUMN Added_Room;
 ALTER TABLE UserBookingDetails 
 ADD COLUMN Room_Number TEXT AFTER Availability;
 
+ALTER TABLE UserBookingDetails
+ADD COLUMN Customer_cancelled BOOLEAN DEFAULT FALSE AFTER Room_Number;
+
+
+
 
 
 
