@@ -538,3 +538,36 @@ function proceedToPay(roomId) {
 
 
 
+const form = document.getElementById('emailForm');
+        const modal = document.getElementById('modal');
+        const overlay = document.getElementById('overlayr');
+        const closeModal = document.getElementById('closeModal');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+            const email = document.getElementById('email').value;
+
+            // Simulate sending email with fetch or AJAX (optional)
+            fetch('send_email.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `email=${encodeURIComponent(email)}`,
+            }).then(response => {
+                if (response.ok) {
+                    // Show modal
+                    modal.style.display = 'block';
+                    overlay.style.display = 'block';
+                } else {
+                    alert('Failed to submit email. Please try again.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+        closeModal.addEventListener('click', function () {
+            modal.style.display = 'none';
+            overlay.style.display = 'none';
+        });

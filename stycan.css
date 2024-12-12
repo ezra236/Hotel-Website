@@ -721,337 +721,44 @@ nav a:hover {
 }
 
 
-
-
-/* Container Styling */
-.containerp {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.bit {
+    text-align: center;
+    background-color: #fff;
     padding: 20px;
-    gap: 20px;
-  }
-  
-  /* Left Image Section */
-  .image-sectionn img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 0px;
-    object-fit: cover;
-    height: 800px;
-  }
-  
-  /* Right Amenities Section */
-  .amenities-section {
-    max-width: 500px;
-    margin-top: -50px;
-  }
-  
-  .amenities-section h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .amenities-section p {
-    margin-bottom: 20px;
-    color: #252424;
-  }
-  
-  .amenities-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .amenities-list li {
-    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 300px;
+    margin-top: 200px;
     align-items: center;
+    margin-left: 580px;
+}
+.bit label {
+    display: block;
     margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-  }
-  
-  .amenities-list li .icon {
-    font-size: 1.2rem;
-    margin-right: 10px;
-    color: #555;
-  }
-
-
-  .description-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
-    gap: 20px;
-    margin-top: 90px;
-  }
-  
-  /* Left Title Section */
-  .title-section {
-    flex: 1;
-  }
-  
-  .title-section h3 {
-    font-size: 2rem;
     font-weight: bold;
-    color: #001d36; /* Dark navy color */
-  }
-  
-  /* Right Text Section */
-  .text-section {
-    flex: 2;
-  }
-  
-  .text-section p {
-    font-size: 1rem;
-    color: #001d36; /* Dark navy color */
-    text-align: justify;
-    line-height: 1.8;
-  }
-
-
-
-
-
-.buttonn {
-    margin-top: 25px; /* Space between paragraph and button */
-    padding: 10px 5px;
+}
+.bit input {
+    width: 72%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #585656;
+    border-radius: 1px;
+}
+.bit button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 50px;
+    cursor: pointer;
     font-size: 16px;
-    width: 155px;
-    font-family: 'Times New Roman', Times, serif;
-    background-color: #c9632c; /* Button background color */
-    border: 2px solid #c9632c; 
-    color: #ffffff; /* Text color */ 
     border-radius: 0px;
-    cursor: pointer;
 }
-
-.buttonn:hover {
-    background-color: #a9450f; /* Darker color on hover */
-}
-
-.verify-dates {
-    position: fixed; /* Fix it to the screen */
-    bottom: 0; /* Start from the bottom */
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden; /* Make it hidden but still take up space */
-    transition: opacity 0.5s ease, visibility 0s 0.5s, transform 1s ease; /* Transition opacity and visibility */
-    transform: translateY(100%); /* Start off-screen from the bottom */
-    background-color: white;
-    color: #ffffff; /* Text color */
-    overflow: hidden;
-}
-
-.verify-dates.show {
-    opacity: 1;
-    visibility: visible; /* Make it visible */
-    transform: translateY(0); /* Slide into view from the bottom */
-    transition: opacity 0.5s ease, visibility 0s 0s, transform 1s ease; /* Remove delay for visibility and apply transitions */
-}
-
-.verify-dates p {
-    display: inline-block;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    color: rgb(22, 32, 122);
-    margin-left: 30px;
-}
-
-.verify-dates img {
-    width: 28px;
-    height: auto;
-    margin-left: 20px;
-    margin-top: 19px;
-    border-radius: 20px;
+.bit button:hover {
+    background-color: #45a049;
 }
 
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: rgb(28, 3, 3);
-    font-size: 50px;
-    cursor: pointer;
-    background: none;
-    border: none;
-}
 
-/* Basic styling for calendar */
-.calendar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #7c2b28;
-    height: 500px;
-}
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0px;
-    border-radius: 1px;
-    background-color: #ffffff;
-    color: black;
-    font-size: 28px;
-    font-family: 'Times New Roman', Times, serif;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    border: 2px solid black;
-    height: 95px;
-}
-
-.calendar-header button{
-    background-color: transparent;
-    border: none;
-    width: 80px;
-    color: rgb(172, 103, 103);
-    border: 1px solid black;
-    cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.prev-month {
-    font-size: 45px; /* Adjust size for the left arrow */
-}
-
-.next-month {
-    font-size: 45px; /* Adjust size for the right arrow */
-}
-
-.prev-month:hover {
-    color: rgb(93, 42, 42);
-}
-
-.next-month:hover {
-    color: rgb(93, 42, 42);
-}
-
-.calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    padding: 50px;
-}
-
-.calendar-day, .calendar-date {
-    text-align: center;
-    padding: 10px;
-    cursor: pointer;
-    border: 1px solid rgb(135, 107, 96);
-    transition: background-color 0.3s;
-    background-color: #ffffff;
-    font-family: 'Times New Roman', Times, serif;
-    width: 60px;
-    color: #000;
-}
-
-.calendar-day {
-    background-color: white;
-}
-
-.calendar-date:hover {
-    border: 1px solid rgb(0, 0, 255);
-}
-
-.check-in-out {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 1px;
-    background-color: #7c2b28;
-    height: 80px;
-}
-
-
-.check-in, .check-out {
-    width: 45%;
-    padding: 20px;
-    text-align: center;
-    background-color: #7c2b28;
-    border-radius: 0px;
-    cursor: pointer;
-    font-size: 26px;
-    border: 1px solid black;
-    color: white;
-    font-weight: bold;
-    margin-left: 60px;
-    margin-right:60px ;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.check-in span, .check-out span {
-    font-size: 26px;
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
-}
-
-
-/* Apply a diagonal line for disabled dates */
-.calendar-date.disabled {
-    position: relative;
-    background-color: #f0f0f0; 
-    color: #ccc; 
-    pointer-events: none;
-}
-
-
-.calendar-date.disabled::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.2) 50%, transparent 50%) no-repeat center center;
-    background-size: 10px 10px; 
-    pointer-events: none; 
-}
-
-
-.button-container {
-    display: flex;
-    justify-content: space-between; /* Space between to push elements apart */
-    width: 100%;
-    margin-top: 10px;
-    background-color: #ffffff;
-    margin-bottom: 20px;
-}
-
-.s {
-    font-size: 25px;
-    font-family: 'Times New Roman', Times, serif;
-    color: blue;
-    font-weight: bold;
-    padding-top: 10px;
-}
-
-.right-button {
-    padding: 18px 35px; 
-    font-size: 16px; 
-    background-color: #e06320; 
-    color: white; 
-    border: none; 
-    cursor: pointer; 
-    font-size: 18px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-right: 25px;
-    border-radius: 1px;
-}
-
-.right-button:hover {
-    background-color: #8d3e26; 
-}
 
 .block {
     top: 0px;

@@ -1032,3 +1032,59 @@ nav a:hover {
     border-bottom: 10px solid #ffffff; 
     transform: translateX(-50%); 
 }
+
+
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 0px; /* Slight rounding for better aesthetics */
+    text-align: center;
+    width: 90%; 
+    max-width: 500px; 
+    max-height: 440px; 
+    overflow-y: auto; 
+    z-index: 1000;
+    border: 20px solid #cc5327;
+}
+.modal h2 {
+    margin-top: 0;
+    color: #cc5327;
+}
+.modal p {
+    color: #000;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+.modal button {
+    margin-top: 20px;
+    background-color: #cc5327;
+    color: white;
+    border: none;
+    padding: 12px 50px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0px; /* Match the border radius of the modal */
+}
+.modal button:hover {
+    background-color: #a2350d;
+}
+
+.overlayr {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}

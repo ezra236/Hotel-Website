@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const shapedSquare = document.getElementById('shaped-square');
     const slidingBlock = document.getElementById('slidingg-block');
@@ -233,3 +234,9 @@ const form = document.getElementById('emailForm');
             modal.style.display = 'none';
             overlay.style.display = 'none';
         });
+
+
+
+
+
+

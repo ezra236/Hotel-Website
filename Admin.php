@@ -61,6 +61,60 @@ echo '</div>';
 $conn->close();
 ?>
 
+<?php
+// Database connection
+$servername = "localhost";
+$username = "root"; // Update with your database username
+$password = ""; // Update with your database password
+$dbname = "UserBookingDB";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// SQL query to retrieve data where Customer_cancelled = 1
+$sql = "SELECT first_name, last_name, random_number, availability, last_line, room_number, customer_cancelled
+        FROM UserBookingDetails
+        WHERE customer_cancelled = 1";
+
+// Execute the query
+$result = $conn->query($sql);
+
+// Check if there are results
+if ($result->num_rows > 0) {
+    // Start the table
+    echo "<table class='booking-table'>";
+    echo "<thead><tr>";
+    echo "<th>First Name</th><th>Last Name</th><th>Random Number</th><th>Availability</th><th>Last Line</th><th>Room Number</th><th>Customer Cancelled</th>";
+    echo "</tr></thead>";
+    echo "<tbody>";
+
+    // Output the data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['random_number']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['availability']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['last_line']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['room_number']) . "</td>";
+        echo "<td>" . ($row['customer_cancelled'] == 1 ? 'Yes' : 'No') . "</td>";
+        echo "</tr>";
+    }
+
+    // End the table
+    echo "</tbody></table>";
+} else {
+    echo "No records found.";
+}
+
+// Close the connection
+$conn->close();
+?>
+
 
 <?php
 // Database connection details

@@ -279,18 +279,36 @@
                     <img src="f.jpeg" alt="Facebook Share" class="social-icon">
                 </a><br>
                 <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
-                <form action="send_email.php" method="post">
+                <form id="emailForm">
                     <div class="input-button-container">
                         <label for="email">Email Address:</label>
                         <input type="email" id="email" name="email" required>
-                        <button type="submit" class="su">
-                            &#8594; <!-- Arrow symbol -->
-                        </button>
+                        <button type="submit" class="su">&#8594;</button>
                     </div>                
                 </form>
             </div>
         </div>
     </div>
+
+
+
+
+
+    <div class="overlayr" id="overlayr"></div>
+    <div class="modal" id="modal">
+        <p>Email submitted successfully!</p>
+        <h2>PRIME GUEST NEWS, OFFERS AND ANNOUNCEMENTS</h2>
+        <p>
+          <strong>NEWSLETTER SIGNUP</strong><br>
+        We love sharing our news and announcements with you on a regular basis so that you know what is happening in the world of Prime. To receive information about our ongoing specials and promotions, please complete the form below, and we will make sure to stay in touch.
+        </p>
+        <p>
+            Your privacy is important to us, and we will never share or sell any information you provide to us. The notices you receive will be from Prime Lodge with hopes of enhancing your next experience with us.
+        </p>
+        <button id="closeModal">OK</button>
+    </div>
+
+
     
         
         <div class="footer">
