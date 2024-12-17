@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -109,6 +110,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+function expandContainer() {
+    var container = document.getElementById("lodge-container");
+
+    // Toggle height between initial and expanded height
+    if (container.style.height === "800px") {
+        container.style.height = "500px"; // Collapse the container
+    } else {
+        container.style.height = "800px"; // Expand the container
+    }
+}
+
+
+
 
 
 
@@ -176,6 +192,8 @@ prevBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+
 
 
 const scrollyContainer = document.getElementById("scrollyContainer");
@@ -430,7 +448,6 @@ function hideDetails() {
 
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const shapedSquare = document.getElementById('shaped-square');
     const slidingBlock = document.getElementById('slidingg-block');
@@ -455,9 +472,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500); // Match the CSS transition duration
     });
 });
-
-
-
 
 
 document.getElementById('bookNowButton').addEventListener('click', function () {
@@ -494,3 +508,26 @@ function hideMessageBox() {
     const messageBox = document.getElementById('messageBox');
     messageBox.style.display = 'none';
 }
+
+
+
+
+const scrollContaineru = document.getElementById('scroll-containeru');
+const leftArrow = document.getElementById('leftg-arrow');
+const rightArrow = document.getElementById('rightg-arrow');
+
+// Function to scroll left
+leftArrow.addEventListener('click', () => {
+    scrollContaineru.scrollBy({
+        left: -200,  // Scroll 200px to the left
+        behavior: 'smooth'
+    });
+});
+
+// Function to scroll right
+rightArrow.addEventListener('click', () => {
+    scrollContaineru.scrollBy({
+        left: 200,  // Scroll 200px to the right
+        behavior: 'smooth'
+    });
+});
