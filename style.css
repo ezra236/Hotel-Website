@@ -2734,3 +2734,69 @@ nav a:hover {
 }
 
 
+
+
+
+
+
+.center-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #070101;
+    padding: 20px;
+    border-radius: 0px;
+    border: 10px solid #e14e26;
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+    z-index: 1000;
+}
+
+
+.center-box  button{
+    padding: 10px 35px;
+    background-color: #e14e26;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
+.center-box button:hover {
+    background-color: #933405;
+}
+
+button.sug {
+    background-color: transparent;
+    color: rgb(227, 202, 202);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button.sug:hover {
+    background-color: transparent;
+    color: #daa0a0;
+}
+
+
+.sug {
+    background-color: transparent; 
+    color: rgb(215, 198, 198);
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 25px; /* Adjust the size of the arrow */
+    transition: background-color 0.3s ease;
+    margin-left: -45px;
+}
+
+.sug:hover {
+    color: #ba9a9a; /* Slightly darker green when hovered */
+}
+
+
+
+

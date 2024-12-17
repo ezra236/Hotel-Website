@@ -531,3 +531,38 @@ rightArrow.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+
+
+
+
+
+
+document.getElementById('newsletterForms').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+    
+    // Form Data
+    const formData = new FormData(this);
+
+    // Submit the form using Fetch API
+    fetch('send_email.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            document.getElementById('centerBox').style.display = 'block';
+        } else {
+            alert('There was an error submitting the form.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Something went wrong!');
+    });
+});
+
+// Function to close the box
+function closeBox() {
+    document.getElementById('centerBox').style.display = 'none';
+}
