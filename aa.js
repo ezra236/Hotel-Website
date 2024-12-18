@@ -566,3 +566,22 @@ document.getElementById('newsletterForms').addEventListener('submit', function(e
 function closeBox() {
     document.getElementById('centerBox').style.display = 'none';
 }
+
+
+
+// Select the container and button
+const lodgeContainer = document.getElementById('lodgeContainer');
+const expandButton = document.getElementById('expandButton');
+
+// Add click event listener to the button
+expandButton.addEventListener('click', () => {
+    // Toggle the 'expanded' class
+    lodgeContainer.classList.toggle('expanded');
+
+    // Change button text based on state
+    if (lodgeContainer.classList.contains('expanded')) {
+        expandButton.textContent = '-'; // Change to '-' when expanded
+    } else {
+        expandButton.textContent = '+'; // Change back to '+' when collapsed
+    }
+});

@@ -613,3 +613,35 @@ const form = document.getElementById('emailForm');
             modal.style.display = 'none';
             overlay.style.display = 'none';
         });
+
+
+
+
+
+
+
+
+
+        const scrollContaineru = document.getElementById('scroll-containeru');
+        const leftArrow = document.getElementById('leftg-arrow');
+        const rightArrow = document.getElementById('rightg-arrow');
+        
+        // Function to scroll left
+        leftArrow.addEventListener('click', () => {
+            scrollContaineru.scrollBy({
+                left: -200,  // Scroll 200px to the left
+                behavior: 'smooth'
+            });
+        });
+        
+        // Function to scroll right
+        rightArrow.addEventListener('click', () => {
+            scrollContaineru.scrollBy({
+                left: 200,  // Scroll 200px to the right
+                behavior: 'smooth'
+            });
+        });
+        
+        
+        
+

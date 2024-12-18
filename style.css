@@ -646,14 +646,38 @@ nav a:hover {
     background-color: #301414;
     padding: 40px;
     text-align: center;
-    height: 700px; /* Initial height */
-    overflow: hidden; /* Hide excess content initially */
+    height: 510px; /* Initial height */
+    overflow: hidden; 
+}
+
+.expand-button {
+    position: absolute;
+    top: 1150px; /* Initial button position */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 10px 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 65px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: top 0.5s ease; 
+}
+
+.lodge-container.expanded {
+    height: 1950px; 
+}
+
+.lodge-container.expanded .expand-button {
+    top: 2520px; 
 }
 
 /* Show the container on mobile devices */
 @media (max-width: 768px) {
     .lodge-container {
-        display: block; /* Make it visible on mobile */
+        display: block; 
     }
 }
 
@@ -2270,8 +2294,6 @@ nav a:hover {
         display: none;
     }
 }
-
-
 
 
 .slideshow-container {
