@@ -32,6 +32,12 @@ body {
     transition: background-color 0.3s;
 }
 
+@media (max-width: 768px) {
+    .squared-shape {
+        margin-top: 15px; /* Apply margin-top for mobile */
+    }
+}
+
 .squared-shape:hover {
     background-color: #ccae84; /* Change color on hover */
 }
@@ -59,6 +65,15 @@ body {
     z-index: 5000;
 }
 
+@media only screen and (max-width: 767px) {
+    .blockk {
+        height: 700px; 
+        left: -10px; 
+        width: 100%; 
+        height: 700px;
+    }
+}
+
 .parag {
     position: absolute; 
     top: 20px;  
@@ -75,6 +90,12 @@ body {
     margin-top: 170px;
     height: 100px;
     width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+    .inblock {
+        margin-top: 0; /* Set margin-top to 0 for mobile */
+    }
 }
 
 .inblock img{
@@ -102,6 +123,24 @@ body {
     margin-top: 50px; 
     width: 100%;
     height: 50px;
+}
+
+/* Show all links by default on mobile */
+.linkk a {
+    display: block;
+}
+
+/* Hide all links by default on desktop */
+@media only screen and (min-width: 1024px) {
+    .linkk a {
+        display: none;
+    }
+
+    /* Show only 'HERITAGE' and 'FEEDBACK' on desktop */
+    .linkk a[href="herit.html"],  /* HERITAGE link */
+    .linkk a[href="feedback.html"] {  /* FEEDBACK link */
+        display: block;
+    }
 }
 
 .linkk a{
@@ -141,16 +180,72 @@ body {
     z-index: 4098; /* Sits below the sliding block */
 }
 
+.yu{
+    background-color: #eccea5;
+    align-items: center;
+    justify-content: center; /* Centers the content horizontally */
+    display: flex;
+    width: 150px;
+}
+
+@media (max-width: 768px) {
+    .yu {
+        width: 107px; 
+    }
+}
+
+.finis {
+    top: 0;
+    height: 40px;
+    background-color: #eccea5;
+    position: fixed;
+    width: 100%;
+    transition: top 0.5s ease; /* Smooth transition for disappearing */
+    z-index: 1191;
+}
+
+.finis p {
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 5px; /* Remove default margin */
+}
+
+@media (min-width: 1024px) { /* Adjust min-width as needed */
+    .finis {
+        display: none;
+    }
+}
 
 .nav-container {
     display: flex;
     width: 100%;
     position: fixed;
-    top: 0;
+    top: 35px;
     left: 0;
     z-index: 1200;
-    padding: 0; /* Remove extra padding */
+    padding: 0;
     margin: 0;
+    transition: top 0.5s ease; /* Smooth transition for movement */
+}
+
+@media (min-width: 769px) { 
+    .nav-container {
+        top: 0; /* Move to the top on desktop */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .nav-container .dropdown,
+    .nav-container nav {
+        display: none; /* Hide dropdown and nav links on mobile */
+    }
+
+    .nav-container .logo,
+    .nav-container .yu,
+    .nav-container .shape-container {
+        display: block; /* Ensure these elements are visible on mobile */
+    }
 }
 
 nav {
@@ -170,10 +265,10 @@ nav {
 }
 
 .logo img {
-    width: 90px; /* Adjust the size to your preference */
-    height: 70px; /* Maintain aspect ratio */
-    max-height: 100%; /* Prevents the logo from getting larger than the container */
-    object-fit: contain; /* Ensures the image fits within the container without distortion */
+    width: 90px; 
+    height: 70px; 
+    max-height: 100%; 
+    object-fit: contain; 
     margin: 0;
     padding: 0;
     margin-right: 12px;
@@ -195,13 +290,19 @@ nav {
     top: 0; 
     left: 0; 
   }
+
+  @media screen and (max-width: 768px) {
+    .square {
+        height: 74px; 
+    }
+}
   
 .shape-container:hover .square {
-    background-color: rgb(230, 89, 28);/* Change color on hover */
+    background-color: rgb(230, 89, 28);
 }
 
 .shape-container:hover .triangle{
-    border-top-color: rgb(230, 89, 28); /* Change color on hover */
+    border-top-color: rgb(230, 89, 28); 
 }
   
 .triangle {
@@ -213,6 +314,12 @@ nav {
     position: relative; 
     top: 84px; 
     z-index: 1500;
+}
+
+@media screen and (max-width: 768px) {
+    .triangle {
+        top: 74px; 
+    }
 }
 
 .triangle-image {
@@ -242,7 +349,7 @@ nav a {
     font-family: 'Times New Roman', Times, serif;
     border-radius: 5px; 
     transition: background-color 0.3s, color 0.3s; 
-    margin: 0 65px; 
+    margin: 0 60px; 
     position: relative; 
 }
 
@@ -381,7 +488,7 @@ nav a:hover {
     display: block;
     position: absolute;
     background-color: #392b2b;
-    min-width: 1516px;
+    min-width: 100%;
     max-height: 0; /* Start closed */
     overflow: visible;
     opacity: 0; /* Fully transparent */
@@ -514,6 +621,7 @@ nav a:hover {
 .tex p{
     font-size: 13px;
     font-weight: bold;
+    color: white;
 }
 
 /* Circle container styling */
@@ -725,6 +833,192 @@ nav a:hover {
 
 
 
+@media only screen and (max-width: 768px) {
+    .circle {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .dropdownn-content {
+        position: absolute;
+        min-width: 360px;
+        max-height: 700px; 
+        padding: 10px;
+        top: 10px;
+        left: 0px;
+        transform: translateY(0px); 
+        transition: max-height 0s ease, padding 0s ease, opacity 0s ease, transform 1s ease;
+    }
+
+    .dropdownn-content.show {
+        max-height: 700px;
+    }
+
+    .check {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .check label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .check input {
+        width: 80%; 
+        background-color: white;
+        padding: 8px;
+        min-height: 10px;
+    }
+
+    .check form {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .check input[type="text"].flatpickr,
+    .check input[type="number"],
+    .check input[type="numberr"] {
+        width: 40px;
+    }
+
+    .dropdow {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdoww {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+
+    .linkc {
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .popover {
+        position: absolute;
+        top: 1%; /* Place below Modify Booking */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f9ede1;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 4px;
+        width: 80%; /* Make popover smaller */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1500;
+        height: 260px;
+        display: none; /* Hidden by default */
+        margin-top: 50px;
+    }
+
+    .popover.show {
+        display: block; /* Show the popover when active */
+    }
+
+    .popover::before {
+        content: '';
+        position: absolute;
+        bottom: 100%; 
+        left: 50%; 
+        margin-left: -10px; 
+        border-width: 22px; 
+        border-style: solid;
+        border-color: transparent transparent #f9ede1 transparent; /* Triangle color matches popover background */
+    }
+
+    .popover p {
+        margin: 0;
+        font-size: 14px;
+        color: #e14e26;
+        text-decoration: none;
+        font-size: 22px;
+        pointer-events: none;
+    }
+
+    .popover .popover-label {
+        font-size: 14px;
+        color: #000000;
+        font-weight: bold;
+        margin-top: 10px; /* Adjust spacing from above elements */
+    }
+
+    /* Style for the Confirmation Number input */
+    .popover input[type="text"] {
+        padding: 12px;
+        width: 200px;
+        border-radius: 3px;
+        pointer-events: auto;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* Style for the Close button */
+#close-popover {
+    width: 75px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#close-popover:hover {
+    background-color: #811b18; /* Darker red on hover */
+}
+
+#continue-popover {
+    width: 95px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+#continue-popover:hover {
+    background-color: #9b2611; /* Darker green on hover */
+}
+
+
+#close-popover {
+    margin-right: 40px; 
+}
+}
+
+
 
 /* Chosen section styles */
 .chosen {
@@ -737,6 +1031,12 @@ nav a:hover {
     margin-top: 75px; /* Ensure it's below the fixed navbar */
     background-color: white;
     margin-left: 120px;
+}
+
+@media (max-width: 768px) {
+    .chosen {
+        margin-top: 100px; 
+    }
 }
 
 .imagee {
@@ -775,7 +1075,7 @@ nav a:hover {
 }
 
 .image-item img {
-    width: 100%; /* Makes the image fill its container */
+    width: 100%; 
     height: auto;
     max-width: 55px; /* Prevents the image from getting too large */
     margin-bottom: 5px; /* Adds some space below the image */
@@ -825,6 +1125,61 @@ nav a:hover {
     background-color: #85370c; /* Darker green */
 }
 
+
+/* Mobile styles for .chosen */
+@media (max-width: 768px) {
+    .chosen {
+        flex-direction: column; 
+        width: 100%; 
+        height: auto; 
+        margin-left: 0; 
+        padding: 10px; 
+    }
+    
+    .imagee{
+        width: 70%;
+    }
+    .text{
+        width: 100%; 
+        height: auto; 
+        font-size: 13px;
+    }
+
+    .image-container {
+        flex-direction: row;
+        gap: 40px; 
+        height: 50px;
+    }
+
+    .image-item {
+        width: 60px; /* Ensure each item takes full width */
+        text-align: center;
+    }
+
+    .image-item p {
+       font-size: 12px;
+    }
+
+    .option {
+        width: 90%; 
+        height: auto; 
+        margin-left: -20px;
+    }
+
+    .option p{
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .book-button {
+        margin-left: 0; 
+        margin-top: 20px; 
+        width: 100%; /* Full-width button */
+    }
+}
+
+
+
 /* Message Box Styling */
 .message-box {
     display: none;
@@ -846,8 +1201,19 @@ nav a:hover {
     font-size: 18px;
 }
 
+@media only screen and (max-width: 768px) {
+    .message-box {
+        top: 60%;
+        left: 5%;
+        width: 90px; 
+        height: 60px; 
+        padding: 5px; 
+        font-size: 15px; 
+    }
+}
 
-/* Style for block-box (Full-Screen Overlay) */
+
+
 .block-box {
     position: fixed;
     top: 0;
@@ -864,6 +1230,15 @@ nav a:hover {
     z-index: 15000; /* Ensures it sits above other content */
 }
 
+@media screen and (max-width: 600px) {
+    .block-box {
+        font-size: 16px; 
+        padding: 15px; 
+        width: 330px;
+    }
+}
+
+
 .block-box p{
     font-size: 32px;
     color: white;
@@ -872,16 +1247,33 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* Box container to display boxes in a row */
+@media screen and (max-width: 600px) {
+    .block-box p {
+        font-size: 20px; 
+        margin-left: 0;  
+        text-align: center; 
+    }
+}
+
+
 .box-container {
-    display: flex; /* Aligns items in a row */
-    justify-content: space-between; /* Ensures space between the boxes */
-    gap: 20px; /* Space between the boxes */
-    max-width: 1000px; /* Limits width of container */
+    display: flex; 
+    justify-content: space-between; 
+    gap: 20px; 
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Styling for individual square boxes */
+@media screen and (max-width: 600px) {
+    .box-container {
+        flex-direction: column;  
+        gap: 10px;               
+        max-width: 360px;
+        margin-left: -15px;  
+        margin-right: auto;
+    }
+}
+
 .square-box1 {
     width: 30%; 
     height: 300px; 
@@ -899,7 +1291,7 @@ nav a:hover {
 
 #squareBox1 h2 {
     font-size: 18px;
-    margin: 10px 0; /* Spacing between h2 and other elements */
+    margin: 10px 0; 
     color: #c7581c;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -923,6 +1315,25 @@ div#squareBox1 p {
 #squareBox1 strong {
     color: #000;
     font-family: 'Times New Roman', Times, serif;
+}
+
+@media screen and (max-width: 600px) {
+    .square-box1 {
+        width: 60%;  
+        height: 230px;
+        margin-left: 5px; 
+        margin-right: 20px; 
+        margin-bottom: 5px; 
+    }
+    #squareBox1 h2 {
+        font-size: 15px; 
+    }
+
+   
+    #squareBox1 img {
+        width: 85%;
+        height: 180px; 
+    }
 }
 
 .square-box2 {
@@ -951,6 +1362,22 @@ div#squareBox1 p {
     font-size: 50px;
 }
 
+@media screen and (max-width: 600px) {
+    .square-box2 {
+        width: 70%; 
+        margin-right: 0;
+        margin-left: 10px; 
+        margin-bottom: 5px; 
+        height: 260px;
+    }
+
+    .square-box2 h5 {
+        font-size: 35px; /* Reduce font size for mobile */
+    }
+}
+
+
+
 #notificationBox {
     display: none;
     position: fixed;
@@ -973,6 +1400,18 @@ div#squareBox1 p {
     text-align: center;
 }
 
+
+@media screen and (max-width: 600px) {
+    #notificationBox {
+        width: 135px; 
+        top: 17%; 
+        left: 25%;
+        padding: 10px;  
+        font-size: 18px;  
+        height: 35px;  
+        max-width: 300px;  
+    }
+}
 
 .container {
     display: flex;
@@ -1041,6 +1480,12 @@ div#squareBox1 p {
     background-color: #ffffff;
     border: 1px solid #ccc;
     margin-left: 0px;
+}
+
+@media (max-width: 768px) { 
+    .know {
+        display: none; 
+    }
 }
 
 .datess {
@@ -1329,6 +1774,31 @@ button:hover {
     background-color: #94360a;
 }
 
+
+
+@media (max-width: 768px) {
+    .scroll-container {
+        width: 95%; 
+        margin-left: -20px;
+    }
+
+    .room-row {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .roo1, .roo2, .roo3, .roo4, .roo5, .roo6, .roo7, .roo8, .roo9, .roo10 {
+        width: 90%; 
+        margin-bottom: 20px; 
+    }
+
+    .roo1 img, .roo2 img, .roo3 img, .roo4 img, .roo5 img, .roo6 img, .roo7 img, .roo8 img, .roo9 img, .roo10 img {
+        width: 100%; 
+        height: auto; 
+    }
+}
+
+
 /* Modal styling to cover the full screen */
 .modal {
     position: fixed;
@@ -1417,6 +1887,12 @@ button:hover {
 
 .add-room-box p {
     margin-top: 18px;
+}
+
+@media (max-width: 768px) {
+    .acc {
+        display: none; 
+    }
 }
 
 
@@ -1532,17 +2008,7 @@ button:hover {
     margin-left: 65px;
 }
 
-/* Responsive: Stack the sections vertically on small screens */
-@media (max-width: 600px) {
-    .footer {
-        flex-direction: column; /* Stack the sections vertically */
-        text-align: center;
-    }
 
-    .stp {
-        margin-top: 10px;
-    }
-}
 
 .about-link {
     text-align: left;
@@ -1624,6 +2090,12 @@ button:hover {
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    .triangled {
+        margin-left: 130px;
+    }
+}
+
 .arrowd {
     position: absolute;
     top: 19px; /* Adjust position of the arrow inside the triangle */
@@ -1687,4 +2159,180 @@ button:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
+}
+
+
+
+
+
+
+/* Default styles for desktop - content will be hidden on desktop */
+.foop, .ffsud, .ddsud {
+    display: none; /* Hide on desktop by default */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    /* Show the content only on mobile */
+    .foop, .ffsud, .ddsud {
+        display: block; /* Show on mobile */
+    }
+
+    /* Mobile-specific styles */
+    .foop {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #e8e8e8;
+        height: auto;
+    }
+
+    .ffsud, .ddsud {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+        margin-bottom: 0px;
+        background-color: #e8e8e8;
+    }
+
+    .ffsud {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        background-color: #e8e8e8;
+        height: 100%; /* Ensure the div takes full height of its container */
+    }
+    
+    .ffsud h3 {
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        margin-bottom: 0px;
+        text-align: center; /* Center the heading text */
+    }
+    
+    .ffsud a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        text-align: center; /* Center the link */
+    }
+    
+    .ffsud p {
+        color: #000000;
+        font-size: 16px;
+        margin: 5px 0;
+        text-align: center; /* Center the paragraph text */
+    }    
+
+    /* DDS class styles */
+    .ddsud {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        background-color: #e8e8e8;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .ddsud h3 {
+        color: #090808;
+        font-size: 20px;
+        margin-bottom: 5px;
+        text-align: center; /* Center the heading text */
+    }
+    
+    .ddsud p {
+        color: #333;
+        font-size: 16px;
+        margin: 5px 0;
+        text-align: center; /* Center the paragraph text */
+    }
+    
+    .ddsud a {
+        color: #0f0907; 
+        text-decoration: none; 
+        text-align: center; 
+    }
+    
+    .ddsud a:hover {
+        text-decoration: underline; 
+    }
+    
+    .ddsud .social-icons {
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        cursor: pointer;
+        padding-left: 0; 
+    }
+
+    .dams {
+        background-color: #e8e8e8;
+        padding: 20px;
+        box-sizing: border-box;
+        color: black;
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; 
+        align-items: flex-start;
+        text-align: left; 
+        padding: 15px;
+    }
+
+    .stp a {
+        font-size: 16px; 
+        margin: 5px 0; 
+        padding: 8px 5px;
+    }
+
+    .copyright {
+        font-size: 14px; 
+        margin-left: 0; 
+        margin-top: 4px; 
+        margin-bottom: 18px;
+    }
+
+    .stp a:hover, .about-link:hover {
+        color: #ff4500;
+    }
+}
+
+button.sug {
+    background-color: transparent;
+    color: rgb(227, 202, 202);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button.sug:hover {
+    background-color: transparent;
+    color: #daa0a0;
+}
+
+
+.sug {
+    background-color: transparent; 
+    color: rgb(215, 198, 198);
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 25px; /* Adjust the size of the arrow */
+    transition: background-color 0.3s ease;
+    margin-left: -45px;
+}
+
+.sug:hover {
+    color: #ba9a9a; 
 }
