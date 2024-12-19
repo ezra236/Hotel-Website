@@ -619,29 +619,33 @@ const form = document.getElementById('emailForm');
 
 
 
+// Function to check if the device is mobile
+function isMobile() {
+    return window.innerWidth <= 768; // Adjust the value for the mobile breakpoint
+}
 
+document.addEventListener('scroll', () => {
+    if (isMobile()) {
+        const finis = document.querySelector('.finis');
+        const navContainer = document.querySelector('.nav-container');
+        
+        if (window.scrollY > 0) {
+            finis.style.top = '-40px'; // Hide the finis container
+            navContainer.style.top = '0'; // Move nav-container to top
+        } else {
+            finis.style.top = '0'; // Show the finis container
+            navContainer.style.top = '40px'; // Reset nav-container position
+        }
+    }
+});
 
-
-        const scrollContaineru = document.getElementById('scroll-containeru');
-        const leftArrow = document.getElementById('leftg-arrow');
-        const rightArrow = document.getElementById('rightg-arrow');
+document.addEventListener('keydown', (event) => {
+    if (isMobile() && event.key === 'ArrowDown') {
+        const finis = document.querySelector('.finis');
+        const navContainer = document.querySelector('.nav-container');
         
-        // Function to scroll left
-        leftArrow.addEventListener('click', () => {
-            scrollContaineru.scrollBy({
-                left: -200,  // Scroll 200px to the left
-                behavior: 'smooth'
-            });
-        });
-        
-        // Function to scroll right
-        rightArrow.addEventListener('click', () => {
-            scrollContaineru.scrollBy({
-                left: 200,  // Scroll 200px to the right
-                behavior: 'smooth'
-            });
-        });
-        
-        
-        
+        finis.style.top = '-40px'; // Hide the finis container
+        navContainer.style.top = '0'; // Move nav-container to top
+    }
+});
 
