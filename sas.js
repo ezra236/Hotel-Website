@@ -619,33 +619,40 @@ const form = document.getElementById('emailForm');
 
 
 
-// Function to check if the device is mobile
-function isMobile() {
-    return window.innerWidth <= 768; // Adjust the value for the mobile breakpoint
-}
 
-document.addEventListener('scroll', () => {
-    if (isMobile()) {
-        const finis = document.querySelector('.finis');
-        const navContainer = document.querySelector('.nav-container');
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            let lastScrollY = window.scrollY;
         
-        if (window.scrollY > 0) {
-            finis.style.top = '-40px'; // Hide the finis container
-            navContainer.style.top = '0'; // Move nav-container to top
-        } else {
-            finis.style.top = '0'; // Show the finis container
-            navContainer.style.top = '40px'; // Reset nav-container position
+            document.addEventListener('scroll', () => {
+                const finis = document.querySelector('.finis');
+                const navContainer = document.querySelector('.nav-container');
+        
+                if (window.scrollY > lastScrollY) {
+                    // Scrolling down
+                    finis.style.top = '-40px'; // Hide the finis container
+                    navContainer.style.top = '40px'; // Move nav-container to top
+                } else {
+                    // Scrolling up
+                    finis.style.top = '0px'; // Show the finis container
+                    navContainer.style.top = '40px'; // Reset nav-container position
+                }
+        
+                lastScrollY = window.scrollY; // Update the last scroll position
+            });
+        
+            document.addEventListener('keydown', (event) => {
+                const finis = document.querySelector('.finis');
+                const navContainer = document.querySelector('.nav-container');
+        
+                if (event.key === 'ArrowDown') {
+                    finis.style.top = '-40px'; // Hide the finis container
+                    navContainer.style.top = '40px'; // Move nav-container to top
+                }
+        
+                if (event.key === 'ArrowUp') {
+                    finis.style.top = '0px'; // Show the finis container
+                    navContainer.style.top = '40px'; // Reset nav-container position
+                }
+            });
         }
-    }
-});
-
-document.addEventListener('keydown', (event) => {
-    if (isMobile() && event.key === 'ArrowDown') {
-        const finis = document.querySelector('.finis');
-        const navContainer = document.querySelector('.nav-container');
         
-        finis.style.top = '-40px'; // Hide the finis container
-        navContainer.style.top = '0'; // Move nav-container to top
-    }
-});
-

@@ -198,7 +198,7 @@ body {
 
 .finis {
     top: 0;
-    height: 35px;
+    height: 40px;
     background-color: #eccea5;
     position: fixed;
     width: 100%;
@@ -843,7 +843,7 @@ nav a:hover {
         min-width: 360px;
         max-height: 700px; 
         padding: 10px;
-        top: -20px;
+        top: 0px;
         left: 0px;
         transform: translateY(0px); 
         transition: max-height 0s ease, padding 0s ease, opacity 0s ease, transform 1s ease;
@@ -1028,7 +1028,7 @@ nav a:hover {
 
 @media (max-width: 768px) { /* Target screens with width 768px or less */
     .slideshow-cont {
-        top: 75px; /* Move slideshow down on mobile */
+        top: 70px; /* Move slideshow down on mobile */
     }
 }
 
