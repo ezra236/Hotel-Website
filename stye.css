@@ -1205,7 +1205,7 @@ nav a:hover {
 @media only screen and (max-width: 768px) {
     .message-box {
         top: 60%;
-        left: 5%;
+        left: 19%;
         width: 90px; 
         height: 60px; 
         padding: 5px; 
@@ -1250,8 +1250,8 @@ nav a:hover {
 
 @media screen and (max-width: 600px) {
     .block-box p {
-        font-size: 20px; 
-        margin-left: 0;  
+        font-size: 40px; 
+        margin-left: 200px;  
         text-align: center; 
     }
 }
@@ -1405,8 +1405,8 @@ div#squareBox1 p {
 @media screen and (max-width: 600px) {
     #notificationBox {
         width: 135px; 
-        top: 17%; 
-        left: 25%;
+        top: 30%; 
+        left: 40%;
         padding: 10px;  
         font-size: 18px;  
         height: 35px;  
