@@ -700,7 +700,7 @@ const form = document.getElementById('emailForm');
                 if (window.scrollY > lastScrollY) {
                     // Scrolling down
                     finis.style.top = '-40px'; // Hide the finis container
-                    navContainer.style.top = '85px'; // Move nav-container to top
+                    navContainer.style.top = '76px'; // Move nav-container to top
                 } else {
                     // Scrolling up
                     finis.style.top = '0px'; // Show the finis container
@@ -716,7 +716,7 @@ const form = document.getElementById('emailForm');
         
                 if (event.key === 'ArrowDown') {
                     finis.style.top = '-40px'; // Hide the finis container
-                    navContainer.style.top = '85px'; // Move nav-container to top
+                    navContainer.style.top = '76px'; // Move nav-container to top
                 }
         
                 if (event.key === 'ArrowUp') {

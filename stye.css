@@ -8,6 +8,7 @@ body {
     color:black;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 
@@ -2308,31 +2309,19 @@ button:hover {
     }
 }
 
+
+
+
 button.sug {
     background-color: transparent;
     color: rgb(227, 202, 202);
     border: none;
     padding: 10px 15px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 30px;
+    margin-top: -100px;
 }
 button.sug:hover {
     background-color: transparent;
     color: #daa0a0;
-}
-
-
-.sug {
-    background-color: transparent; 
-    color: rgb(215, 198, 198);
-    border: none;
-    padding: 6px 10px;
-    cursor: pointer;
-    font-size: 25px; /* Adjust the size of the arrow */
-    transition: background-color 0.3s ease;
-    margin-left: -45px;
-}
-
-.sug:hover {
-    color: #ba9a9a; 
 }
