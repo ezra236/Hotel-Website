@@ -655,4 +655,38 @@ const form = document.getElementById('emailForm');
                 }
             });
         }
+
+
+
+
+
+        const formm = document.getElementById('newsletterForms');
+        const popupBox = document.getElementById('popupBox');
+
+        formm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default form submission
+            
+            const formData = new FormData(formm);
+            
+            try {
+                const response = await fetch('send_email.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    popupBox.style.display = 'flex'; // Show the popup box
+                    formm.reset(); // Reset form fields
+                } else {
+                    alert('Failed to submit the email.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred.');
+            }
+        });
+
+        function closePopup() {
+            popupBox.style.display = 'none';
+        }
         

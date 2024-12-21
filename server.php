@@ -789,6 +789,15 @@ if ($selected_room && $checkin !== 'Not provided' && $checkout !== 'Not provided
         </div>
     </div>
 
+
+
+    <div id="popupBox" class="popupBox">
+        <div class="popupBox-content">
+            <p>Email submitted successfully!</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
     
         
         <div class="footer">
