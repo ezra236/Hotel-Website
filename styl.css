@@ -1308,6 +1308,7 @@ nav a:hover {
     .roomd {
         flex-direction: column;  /* Change to column layout on mobile */
         width: 100%;
+        height: 2500px;
     }
 
     .roo1, .roo2, .roo3, .roo4, .roo5, .roo6, .roo7, .roo8, .roo9, .roo10 {
@@ -1725,6 +1726,7 @@ nav a:hover {
         background-size: cover; 
         background-position: center;
         background-size: 100% 750px;
+        margin-top: 1850px;
     }
 
     .titley {
