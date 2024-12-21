@@ -1689,16 +1689,32 @@ div#squareBox1 p {
     background-color: #903a04;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .formm-row {
-        flex-direction: column;
-    }
-}
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    .hidden-block {
+        width: 360px;      
+    }
+    .containerd {
+        flex-direction: column; 
+        gap: 0; 
+    }
+
+    .pay-d,
     .formm-container {
-        padding: 10px;
+        flex: 1 1 360px; 
+        margin-top: 10px; 
+    }
+
+    .formm-row {
+        flex-direction: column; 
+    }
+
+    .formm-group {
+        margin-right: 0; /* Remove the margin between groups */
+    }
+
+    .formm-input {
+        font-size: 16px; /* Adjust font size for mobile */
     }
 }
 
@@ -1713,7 +1729,11 @@ div#squareBox1 p {
     font-size: 20px;
 }
 
-
+@media (max-width: 768px) {
+    .m {
+        margin-left: 20px; 
+    }
+}
 
 .display {
     padding: 20px;

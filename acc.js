@@ -585,11 +585,11 @@ document.querySelector('.formm-submit').addEventListener('click', function (even
     // Style the box using JavaScript
     box.style.position = 'fixed';
     box.style.top = '50%';
-    box.style.left = '50%';
+    box.style.left = '45%';
     box.style.transform = 'translate(-50%, -50%)';
-    box.style.width = '500px';
+    box.style.width = '300px';
     box.style.height = '210px';
-    box.style.border = '20px solid #c44d16';
+    box.style.border = '10px solid #c44d16';
     box.style.backgroundColor = 'white';
     box.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
     box.style.borderRadius = '1px';
@@ -602,7 +602,6 @@ document.querySelector('.formm-submit').addEventListener('click', function (even
 
     // Add the box to the body
     document.body.appendChild(box);
-
 
     // Create an AJAX request to send data to submit_payment.php
     const xhr1 = new XMLHttpRequest();
