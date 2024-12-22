@@ -11,6 +11,20 @@ body {
 }
 
 
+.yu{
+    background-color: #eccea5;
+    align-items: center;
+    justify-content: center; /* Centers the content horizontally */
+    display: flex;
+    width: 150px;
+}
+
+@media (max-width: 768px) {
+    .yu {
+        width: 107px;
+    }
+}
+
 .separator {
     font-size: 30px; 
     color: #dc5837; /* Adjust color to match your design */
@@ -30,6 +44,12 @@ body {
     overflow: hidden; 
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+@media (max-width: 768px) {
+    .squared-shape {
+        margin-top: 16px;
+    }
 }
 
 .squared-shape:hover {
@@ -59,6 +79,14 @@ body {
     z-index: 5000;
 }
 
+@media only screen and (max-width: 767px) {
+    .blockk { 
+        left: -10px; 
+        width: 100%; 
+        height: 700px;
+    }
+}
+
 .parag {
     position: absolute; 
     top: 20px;  
@@ -75,6 +103,13 @@ body {
     margin-top: 170px;
     height: 100px;
     width: 100%;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .inblock {
+        margin-top: 0; 
+    }
 }
 
 .inblock img{
@@ -117,6 +152,22 @@ body {
     color: #cc462b;
 }
 
+.linkk a {
+    display: block;
+}
+
+/* Hide all links by default on desktop */
+@media only screen and (min-width: 1024px) {
+    .linkk a {
+        display: none;
+    }
+
+    .linkk a[href="herit.html"],  /* HERITAGE link */
+    .linkk a[href="feedback.html"] {  /* FEEDBACK link */
+        display: block;
+    }
+}
+
 .logimage{
     margin-top: 70px;
 }
@@ -150,6 +201,19 @@ body {
     z-index: 1200;
     padding: 0; /* Remove extra padding */
     margin: 0;
+}
+
+@media (max-width: 768px) {
+    .nav-container .dropdown,
+    .nav-container nav {
+        display: none;
+    }
+    
+    .nav-container .logo,
+    .nav-container .yu,
+    .nav-container .shape-container {
+        display: block;
+    }
 }
 
 nav {
@@ -194,6 +258,12 @@ nav {
     top: 0; 
     left: 0; 
   }
+
+  @media (max-width: 768px) {
+    .square {
+        height: 75px;
+    }
+}
   
 .shape-container:hover .square {
     background-color: rgb(230, 89, 28);/* Change color on hover */
@@ -212,6 +282,12 @@ nav {
     position: relative; 
     top: 84px; 
     z-index: 1500;
+}
+
+@media (max-width: 768px) {
+    .triangle {
+        top: 75px;
+    }
 }
 
 .triangle-image {
@@ -719,6 +795,194 @@ nav a:hover {
     margin-right: 40px; /* Adjust for the desired spacing */
 }
 
+
+@media only screen and (max-width: 768px) {
+    .circle {
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .dropdownn-content {
+        position: absolute;
+        min-width: 360px;
+        max-height: 700px; 
+        padding: 10px;
+        top: -20px;
+        left: 0px;
+        transform: translateY(0px); 
+        transition: max-height 0s ease, padding 0s ease, opacity 0s ease, transform 1s ease;
+    }
+
+    .dropdownn-content.show {
+        max-height: 700px;
+    }
+
+    .check {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .check label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .check input {
+        width: 80%; 
+        background-color: white;
+        padding: 8px;
+        min-height: 10px;
+    }
+
+    .check form {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .check input[type="text"].flatpickr,
+    .check input[type="number"],
+    .check input[type="numberr"] {
+        width: 40px;
+    }
+
+    .dropdow {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdoww {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+
+    .linkc {
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .popover {
+        position: absolute;
+        top: 1%; /* Place below Modify Booking */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f9ede1;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 4px;
+        width: 80%; /* Make popover smaller */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1500;
+        height: 260px;
+        display: none; /* Hidden by default */
+        margin-top: 50px;
+    }
+
+    .popover.show {
+        display: block; /* Show the popover when active */
+    }
+
+    .popover::before {
+        content: '';
+        position: absolute;
+        bottom: 100%; 
+        left: 50%; 
+        margin-left: -10px; 
+        border-width: 22px; 
+        border-style: solid;
+        border-color: transparent transparent #f9ede1 transparent; /* Triangle color matches popover background */
+    }
+
+    .popover p {
+        margin: 0;
+        font-size: 14px;
+        color: #e14e26;
+        text-decoration: none;
+        font-size: 22px;
+        pointer-events: none;
+    }
+
+    .popover .popover-label {
+        font-size: 14px;
+        color: #000000;
+        font-weight: bold;
+        margin-top: 10px; /* Adjust spacing from above elements */
+    }
+
+    /* Style for the Confirmation Number input */
+    .popover input[type="text"] {
+        padding: 12px;
+        width: 200px;
+        border-radius: 3px;
+        pointer-events: auto;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* Style for the Close button */
+#close-popover {
+    width: 75px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#close-popover:hover {
+    background-color: #811b18; /* Darker red on hover */
+}
+
+#continue-popover {
+    width: 95px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+#continue-popover:hover {
+    background-color: #9b2611; /* Darker green on hover */
+}
+
+
+#close-popover {
+    margin-right: 40px; 
+}
+}
+
+
 /* Breadcrumb Header */
 .breadcrumb {
     padding: 10px 20px;
@@ -728,6 +992,12 @@ nav a:hover {
     margin-top: 66px;
     color: #000000;
     padding-left: 246px;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb {
+        padding-left: 10px;
+    }
 }
 
 .breadcrumb a {
@@ -780,7 +1050,13 @@ nav a:hover {
 }
 
 
-
+@media (max-width: 768px) {
+    .pic img {
+        margin-left: 25px; /* Remove left margin on mobile */
+        width: 80%; /* Optionally adjust width for better responsiveness */
+        height: 250px;
+    }
+}
 
 
 
@@ -1055,4 +1331,189 @@ nav a:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
+}
+
+
+
+.foop, .ffsud, .ddsud {
+    display: none; /* Hide on desktop by default */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    /* Show the content only on mobile */
+    .foop, .ffsud, .ddsud {
+        display: block; /* Show on mobile */
+    }
+
+    /* Mobile-specific styles */
+    .foop {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #e8e8e8;
+        height: auto;
+    }
+
+    .ffsud, .ddsud {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+        margin-bottom: 0px;
+        background-color: #e8e8e8;
+    }
+
+    .ffsud {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        background-color: #e8e8e8;
+        height: 100%; /* Ensure the div takes full height of its container */
+    }
+    
+    .ffsud h3 {
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        margin-bottom: 0px;
+        text-align: center; /* Center the heading text */
+    }
+    
+    .ffsud a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        text-align: center; /* Center the link */
+    }
+    
+    .ffsud p {
+        color: #000000;
+        font-size: 16px;
+        margin: 5px 0;
+        text-align: center; /* Center the paragraph text */
+    }    
+
+    /* DDS class styles */
+    .ddsud {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        background-color: #e8e8e8;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .ddsud h3 {
+        color: #090808;
+        font-size: 20px;
+        margin-bottom: 5px;
+        text-align: center; /* Center the heading text */
+    }
+    
+    .ddsud p {
+        color: #333;
+        font-size: 16px;
+        margin: 5px 0;
+        text-align: center; /* Center the paragraph text */
+    }
+    
+    .ddsud a {
+        color: #0f0907; 
+        text-decoration: none; 
+        text-align: center; 
+    }
+    
+    .ddsud a:hover {
+        text-decoration: underline; 
+    }
+    
+    .ddsud .social-icons {
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        cursor: pointer;
+        padding-left: 0; 
+    }
+
+    .dams {
+        background-color: #e8e8e8;
+        padding: 20px;
+        box-sizing: border-box;
+        color: black;
+    }
+}
+
+@media (max-width: 768px) {
+    .acc {
+        display: none;
+    }
+}
+
+
+button.sug {
+    background-color: transparent;
+    color: rgb(227, 202, 202);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button.sug:hover {
+    background-color: transparent;
+    color: #daa0a0;
+}
+
+
+.sug {
+    background-color: transparent; 
+    color: rgb(215, 198, 198);
+    border: none;
+    padding: 6px 20px;
+    cursor: pointer;
+    font-size: 25px; /* Adjust the size of the arrow */
+    transition: background-color 0.3s ease;
+    margin-left: -45px;
+}
+
+.sug:hover {
+    color: #ba9a9a; /* Slightly darker green when hovered */
+}
+
+
+
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; 
+        align-items: flex-start;
+        text-align: left; 
+        padding: 15px;
+    }
+
+    .stp a {
+        font-size: 16px; 
+        margin: 5px 0; 
+        padding: 8px 5px;
+    }
+
+    .copyright {
+        font-size: 14px; 
+        margin-left: 0; 
+        margin-top: 4px; 
+        margin-bottom: 18px;
+    }
+
+    .stp a:hover, .about-link:hover {
+        color: #ff4500;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .triangled {
+        margin-left: 140px;
+    }
 }

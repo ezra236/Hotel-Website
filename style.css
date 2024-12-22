@@ -421,7 +421,7 @@ nav {
   
 @media (max-width: 768px) { 
     .square {
-        height: 70px;  
+        height: 73px;  
     }
 }
 
@@ -446,7 +446,7 @@ nav {
 
 @media (max-width: 768px) { /* Adjust the max-width for mobile devices */
     .triangle {
-        top: 62.5px; /* Change top position on mobile devices */
+        top: 65px; /* Change top position on mobile devices */
     }
 }
 

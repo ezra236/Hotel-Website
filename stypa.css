@@ -152,7 +152,6 @@ body {
     color: #cc462b;
 }
 
-/* Show all links by default on mobile */
 .linkk a {
     display: block;
 }
@@ -191,7 +190,6 @@ body {
     display: none; /* Initially hidden */
     z-index: 4098; /* Sits below the sliding block */
 }
-
 
 .nav-container {
     display: flex;
@@ -1714,7 +1712,6 @@ nav a:hover {
 }
 
 
-/* Default styles for desktop - content will be hidden on desktop */
 .foop, .ffsud, .ddsud {
     display: none; /* Hide on desktop by default */
 }
