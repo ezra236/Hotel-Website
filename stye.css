@@ -170,6 +170,12 @@ body {
     border-radius: 160px;
 }
 
+@media (max-width: 768px) {
+    .logimage img {
+        margin-top: 25px; /* Adjust margin-top for mobile devices */
+    }
+}
+
 #overlay {
     position: fixed;
     top: 0;

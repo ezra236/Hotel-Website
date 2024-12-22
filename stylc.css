@@ -138,6 +138,13 @@ body {
     height: 50px;
 }
 
+@media (max-width: 768px) {
+    .linkk {
+        margin-top: 0;
+        height: 190px;
+    }
+}
+
 .linkk a{
     margin-bottom: 20px;
     font-family: 'Times New Roman', Times, serif;
@@ -178,6 +185,12 @@ body {
     margin-top: 95px;
     opacity: 0.6;
     border-radius: 160px;
+}
+
+@media (max-width: 768px) {
+    .logimage img {
+        margin-top: 25px; /* Adjust margin-top for mobile devices */
+    }
 }
 
 #overlay {

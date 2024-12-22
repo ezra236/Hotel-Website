@@ -240,3 +240,48 @@ const form = document.getElementById('emailForm');
 
 
 
+
+
+
+
+// Function to move the nav-container down by 40px
+function moveNavDown() {
+    const navContainer = document.querySelector('.nav-container');
+    navContainer.style.top = '40px';  
+}
+
+// Function to move the nav-container back to top 0
+function moveNavUp() {
+    const navContainer = document.querySelector('.nav-container');
+    navContainer.style.top = '0';  
+}
+
+// Check if the screen width is mobile size
+function isMobile() {
+    return window.innerWidth <= 768;  // Adjust the threshold for mobile screen size
+}
+
+// Apply the navigation behavior only on mobile
+if (isMobile()) {
+    document.addEventListener('keydown', function (event) {
+        if (event.key === "ArrowDown") {
+            moveNavDown();
+        } else if (event.key === "ArrowUp") {  // Detect the up arrow key (key code 38)
+            moveNavUp();
+        }
+    });
+
+    let lastScrollY = window.scrollY;
+
+    // Listen for scroll event to move the nav-container down when scrolling
+    window.addEventListener('scroll', function () {
+        const navContainer = document.querySelector('.nav-container');
+        if (window.scrollY > lastScrollY) {  // When scrolling down
+            moveNavDown();
+        } else if (window.scrollY < lastScrollY) {  // When scrolling up
+            moveNavUp();
+        }
+        
+        lastScrollY = window.scrollY;
+    });
+}

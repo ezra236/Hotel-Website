@@ -136,6 +136,13 @@ body {
     height: 50px;
 }
 
+@media (max-width: 768px) {
+    .linkk {
+        margin-top: 0;
+        height: 190px;
+    }
+}
+
 .linkk a{
     margin-bottom: 20px;
     font-family: 'Times New Roman', Times, serif;
@@ -177,6 +184,13 @@ body {
     opacity: 0.6;
     border-radius: 160px;
 }
+
+@media (max-width: 768px) {
+    .logimage img {
+        margin-top: 25px; /* Adjust margin-top for mobile devices */
+    }
+}
+
 
 #overlay {
     position: fixed;
@@ -224,16 +238,16 @@ nav {
 }
 
 .logo {
-    display: flex; /* Aligns content using flexbox */
-    align-items: center; /* Vertically centers the logo */
+    display: flex; 
+    align-items: center; 
     justify-content: flex-start; /* Aligns the logo to the left */
     background-color: #eccea5;
 }
 
 .logo img {
-    width: 90px; /* Adjust the size to your preference */
-    height: 70px; /* Maintain aspect ratio */
-    max-height: 100%; /* Prevents the logo from getting larger than the container */
+    width: 90px; 
+    height: 70px; 
+    max-height: 100%; 
     object-fit: contain; /* Ensures the image fits within the container without distortion */
     margin: 0;
     padding: 0;
@@ -489,8 +503,8 @@ nav a:hover {
 
 
 .linkc p {
-    color: #ffffff; /* Initial text color */
-    padding: 10px 20px; /* Adding padding for the link */
+    color: #ffffff; 
+    padding: 10px 20px; 
     display: inline-block; /* Ensures padding works as expected */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
     text-decoration: underline;
@@ -499,8 +513,8 @@ nav a:hover {
 }
 
 .linkc p:hover {
-    color: #ff5900; /* Text color on hover */
-    background-color: transparent; /* Background color on hover */
+    color: #ff5900; 
+    background-color: transparent; 
     border-radius: 4px; /* Optional: rounded corners */
     cursor: pointer;
 }
@@ -799,8 +813,6 @@ nav a:hover {
         display: none;
     }
 }
-
-
 
 @media screen and (max-width: 768px) {
     .dropdownn-content {

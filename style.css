@@ -312,6 +312,7 @@ body {
 @media (max-width: 768px) {
     .linkk {
         margin-top: 0; /* Set margin-top to 0 on mobile devices */
+        height: 190px;
     }
 }
 
@@ -339,6 +340,12 @@ body {
     margin-top: 95px;
     opacity: 0.6;
     border-radius: 160px;
+}
+
+@media (max-width: 768px) {
+    .logimage img {
+        margin-top: 25px; /* Adjust margin-top for mobile devices */
+    }
 }
 
 #overlay {
