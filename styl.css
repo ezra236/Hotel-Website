@@ -32,11 +32,98 @@ body {
     }
 }
 
+/* For 412px width */
+@media (min-width: 412px) and (max-width: 413px) {
+    .yu {
+        width: 150px;
+    }
+}
+
+/* For 384px width */
+@media (min-width: 384px) and (max-width: 385px) {
+    .yu {
+        width: 125px;
+    }
+}
+
+/* For 375px width */
+@media (min-width: 375px) and (max-width: 376px) {
+    .yu {
+        width: 115px;
+    }
+}
+
+/* For 414px width */
+@media (min-width: 414px) and (max-width: 415px) {
+    .yu {
+        width: 155px;
+    }
+}
+
+/* For 390px width */
+@media (min-width: 390px) and (max-width: 391px) {
+    .yu {
+        width: 128px;
+    }
+}
+
+/* For 428px width */
+@media (min-width: 428px) and (max-width: 429px) {
+    .yu {
+        width: 165px;
+    }
+}
+
+
 @media only screen and (max-width: 768px) {
     .squared-shape {
         margin-top: 15px;
+        margin-left: 10px;
     }
 }
+
+/* For 412px width */
+@media (min-width: 412px) and (max-width: 413px) {
+    .squared-shape {
+        margin-left: 26px;
+    }
+}
+
+/* For 384px width */
+@media (min-width: 384px) and (max-width: 385px) {
+    .squared-shape {
+        margin-left: 26px;
+    }
+}
+
+/* For 375px width */
+@media (min-width: 375px) and (max-width: 376px) {
+    .squared-shape {
+        margin-left: 20px;
+    }
+}
+
+/* For 414px width */
+@media (min-width: 414px) and (max-width: 415px) {
+    .squared-shape {
+        margin-left: 26px;
+    }
+}
+
+/* For 390px width */
+@media (min-width: 390px) and (max-width: 391px) {
+    .squared-shape {
+        margin-left: 26px;
+    }
+}
+
+/* For 428px width */
+@media (min-width: 428px) and (max-width: 429px) {
+    .squared-shape {
+        margin-left: 26px;
+    }
+}
+
 
 .squared-shape {
     width: 78px; 
@@ -311,6 +398,44 @@ nav {
     }
 }
 
+
+@media (min-width: 412px) and (max-width: 413px) {
+    .square {
+        width: 148px;
+    }
+}
+
+@media (min-width: 384px) and (max-width: 385px) {
+    .square {
+        width: 145px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 376px) {
+    .square {
+        width: 146px;
+    }
+}
+
+/* For 414px width devices */
+@media (min-width: 414px) and (max-width: 415px) {
+    .square {
+        width: 145px;
+    }
+}
+
+@media (min-width: 390px) and (max-width: 391px) {
+    .square {
+        width: 148px;
+    }
+}
+
+@media (min-width: 428px) and (max-width: 429px) {
+    .square {
+        width: 149px;
+    }
+}
+
 .shape-container:hover .square {
     background-color: rgb(230, 89, 28);/* Change color on hover */
 }
@@ -333,6 +458,59 @@ nav {
 @media screen and (max-width: 768px) {
     .triangle {
         top: 70px; 
+    }
+}
+
+
+@media (width: 412px) {
+    .triangle {
+        top: 70px; 
+        border-left: 74px solid transparent; 
+        border-right: 74px solid transparent; 
+    }
+}
+
+@media (width: 428px) {
+    .triangle {
+        top: 70px; 
+        border-left: 75px solid transparent; 
+        border-right: 75px solid transparent; 
+    }
+}
+
+/* For widths between 383px and 385px */
+@media (min-width: 383px) and (max-width: 385px) {
+    .triangle {
+        top: 70px;
+        border-left: 73px solid transparent;
+        border-right: 73px solid transparent;
+    }
+}
+
+/* For widths between 374px and 376px */
+@media (min-width: 374px) and (max-width: 376px) {
+    .triangle {
+        top: 70px;
+        border-left: 74px solid transparent;
+        border-right: 74px solid transparent;
+    }
+}
+
+/* For widths between 413px and 415px */
+@media (min-width: 413px) and (max-width: 415px) {
+    .triangle {
+        top: 70px;
+        border-left: 74px solid transparent;
+        border-right: 74px solid transparent;
+    }
+}
+
+/* For widths between 389px and 391px */
+@media (min-width: 389px) and (max-width: 391px) {
+    .triangle {
+        top: 70px;
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
     }
 }
 
