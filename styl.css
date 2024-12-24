@@ -1033,7 +1033,7 @@ nav a:hover {
         min-width: 360px;
         max-height: 700px; 
         padding: 10px;
-        top: 0px;
+        top: 10px;
         left: 0px;
         transform: translateY(0px); 
         transition: max-height 0s ease, padding 0s ease, opacity 0s ease, transform 1s ease;
@@ -1205,6 +1205,1517 @@ nav a:hover {
 }
 }
 
+@media (min-width: 374px) and (max-width: 376px) {
+    .dropdownn {
+        position: relative;
+        display: inline-block;
+        overflow: visible;
+        pointer-events: none;
+    }
+    
+    .dropdownn-content {
+        display: none; 
+        position: absolute;
+        background-color: #392b2b;
+        min-width: 375px;
+        max-height: 0; /* Start closed */
+        overflow: visible;
+        opacity: 0; 
+        z-index: 1000;
+        top: 10px;
+        left: 0;
+        padding: 10px;
+        border-radius: 0;
+        pointer-events: none;
+        transform: translateY(-10px); 
+        transition: max-height 1s ease, padding 1s ease, opacity 0.5s ease, transform 1s ease;
+    }
+    
+    .dropdownn-content.show {
+        display: block; /* Show the dropdown */
+        max-height: 700px;
+        padding: 0px 0; 
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); 
+        pointer-events: auto;
+        z-index: 1100;
+    }
+
+    .check {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: #392b2b;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .check form {
+        display: flex;
+        flex-direction: column; /* Arrange form elements vertically */
+        gap: 10px;
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    .check label{
+        width: 80%; 
+        margin-top: 3px;
+        margin-bottom: 5px;
+    }
+    
+    .check input {
+        width: 80%; 
+        background-color: white;
+        padding: 8px;
+        min-height: 10px;
+    }
+
+    .check input[type="text"].flatpickr{
+        padding: 10px;
+        min-height: 10px;
+        font-size: 14px;
+    }
+    
+    .check input[type="number"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .check button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .dropdow {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdoww {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdow div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdow div:hover {
+        background-color: #856464; 
+    }
+    
+    .dropdoww div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdoww div:hover {
+        background-color: #856464; 
+    }
+
+    .linkc {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .linkc p {
+        color: #ffffff;
+        text-decoration: underline;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .linkc p:hover {
+        color: #ff5900;
+    }
+
+    /* Modify the popover to fit on mobile */
+    .popover {
+        position: absolute;
+        top: 1%; /* Place below Modify Booking */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f9ede1;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 4px;
+        width: 80%; /* Make popover smaller */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1500;
+        height: 260px;
+        display: none; /* Hidden by default */
+        margin-top: 10px;
+    }
+
+    .popover.show {
+        display: block; /* Show the popover when active */
+    }
+
+    .popover::before {
+        content: '';
+        position: absolute;
+        bottom: 100%; 
+        left: 50%; 
+        margin-left: -10px; 
+        border-width: 22px; 
+        border-style: solid;
+        border-color: transparent transparent #f9ede1 transparent; /* Triangle color matches popover background */
+    }
+
+    .popover p {
+        margin: 0;
+        font-size: 14px;
+        color: #e14e26;
+        text-decoration: none;
+        font-size: 22px;
+        pointer-events: none;
+    }
+
+    .popover .popover-label {
+        font-size: 14px;
+        color: #000000;
+        font-weight: bold;
+        margin-top: 10px; /* Adjust spacing from above elements */
+    }
+
+    /* Style for the Confirmation Number input */
+    .popover input[type="text"] {
+        padding: 12px;
+        width: 200px;
+        border-radius: 3px;
+        pointer-events: auto;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* Style for the Close button */
+#close-popover {
+    width: 75px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#close-popover:hover {
+    background-color: #811b18; /* Darker red on hover */
+}
+
+#continue-popover {
+    width: 95px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+#continue-popover:hover {
+    background-color: #9b2611; /* Darker green on hover */
+}
+
+
+#close-popover {
+    margin-right: 40px; 
+}   
+}
+
+
+@media (width: 412px) {
+    .dropdownn {
+        position: relative;
+        display: inline-block;
+        overflow: visible;
+        pointer-events: none;
+    }
+    
+    .dropdownn-content {
+        display: none; 
+        position: absolute;
+        background-color: #392b2b;
+        min-width: 411px;
+        max-height: 0; /* Start closed */
+        overflow: visible;
+        opacity: 0; 
+        z-index: 1000;
+        top: 10px;
+        left: 0;
+        padding: 10px;
+        border-radius: 0;
+        pointer-events: none;
+        transform: translateY(-10px); 
+        transition: max-height 1s ease, padding 1s ease, opacity 0.5s ease, transform 1s ease;
+    }
+    
+    .dropdownn-content.show {
+        display: block; /* Show the dropdown */
+        max-height: 700px;
+        padding: 0px 0; 
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); 
+        pointer-events: auto;
+        z-index: 1100;
+    }
+
+    .check {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: #392b2b;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .check form {
+        display: flex;
+        flex-direction: column; /* Arrange form elements vertically */
+        gap: 10px;
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    .check label{
+        width: 80%; 
+        margin-top: 3px;
+        margin-bottom: 5px;
+    }
+    
+    .check input {
+        width: 80%; 
+        background-color: white;
+        padding: 8px;
+        min-height: 10px;
+    }
+
+    .check input[type="text"].flatpickr{
+        padding: 10px;
+        min-height: 10px;
+        font-size: 14px;
+    }
+    
+    .check input[type="number"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .check button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .dropdow {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdoww {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdow div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdow div:hover {
+        background-color: #856464; 
+    }
+    
+    .dropdoww div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdoww div:hover {
+        background-color: #856464; 
+    }
+
+    .linkc {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .linkc p {
+        color: #ffffff;
+        text-decoration: underline;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .linkc p:hover {
+        color: #ff5900;
+    }
+
+    /* Modify the popover to fit on mobile */
+    .popover {
+        position: absolute;
+        top: 1%; /* Place below Modify Booking */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f9ede1;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 4px;
+        width: 80%; /* Make popover smaller */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1500;
+        height: 260px;
+        display: none; /* Hidden by default */
+        margin-top: 10px;
+    }
+
+    .popover.show {
+        display: block; /* Show the popover when active */
+    }
+
+    .popover::before {
+        content: '';
+        position: absolute;
+        bottom: 100%; 
+        left: 50%; 
+        margin-left: -10px; 
+        border-width: 22px; 
+        border-style: solid;
+        border-color: transparent transparent #f9ede1 transparent; /* Triangle color matches popover background */
+    }
+
+    .popover p {
+        margin: 0;
+        font-size: 14px;
+        color: #e14e26;
+        text-decoration: none;
+        font-size: 22px;
+        pointer-events: none;
+    }
+
+    .popover .popover-label {
+        font-size: 14px;
+        color: #000000;
+        font-weight: bold;
+        margin-top: 10px; /* Adjust spacing from above elements */
+    }
+
+    /* Style for the Confirmation Number input */
+    .popover input[type="text"] {
+        padding: 12px;
+        width: 200px;
+        border-radius: 3px;
+        pointer-events: auto;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* Style for the Close button */
+#close-popover {
+    width: 75px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#close-popover:hover {
+    background-color: #811b18; /* Darker red on hover */
+}
+
+#continue-popover {
+    width: 95px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+#continue-popover:hover {
+    background-color: #9b2611; /* Darker green on hover */
+}
+
+
+#close-popover {
+    margin-right: 40px; 
+}    
+}
+
+@media (width: 428px) {
+    .dropdownn {
+        position: relative;
+        display: inline-block;
+        overflow: visible;
+        pointer-events: none;
+    }
+    
+    .dropdownn-content {
+        display: none; 
+        position: absolute;
+        background-color: #392b2b;
+        min-width: 428px;
+        max-height: 0; /* Start closed */
+        overflow: visible;
+        opacity: 0; 
+        z-index: 1000;
+        top: 10px;
+        left: 0;
+        padding: 10px;
+        border-radius: 0;
+        pointer-events: none;
+        transform: translateY(-10px); 
+        transition: max-height 1s ease, padding 1s ease, opacity 0.5s ease, transform 1s ease;
+    }
+    
+    .dropdownn-content.show {
+        display: block; /* Show the dropdown */
+        max-height: 700px;
+        padding: 0px 0; 
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); 
+        pointer-events: auto;
+        z-index: 1100;
+    }
+
+    .check {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: #392b2b;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .check form {
+        display: flex;
+        flex-direction: column; /* Arrange form elements vertically */
+        gap: 10px;
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    .check label{
+        width: 80%; 
+        margin-top: 3px;
+        margin-bottom: 5px;
+    }
+    
+    .check input {
+        width: 80%; 
+        background-color: white;
+        padding: 8px;
+        min-height: 10px;
+    }
+
+    .check input[type="text"].flatpickr{
+        padding: 10px;
+        min-height: 10px;
+        font-size: 14px;
+    }
+    
+    .check input[type="number"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .check button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .dropdow {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdoww {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdow div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdow div:hover {
+        background-color: #856464; 
+    }
+    
+    .dropdoww div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdoww div:hover {
+        background-color: #856464; 
+    }
+
+    .linkc {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .linkc p {
+        color: #ffffff;
+        text-decoration: underline;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .linkc p:hover {
+        color: #ff5900;
+    }
+
+    /* Modify the popover to fit on mobile */
+    .popover {
+        position: absolute;
+        top: 1%; /* Place below Modify Booking */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f9ede1;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 4px;
+        width: 80%; /* Make popover smaller */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1500;
+        height: 260px;
+        display: none; /* Hidden by default */
+        margin-top: 10px;
+    }
+
+    .popover.show {
+        display: block; /* Show the popover when active */
+    }
+
+    .popover::before {
+        content: '';
+        position: absolute;
+        bottom: 100%; 
+        left: 50%; 
+        margin-left: -10px; 
+        border-width: 22px; 
+        border-style: solid;
+        border-color: transparent transparent #f9ede1 transparent; /* Triangle color matches popover background */
+    }
+
+    .popover p {
+        margin: 0;
+        font-size: 14px;
+        color: #e14e26;
+        text-decoration: none;
+        font-size: 22px;
+        pointer-events: none;
+    }
+
+    .popover .popover-label {
+        font-size: 14px;
+        color: #000000;
+        font-weight: bold;
+        margin-top: 10px; /* Adjust spacing from above elements */
+    }
+
+    /* Style for the Confirmation Number input */
+    .popover input[type="text"] {
+        padding: 12px;
+        width: 200px;
+        border-radius: 3px;
+        pointer-events: auto;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* Style for the Close button */
+#close-popover {
+    width: 75px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#close-popover:hover {
+    background-color: #811b18; /* Darker red on hover */
+}
+
+#continue-popover {
+    width: 95px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+#continue-popover:hover {
+    background-color: #9b2611; /* Darker green on hover */
+}
+
+
+#close-popover {
+    margin-right: 40px; 
+}   
+}
+
+/* For widths between 383px and 385px */
+@media (min-width: 383px) and (max-width: 385px) {
+    .dropdownn {
+        position: relative;
+        display: inline-block;
+        overflow: visible;
+        pointer-events: none;
+    }
+    
+    .dropdownn-content {
+        display: none; 
+        position: absolute;
+        background-color: #392b2b;
+        min-width: 385px;
+        max-height: 0; /* Start closed */
+        overflow: visible;
+        opacity: 0; 
+        z-index: 1000;
+        top: 10px;
+        left: 0;
+        padding: 10px;
+        border-radius: 0;
+        pointer-events: none;
+        transform: translateY(-10px); 
+        transition: max-height 1s ease, padding 1s ease, opacity 0.5s ease, transform 1s ease;
+    }
+    
+    .dropdownn-content.show {
+        display: block; /* Show the dropdown */
+        max-height: 700px;
+        padding: 0px 0; 
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); 
+        pointer-events: auto;
+        z-index: 1100;
+    }
+
+    .check {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: #392b2b;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .check form {
+        display: flex;
+        flex-direction: column; /* Arrange form elements vertically */
+        gap: 10px;
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    .check label{
+        width: 80%; 
+        margin-top: 3px;
+        margin-bottom: 5px;
+    }
+    
+    .check input {
+        width: 80%; 
+        background-color: white;
+        padding: 8px;
+        min-height: 10px;
+    }
+
+    .check input[type="text"].flatpickr{
+        padding: 10px;
+        min-height: 10px;
+        font-size: 14px;
+    }
+    
+    .check input[type="number"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .check button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .dropdow {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdoww {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdow div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdow div:hover {
+        background-color: #856464; 
+    }
+    
+    .dropdoww div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdoww div:hover {
+        background-color: #856464; 
+    }
+
+    .linkc {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .linkc p {
+        color: #ffffff;
+        text-decoration: underline;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .linkc p:hover {
+        color: #ff5900;
+    }
+
+    /* Modify the popover to fit on mobile */
+    .popover {
+        position: absolute;
+        top: 1%; /* Place below Modify Booking */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f9ede1;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 4px;
+        width: 80%; /* Make popover smaller */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1500;
+        height: 260px;
+        display: none; /* Hidden by default */
+        margin-top: 10px;
+    }
+
+    .popover.show {
+        display: block; /* Show the popover when active */
+    }
+
+    .popover::before {
+        content: '';
+        position: absolute;
+        bottom: 100%; 
+        left: 50%; 
+        margin-left: -10px; 
+        border-width: 22px; 
+        border-style: solid;
+        border-color: transparent transparent #f9ede1 transparent; /* Triangle color matches popover background */
+    }
+
+    .popover p {
+        margin: 0;
+        font-size: 14px;
+        color: #e14e26;
+        text-decoration: none;
+        font-size: 22px;
+        pointer-events: none;
+    }
+
+    .popover .popover-label {
+        font-size: 14px;
+        color: #000000;
+        font-weight: bold;
+        margin-top: 10px; /* Adjust spacing from above elements */
+    }
+
+    /* Style for the Confirmation Number input */
+    .popover input[type="text"] {
+        padding: 12px;
+        width: 200px;
+        border-radius: 3px;
+        pointer-events: auto;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* Style for the Close button */
+#close-popover {
+    width: 75px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#close-popover:hover {
+    background-color: #811b18; /* Darker red on hover */
+}
+
+#continue-popover {
+    width: 95px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+#continue-popover:hover {
+    background-color: #9b2611; /* Darker green on hover */
+}
+
+
+#close-popover {
+    margin-right: 40px; 
+}   
+}
+
+
+
+/* For widths between 413px and 415px */
+@media (min-width: 413px) and (max-width: 415px) {
+    .dropdownn {
+        position: relative;
+        display: inline-block;
+        overflow: visible;
+        pointer-events: none;
+    }
+    
+    .dropdownn-content {
+        display: none; 
+        position: absolute;
+        background-color: #392b2b;
+        min-width: 414px;
+        max-height: 0; /* Start closed */
+        overflow: visible;
+        opacity: 0; 
+        z-index: 1000;
+        top: 10px;
+        left: 0;
+        padding: 10px;
+        border-radius: 0;
+        pointer-events: none;
+        transform: translateY(-10px); 
+        transition: max-height 1s ease, padding 1s ease, opacity 0.5s ease, transform 1s ease;
+    }
+    
+    .dropdownn-content.show {
+        display: block; /* Show the dropdown */
+        max-height: 700px;
+        padding: 0px 0; 
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); 
+        pointer-events: auto;
+        z-index: 1100;
+    }
+
+    .check {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: #392b2b;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .check form {
+        display: flex;
+        flex-direction: column; /* Arrange form elements vertically */
+        gap: 10px;
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    .check label{
+        width: 80%; 
+        margin-top: 3px;
+        margin-bottom: 5px;
+    }
+    
+    .check input {
+        width: 80%; 
+        background-color: white;
+        padding: 8px;
+        min-height: 10px;
+    }
+
+    .check input[type="text"].flatpickr{
+        padding: 10px;
+        min-height: 10px;
+        font-size: 14px;
+    }
+    
+    .check input[type="number"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .check button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .dropdow {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdoww {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdow div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdow div:hover {
+        background-color: #856464; 
+    }
+    
+    .dropdoww div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdoww div:hover {
+        background-color: #856464; 
+    }
+
+    .linkc {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .linkc p {
+        color: #ffffff;
+        text-decoration: underline;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .linkc p:hover {
+        color: #ff5900;
+    }
+
+    /* Modify the popover to fit on mobile */
+    .popover {
+        position: absolute;
+        top: 1%; /* Place below Modify Booking */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f9ede1;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 4px;
+        width: 80%; /* Make popover smaller */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1500;
+        height: 260px;
+        display: none; /* Hidden by default */
+        margin-top: 10px;
+    }
+
+    .popover.show {
+        display: block; /* Show the popover when active */
+    }
+
+    .popover::before {
+        content: '';
+        position: absolute;
+        bottom: 100%; 
+        left: 50%; 
+        margin-left: -10px; 
+        border-width: 22px; 
+        border-style: solid;
+        border-color: transparent transparent #f9ede1 transparent; /* Triangle color matches popover background */
+    }
+
+    .popover p {
+        margin: 0;
+        font-size: 14px;
+        color: #e14e26;
+        text-decoration: none;
+        font-size: 22px;
+        pointer-events: none;
+    }
+
+    .popover .popover-label {
+        font-size: 14px;
+        color: #000000;
+        font-weight: bold;
+        margin-top: 10px; /* Adjust spacing from above elements */
+    }
+
+    /* Style for the Confirmation Number input */
+    .popover input[type="text"] {
+        padding: 12px;
+        width: 200px;
+        border-radius: 3px;
+        pointer-events: auto;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* Style for the Close button */
+#close-popover {
+    width: 75px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#close-popover:hover {
+    background-color: #811b18; /* Darker red on hover */
+}
+
+#continue-popover {
+    width: 95px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+#continue-popover:hover {
+    background-color: #9b2611; /* Darker green on hover */
+}
+
+
+#close-popover {
+    margin-right: 40px; 
+}   
+}
+
+/* For widths between 389px and 391px */
+@media (min-width: 389px) and (max-width: 391px) {
+    .dropdownn {
+        position: relative;
+        display: inline-block;
+        overflow: visible;
+        pointer-events: none;
+    }
+    
+    .dropdownn-content {
+        display: none; 
+        position: absolute;
+        background-color: #392b2b;
+        min-width: 390px;
+        max-height: 0; /* Start closed */
+        overflow: visible;
+        opacity: 0; 
+        z-index: 1000;
+        top: 10px;
+        left: 0;
+        padding: 10px;
+        border-radius: 0;
+        pointer-events: none;
+        transform: translateY(-10px); 
+        transition: max-height 1s ease, padding 1s ease, opacity 0.5s ease, transform 1s ease;
+    }
+    
+    .dropdownn-content.show {
+        display: block; /* Show the dropdown */
+        max-height: 700px;
+        padding: 0px 0; 
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); 
+        pointer-events: auto;
+        z-index: 1100;
+    }
+
+    .check {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: #392b2b;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .check form {
+        display: flex;
+        flex-direction: column; /* Arrange form elements vertically */
+        gap: 10px;
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    .check label{
+        width: 80%; 
+        margin-top: 3px;
+        margin-bottom: 5px;
+    }
+    
+    .check input {
+        width: 80%; 
+        background-color: white;
+        padding: 8px;
+        min-height: 10px;
+    }
+
+    .check input[type="text"].flatpickr{
+        padding: 10px;
+        min-height: 10px;
+        font-size: 14px;
+    }
+    
+    .check input[type="number"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .check button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .dropdow {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdoww {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdow div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdow div:hover {
+        background-color: #856464; 
+    }
+    
+    .dropdoww div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdoww div:hover {
+        background-color: #856464; 
+    }
+
+    .linkc {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .linkc p {
+        color: #ffffff;
+        text-decoration: underline;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .linkc p:hover {
+        color: #ff5900;
+    }
+
+    /* Modify the popover to fit on mobile */
+    .popover {
+        position: absolute;
+        top: 1%; /* Place below Modify Booking */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f9ede1;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 4px;
+        width: 80%; /* Make popover smaller */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1500;
+        height: 260px;
+        display: none; /* Hidden by default */
+        margin-top: 10px;
+    }
+
+    .popover.show {
+        display: block; /* Show the popover when active */
+    }
+
+    .popover::before {
+        content: '';
+        position: absolute;
+        bottom: 100%; 
+        left: 50%; 
+        margin-left: -10px; 
+        border-width: 22px; 
+        border-style: solid;
+        border-color: transparent transparent #f9ede1 transparent; /* Triangle color matches popover background */
+    }
+
+    .popover p {
+        margin: 0;
+        font-size: 14px;
+        color: #e14e26;
+        text-decoration: none;
+        font-size: 22px;
+        pointer-events: none;
+    }
+
+    .popover .popover-label {
+        font-size: 14px;
+        color: #000000;
+        font-weight: bold;
+        margin-top: 10px; /* Adjust spacing from above elements */
+    }
+
+    /* Style for the Confirmation Number input */
+    .popover input[type="text"] {
+        padding: 12px;
+        width: 200px;
+        border-radius: 3px;
+        pointer-events: auto;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* Style for the Close button */
+#close-popover {
+    width: 75px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#close-popover:hover {
+    background-color: #811b18; /* Darker red on hover */
+}
+
+#continue-popover {
+    width: 95px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+#continue-popover:hover {
+    background-color: #9b2611; /* Darker green on hover */
+}
+
+
+#close-popover {
+    margin-right: 40px; 
+}   
+}
 
 .slideshow-cont{
     top: 50px;
