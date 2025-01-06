@@ -1278,28 +1278,41 @@ nav a:hover {
 }
 
 
-.triangledd {
-    position: relative;
-    width: 0; 
-    height: 0; 
-    border-left: 50px solid transparent; 
-    border-right: 50px solid transparent;
-    border-bottom: 30px solid #e8e8e8; 
-    margin-left: 136px;
-    margin-top: 0px;
-    cursor: pointer;
+/* Default: Hide triangle and arrow on all devices */
+.triangledd,
+.arrowdd {
+    display: none;
 }
 
-.arrowdd {
-    position: absolute;
-    top: 19px; /* Adjust position of the arrow inside the triangle */
-    left: 50%;
-    height: auto; /* No height needed for the triangle */
-    border-left: 16px solid transparent; 
-    border-right: 16px solid transparent; 
-    border-bottom: 10px solid #ffffff; 
-    transform: translateX(-50%); 
+/* Mobile devices: Show triangle and arrow */
+@media (max-width: 768px) {
+    .triangledd {
+        display: block;
+        position: relative;
+        width: 0; 
+        height: 0; 
+        border-left: 50px solid transparent; 
+        border-right: 50px solid transparent;
+        border-bottom: 30px solid #e8e8e8; 
+        margin-left: 136px;
+        margin-top: 0px;
+        cursor: pointer;
+    }
+
+    .arrowdd {
+        display: block;
+        position: absolute;
+        top: 19px; 
+        left: 50%;
+        height: auto; 
+        border-left: 16px solid transparent; 
+        border-right: 16px solid transparent; 
+        border-bottom: 10px solid #ffffff; 
+        transform: translateX(-50%);
+    }
 }
+
+
 
 
 .offer-mobile {
