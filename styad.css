@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.For-Em {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 900px;
+    margin-left: 280px;
+}
+.form-container {
+    width: 65%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin-right: 20px;
+}
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}
+.form-container button {
+    padding: 12px 80px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.form-container .book-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+.form-container .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.form-container .room-btn{
+    background-color: #e25623;
+    color: #fff;
+}
+
+.form-container .unroom-btn{
+    background-color: #e25623;
+    color: #fff;
+}
+
+.form-container button:hover {
+    opacity: 0.9;
+}
+
+.form-container h3{
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+}
+
+.form-container h4{
+    font-size: 18x;
+    text-decoration: underline;
+    color: blue;
+}
+
+.email {
+    width: 35%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.email label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.email input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}
+.email button {
+    padding: 12px 80px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+.email button:hover {
+    opacity: 0.9;
+}
+
+.q{
+    margin-bottom: 90px;
+}
+
+#message {
+    margin-top: 50px;
+    color: rgb(184, 81, 12);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+
+table {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+:root {
+    --table-bg-color: #f9f9f9;
+    --table-border-color: #ddd;
+    --header-bg-color: #4CAF50;
+    --header-text-color: white;
+    --row-hover-color: #f1f1f1;
+    --text-color: #333;
+}
+
+.tab{
+    margin-top: 20px;
+    margin-bottom: 85px;
+}
+
+.booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: var(--table-bg-color);
+    border: 1px solid var(--table-border-color);
+}
+
+.booking-table th, .booking-table td {
+    padding: 12px;
+    border: 1px solid var(--table-border-color);
+    text-align: left;
+    color: var(--text-color);
+}
+
+.booking-table th {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+}
+
+.booking-table tr:hover {
+    background-color: var(--row-hover-color);
+}
