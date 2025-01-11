@@ -3297,7 +3297,7 @@ nav a:hover {
 @media (max-width: 768px) {
     .verify-dates {
         transform: translateY(100%); /* Start off-screen from the bottom */
-        width: 360px;
+        width: 98%;
         height: 100%;
     }    
     .verify-dates.show {
