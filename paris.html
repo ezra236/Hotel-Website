@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="5000">
+    <link rel="icon" href="lilo.png" type="image/png">
+    <title>Prime Guest Lodge</title>
+    <link rel="stylesheet" href="stypa.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="nav-container"> 
+        <div class="logo">
+            <img src="logo.png" alt="Logo" /> 
+      </div>
+      <div class="dropdown">
+         <a href="room.html" class="rooms-link">Accomodation</a>
+           <div class="dropdown-content">
+            <p>Available Rooms</p>
+            <a href="paris.html" target="_blank">Paris</a>
+            <a href="tokyo.html" target="_blank">Tokyo</a>
+            <a href="york.html" target="_blank">New York</a>
+            <a href="dubai.html" target="_blank">Dubai</a>
+            <a href="london.html" target="_blank">London</a>
+            <a href="sydney.html" target="_blank">Sydney</a>
+            <a href="rome.html" target="_blank">Rome</a>
+            <a href="cairo.html" target="_blank">Cairo</a>
+            <a href="berlin.html" target="_blank">Berlin</a>
+            <a href="bangkok.html" target="_blank">Bangkok</a>
+            <a href="istanbul.html" target="_blank">Istanbul</a>
+            <a href="mosco.html" target="_blank">Moscow</a>
+            <a href="toronto.html" target="_blank">Toronto</a>
+           </div>
+      </div>
+        <nav>
+         <span class="separator">|</span>
+         <a href="offers.html">Offers</a>
+         <span class="separator">|</span>
+         <a href="dining.html">Dining</a>
+         <span class="separator">|</span>
+         <a href="locate.html">Location</a>
+         <span class="separator">|</span>
+         <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="yu">
+            <div class="squared-shape" id="shaped-square">
+                <p>More</p>
+            </div>
+        </div>
+        <div class="shape-container" id="shape-container">
+            <div class="triangle">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 9.17L12 12.58l3.41-3.41L17 10.59l-5 5-5-5z'/%3E%3C/svg%3E" alt="Triangle Icon" class="triangle-image">
+            </div>
+            <div class="square"></div>
+            <p class="shape-text"><br>Check Availability</p>
+         
+        </div>  
+    </div>
+    
+    
+    <div id="overlay"></div>
+    
+    
+    <div class="blockk" id="slidingg-block">
+        <p class="parag" id="close-button">X</p>
+        <div class="inblock">
+            <img src="logoo.jpg">
+            <p>PRIME GUEST HOME</p>
+        </div>
+        <div class="linkk">
+            <a href="room.html">ACCOMODATION</a>
+            <a href="offers.html">OFFERS</a>
+            <a href="dining.html">DINING</a>
+            <a href="locate.html">LOCATION</a>
+            <a href="contact.html">CONTACT Us</a>
+            <a href="feedback.html">FEEDBACK</a>
+            <a href="herit.html">HERITAGE</a>
+        </div>
+        <div class="logimage">
+            <img src="logoo.jpg">
+        </div>
+    </div>
+    
+    
+    <div class="dropdownn">
+        <div class="dropdownn-content" id="dropdownn">
+            <div class="check">
+                <div class="circle">
+                    <div class="checkmark"></div>
+                </div>
+                <div class="tex">
+                    <p><span style="color: #ff4500;">Rooms From KSH 1205.00 </span><br>
+                        Best rate guaranteed<br>
+                        Exclusive offers available
+                    </p>
+                </div>
+                <form action="rate.php" method="POST" id="roomForm">
+                    <label for="check-in">Check-in:</label>
+                    <input type="text" id="check-in" name="check-in" class="flatpickr" />
+        
+                    <label for="check-out">Check-out:</label>
+                    <input type="text" id="check-out" name="check-out" class="flatpickr" />
+        
+                    <label for="room-number">Room Number:</label>
+                    <input type="numberr" id="room-number" name="room-number" />
+                    <div class="dropdow" id="roomdropdow">
+                        <!-- Dropdown items -->
+                        <div data-value="1">1</div>
+                        <div data-value="2">2</div>
+                        <div data-value="3">3</div>
+                        <div data-value="4">4</div>
+                        <div data-value="5">5</div>
+                        <div data-value="6">6</div>
+                        <div data-value="7">7</div>
+                        <div data-value="8">8</div>
+                        <div data-value="9">9</div>
+                        <div data-value="10">10</div>
+                    </div>
+        
+                    <label for="adults">Adults:</label>
+                    <input type="numberr" id="adults" name="adults" />
+                    <div class="dropdoww" id="adultsdropdow">
+                        <!-- Dropdown items -->
+                        <div data-value="1">1</div>
+                        <div data-value="2">2</div>
+                        <div data-value="3">3</div>
+                        <div data-value="4">4</div>
+                        <div data-value="5">5</div>
+                        <div data-value="6">6</div>
+                        <div data-value="7">7</div>
+                        <div data-value="8">8</div>
+                        <div data-value="9">9</div>
+                        <div data-value="10">10</div>
+                    </div>
+        
+                    <button type="submit">Check Rates</button>
+    
+                </form>
+                <div class="linkc">
+                    <p id="modify-booking">Modify Booking</p>
+                    <div class="popover" id="popover">
+                        <p><span style="color: #cb4f1d;">Modify/ Cancel Reservations</span></p>
+                        <p><span style="color: black; font-size: 14px; font-weight: normal;"> Please enter the following to retrieve your reservation</span></p>
+                        <label for="confirmation_number" class="popover-label">Confirmation Number:</label>
+                        <input type="text" id="confirmation_number" name="confirmation_number" />
+    
+                        <button id="close-popover" class="popp">Close</button>
+                        <button id="continue-popover" class="popp">Continue</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+     </div>
+
+
+
+
+     <div class="description-container">
+        <!-- Left Title Section -->
+        <div class="title-section">
+          <h3>Room Description</h3>
+        </div>
+    
+        <!-- Right Text Section -->
+        <div class="text-section">
+          <p>
+            Our spacious 30 m<sup>2</sup> (323 ft<sup>2</sup>) Superior Rooms offer luxury and comfort. 
+            Ideal for leisure and business travellers, our Superior Rooms feature large windows with panoramic views of the city, 
+            a plush, comfortable king bed, an executive working desk, a luxurious bathtub with a separate shower, 
+            and a complimentary minibar for your complete comfort and convenience during your stay with us.
+          </p>
+        </div>
+      </div>
+
+
+     <div class="containerp">
+        <!-- Left Image Section -->
+        <div class="image-sectionn">
+          <img src="im1.avif" alt="Bathroom" />
+        </div>
+    
+        <!-- Right Amenities Section -->
+        <div class="amenities-section">
+          <h1>Amenities</h1>
+          <p>
+            Our Superior Rooms offer every modern amenity for your convenience and comfort, 
+            whether you are visiting Nairobi for leisure or business.
+          </p>
+          <ul class="amenities-list">
+            <li><span class="icon">☕</span> Coffee and/or tea making facilities</li>
+            <li><span class="icon">🔒</span> Safe</li>
+            <li><span class="icon">💼</span> Desk</li>
+            <li><span class="icon">🛁</span> Bathtub and separate shower</li>
+            <li><span class="icon">🆓</span> Complimentary minibar (soft drinks only)</li>
+          </ul>
+
+          <button class="buttonn" onclick="proceedToPay('roo1')">BOOK</button>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div class="verify-dates">
+        <img src="lilo.png">
+        <p> Prime Guest Lodge</p>
+
+        <button class="close">&times;</button>
+
+        <div class="button-container">
+            <p class="s"> SELECT DATES</p>
+            <button class="right-button" id="right-button">CONFIRM DATES OF STAY</button>
+        </div>
+        
+    
+        <!-- Check-in / Check-out Section -->
+    <div class="check-in-out">
+        <div class="check-in" id="check-in">
+            <span>Check-in: Not selected</span>
+        </div>
+        <div class="check-out" id="check-out">
+            <span>Check-out: Not selected</span>
+        </div>
+    </div>
+    
+        <!-- Calendar Container -->
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button class="prev-month" onclick="changeMonth(-1)">&#10094;</button>
+                <h2 id="month-name">November 2024</h2>
+                <button class="next-month" onclick="changeMonth(1)">&#10095;</button>
+            </div>
+            <div class="calendar">
+                <div class="calendar-day">Sun</div>
+                <div class="calendar-day">Mon</div>
+                <div class="calendar-day">Tue</div>
+                <div class="calendar-day">Wed</div>
+                <div class="calendar-day">Thu</div>
+                <div class="calendar-day">Fri</div>
+                <div class="calendar-day">Sat</div>
+                <!-- Dates will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+     <div class="triangled" onclick="scrollToTop()">
+        <div class="arrowd"></div>
+    </div> 
+
+
+     <div class="acc"> 
+        <div class="block">
+                <img src="logoo.jpg" style="cursor: pointer;">
+        </div>
+    
+        <div class="info">
+            <div class="section section1">
+                <h3><a href="contact.html" class="about-link">Contact Details</a> </h3>
+                <p><a href="contact.html" class="about-lin">0799963300</a></p>
+                <p><a href="contact.html" class="about-lin">0708364240</a></p>
+                <p class="pp">Prime Guest Lodge</p>
+                <p class="oo">Maua basin, Meru</p>
+            </div>
+            <div class="section section2">
+                <h3> <a href="contact.html" class="about-link">About Us</a></h3>
+                <p><a href="contact.html" class="about-lin">Contact Us</a></p>
+                <p><a href="locate.html" class="about-lin">Location</a></p>
+            </div>
+            <div class="section section3">
+                <h3><a href="contact.html" class="about-link">Email Details</a> </h3>
+                <p class="u"><a href="contact.html" class="about-lin">Kaithia@gmail.com</a></p>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/" target="_blank">
+                    <img src="f.jpeg" alt="Facebook Share" class="social-icon">
+                </a><br>
+                <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+                <form id="emailForm">
+                    <div class="input-button-container">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                        <button type="submit" class="su">&#8594;</button>
+                    </div>                
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="overlayr" id="overlayr"></div>
+    <div class="modal" id="modal">
+        <p>Email submitted successfully!</p>
+        <h2>PRIME GUEST NEWS, OFFERS AND ANNOUNCEMENTS</h2>
+        <p>
+          <strong>NEWSLETTER SIGNUP</strong><br>
+        We love sharing our news and announcements with you on a regular basis so that you know what is happening in the world of Prime. To receive information about our ongoing specials and promotions, please complete the form below, and we will make sure to stay in touch.
+        </p>
+        <p>
+            Your privacy is important to us, and we will never share or sell any information you provide to us. The notices you receive will be from Prime Lodge with hopes of enhancing your next experience with us.
+        </p>
+        <button id="closeModal">OK</button>
+    </div>
+
+
+
+    <div class="center-box" id="centerBox">
+        <p>Thank you for subscribing!</p>
+        <button onclick="closeBox()">Close</button>
+    </div>
+
+
+
+
+    <div class="foop">
+        <div class="ffsud">
+            <h3><a href="contact.html">Contact Details</a> </h3>
+                <p>0799963300</a></p>
+                <p>0708364240</a></p>
+                <p>Prime Guest Lodge</p>
+                <p>Maua basin, Meru</p>
+        </div>
+        <div class="ddsud">
+            <h3><a href="contact.html">Email Details</a> </h3>
+            <p><a href="contact.html">Kaithia@gmail.com</a></p>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/" target="_blank">
+                <img src="f.jpeg" alt="Facebook Share" class="social-icons">
+            </a>
+        </div>
+        <div class="dams">
+            <p style="font-weight: bold;">SUBSCRIBE TO OUR NEWSLETTER</p>
+            <form id="newsletterForms">
+                <label for="email" style="color: #000000;">Email Address:</label>
+                <input type="email" id="emails" name="email" required>
+                <button type="submit" class="sug">
+                    &#8594; <!-- Arrow symbol -->
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    
+        
+        <div class="footer">
+            
+            <div class="copyright">
+                © 2024 Prime Guest Lodge | Made by ezramuthomi@gmail.com
+            </div>
+            <div class="stp">
+            <a href="site.html">Site map</a> 
+            <a href="Tou.html">Terms of use</a> 
+            <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+
+
+
+
+     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+     <script>
+         // Initialize Flatpickr
+         flatpickr('.flatpickr', {
+             dateFormat: "Y-m-d", // Adjust date format as needed
+         });
+     </script>
+
+     <script src="par.js"></script>
+</body>
+</html>
