@@ -1,0 +1,426 @@
+/* Hide the .acc div on mobile devices */
+@media (max-width: 768px) {
+    .acc {
+      display: none; /* Hidden on mobile */
+    }
+  }
+  
+  .block {
+    top: 0px;
+    width: 100%;
+    height: 140px;
+    margin: 0; /* Remove any default margin */
+    background-color: #e8e8e8;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .block img {
+    width: 80px;
+    border-radius: 40px;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e8e8e8; /* Pantone 427 (Fog Gray) */
+    padding: 20px;
+    height: 255px;
+    border-radius: 1px;
+    margin-top: 0px;
+  }
+  
+  /* Individual section styling */
+  .section {
+    flex: 1; /* Make all sections equal width */
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    margin-top: 8px;
+  }
+  
+  .section1 {
+    color: #000000;
+    margin-left: 80px;
+  }
+  
+  .section2 {
+    color: #000000;
+  }
+  
+  .section3 {
+    color: #000000;
+  }
+  
+  .social-icon {
+    margin-left: 20px;
+    width: 27px; /* Set desired width */
+    height: 27px; /* Set desired height */
+    transition: transform 0.5s ease; /* Optional transition for hover effect */
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.7); /* Optional hover effect to slightly enlarge */
+  }
+  
+  .pp {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+  }
+  
+  .oo {
+    font-weight: 15px; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+  }
+  
+  .u {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between; /* Space out the two sections */
+    align-items: center; /* Vertically align the sections */
+    background-color: #ffffff; /* Dark background */
+    color: #000000; /* White text */
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .stp a {
+    text-decoration: none;
+    color: black; /* Link color */
+    padding: 10px 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0 27px;
+  }
+  
+  .stp a:hover {
+    color: #ff4500;
+  }
+  
+  /* Style for the copyright section */
+  .copyright {
+    font-size: 16px;
+    color: #000000; /* Slightly lighter gray text */
+    margin-left: 65px;
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      padding: 15px;
+    }
+  
+    .stp a {
+      font-size: 16px;
+      margin: 5px 0;
+      padding: 8px 5px;
+    }
+  
+    .copyright {
+      font-size: 14px;
+      margin-left: 0;
+      margin-top: 4px;
+      margin-bottom: 18px;
+    }
+  
+    .stp a:hover,
+    .about-link:hover {
+      color: #ff4500;
+    }
+  }
+  
+  .about-link {
+    text-align: left;
+    text-decoration: none;
+    color: black; /* Link color */
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .about-link:hover {
+    color: #ff4500;
+  }
+  
+  .about-lin {
+    text-align: left;
+    text-decoration: none;
+    color: black; /* Link color */
+    padding: 10px 20px;
+    font-weight: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .about-lin:hover {
+    color: #ff4500;
+  }
+  
+  .form-container {
+    background-color: #d0d0ce;
+  }
+  
+  .input-button-container {
+    display: flex; /* Use flexbox to place input and button on the same line */
+    align-items: center; /* Align vertically */
+    gap: 0px; /* Add spacing between input and button */
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  input[type="email"] {
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    flex: 1; /* Make the input field flexible */
+  }
+  
+  .su {
+    background-color: transparent;
+    color: rgb(215, 198, 198);
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 25px; /* Adjust the size of the arrow */
+    transition: background-color 0.3s ease;
+    margin-left: -45px;
+  }
+  
+  .su:hover {
+    color: #ba9a9a; /* Slightly darker green when hovered */
+  }
+  
+  #messageBox {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: #131111;
+    padding: 20px;
+    border: 20px solid #d56a46;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    width: 85%;
+    max-width: 500px;
+    text-align: center;
+    z-index: 1000;
+  }
+  
+  .messag h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #cd5627;
+  }
+  
+  .messag p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+  }
+  
+  .c {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #0e0101;
+    font-weight: bold;
+  }
+  
+  .c:hover {
+    color: red;
+  }
+  
+  /* Default styles for desktop - content will be hidden on desktop */
+  .foop,
+  .ffsud,
+  .ddsud {
+    display: none; /* Hide on desktop by default */
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    /* Show the content only on mobile */
+    .foop,
+    .ffsud,
+    .ddsud {
+      display: block; /* Show on mobile */
+    }
+  
+    /* Mobile-specific styles */
+    .foop {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #e8e8e8;
+      height: auto;
+      margin-top: -115px;
+    }
+  
+    .ffsud,
+    .ddsud {
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+      margin-bottom: 0px;
+      background-color: #e8e8e8;
+    }
+  
+    .ffsud {
+      display: flex;
+      flex-direction: column; /* Stack children vertically */
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+      background-color: #e8e8e8;
+      height: 100%; /* Ensure the div takes full height of its container */
+    }
+  
+    .ffsud h3 {
+      color: rgb(0, 0, 0);
+      font-size: 20px;
+      margin-bottom: 0px;
+      text-align: center; /* Center the heading text */
+    }
+  
+    .ffsud a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      text-align: center; /* Center the link */
+    }
+  
+    .ffsud p {
+      color: #000000;
+      font-size: 16px;
+      margin: 5px 0;
+      text-align: center; /* Center the paragraph text */
+    }
+  
+    /* DDS class styles */
+    .ddsud {
+      display: flex;
+      flex-direction: column; /* Stack children vertically */
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+      background-color: #e8e8e8;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  
+    .ddsud h3 {
+      color: #090808;
+      font-size: 20px;
+      margin-bottom: 5px;
+      text-align: center; /* Center the heading text */
+    }
+  
+    .ddsud p {
+      color: #333;
+      font-size: 16px;
+      margin: 5px 0;
+      text-align: center; /* Center the paragraph text */
+    }
+  
+    .ddsud a {
+      color: #0f0907;
+      text-decoration: none;
+      text-align: center;
+    }
+  
+    .ddsud a:hover {
+      text-decoration: underline;
+    }
+  
+    .ddsud .social-icons {
+      width: 40px;
+      height: 40px;
+      margin-top: 10px;
+      cursor: pointer;
+      padding-left: 0;
+    }
+  
+    .dams {
+      background-color: #e8e8e8;
+      padding: 20px;
+      box-sizing: border-box;
+      color: black;
+    }
+  }
+  
+  .center-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #070101;
+    padding: 20px;
+    border-radius: 0px;
+    border: 10px solid #e14e26;
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+    z-index: 1000;
+  }
+  
+  .center-box button {
+    padding: 10px 35px;
+    background-color: #e14e26;
+    cursor: pointer;
+    color: white;
+    border: none;
+  }
+  
+  .center-box button:hover {
+    background-color: #933405;
+  }
+  
+  button.sug {
+    background-color: transparent;
+    color: rgb(227, 202, 202);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button.sug:hover {
+    background-color: transparent;
+    color: #daa0a0;
+  }
+  
+  .sug {
+    background-color: transparent;
+    color: rgb(215, 198, 198);
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 25px; /* Adjust the size of the arrow */
+    transition: background-color 0.3s ease;
+    margin-left: -45px;
+  }
+  
+  .sug:hover {
+    color: #ba9a9a; /* Slightly darker green when hovered */
+  }

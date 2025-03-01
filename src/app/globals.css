@@ -1,0 +1,19 @@
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
