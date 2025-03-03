@@ -1,0 +1,2991 @@
+html {
+    scroll-behavior: smooth;
+    background-color: #0056b3;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.finis {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 20px; /* Add padding for spacing */
+    background-color: #d6b88f;
+    width: 100%;
+    height: 20px;
+    box-sizing: border-box; 
+}
+
+.finis img.leftt-image {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px; /* Space between image and text */
+    border-radius: 50%;
+}
+
+.finis p {
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0; /* Remove default margin */
+    margin-right: 15px; 
+}
+
+.finis .sig {
+    margin-left: auto; /* Push button to the far right */
+    padding: 8px 16px;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.finis .sig:hover {
+    background-color: #91989338; /* Hover effect */
+}
+
+.time-display {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 140px; 
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+@media (max-width: 768px) {
+    .finis {
+        display: none; 
+    }
+}
+
+@media (min-width: 769px) {
+    .finis {
+        display: flex; 
+    }
+}
+
+.details {
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Hide it visually but keep it in the DOM */
+    position: fixed; 
+    top: 120px; 
+    left: 35%; 
+    width: 30%; 
+    height: 75%; /* Set exact height */
+    background-color: transparent; 
+    color: #fff; /* Text color */
+    font-family: Arial, sans-serif;
+    text-align: center; 
+    padding: 20px; 
+    box-sizing: content-box; 
+    overflow: hidden; 
+    z-index: 20000; 
+    transform: translateY(100vh); /* Start off-screen */
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Smooth transition */
+}
+
+.details.show {
+    opacity: 1; 
+    visibility: visible; /* Ensure it's interactable */
+    transform: translateY(0); 
+}
+
+.backdrop {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 19999; /* Below .details */
+}
+
+.clos {
+    position: absolute;
+    top: 1px;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 430px;
+    cursor: pointer;
+    color: white;
+}
+
+.clos:hover {
+    color: #d25431;
+}
+
+.details h2{
+    color: white;
+}
+
+/* Styles for the first form */
+.signin-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+}
+
+.signin-label {
+    font-size: 18px;
+    color: white;
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.signin-input {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signin-submit {
+    width: 80%;
+    padding: 12px;
+    background-color: #b34d12;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signin-submit:hover {
+    background-color: #933c0a;
+}
+
+
+
+.separator {
+    font-size: 30px; 
+    color: #dc5837; /* Adjust color to match your design */
+    margin-left: 0px; 
+    font-family: Times New Roman;
+}
+
+.yu{
+    background-color: #eccea5;
+    align-items: center;
+    justify-content: center; /* Centers the content horizontally */
+    display: flex;
+    width: 110px;
+}
+
+/* For 412px width */
+@media (min-width: 412px) and (max-width: 413px) {
+    .yu {
+        width: 155px;
+    }
+}
+
+/* For 384px width */
+@media (min-width: 384px) and (max-width: 385px) {
+    .yu {
+        width: 125px;
+    }
+}
+
+/* For 375px width */
+@media (min-width: 375px) and (max-width: 376px) {
+    .yu {
+        width: 115px;
+    }
+}
+
+/* For 414px width */
+@media (min-width: 414px) and (max-width: 415px) {
+    .yu {
+        width: 150px;
+    }
+}
+
+/* For 390px width */
+@media (min-width: 390px) and (max-width: 391px) {
+    .yu {
+        width: 128px;
+    }
+}
+
+/* For 428px width */
+@media (min-width: 428px) and (max-width: 429px) {
+    .yu {
+        width: 160px;
+    }
+}
+
+.squared-shape {
+    width: 78px; 
+    height: 38px; 
+    background-color: #eccea5; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    border-radius: 38px; 
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    overflow: hidden; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+@media (min-width: 1024px) { /* Adjust the min-width for your definition of desktop */
+    .squared-shape {
+        margin-top: 20px;  /* Set desired top margin */
+        margin-left: 0px; /* Set desired left margin */
+    }
+}
+
+.squared-shape:hover {
+    background-color: #ccae84; /* Change color on hover */
+}
+
+.squared-shape p {
+    margin: 8px;
+    text-align: center;
+    color: rgb(0, 0, 0); /* Change text color for visibility */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.squared-shape p:hover{
+    color: #ff4500;
+}
+
+.blockk {
+    position: fixed;
+    top: 0; 
+    right: -800px; 
+    width: 390px;
+    height: 800px; 
+    background-color: rgb(40, 29, 24); /* Block color */
+    backdrop-filter: blur(5px);
+    transition: right 0.5s ease; 
+    display: none; 
+    z-index: 5000;
+}
+
+@media (max-width: 768px) {
+    .blockk {
+        left: 0px; 
+        width: 100%; 
+        height: 700px;
+    }
+}
+
+
+
+.parag {
+    position: absolute; 
+    top: 20px;  
+    left: 330px; /* Adjust as needed */
+    color: rgb(255, 254, 254); 
+    font-size: 45px; 
+    margin: 0; 
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .parag {
+        left: 85%; /* Push towards the left */
+    }
+}
+
+.inblock{
+    display: flex; 
+    align-items: center; 
+    margin-top: 170px;
+    height: 100px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .inblock {
+        margin-top: 0; /* Remove margin-top on mobile */
+    }
+}
+
+.inblock img{
+    width: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 25px;
+}
+
+.inblock p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.inblock p:hover {
+    color: #cc462b; /* Change color on hover */
+}
+
+.linkk{
+    display: flex;
+    flex-direction: column; 
+    margin-top: 50px; 
+    width: 100%;
+    height: 50px;
+}
+
+@media (min-width: 768px) {
+    .linkk a {
+        display: none; /* Hide all links initially */
+    }
+
+    .linkk a[href="feedback.html"],
+    .linkk a[href="herit.html"] {
+        display: block; /* Show "FEEDBACK" and "HERITAGE" links */
+    }
+}
+
+@media (max-width: 768px) {
+    .linkk {
+        margin-top: 0; /* Set margin-top to 0 on mobile devices */
+        height: 190px;
+    }
+}
+
+.linkk a{
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    color: #ffffff;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.linkk a:hover{
+    color: #cc462b;
+}
+
+.logimage{
+    margin-top: 70px;
+}
+
+.logimage img{
+    width: 250px;
+    margin-left: 120px;
+    margin-top: 95px;
+    opacity: 0.6;
+    border-radius: 160px;
+}
+
+@media (max-width: 768px) {
+    .logimage img {
+        margin-top: 25px; /* Adjust margin-top for mobile devices */
+    }
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none; /* Initially hidden */
+    z-index: 4098; /* Sits below the sliding block */
+}
+
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    z-index: 1200;
+    padding: 0; /* Remove extra padding */
+    margin: 0;
+    transition: top 0.5s ease; /* Smooth transition */
+}
+
+.nav-container.scrolled {
+    top: 0;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        top: 0; /* Nav container always at the very top on mobile devices */
+    }
+}
+
+nav {
+    background-color:#eccea5;
+    width: 61%;
+    padding: 23px;
+    text-align: left;
+    display: flex; /* Ensure the nav is using flexbox */
+    align-items: center;
+}
+
+.logo {
+    display: flex; /* Aligns content using flexbox */
+    align-items: center; /* Vertically centers the logo */
+    justify-content: flex-start; /* Aligns the logo to the left */
+    background-color: #eccea5;
+}
+
+.logo img {
+    width: 90px; /* Adjust the size to your preference */
+    height: 70px; /* Maintain aspect ratio */
+    max-height: 100%; /* Prevents the logo from getting larger than the container */
+    object-fit: contain; /* Ensures the image fits within the container without distortion */
+    margin: 0;
+    padding: 0;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+.shape-container {
+    position: relative;
+    width: 139px; /* Width of the square */
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .square {
+    width: 100%; 
+    height: 81px; 
+    background-color: rgb(255, 132, 0); 
+    position: absolute; /* Position it above the triangle */
+    top: 0; 
+    left: 0; 
+  }
+  
+@media (max-width: 768px) { 
+    .square {
+        height: 73px;  
+    }
+}
+
+
+@media (min-width: 412px) and (max-width: 413px) {
+    .square {
+        width: 148px;
+    }
+}
+
+@media (min-width: 384px) and (max-width: 385px) {
+    .square {
+        width: 145px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 376px) {
+    .square {
+        width: 146px;
+    }
+}
+
+/* For 414px width devices */
+@media (min-width: 414px) and (max-width: 415px) {
+    .square {
+        width: 150px;
+    }
+}
+
+@media (min-width: 390px) and (max-width: 391px) {
+    .square {
+        width: 148px;
+    }
+}
+
+@media (min-width: 428px) and (max-width: 429px) {
+    .square {
+        width: 154px;
+    }
+}
+
+.shape-container:hover .square {
+    background-color: rgb(230, 89, 28);
+}
+
+.shape-container:hover .triangle{
+    border-top-color: rgb(230, 89, 28); 
+}
+  
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 70px solid transparent; /* Half of the square width */
+    border-right: 70px solid transparent; 
+    border-top: 35px solid rgb(255, 132, 0); 
+    position: relative; 
+    top: 81px; 
+    z-index: 1500;
+}
+
+@media (max-width: 768px) {
+    .triangle {
+        top: 65px;
+    }
+}
+
+@media (width: 412px) {
+    .triangle {
+        top: 65px; 
+        border-left: 74px solid transparent; 
+        border-right: 74px solid transparent; 
+    }
+}
+
+@media (width: 428px) {
+    .triangle {
+        top: 65px; 
+        border-left: 77px solid transparent; 
+        border-right: 77px solid transparent; 
+    }
+}
+
+/* For widths between 383px and 385px */
+@media (min-width: 383px) and (max-width: 385px) {
+    .triangle {
+        top: 65px;
+        border-left: 73px solid transparent;
+        border-right: 73px solid transparent;
+    }
+}
+
+/* For widths between 374px and 376px */
+@media (min-width: 374px) and (max-width: 376px) {
+    .triangle {
+        top: 65px;
+        border-left: 74px solid transparent;
+        border-right: 74px solid transparent;
+    }
+}
+
+/* For widths between 413px and 415px */
+@media (min-width: 413px) and (max-width: 415px) {
+    .triangle {
+        top: 65px;
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+    }
+}
+
+/* For widths between 389px and 391px */
+@media (min-width: 389px) and (max-width: 391px) {
+    .triangle {
+        top: 65px;
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+    }
+}
+
+
+.triangle-image {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px; /* Adjust the size as needed */
+    height: 35px;
+}
+  .shape-text {
+    position: absolute; 
+    top: 10px; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); 
+    color: #333; 
+    font-size: 16px; 
+    margin: 0; 
+    text-align: center; 
+    font-weight: bold; 
+}
+
+/* Default styles for all screen sizes */
+.nav-container > * {
+    display: block; /* Ensure all elements are displayed by default */
+}
+
+
+@media (max-width: 768px) {
+    /* Hide everything inside .nav-container by default */
+    .nav-container > * {
+        display: none;
+    }
+    
+    /* Display specific elements on mobile */
+    .logo,
+    .yu,
+    .shape-container {
+        display: flex;
+        align-items: center; /* Center vertically (if necessary) */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .dropdown {
+        display: none; /* Hide the dropdown on mobile devices */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container .dropdown {
+        display: none !important; /* Force hiding */
+    }
+}
+
+@media (max-width: 768px) {
+    .squared-shape {
+        display: block !important; /* Force display on mobile */
+    }
+}
+
+nav a {
+    text-decoration: none; 
+    color: black; 
+    padding: 10px 20px; 
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+    margin: 0 55px; 
+    position: relative; 
+}
+
+nav a::after {
+    content: ''; 
+    position: absolute; 
+    left: 0; /* Align with the left */
+    bottom: 0; /* Start at the bottom of the text */
+    width: 100%; /* Full width initially */
+    height: 5px; 
+    background-color: #ff4500; 
+    transition: bottom 0.5s ease, height 0.7s ease; 
+    box-shadow: 0 0 10px #ff7441; 
+    opacity: 0; /* Initially hidden */
+}
+
+nav a:hover::after {
+    bottom: -12px; /* Move the line down */
+    height: 5px; 
+    opacity: 1; 
+}
+
+
+nav a:hover {
+    color: #ff4500; 
+}
+
+.menu-container {
+    position: relative; 
+    z-index: 10;
+}
+
+.toggle-box {
+    position: fixed;
+    top: 325px;
+    left: 220px; /* Position this initially on the screen */
+    width: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-top: 30px solid transparent; /* Top part */
+    border-bottom: 30px solid transparent; /* Bottom part */
+    border-left: 40px solid #ffb264;
+    z-index: 10;
+    transition: left 0.3s ease-in-out; /* Smooth movement */
+}
+
+.toggle-box p{
+    margin: 0; /* Remove default margin */
+    position: absolute; /* Position the text absolutely */
+    margin-left: -55px; /* Adjust the left position to fit inside the triangle */
+    font-size: 20px;
+    color: #ffffff;
+}
+  
+  /* Styles for the hidden menu */
+  .menu {
+    position: fixed;
+    top: 230px;
+    left: 0; /* Initially on-screen */
+    width: 180px;
+    height: 28vh;
+    background-color: #ffb264;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    border-radius: 8px;
+  }
+
+@media(max-width: 768px) {
+    .menu {
+        height: 25vh;
+    }
+}
+
+  .menu.active {
+    left: -217px; /* Move out of view when active */
+}
+
+.toggle-box.active {
+    border-left: 40px solid #160606;
+}
+
+.menu p {
+    color: rgb(0, 0, 0); 
+    font-size: 20px; 
+    font-weight: bold; 
+    margin: 0; 
+    text-align: center; 
+}
+  
+  /* Adjust the toggle box position when menu is active */
+  .menu.active ~ .toggle-box {
+    left: 0; 
+  }
+  
+  .offer-image {
+    max-width: 100%; 
+    height: 60%; 
+    display: block; 
+    margin-top: 10px; 
+    border-radius: 6px;
+}
+
+.offer-button {
+    background-color: #ef640d; 
+    color: rgb(255, 255, 255); 
+    border: none; 
+    padding: 11px 49px; /* Padding for the button */
+    border-radius: 0px; 
+    cursor: pointer; /* Change cursor on hover */
+    margin-top: 20px; 
+    font-weight: bold;
+    transition: background-color 0.3s; 
+}
+
+.offer-button:hover {
+    background-color: #bb4b00; /* Darker shade on hover */
+}
+
+@media (max-width: 600px) {
+    .menu {
+        height: 28vh; /* Override height on mobile */
+        border-radius: 0px;
+    }
+}
+
+
+.lodge-container {
+    background-color: #301414;
+    padding: 40px;
+    text-align: center;
+    height: 510px; /* Initial height */
+    overflow: hidden; 
+}
+
+.expand-button {
+    position: absolute;
+    top: 1150px; /* Initial button position */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 10px 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 65px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: top 0.5s ease; 
+}
+
+.lodge-container.expanded {
+    height: 1950px; 
+}
+
+.lodge-container.expanded .expand-button {
+    top: 2520px; 
+}
+
+/* Show the container on mobile devices */
+@media (max-width: 768px) {
+    .lodge-container {
+        display: block; 
+    }
+}
+
+/* Hide the container on larger screens */
+@media (min-width: 769px) {
+    .lodge-container {
+        display: none; /* Hidden on desktop */
+    }
+}
+
+/* Styling for the title */
+.titlerr {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 5px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+/* Styling for the subtitle */
+.subtitle {
+    font-size: 25px; 
+    color: #e67e22;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+/* Description styling */
+.description {
+    font-size: 19px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: white;
+    text-align: justify;
+    margin-top: 20px;
+}
+
+
+
+    
+
+.full-width-paragraph {
+    width: 100%; 
+    padding: 20px; 
+    background-color: #301414;
+    box-sizing: border-box; 
+    color: white; 
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center; 
+    overflow: hidden; /* Ensure content overflow is hidden */
+    transition: max-height 3s ease;
+    max-height: 265px; /* Set initial height to 81px */
+    position: relative; /* Allow positioning of toggle text */
+}
+
+@media (max-width: 768px) { /* Adjust max-width for desired breakpoint */
+    .full-width-paragraph {
+        display: none;
+    }
+}
+    
+.content {
+    padding: 10px;
+}
+
+.toggle_{
+    margin: 10px; 
+    padding: 0px; 
+    background-color: transparent; 
+    color: rgb(255, 102, 0); 
+    cursor: pointer; 
+    position: absolute; 
+    font-size: 14px;
+    top: 230px;
+    bottom: 10px;
+    right: 10px; 
+    font-weight: bold; 
+    text-decoration: none;
+    transition: top 2s ease;
+    z-index: 900;
+}
+
+.toggle_::after {
+    content: ''; 
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    bottom: -11px; 
+    height: 2px; /* Thickness of the underline */
+    background-color: rgb(255, 145, 0); 
+    transform: translateY(5px); /* Initial position of underline */
+    transition: transform 0.3s ease; 
+}
+
+.toggle_:hover::after {
+    transform: translateY(-8px); /* Move the underline up on hover */
+}
+
+.clients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 35px;
+    max-height: auto;
+}
+
+.titley {
+    font-size: 24px;
+    color: #da450f;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.arrowy-container {
+    display: flex;
+    align-items: center;
+}
+
+.scrolly-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 940px; /* Adjust width to show three items */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scrolly-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scrolly-item {
+    min-width: 850px; /* Ensure each item gets allocated space */
+    height: 350px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 20px;
+    border-radius: 5px;
+    flex-shrink: 0; /* Prevents items from shrinking */
+    transition: transform 3s ease, opacity 3s ease; 
+}
+
+.scrolly-item:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    opacity: 0.8; /* Slightly reduce opacity on hover */
+    background-color: #dfc299;
+}
+
+/* Background colors for items */
+.scrolly-item:nth-child(1) { background-color: #eccea5; min-width: 780px;}
+.scrolly-item:nth-child(2) { background-color: #eccea5; min-width: 760px;}
+.scrolly-item:nth-child(3) { background-color: #eccea5; min-width: 770px; }
+.scrolly-item:nth-child(4) { background-color: #eccea5; min-width: 790px;}
+
+.im img {
+    width: 80px; /* Set desired width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; 
+    margin-top: 20px;
+}
+
+.scrolly-item p {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    overflow-wrap: break-word;
+}
+
+.arrowy {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 40px;
+    padding: 10px;
+    color: #007bff;
+}
+
+.arrowy:hover {
+    color: #0056b3;
+    background-color: transparent;
+}
+
+
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 10000px;
+    margin-top: 55px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        display: none;
+    }
+}
+
+.image-container {
+    position: relative;
+    width: 70%;
+    max-width: 600px;
+    left: 10%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.image-container p {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.text-right {
+    margin-left: 250px;
+    margin-top: 25px;
+    color: black;
+    font-size: 22px;
+    font-weight: normal;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.book-now-btn {
+    background-color: #e06230;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 20px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+    background-color: #952b0b;
+}
+
+
+/* Hide the mobile version on desktop */
+@media (min-width: 769px) {
+    .mobile-container {
+        display: none;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .mobile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        background-color: white;
+    }
+
+    .mobile-title {
+        font-size: 30px;
+        color: #040201;
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 1px;
+    }
+
+    .mobile-subtitle {
+        font-size: 22px;
+        color: #070402;
+        text-align: center;
+        font-weight: normal;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 5px;
+    }
+
+    .mobile-image-container {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 5px;
+    }
+
+    .mobile-image-container img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    .mobile-discover-link {
+        color: #e06230; /* Text color */
+        text-decoration: none; /* Remove the default underline */
+        font-weight: bold;
+        font-size: 22px;
+        font-family: 'Times New Roman', Times, serif;
+        position: relative; 
+        transition: color 0.3s ease; /* Smooth color transition */
+    }
+    
+    .mobile-discover-link::after {
+        content: ''; 
+        position: absolute;
+        bottom: -2px; 
+        left: 0;
+        right: 0;
+        height: 2px; 
+        background-color: #e06230; 
+        transform: translateY(2px); 
+        transition: transform 0.3s ease; 
+    }
+    
+    .mobile-discover-link:hover {
+        color: #952b0b; /* Change text color on hover */
+    }
+    
+    .mobile-discover-link:hover::after {
+        transform: translateY(-10px); /* Move the underline up by 2px on hover */
+    }
+}
+
+
+.content-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 10000px;
+    margin-top: 60px;
+}
+
+/* Hide the content-container on mobile devices */
+@media (max-width: 768px) {
+    .content-container {
+        display: none;
+    }
+}
+
+.text-container {
+    flex: 1; /* Allow text container to take up available space */
+    padding: 20px; /* Add padding for spacing */
+    text-align: center;
+    margin-top: -8%;
+    margin-left: 120px;
+    margin-right: 110px;
+}
+
+.i {
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.image-section {
+    flex: 0 0 auto; /* Prevent the image section from growing */
+    margin-left: 20px;
+    margin-right: 150px;
+}
+
+.image-section img { 
+    height: 410px; 
+    max-width: 550px;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .mobile-content-containert {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+
+    .mobile-text-containert {
+        text-align: center;
+        margin-bottom: 2px;
+    }
+
+    .mobile-text-container span {
+        font-size: 18px;
+        color: #000000;
+        max-width: 90%; /* Optional: set a maximum width for the text */
+        margin: 0 auto; /* Center the span text */
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .mobile-titlet {
+        font-size: 30px;
+        color: #0b0502;
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .mobile-image-sectiont img {
+        width: 100%;
+        height: auto;
+        max-width: 600px; /* Adjust the size of the image */
+        margin-bottom: 5px;
+    }
+
+    .mobile-discover-link-containert {
+        text-align: center;
+    }
+
+    .mobile-discover-linkt {
+        color: #e06230;
+        text-decoration: none; /* No default underline */
+        font-weight: bold;
+        font-size: 22px;
+        font-family: 'Times New Roman', Times, serif;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-discover-linkt::after {
+        content: '';
+        position: absolute;
+        bottom: -2px; /* Position of the underline */
+        left: 0;
+        right: 0;
+        height: 2px; 
+        background-color: #e06230; 
+        transform: translateY(2px); 
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-discover-linkt:hover {
+        color: #952b0b; /* Change text color on hover */
+    }
+
+    .mobile-discover-linkt:hover::after {
+        transform: translateY(-10px); /* Move underline up on hover */
+    }
+}
+
+
+@media (min-width: 769px) {
+    .mobile-content-containert {
+        display: none;
+    }
+}
+
+
+/* Default: Hide triangle and arrow on all devices */
+.triangledd,
+.arrowdd {
+    display: none;
+}
+
+/* Mobile devices: Show triangle and arrow */
+@media (max-width: 768px) {
+    .triangledd {
+        display: block;
+        position: relative;
+        width: 0; 
+        height: 0; 
+        border-left: 50px solid transparent; 
+        border-right: 50px solid transparent;
+        border-bottom: 30px solid #e8e8e8; 
+        left: 38%;
+        margin-top: 0px;
+        cursor: pointer;
+    }
+
+    .arrowdd {
+        display: block;
+        position: absolute;
+        top: 19px; 
+        left: 50%;
+        height: auto; 
+        border-left: 16px solid transparent; 
+        border-right: 16px solid transparent; 
+        border-bottom: 10px solid #ffffff; 
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+.offer-mobile {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    box-sizing: border-box;
+    margin-bottom: 180px; 
+}
+
+@media (min-width: 769px) {
+    .offer-mobile {
+        display: none;
+    }
+}
+
+.info-offer {
+    flex: 1; 
+    background-color: #eccea5;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.info-show {
+    flex: 1;
+    background-color: #eccea5;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.info-offer h1 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #250c08;
+}
+
+.info-offer h2 {
+    font-size: 0.9em;
+    margin-top: 10px;
+    color: #be2f0b;
+    display: inline-block;
+}
+
+.scroll-arrowsr {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 2em;
+    color: #333;
+}
+
+.scroll-containers {
+    display: flex;
+    overflow-x: scroll; 
+    scroll-snap-type: x mandatory; /* Enforces snapping behavior */
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.scroll-itemr {
+    flex: 0 0 100%; 
+    scroll-snap-align: start; 
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    background-color: #eccea5;
+    color: #000;
+    font-size: 0.9em;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.scroll-itemr img {
+    width: 100%;
+    max-width: 300px; 
+    height: 250px;
+    margin-bottom: 10px; 
+    margin-top: -60px;
+}
+
+.scroll-itemr p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 10px; /* Adds space between paragraph and button */
+}
+
+.scroll-itemr button {
+    padding: 10px 45px;
+    font-size: 1em;
+    background-color: #ba5317;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.scroll-itemr button:hover {
+    background-color: #791903;
+}
+
+.scroll-containers::-webkit-scrollbar {
+    display: none; /* Hides scrollbar for WebKit browsers */
+}
+
+.scroll-itemr p a {
+    text-decoration: none; 
+    color: #000000; 
+}
+
+.scroll-itemr p a:hover {
+    text-decoration: underline;
+}
+
+
+.offers {
+    display: flex;
+    flex-direction: column; /* Stack arrows and scroll container vertically */
+    align-items: center;
+    position: relative;
+    margin-top: 50px;
+    height: 860px;
+    background-color: #eccea5;
+}
+
+@media only screen and (max-width: 768px) {
+    .offers {
+        display: none;
+    }
+}
+
+.arroww-container {
+    display: flex;
+    align-items: center;
+    margin-top: 45px;
+    margin-bottom: 10px; /* Space between arrows and scroll container */
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 1100px; /* Adjusted width to fit three items */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+.scroll-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scroll-item1,
+.scroll-item2,
+.scroll-item3,
+.scroll-item4,
+.scroll-item5 {
+    min-width: 350px;
+    height: 550px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.scroll-item1 { background-color: #eccea5; }
+.scroll-item2 { background-color: #eccea5; }
+.scroll-item3 { background-color: #eccea5; }
+.scroll-item4 { background-color: #eccea5; }
+.scroll-item5 { background-color: #eccea5; }
+
+.scroll-item1 img {
+    width: 312px; 
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.scroll-item1 p.desc {
+    color: white; 
+    margin-top: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+}
+
+.scroll-item1 p.desc a {
+    text-decoration: none; 
+    color: rgb(77, 24, 8); 
+}
+
+.scroll-item1 p.desc a:hover {
+    text-decoration: underline; 
+}
+
+.scroll-item2 img {
+    width: 330px; 
+    height: 295px; 
+    margin-top: 20px;
+}
+
+.scroll-item2 p.d {
+    color: white; 
+    margin-top: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+}
+
+.scroll-item2 p.d a {
+    text-decoration: none; 
+    color: rgb(77, 24, 8); 
+}
+
+.scroll-item2 p.d a:hover {
+    text-decoration: underline; 
+}
+
+.scroll-item3 img {
+    width: 330px; 
+    height: 295px; 
+    margin-top: 20px;
+}
+
+.scroll-item3 p.de {
+    color: white; 
+    margin-top: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+}
+
+.scroll-item3 p.de a {
+    text-decoration: none; 
+    color: rgb(77, 24, 8); 
+}
+
+.scroll-item3 p.de a:hover {
+    text-decoration: underline; 
+}
+
+.scroll-item4 img {
+    width: 330px; 
+    height: 295px; 
+    margin-top: 20px;
+}
+
+.scroll-item4 p.des {
+    color: white; 
+    margin-top: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+}
+
+.scroll-item4 p.des a {
+    text-decoration: none; 
+    color: rgb(77, 24, 8); 
+}
+
+.scroll-item4 p.des a:hover {
+    text-decoration: underline; 
+}
+
+.scroll-item5 img {
+    width: 330px; 
+    height: 295px; 
+    margin-top: 20px;
+}
+
+.scroll-item5 p.descr {
+    color: white; 
+    margin-top: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+}
+
+.scroll-item5 p.descr a {
+    text-decoration: none; 
+    color: rgb(77, 24, 8); 
+}
+
+.scroll-item5 p.descr a:hover {
+    text-decoration: underline; 
+}
+
+.offa-button {
+    background-color: #ee620b; 
+    color: white; 
+    border: none; 
+    width: 328px;
+    padding: 10px 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-top: 40px; 
+    margin-left: 18px;
+}
+
+.offa-button:hover {
+    background-color: #6e100e; 
+}
+
+.offf-button {
+    background-color: #ee620b; 
+    color: white; 
+    border: none; 
+    width: 328px;
+    padding: 10px 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-top: 45px; 
+    margin-left: 8px;
+}
+
+.offf-button:hover {
+    background-color: #6e100e; 
+}
+
+.offff-button {
+    background-color: #ee620b; 
+    color: white; 
+    border: none; 
+    width: 328px;
+    padding: 10px 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-top: 45px; 
+    margin-left: 8px;
+}
+
+.offff-button:hover {
+    background-color: #6e100e; 
+}
+
+.offd-button {
+    background-color: #ee620b; 
+    color: white; 
+    border: none; 
+    width: 328px;
+    padding: 10px 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-top: 45px; 
+    margin-left: 7px;
+}
+
+.offd-button:hover {
+    background-color: #6e100e; 
+}
+
+.offs-button {
+    background-color: #ee620b; 
+    color: white; 
+    border: none; 
+    width: 328px;
+    padding: 10px 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-top: 43px; 
+    margin-left: 8px;
+}
+
+.offs-button:hover {
+    background-color: #6e100e; 
+}
+
+.arroww {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 44px;
+    padding: 2px;
+    color: #007bff;
+}
+
+.arroww:hover {
+    background-color: transparent;
+    color: #0056b3;
+}
+
+.title {
+    margin: 0 185px; /* Space between title and arrows */
+    font-size: 38px; /* Title size */
+    color: #332824; /* Title color */
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.titler{
+    font-size: 20px;
+    text-align: center;
+    color: rgba(175, 26, 26, 0.877);
+}
+
+
+.triangled {
+    position: relative;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent; 
+    border-right: 50px solid transparent;
+    border-bottom: 30px solid #e8e8e8; 
+    margin-left: -5px;
+    margin-top: 72px;
+    cursor: pointer;
+}
+
+.arrowd {
+    position: absolute;
+    top: 19px; /* Adjust position of the arrow inside the triangle */
+    left: 50%;
+    height: auto; /* No height needed for the triangle */
+    border-left: 16px solid transparent; 
+    border-right: 16px solid transparent; 
+    border-bottom: 10px solid #ffffff; 
+    transform: translateX(-50%); 
+}
+
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 10%;
+    background-color: #eccea5;
+    padding: 17px;
+    text-align: center;
+    display: flex; /* Ensure the nav is using flexbox */
+    align-items: center;
+}
+
+.dropdown p {
+    color: #4c2222;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 50px;
+    position: relative;
+    font-size: 17px;
+    width: 120px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.dropdown a {
+    color: #000;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 50px;
+    position: relative;
+    font-size: 17px;
+    width: 95px;
+}
+
+.dropdown a:hover {
+    color: #ff4500; /* Change text color to red */
+}
+
+/* Add the arrow after the "Rooms" link text */
+.rooms-link::after {
+    content: "▼"; /* Down arrow */
+    font-size: 12px;
+    margin-left: 5px;
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.dropdown:hover .rooms-link::after {
+    content: "▲"; /* Change to up arrow */
+    transform: rotate(180deg); /* Flip the arrow on hover */
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #FAF0E6;
+    min-width: 240px;
+    height: 600px; 
+    font-family: 'Times New Roman', Times, serif;
+    opacity: 0; /* Start fully transparent */
+    z-index: 1800;
+    top: 93%;
+    left: 0;
+    padding: 0;
+    overflow: visible;
+    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+    margin-top: 5px;
+    border-radius: 1px;
+    pointer-events: none;
+}
+
+.dropdown:hover .dropdown-content {
+    padding: 10px 0; 
+    max-height: 600px;
+    opacity: 1; /* Make fully visible */
+    pointer-events: auto;
+}
+
+.dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    margin-bottom: 2px;
+    transition: all 0.5s ease;
+}
+
+.dropdown-content a:hover {
+    color: #ff4500; /* Change text color to red */
+}
+
+
+.dropdown-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px; /* Thickness of the underline */
+    background-color: rgb(255, 38, 0); /* The underline color */
+}
+
+
+.dropdownn {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+    pointer-events: none;
+    width: 100%;
+}
+
+.dropdownn-content {
+    display: block;
+    position: absolute;
+    background-color: #392b2b;
+    width: 100%;
+    max-height: 0; /* Start closed */
+    overflow: visible;
+    opacity: 0; /* Fully transparent */
+    z-index: 1000;
+    top: -5px;
+    left: 1px;
+    padding: 0;
+    margin-top: 71px;
+    border-radius: 0;
+    pointer-events: none;
+    
+    /* Start with hidden and scaled up */
+    transform: translateY(-10px); 
+    transition: max-height 1s ease, padding 1s ease, opacity 0.5s ease, transform 1s ease;
+}
+
+.dropdownn-content.show {
+    max-height: 500px;
+    padding: 0px 0; 
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); 
+    pointer-events: auto;
+    z-index: 1100;
+} 
+    
+.linkc {
+    display: block; /* or flex if using flex layout */
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+
+.linkc p {
+    color: #ffffff; /* Initial text color */
+    padding: 10px 20px; /* Adding padding for the link */
+    display: inline-block; /* Ensures padding works as expected */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    text-decoration: underline;
+    pointer-events: auto;
+    margin-left: auto;
+}
+
+.linkc p:hover {
+    color: #ff5900; /* Text color on hover */
+    background-color: transparent; /* Background color on hover */
+    border-radius: 4px; /* Optional: rounded corners */
+    cursor: pointer;
+}
+
+
+.popover {
+    position: absolute;
+    top: 100%; /* Position below the "Modify Booking" text */
+    left: 85%; /* Adjust based on your layout */
+    transform: translateX(-50%);
+    background-color: #f9ede1;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 380px; /* Width of the popover */
+    z-index: 1500;
+    height: 250px;
+    display: none; /* Hidden by default */
+    margin-top: 10px;
+}
+
+.popover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%; 
+    left: 50%; 
+    margin-left: -10px; 
+    border-width: 22px; 
+    border-style: solid;
+    border-color: transparent transparent #f9ede1 transparent; /* Triangle color matches popover background */
+}
+
+
+.popover p {
+    margin: 0;
+    font-size: 14px;
+    color: #e14e26;
+    text-decoration: none;
+    font-size: 22px;
+    pointer-events: none;
+}
+
+.popover .popover-label {
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+    margin-top: 10px; /* Adjust spacing from above elements */
+}
+
+/* Style for the Confirmation Number input */
+.popover input[type="text"] {
+    padding: 12px;
+    width: 200px;
+    border-radius: 3px;
+    pointer-events: auto;
+    display: block;
+    margin-top: 10px;
+}
+
+.popover button {
+    margin-top: 10px;
+    padding: 10px 35px;
+    background-color: #ea6827;
+    color: #ffffff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.popp{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.tex{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.tex p{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* Circle container styling */
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 4px solid #A5D6A7;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+/* Checkmark styling */
+.checkmark {
+    width: 5px;
+    height: 10px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgb(15, 228, 82);
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+
+
+/* Container for the form */
+.check {
+    background-color: #392b2b;
+    border-radius: 0px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style each label and input in a row */
+.check form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 23px;
+}
+
+.check label {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 58px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+.check input[type="text"].flatpickr {
+    width: 150px;
+    padding: 8px 30px 8px 8px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif; 
+    font-size: 14px;
+    min-height: 10px; /* Set a minimum height */
+    
+    /* Add background image */
+    background-image: url('calendar-icon-orange.ico'); /* Path to your icon */
+    background-repeat: no-repeat; /* Prevent the icon from repeating */
+    background-position: right 10px center;/* Position the icon inside the input */
+    background-size: 16px 16px; /* Set size of the icon */
+    pointer-events: auto;
+}
+
+
+/* Set width for number input */
+.check input[type="number"] {
+    font-family: 'Arial', sans-serif;/* Change to your desired font family */
+    font-size: 14px;
+    width: 180px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    pointer-events: auto;
+}
+
+.check input[type="numberr"] {
+    font-family: 'Arial', sans-serif;/* Change to your desired font family */
+    font-size: 14px;
+    width: 32px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="orange" viewBox="0 0 24 24"%3E%3Cpath d="M8.59 9.17L12 12.58l3.41-3.41L17 10.59l-5 5-5-5z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: left 50px center;
+    background-size: 28px;
+    padding-right: 36px; 
+    cursor: pointer; 
+    pointer-events: auto;
+}
+
+.dropdow {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background-color: #FAF0E6;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    z-index: 2500;
+    width: 55px; /* Match input width */
+    margin-left: 618px;
+    margin-top: 390px;
+    color: #000;
+    pointer-events: auto;
+}
+
+.dropdoww {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background-color: #FAF0E6;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    z-index: 2500;
+    width: 55px; /* Match input width */
+    margin-left: 768px;
+    margin-top: 390px;
+    color: #000;
+    pointer-events: auto;
+}
+
+.dropdow div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdow div:hover {
+    background-color: #856464; /* Highlight on hover */
+}
+
+.dropdoww div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdoww div:hover {
+    background-color: #856464; /* Highlight on hover */
+}
+
+.check button {
+    padding: 9px 48px;
+    background-color: #cf6237;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: background-color 0.3s;
+    pointer-events: auto;
+    display: inline-block; /* Ensures button is inline */
+    white-space: nowrap; /* Prevents text from wrapping */
+    text-align: center;
+}
+
+.check button:hover {
+    background-color: #9b2611;
+}  
+
+/* Style for the Close button */
+#close-popover {
+    padding: 9px 48px;
+    background-color: #cf6237; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#close-popover:hover {
+    background-color: #811b18; /* Darker red on hover */
+}
+
+/* Style for the Continue button */
+#continue-popover {
+    padding: 9px 48px;
+    background-color: #cf6237; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; /* Adds space between the two buttons */
+}
+
+#continue-popover:hover {
+    background-color: #9b2611; /* Darker green on hover */
+}
+
+
+#close-popover {
+    margin-right: 40px; 
+}
+
+
+/* General Layout for Mobile */
+@media screen and (max-width: 768px) {
+    .dropdownn {
+        position: relative;
+        display: inline-block;
+        overflow: visible;
+        pointer-events: none;
+    }
+    
+    .dropdownn-content {
+        display: none; 
+        position: absolute;
+        background-color: #392b2b;
+        width: 100%;
+        max-height: 0; /* Start closed */
+        overflow: visible;
+        opacity: 0; 
+        z-index: 1000;
+        top: -20px;
+        left: 0;
+        padding: 10px;
+        border-radius: 0;
+        pointer-events: none;
+        transform: translateY(-10px); 
+        transition: max-height 1s ease, padding 1s ease, opacity 0.5s ease, transform 1s ease;
+    }
+    
+    .dropdownn-content.show {
+        display: block; /* Show the dropdown */
+        max-height: 700px;
+        padding: 0px 0; 
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); 
+        pointer-events: auto;
+        z-index: 1100;
+    }
+
+    .check {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: #392b2b;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .check form {
+        display: flex;
+        flex-direction: column; /* Arrange form elements vertically */
+        gap: 10px;
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    .check label{
+        width: 80%; 
+        margin-top: 3px;
+        margin-bottom: 5px;
+    }
+    
+    .check input {
+        width: 80%; 
+        background-color: white;
+        padding: 8px;
+        min-height: 10px;
+    }
+
+    .check input[type="text"].flatpickr{
+        padding: 10px;
+        min-height: 10px;
+        font-size: 14px;
+    }
+    
+    .check input[type="number"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .check button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .dropdow {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdoww {
+        display: none; 
+        position: absolute;
+        background-color: #FAF0E6;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        z-index: 2500;
+        width: 55px; /* Match input width */
+        margin-left: 120px;
+        margin-top: 50px;
+        color: #000;
+        pointer-events: auto;
+    }
+    
+    .dropdow div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdow div:hover {
+        background-color: #856464; 
+    }
+    
+    .dropdoww div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .dropdoww div:hover {
+        background-color: #856464; 
+    }
+
+    .linkc {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .linkc p {
+        color: #ffffff;
+        text-decoration: underline;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .linkc p:hover {
+        color: #ff5900;
+    }
+
+    /* Modify the popover to fit on mobile */
+    .popover {
+        position: absolute;
+        top: 1%; /* Place below Modify Booking */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f9ede1;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 4px;
+        width: 80%; /* Make popover smaller */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1500;
+        height: 260px;
+        display: none; /* Hidden by default */
+        margin-top: 10px;
+    }
+
+    .popover.show {
+        display: block; /* Show the popover when active */
+    }
+
+    .popover::before {
+        content: '';
+        position: absolute;
+        bottom: 100%; 
+        left: 50%; 
+        margin-left: -10px; 
+        border-width: 22px; 
+        border-style: solid;
+        border-color: transparent transparent #f9ede1 transparent; /* Triangle color matches popover background */
+    }
+
+    .popover p {
+        margin: 0;
+        font-size: 14px;
+        color: #e14e26;
+        text-decoration: none;
+        font-size: 22px;
+        pointer-events: none;
+    }
+
+    .popover .popover-label {
+        font-size: 14px;
+        color: #000000;
+        font-weight: bold;
+        margin-top: 10px; /* Adjust spacing from above elements */
+    }
+
+    /* Style for the Confirmation Number input */
+    .popover input[type="text"] {
+        padding: 12px;
+        width: 200px;
+        border-radius: 3px;
+        pointer-events: auto;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* Style for the Close button */
+#close-popover {
+    width: 75px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#close-popover:hover {
+    background-color: #811b18; /* Darker red on hover */
+}
+
+#continue-popover {
+    width: 95px;
+    padding: 9px 10px;
+    background-color: #cf6237; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+#continue-popover:hover {
+    background-color: #9b2611; /* Darker green on hover */
+}
+
+
+#close-popover {
+    margin-right: 40px; 
+}
+
+}
+
+@media (max-width: 600px) {
+    /* Hide the circle on mobile */
+    .circle {
+        display: none;
+    }
+}
+
+
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 94vh;
+    overflow: hidden;
+    z-index: 1050;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img { 
+    width: 100%;
+    height: 94vh;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .slideshow-container {
+        height: 620px !important; /* Force height for mobile */
+    }
+
+    .slide img {
+        height: 620px !important; /* Force height for mobile */
+        object-fit: cover;
+    }
+}
+
+.slide p {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 600px) {
+    .slide p {
+        left: 3%; 
+        transform: none; /* Remove translateX to avoid centering */
+    }
+}
+
+#maua { 
+    position: absolute;
+    bottom: 20px;
+    left: 120px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    visibility: hidden; /* Initially hidden */
+    margin-top: 605px;
+}
+
+
+/* Mobile-specific styles */
+@media (max-width: 600px) {
+    #maua {
+        margin-top: 490px; 
+        left: 20px;
+    }
+}
+
+.fade {
+    animation: fade 1s ease-in-out forwards;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+/* Hide the .acc div on mobile devices */
+@media (max-width: 768px) {
+    .acc {
+        display: none; /* Hidden on mobile */
+    }
+}
+
+
+
+
+
+
+.block {
+    top: 0px;
+    width: 100%; 
+    height: 140px;
+    margin: 0; /* Remove any default margin */
+    background-color: #e8e8e8; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border: none; 
+    box-shadow: none; 
+}
+  
+
+.block img{
+    width: 80px;
+    border-radius: 40px;
+}
+  
+
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e8e8e8; /* Pantone 427 (Fog Gray) */
+    padding: 20px;
+    height: 255px;
+    border-radius: 1px;
+    margin-top: 0px;
+}
+
+/* Individual section styling */
+.section {
+    flex: 1; /* Make all sections equal width */
+    padding: 5px;
+    margin: 5px; 
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.section1 { 
+    color: #000000;
+    margin-left: 80px;
+} 
+.section2 { 
+    color: #000000; 
+} 
+.section3 { 
+    color: #000000;
+} 
+
+.social-icon {
+    margin-left: 20px;
+    width: 27px;  /* Set desired width */
+    height: 27px; /* Set desired height */
+    transition: transform 0.5s ease; /* Optional transition for hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.7); /* Optional hover effect to slightly enlarge */
+}
+
+
+.pp {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+}
+.oo {
+    font-weight: 15px; /* Make the text bold */
+    color: #333;
+    margin-left: 20px;
+}
+
+.u {
+    font-weight: bold; /* Make the text bold */
+    color: #333;
+}
+
+
+
+.footer {
+    display: flex;
+    justify-content: space-between; /* Space out the two sections */
+    align-items: center; /* Vertically align the sections */
+    background-color: #ffffff; /* Dark background */
+    color: #000000; /* White text */
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+.stp a {
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+    margin: 0 27px; 
+}
+
+.stp a:hover {
+    color: #ff4500;
+}
+
+/* Style for the copyright section */
+.copyright {
+    font-size: 16px;
+    color: #000000; /* Slightly lighter gray text */
+    margin-left: 65px;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; 
+        align-items: flex-start;
+        text-align: left; 
+        padding: 15px;
+    }
+
+    .stp a {
+        font-size: 16px; 
+        margin: 5px 0; 
+        padding: 8px 5px;
+    }
+
+    .copyright {
+        font-size: 14px; 
+        margin-left: 0; 
+        margin-top: 4px; 
+        margin-bottom: 18px;
+    }
+
+    .stp a:hover, .about-link:hover {
+        color: #ff4500;
+    }
+}
+
+
+.about-link {
+    text-align: left;
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-weight: bold; 
+    transition: background-color 0.3s, color 0.3s; /
+}
+
+.about-link:hover {
+    color: #ff4500; 
+}
+
+.about-lin {
+    text-align: left;
+    text-decoration: none; 
+    color: black; /* Link color */
+    padding: 10px 20px; 
+    font-weight: 15px; 
+    font-family: 'Times New Roman', Times, serif;
+    transition: background-color 0.3s, color 0.3s; /
+}
+
+.about-lin:hover {
+    color: #ff4500; 
+}
+
+.form-container {
+    background-color: #d0d0ce;
+}
+  
+  .input-button-container {
+    display: flex; /* Use flexbox to place input and button on the same line */
+    align-items: center; /* Align vertically */
+    gap: 0px; /* Add spacing between input and button */
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  input[type="email"] {
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    flex: 1; /* Make the input field flexible */
+  }
+  
+.su {
+    background-color: transparent; 
+    color: rgb(215, 198, 198);
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 25px; /* Adjust the size of the arrow */
+    transition: background-color 0.3s ease;
+    margin-left: -45px;
+}
+
+.su:hover {
+    color: #ba9a9a; /* Slightly darker green when hovered */
+}
+
+
+
+#messageBox {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: #131111;
+    padding: 20px;
+    border: 20px solid #d56a46;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    width: 85%;
+    max-width: 500px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.messag h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #cd5627;
+}
+
+.messag p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.c {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #0e0101;
+    font-weight: bold;
+}
+
+.c:hover {
+    color: red;
+}
+
+
+
+
+
+
+/* Default styles for desktop - content will be hidden on desktop */
+.foop, .ffsud, .ddsud {
+    display: none; /* Hide on desktop by default */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    /* Show the content only on mobile */
+    .foop, .ffsud, .ddsud {
+        display: block; /* Show on mobile */
+    }
+
+    /* Mobile-specific styles */
+    .foop {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #e8e8e8;
+        height: auto;
+    }
+
+    .ffsud, .ddsud {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+        margin-bottom: 0px;
+        background-color: #e8e8e8;
+    }
+
+    .ffsud {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        background-color: #e8e8e8;
+        height: 100%; /* Ensure the div takes full height of its container */
+    }
+    
+    .ffsud h3 {
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        margin-bottom: 0px;
+        text-align: center; /* Center the heading text */
+    }
+    
+    .ffsud a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        text-align: center; /* Center the link */
+    }
+    
+    .ffsud p {
+        color: #000000;
+        font-size: 16px;
+        margin: 5px 0;
+        text-align: center; /* Center the paragraph text */
+    }    
+
+    /* DDS class styles */
+    .ddsud {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        background-color: #e8e8e8;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .ddsud h3 {
+        color: #090808;
+        font-size: 20px;
+        margin-bottom: 5px;
+        text-align: center; /* Center the heading text */
+    }
+    
+    .ddsud p {
+        color: #333;
+        font-size: 16px;
+        margin: 5px 0;
+        text-align: center; /* Center the paragraph text */
+    }
+    
+    .ddsud a {
+        color: #0f0907; 
+        text-decoration: none; 
+        text-align: center; 
+    }
+    
+    .ddsud a:hover {
+        text-decoration: underline; 
+    }
+    
+    .ddsud .social-icons {
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        cursor: pointer;
+        padding-left: 0; 
+    }
+
+    .dams {
+        background-color: #e8e8e8;
+        padding: 20px;
+        box-sizing: border-box;
+        color: black;
+    }
+}
+
+
+
+
+.center-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #070101;
+    padding: 20px;
+    border-radius: 0px;
+    border: 10px solid #e14e26;
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+    z-index: 1000;
+}
+
+
+.center-box  button{
+    padding: 10px 35px;
+    background-color: #e14e26;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
+.center-box button:hover {
+    background-color: #933405;
+}
+
+button.sug {
+    background-color: transparent;
+    color: rgb(227, 202, 202);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button.sug:hover {
+    background-color: transparent;
+    color: #daa0a0;
+}
+
+
+.sug {
+    background-color: transparent; 
+    color: rgb(215, 198, 198);
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 25px; /* Adjust the size of the arrow */
+    transition: background-color 0.3s ease;
+    margin-left: -45px;
+}
+
+.sug:hover {
+    color: #ba9a9a; /* Slightly darker green when hovered */
+}

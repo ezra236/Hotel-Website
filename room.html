@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="5000">
+    <link rel="icon" href="lilo.png" type="image/png">
+    <title>Prime Guest Lodge</title>
+    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="finis">
+        <p class="po"> PRIME GUEST LODGE</p>
+    </div>
+
+    <div class="nav-container"> 
+        <div class="logo">
+            <img src="logo.png" alt="Logo" /> 
+      </div>
+      <div class="dropdown">
+         <a href="room.html" class="rooms-link">Accomodation</a>
+           <div class="dropdown-content">
+            <p>Available Rooms</p>
+            <a href="paris.html" target="_blank">Paris</a>
+            <a href="tokyo.html" target="_blank">Tokyo</a>
+            <a href="york.html" target="_blank">New York</a>
+            <a href="dubai.html" target="_blank">Dubai</a>
+            <a href="london.html" target="_blank">London</a>
+            <a href="sydney.html" target="_blank">Sydney</a>
+            <a href="rome.html" target="_blank">Rome</a>
+            <a href="cairo.html" target="_blank">Cairo</a>
+            <a href="berlin.html" target="_blank">Berlin</a>
+            <a href="bangkok.html" target="_blank">Bangkok</a>
+            <a href="istanbul.html" target="_blank">Istanbul</a>
+            <a href="mosco.html" target="_blank">Moscow</a>
+            <a href="toronto.html" target="_blank">Toronto</a>
+           </div>
+      </div>
+        <nav>
+         <span class="separator">|</span>
+         <a href="offers.html">Offers</a>
+         <span class="separator">|</span>
+         <a href="dining.html">Dining</a>
+         <span class="separator">|</span>
+         <a href="locate.html">Location</a>
+         <span class="separator">|</span>
+         <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="yu">
+            <div class="squared-shape" id="shaped-square">
+                <p>More</p>
+            </div>
+        </div>
+        <div class="shape-container" id="shape-container">
+            <div class="triangle">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 9.17L12 12.58l3.41-3.41L17 10.59l-5 5-5-5z'/%3E%3C/svg%3E" alt="Triangle Icon" class="triangle-image">
+            </div>
+            <div class="square"></div>
+            <p class="shape-text"><br>Check Availability</p>
+         
+        </div>  
+    </div>
+    
+    
+    <div id="overlay"></div>
+    
+    
+    <div class="blockk" id="slidingg-block">
+        <p class="parag" id="close-button">X</p>
+        <div class="inblock">
+            <img src="logoo.jpg">
+            <p>PRIME GUEST HOME</p>
+        </div>
+        <div class="linkk">
+            <a href="room.html">ACCOMODATION</a>
+            <a href="offers.html">OFFERS</a>
+            <a href="dining.html">DINING</a>
+            <a href="locate.html">LOCATION</a>
+            <a href="contact.html">CONTACT Us</a>
+            <a href="feedback.html">FEEDBACK</a>
+            <a href="herit.html">HERITAGE</a>
+        </div>
+        <div class="logimage">
+            <img src="logoo.jpg">
+        </div>
+    </div>
+    
+    
+    <div class="dropdownn">
+        <div class="dropdownn-content" id="dropdownn">
+            <div class="check">
+                <div class="circle">
+                    <div class="checkmark"></div>
+                </div>
+                <div class="tex">
+                    <p><span style="color: #ff4500;">Rooms From KSH 1205.00 </span><br>
+                        Best rate guaranteed<br>
+                        Exclusive offers available
+                    </p>
+                </div>
+                <form action="rate.php" method="POST" id="roomForm">
+                    <label for="check-in">Check-in:</label>
+                    <input type="text" id="check-in" name="check-in" class="flatpickr" />
+        
+                    <label for="check-out">Check-out:</label>
+                    <input type="text" id="check-out" name="check-out" class="flatpickr" />
+        
+                    <label for="room-number">Room Number:</label>
+                    <input type="numberr" id="room-number" name="room-number" />
+                    <div class="dropdow" id="roomdropdow">
+                        <!-- Dropdown items -->
+                        <div data-value="1">1</div>
+                        <div data-value="2">2</div>
+                        <div data-value="3">3</div>
+                        <div data-value="4">4</div>
+                        <div data-value="5">5</div>
+                        <div data-value="6">6</div>
+                        <div data-value="7">7</div>
+                        <div data-value="8">8</div>
+                        <div data-value="9">9</div>
+                        <div data-value="10">10</div>
+                    </div>
+        
+                    <label for="adults">Adults:</label>
+                    <input type="numberr" id="adults" name="adults" />
+                    <div class="dropdoww" id="adultsdropdow">
+                        <!-- Dropdown items -->
+                        <div data-value="1">1</div>
+                        <div data-value="2">2</div>
+                        <div data-value="3">3</div>
+                        <div data-value="4">4</div>
+                        <div data-value="5">5</div>
+                        <div data-value="6">6</div>
+                        <div data-value="7">7</div>
+                        <div data-value="8">8</div>
+                        <div data-value="9">9</div>
+                        <div data-value="10">10</div>
+                    </div>
+        
+                    <button type="submit">Check Rates</button>
+    
+                </form>
+                <div class="linkc">
+                    <p id="modify-booking">Modify Booking</p>
+                    <div class="popover" id="popover">
+                        <p><span style="color: #cb4f1d;">Modify/ Cancel Reservations</span></p>
+                        <p><span style="color: black; font-size: 14px; font-weight: normal;"> Please enter the following to retrieve your reservation</span></p>
+                        <label for="confirmation_number" class="popover-label">Confirmation Number:</label>
+                        <input type="text" id="confirmation_number" name="confirmation_number" />
+    
+                        <button id="close-popover" class="popp">Close</button>
+                        <button id="continue-popover" class="popp">Continue</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+     </div>
+
+
+
+     
+    <div class="slideshow-cont">
+        <div class="Modif">
+            <img src="ii.jpg" alt="Image 1">
+            <p>Rooms & Suites</p>
+            <div class="small">
+                <img src="logoo.jpg" alt="Small Image">
+            </div>
+            <div class="sub-text">
+                <p>Prime Guest<br>Lodge</p>
+            </div>
+            <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+        </div>
+    </div> 
+
+
+
+    <div class="roomm">
+        <div class="roomn">
+            <p class="tt">Click To Choose</p>
+            <p><a class="selected" data-id="roo1">Paris</a></p>
+            <p><a data-id="roo2">Tokyo</a></p>
+            <p><a data-id="roo3">New York</a></p>
+            <p><a data-id="roo4">Dubai</a></p>
+            <p><a data-id="roo5">London</a></p>
+            <p><a data-id="roo6">Sydney</a></p>
+            <p><a data-id="roo7">Rome</a></p>
+            <p><a data-id="roo8">Cairo</a></p>
+            <p><a data-id="roo9">Berlin</a></p>
+            <p><a data-id="roo10">Bangkok</a></p>
+        </div>
+        <div class="roomd" id="i">
+            <div class="roo1" id="roo1">
+                <img src="im1.avif" alt="Room Image">
+                <div class="text-container">
+                    <h3>Paris</h3>
+                    <p>This kind of room would be perfect for those looking to escape into a setting that feels both chic and relaxing—a little slice of Paris right where you are, capturing the timeless ambiance of the world’s most romantic city!</p>
+                    <button class="butto" onclick="window.open('paris.html', '_blank')">MORE DETAILS</button>
+                    <button class="buttonn" onclick="proceedToPay('roo1')">BOOK</button>
+                </div>
+            </div>
+            <div class="roo2" id="roo2">
+                <img src="im2.jpg" alt="Room Image">
+                <div class="text-container">
+                    <h3>Tokyo</h3>
+                    <p>Embrace the perfect blend of tradition and modernity in Tokyo, where elegant rooms provide a tranquil retreat after exploring the vibrant city life.</p>
+                    <button class="butto" onclick="window.open('tokyo.html', '_blank')">MORE DETAILS</button>
+                    <button class="buttonn" onclick="proceedToPay('roo2')">BOOK</button>
+                </div>
+            </div>
+            <div class="roo3" id="roo3">
+                <img src="im3.avif" alt="Room Image">
+                <div class="text-container">
+                    <h3>New York</h3>
+                    <p>Stay in the heart of the action in New York, where stylish accommodations offer breathtaking skyline views and easy access to iconic attractions.</p>
+                    <button class="butto" onclick="window.open('york.html', '_blank')">MORE DETAILS</button>
+                    <button class="buttonn" onclick="proceedToPay('roo3')">BOOK</button>
+                </div>
+            </div>
+            <div class="roo4" id="roo4">
+                <img src="im4.jpg" alt="Room Image">
+                <div class="text-container">
+                    <h3>Dubai</h3>
+                    <p>Indulge in unparalleled luxury in Dubai, featuring opulent hotels with lavish amenities, breathtaking architecture, and exceptional hospitality.</p>
+                    <button class="butto" onclick="window.open('dubai.html', '_blank')">MORE DETAILS</button>
+                    <button class="buttonn" onclick="proceedToPay('roo4')">BOOK</button>
+                </div>
+            </div>
+            <div class="roo5" id="roo5">
+                <img src="im5.jpg" alt="Room Image">
+                <div class="text-container">
+                    <h3>London</h3>
+                    <p>Enjoy a sophisticated stay in London, where classic charm meets modern comfort in beautifully appointed rooms near historic landmarks.</p>
+                    <button class="butto" onclick="window.open('london.html', '_blank')">MORE DETAILS</button>
+                    <button class="buttonn" onclick="proceedToPay('roo5')">BOOK</button>
+                </div>
+            </div>
+            <div class="roo6" id="roo6">
+                <img src="im6.jpg" alt="Room Image">
+                <div class="text-container">
+                    <h3>Sydney</h3>
+                    <p>Experience the stunning coastal views of Sydney, with rooms that offer a relaxing atmosphere and easy access to beautiful beaches and vibrant culture.</p>
+                    <button class="butto" onclick="window.open('sydney.html', '_blank')">MORE DETAILS</button>
+                    <button class="buttonn" onclick="proceedToPay('roo6')">BOOK</button>
+                </div>
+            </div>
+            <div class="roo7" id="roo7">
+                <img src="im7.jpg" alt="Room Image">
+                <div class="text-container">
+                    <h3>Rome</h3>
+                    <p>Immerse yourself in the rich history of Rome, where elegant accommodations provide a charming atmosphere just steps away from ancient ruins and delicious cuisine.</p>
+                    <button class="butto" onclick="window.open('rome.html', '_blank')">MORE DETAILS</button>
+                    <button class="buttonn" onclick="proceedToPay('roo7')">BOOK</button>
+                </div>
+            </div>
+            <div class="roo8" id="roo8">
+                <img src="im8.jpg" alt="Room Image">
+                <div class="text-container">
+                    <h3>Cairo</h3>
+                    <p>Discover the wonders of Cairo with rooms that blend luxury and tradition, offering stunning views of the Pyramids and easy access to the city’s rich history.</p>
+                    <button class="butto" onclick="window.open('cairo.html', '_blank')">MORE DETAILS</button>
+                    <button class="buttonn" onclick="proceedToPay('roo8')">BOOK</button>
+                </div>
+            </div>
+            <div class="roo9" id="roo9">
+                <img src="im9.jpg" alt="Room Image">
+                <div class="text-container">
+                    <h3>Berlin</h3>
+                    <p>Enjoy a stylish and contemporary stay in Berlin, where chic rooms reflect the city's vibrant culture and provide a perfect base for exploration.</p>
+                    <button class="butto" onclick="window.open('berlin.html', '_blank')">MORE DETAILS</button>
+                    <button class="buttonn" onclick="proceedToPay('roo9')">BOOK</button>
+                </div>
+            </div>
+            <div class="roo10" id="roo10">
+                <img src="im10.jpg" alt="Room Image">
+                <div class="text-container">
+                    <h3>Bangkok</h3>
+                    <p>Indulge in the bustling energy of Bangkok, where luxurious hotels offer serene retreats complete with exquisite dining options and cultural experiences.</p>
+                    <button class="butto" onclick="window.open('bangkok.html', '_blank')">MORE DETAILS</button>
+                    <button class="buttonn" onclick="proceedToPay('roo10')">BOOK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="verify-dates">
+        <img src="lilo.png">
+        <p> Prime Guest Lodge</p>
+
+        <button class="close">&times;</button>
+
+        <div class="button-container">
+            <p class="s"> SELECT DATES</p>
+            <button class="right-button" id="right-button">CONFIRM DATES OF STAY</button>
+        </div>
+        
+    
+        <!-- Check-in / Check-out Section -->
+    <div class="check-in-out">
+        <div class="check-in" id="check-in">
+            <span>Check-in: Not selected</span>
+        </div>
+        <div class="check-out" id="check-out">
+            <span>Check-out: Not selected</span>
+        </div>
+    </div>
+    
+        <!-- Calendar Container -->
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button class="prev-month" onclick="changeMonth(-1)">&#10094;</button>
+                <h2 id="month-name">November 2024</h2>
+                <button class="next-month" onclick="changeMonth(1)">&#10095;</button>
+            </div>
+            <div class="calendar">
+                <div class="calendar-day">Sun</div>
+                <div class="calendar-day">Mon</div>
+                <div class="calendar-day">Tue</div>
+                <div class="calendar-day">Wed</div>
+                <div class="calendar-day">Thu</div>
+                <div class="calendar-day">Fri</div>
+                <div class="calendar-day">Sat</div>
+                <!-- Dates will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="clients" >
+        <div class="titley">What our customers say about us!</div>
+        <div class="arrowy-container">
+            <button class="arrowy left" id="prevBtny">&#10094;</button>
+            <div class="scrolly-container" id="scrollyContainer">
+                
+                <div class="scrolly-item">
+                    <div class="im">
+                        <img src="pe.jpg">
+                    </div>
+                    <p>
+                        Absolutely wonderful experience! The rooms are beautifully decorated, spacious, and immaculately clean.<br>
+                        The staff's attention to detail and warm hospitality made our stay unforgettable.<br>
+                        Every morning, we woke to the serene surroundings that added a sense of tranquility<br>
+                        to our getaway. The quality of furnishings and delightful amenities made it feel<br>
+                        like a true five-star experience. We felt pampered, from room service<br>
+                        to thoughtful touches that created a comfortable, restful atmosphere.<br>
+                        I highly recommend staying here for anyone seeking a memorable<br>
+                        experience filled with warmth and luxury.
+                    </p>
+                </div>
+                
+                <div class="scrolly-item">
+                    <div class="im">
+                        <img src="re.webp">
+                    </div>
+                    <p>
+                        The service here is top-notch! From the cozy, well-appointed rooms to the friendly staff,<br>
+                        everything exceeded our expectations. A fantastic place to unwind and relax.<br>
+                        The attention to detail in decor and the calm surroundings<br>
+                        truly create a peaceful retreat. Each room provides an escape<br>
+                        from the busyness of everyday life, with comfortable beds<br>
+                        and spacious areas to relax. The on-site amenities are incredible,<br>
+                        and every interaction with the staff felt personalized.<br>
+                        It’s the ideal spot for a weekend recharge or longer stay.
+                    </p>
+                </div>
+                
+                <div class="scrolly-item">
+                    <div class="im">
+                        <img src="oo.avif">
+                    </div>
+                    <p>
+                        A true gem! The rooms are luxurious yet comfortable, with every amenity you could need.<br>
+                        The staff is incredibly attentive, making every guest feel special.<br>
+                        The peaceful ambiance paired with modern touches creates an environment<br>
+                        that’s both relaxing and refined. Each evening was perfect, from<br>
+                        the exceptional room service to the cozy lounge areas. The location<br>
+                        offers the best of both tranquility and accessibility. I can’t<br>
+                        say enough about the fantastic service and attention to detail.<br>
+                        A must-visit for those who value comfort and elegance.
+                    </p>
+                </div>
+                
+                <div class="scrolly-item">
+                    <div class="im">
+                        <img src="hh.webp">
+                    </div>
+                    <p>
+                        Perfect getaway! The rooms are stylish and pristine, offering a peaceful retreat.<br>
+                        The team went above and beyond to ensure our comfort. Highly recommended!<br>
+                        Each morning started with a scenic view and delicious breakfast.<br>
+                        We loved the peacefulness of the surroundings and the thoughtful<br>
+                        details in the room that made our stay cozy and delightful.<br>
+                        With spacious layouts and well-chosen decor, this lodge offers<br>
+                        both elegance and comfort. We felt refreshed, energized, and<br>
+                        would definitely return. A lovely escape from the everyday.
+                    </p>
+                </div>
+                
+            </div>
+            <button class="arrowy right" id="nextBtny">&#10095;</button>
+
+            <div class="floatingt-arrow bounce-effect">
+                → <p>Swipe</p>
+            </div>
+            
+        </div>
+        <div class="triangled" onclick="scrollToTop()">
+            <div class="arrowd"></div>
+        </div> 
+    </div>
+
+
+
+
+    
+
+
+     <div class="acc"> 
+        <div class="block">
+                <img src="logoo.jpg" style="cursor: pointer;">
+        </div>
+    
+        <div class="info">
+            <div class="section section1">
+                <h3><a href="contact.html" class="about-link">Contact Details</a> </h3>
+                <p><a href="contact.html" class="about-lin">0799963300</a></p>
+                <p><a href="contact.html" class="about-lin">0708364240</a></p>
+                <p class="pp">Prime Guest Lodge</p>
+                <p class="oo">Maua basin, Meru</p>
+            </div>
+            <div class="section section2">
+                <h3> <a href="herit.html" class="about-link">About Us</a></h3>
+                <p><a href="contact.html" class="about-lin">Contact Us</a></p>
+                <p><a href="locate.html" class="about-lin">Location</a></p>
+            </div>
+            <div class="section section3">
+                <h3><a href="contact.html" class="about-link">Email Details</a> </h3>
+                <p class="u"><a href="contact.html" class="about-lin">Kaithia@gmail.com</a></p>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/" target="_blank">
+                    <img src="f.jpeg" alt="Facebook Share" class="social-icon">
+                </a><br>
+                <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+                <form id="emailForm">
+                    <div class="input-button-container">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                        <button type="submit" class="su">&#8594;</button>
+                    </div>                
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="overlayr" id="overlayr"></div>
+    <div class="modal" id="modal">
+        <p>Email submitted successfully!</p>
+        <h2>PRIME GUEST NEWS, OFFERS AND ANNOUNCEMENTS</h2>
+        <p>
+          <strong>NEWSLETTER SIGNUP</strong><br>
+        We love sharing our news and announcements with you on a regular basis so that you know what is happening in the world of Prime. To receive information about our ongoing specials and promotions, please complete the form below, and we will make sure to stay in touch.
+        </p>
+        <p>
+            Your privacy is important to us, and we will never share or sell any information you provide to us. The notices you receive will be from Prime Lodge with hopes of enhancing your next experience with us.
+        </p>
+        <button id="closeModal">OK</button>
+    </div>
+
+
+
+
+    <div class="foop">
+        <div class="ffsud">
+            <h3><a href="contact.html">Contact Details</a> </h3>
+                <p>0799963300</a></p>
+                <p>0708364240</a></p>
+                <p>Prime Guest Lodge</p>
+                <p>Maua basin, Meru</p>
+        </div>
+        <div class="ddsud">
+            <h3><a href="contact.html">Email Details</a> </h3>
+            <p><a href="contact.html">Kaithia@gmail.com</a></p>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/" target="_blank">
+                <img src="f.jpeg" alt="Facebook Share" class="social-icons">
+            </a>
+        </div>
+        <div class="dams">
+            <p style="font-weight: bold;">SUBSCRIBE TO OUR NEWSLETTER</p>
+            <form id="newsletterForms">
+                <label for="email" style="color: #000000;">Email Address:</label>
+                <input type="email" id="emails" name="email" required>
+                <button type="submit" class="sug">
+                    &#8594; <!-- Arrow symbol -->
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <div id="popupBox" class="popupBox">
+        <div class="popupBox-content">
+            <p>Email submitted successfully!</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+    
+
+        
+        <div class="footer">
+            
+            <div class="copyright">
+                © 2024 Prime Guest Lodge | Made by ezramuthomi@gmail.com
+            </div>
+            <div class="stp">
+            <a href="site.html">Site map</a> 
+            <a href="Tou.html">Terms of use</a> 
+            <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    
+    
+        
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+            // Initialize Flatpickr
+            flatpickr('.flatpickr', {
+                dateFormat: "Y-m-d", // Adjust date format as needed
+            });
+        </script>
+    
+        <!-- Scripts -->
+        <script src="sas.js"></script>
+    </body>
+    </html>

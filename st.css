@@ -1,0 +1,76 @@
+@media screen and (max-width: 600px) {
+    .block-box {
+        font-size: 16px; 
+        padding: 15px; 
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .block-box p {
+        font-size: 20px; /* Reduce font size on mobile */
+        margin-left: 0;  /* Remove left margin to prevent content from going out of view */
+        text-align: center; /* Ensure text is centered on mobile */
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .box-container {
+        flex-direction: column;  
+        gap: 10px;               
+        max-width: 360px;
+        margin-left: -15px;  
+        margin-right: auto;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .square-box1 {
+        width: 60%;  
+        height: 230px;
+        margin-left: 5px; 
+        margin-right: 20px; 
+        margin-bottom: 5px; 
+    }
+    #squareBox1 h2 {
+        font-size: 15px; 
+    }
+
+   
+    #squareBox1 img {
+        width: 85%;
+        height: 180px; 
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .square-box2 {
+        width: 70%; 
+        margin-right: 0;
+        margin-left: 10px; 
+        margin-bottom: 5px; 
+        height: 260px;
+    }
+
+    .square-box2 h5 {
+        font-size: 35px; /* Reduce font size for mobile */
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    #notificationBox {
+        width: 135px; 
+        top: 17%; 
+        left: 25%;
+        padding: 10px;  
+        font-size: 18px;  
+        height: 35px;  
+        max-width: 300px;  
+    }
+}
