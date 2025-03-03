@@ -1,0 +1,165 @@
+
+
+.full-width-paragraph {
+    width: 100%; 
+    padding: 20px; 
+    background-color: #301414;
+    box-sizing: border-box; 
+    color: white; 
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center; 
+    overflow: hidden; /* Ensure content overflow is hidden */
+    transition: max-height 3s ease;
+    max-height: 265px; /* Set initial height to 81px */
+    position: relative; /* Allow positioning of toggle text */
+}
+
+@media (max-width: 768px) { /* Adjust max-width for desired breakpoint */
+    .full-width-paragraph {
+        display: none;
+    }
+}
+    
+.content {
+    padding: 10px;
+}
+
+.toggle_{
+    margin: 10px; 
+    padding: 0px; 
+    background-color: transparent; 
+    color: rgb(255, 102, 0); 
+    cursor: pointer; 
+    position: absolute; 
+    font-size: 14px;
+    top: 230px;
+    bottom: 10px;
+    right: 10px; 
+    font-weight: bold; 
+    text-decoration: none;
+    transition: top 2s ease;
+    z-index: 900;
+}
+
+.toggle_::after {
+    content: ''; 
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    bottom: -11px; 
+    height: 2px; /* Thickness of the underline */
+    background-color: rgb(255, 145, 0); 
+    transform: translateY(5px); /* Initial position of underline */
+    transition: transform 0.3s ease; 
+}
+
+.toggle_:hover::after {
+    transform: translateY(-8px); /* Move the underline up on hover */
+}
+
+.clients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 35px;
+    max-height: auto;
+}
+
+.titley {
+    font-size: 24px;
+    color: #da450f;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.arrowy-container {
+    display: flex;
+    align-items: center;
+}
+
+.scrolly-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 940px; /* Adjust width to show three items */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scrolly-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scrolly-item {
+    min-width: 850px; /* Ensure each item gets allocated space */
+    height: 350px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 20px;
+    border-radius: 5px;
+    flex-shrink: 0; /* Prevents items from shrinking */
+    transition: transform 3s ease, opacity 3s ease; 
+}
+
+.scrolly-item:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    opacity: 0.8; /* Slightly reduce opacity on hover */
+    background-color: #dfc299;
+}
+
+/* Background colors for items */
+.scrolly-item:nth-child(1) { background-color: #eccea5; min-width: 780px;}
+.scrolly-item:nth-child(2) { background-color: #eccea5; min-width: 760px;}
+.scrolly-item:nth-child(3) { background-color: #eccea5; min-width: 770px; }
+.scrolly-item:nth-child(4) { background-color: #eccea5; min-width: 790px;}
+
+.im img {
+    width: 80px; /* Set desired width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; 
+    margin-top: 20px;
+}
+
+.scrolly-item p {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    overflow-wrap: break-word;
+}
+
+.arrowy {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 40px;
+    padding: 10px;
+    color: #007bff;
+}
+
+.arrowy:hover {
+    color: #0056b3;
+    background-color: transparent;
+}
+
+
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 10000px;
+    margin-top: 55px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        display: none;
+    }
+}
